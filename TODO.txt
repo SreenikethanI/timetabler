@@ -1,1 +1,4 @@
-1. builder.js > parseDays: try to parse "M34 ..." instead of "M_34 ..."
+• 
+
+=== DONE ===
+• builder.js > parseDays: try to parse "M34 ..." instead of "M_34 ..."

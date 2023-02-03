@@ -51,28 +51,32 @@ export function getTimetableFull(json) {
 }
 
 /** Parses a "days" string.
- * @param {string} daysString A "days" string, example: `"M_2 W_3 Th_5 F_1"`
- * @returns {Map<string,number[]>} A map containing day as key, and an array of
- * period numbers as value.
+ * @param {string} daysString A "days" string, example: `"M2 W3 Th5 F12"`
+ * @returns {Map<string,Set<number>>} A map containing day number (0 = Monday)
+ * as key, and a Set of period numbers as value.
  * @example
  * <caption>Example for return value:</caption>
  * new Map([
- *     ["M":  [2,]],
- *     ["T":  [  ]],
- *     ["W":  [3,]],
- *     ["Th": [5,]],
- *     ["F":  [1,]],
+ *     [ 0, new Set([2]) ],
+ *     [ 2, new Set([3]) ],
+ *     [ 3, new Set([5]) ],
+ *     [ 4, new Set([1, 2]) ],
  * ])
  */
 export function parseDays(daysString) {
-    /** @type {Map<string,number[]>} */
+    /** @type {Map<number,Set<number>>} */
     const parsed = new Map();
 
     daysString.split(" ").forEach(dayString => {
-        let [day, periodsString] = dayString.split("_", 2);
-        const periods = [];
+        const splitPoint = dayString.search(/\d/);
+        const day = Constants.DAYS_SHORT.indexOf(dayString.substring(0, splitPoint));
+        const periodsString = dayString.substring(splitPoint);
+
+        /** @type {Set<number>} */
+        const periods = new Set();
         for (const period of periodsString)
-            periods.push(parseInt(period));
+            periods.add(parseInt(period));
+
         parsed.set(day, periods);
     });
 

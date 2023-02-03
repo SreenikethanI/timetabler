@@ -7,6 +7,7 @@ export const EMPTY_ROOM = {};
 export const FIELDS = ["course", "title", "title_short", "IC", "section", "instructor", "room", "section_room"];
 export const FIELDS_NAMES = {"course":"Code","title":"Title","title_short":"Title","IC":"IC","section":"Section","instructor":"Instructor","room":"Room","section_room":"Sec/Room"};
 export const DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri"];
+export const DAYS_SHORT = ["M", "T", "W", "Th", "F"];
 // Below are in minutes.
 export const PERIOD_START = 7*60 + 30;
 export const PERIOD_DURATION = 50;
