@@ -1,18 +1,8 @@
+"use strict";
 import * as Constants from './constants.js';
+import * as Helper from './helper.js';
 
 const FIELDS_TO_SHOW = ["course", "title_short", "section_room"/*, "instructor"*/];
-
-const TIMETABLES = {
-    "034 - Sreenikethan Iyer": [[{"course":"BIO F111","section":"L2"},{"course":"CS F111","section":"L2"},{"course":"BIO F110","section":"P1"},{"course":"BIO F110","section":"P1"},{"course":"MATH F111","section":"L2"},{"course":"CHEM F111","section":"L2"},{"course":"","section":""},{"course":"","section":""},{"course":"","section":""}],[{"course":"CHEM F111","section":"L2"},{"course":"MATH F111","section":"L2"},{"course":"","section":""},{"course":"","section":""},{"course":"","section":""},{"course":"","section":""},{"course":"BITS F112","section":"L1"},{"course":"BITS F110","section":"P2"},{"course":"BITS F110","section":"P2"}],[{"course":"BITS F110","section":"L1"},{"course":"CHEM F111","section":"L2"},{"course":"CS F111","section":"L2"},{"course":"BIO F111","section":"L2"},{"course":"","section":""},{"course":"","section":""},{"course":"MATH F111","section":"L2"},{"course":"CHEM F110","section":"P4"},{"course":"CHEM F110","section":"P4"}],[{"course":"MATH F111","section":"L2"},{"course":"","section":""},{"course":"","section":""},{"course":"","section":""},{"course":"CS F111","section":"L2"},{"course":"BIO F111","section":"L2"},{"course":"","section":""},{"course":"CS F111","section":"P3"},{"course":"CS F111","section":"P3"}],[{"course":"CS F111","section":"L2"},{"course":"BIO F111","section":"L2"},{"course":"","section":""},{"course":"CHEM F111","section":"L2"},{"course":"BITS F112","section":"L1"}]],
-    "029 - Adithya Nandakumar": [[{"course":"BIO F111","section":"L2"},{"course":"CS F111","section":"L2"},{"course":"BIO F110","section":"P1"},{"course":"BIO F110","section":"P1"},{"course":"MATH F111","section":"L2"},{"course":"CHEM F111","section":"L2"},{"course":"","section":""},{"course":"","section":""},{"course":"","section":""}],[{"course":"CHEM F111","section":"L2"},{"course":"MATH F111","section":"L2"},{"course":"","section":""},{"course":"","section":""},{"course":"","section":""},{"course":"","section":""},{"course":"BITS F112","section":"L1"},{"course":"BITS F110","section":"P2"},{"course":"BITS F110","section":"P2"}],[{"course":"BITS F110","section":"L1"},{"course":"CHEM F111","section":"L2"},{"course":"CS F111","section":"L2"},{"course":"BIO F111","section":"L2"},{"course":"","section":""},{"course":"","section":""},{"course":"MATH F111","section":"L2"},{"course":"CHEM F110","section":"P4"},{"course":"CHEM F110","section":"P4"}],[{"course":"MATH F111","section":"L2"},{"course":"","section":""},{"course":"","section":""},{"course":"","section":""},{"course":"CS F111","section":"L2"},{"course":"BIO F111","section":"L2"},{"course":"","section":""},{"course":"CS F111","section":"P3"},{"course":"CS F111","section":"P3"}],[{"course":"CS F111","section":"L2"},{"course":"BIO F111","section":"L2"},{"course":"","section":""},{"course":"CHEM F111","section":"L2"},{"course":"BITS F112","section":"L1"}]],
-    "031 - Ritvik Bhatnagar": [[{"course":"BIO F111","section":"L2"},{"course":"CS F111","section":"L2"},{"course":"BIO F110","section":"P1"},{"course":"BIO F110","section":"P1"},{"course":"MATH F111","section":"L2"},{"course":"CHEM F111","section":"L2"},{"course":"","section":""},{"course":"","section":""},{"course":"","section":""}],[{"course":"CHEM F111","section":"L2"},{"course":"MATH F111","section":"L2"},{"course":"","section":""},{"course":"","section":""},{"course":"","section":""},{"course":"","section":""},{"course":"BITS F112","section":"L1"},{"course":"BITS F110","section":"P2"},{"course":"BITS F110","section":"P2"}],[{"course":"BITS F110","section":"L1"},{"course":"CHEM F111","section":"L2"},{"course":"CS F111","section":"L2"},{"course":"BIO F111","section":"L2"},{"course":"","section":""},{"course":"","section":""},{"course":"MATH F111","section":"L2"},{"course":"CHEM F110","section":"P4"},{"course":"CHEM F110","section":"P4"}],[{"course":"MATH F111","section":"L2"},{"course":"","section":""},{"course":"","section":""},{"course":"","section":""},{"course":"CS F111","section":"L2"},{"course":"BIO F111","section":"L2"},{"course":"","section":""},{"course":"CS F111","section":"P3"},{"course":"CS F111","section":"P3"}],[{"course":"CS F111","section":"L2"},{"course":"BIO F111","section":"L2"},{"course":"","section":""},{"course":"CHEM F111","section":"L2"},{"course":"BITS F112","section":"L1"}]],
-    "036 - Mohammed Emaan": [[{"course":"BIO F111","section":"L2"},{"course":"CS F111","section":"L2"},{"course":"BIO F110","section":"P1"},{"course":"BIO F110","section":"P1"},{"course":"MATH F111","section":"L2"},{"course":"CHEM F111","section":"L2"},{"course":"","section":""},{"course":"","section":""},{"course":"","section":""}],[{"course":"CHEM F111","section":"L2"},{"course":"MATH F111","section":"L2"},{"course":"","section":""},{"course":"","section":""},{"course":"","section":""},{"course":"","section":""},{"course":"BITS F112","section":"L1"},{"course":"BITS F110","section":"P2"},{"course":"BITS F110","section":"P2"}],[{"course":"BITS F110","section":"L1"},{"course":"CHEM F111","section":"L2"},{"course":"CS F111","section":"L2"},{"course":"BIO F111","section":"L2"},{"course":"","section":""},{"course":"","section":""},{"course":"MATH F111","section":"L2"},{"course":"CHEM F110","section":"P4"},{"course":"CHEM F110","section":"P4"}],[{"course":"MATH F111","section":"L2"},{"course":"","section":""},{"course":"","section":""},{"course":"","section":""},{"course":"CS F111","section":"L2"},{"course":"BIO F111","section":"L2"},{"course":"","section":""},{"course":"CS F111","section":"P3"},{"course":"CS F111","section":"P3"}],[{"course":"CS F111","section":"L2"},{"course":"BIO F111","section":"L2"},{"course":"","section":""},{"course":"CHEM F111","section":"L2"},{"course":"BITS F112","section":"L1"}]],
-    "077 - Adithya Sunoj": [[{"course":"BIO F111","section":"L2"},{"course":"CS F111","section":"L2"},{"course":"","section":""},{"course":"","section":""},{"course":"MATH F111","section":"L2"},{"course":"CHEM F111","section":"L2"},{"course":"","section":""},{"course":"","section":""},{"course":"","section":""}],[{"course":"CHEM F111","section":"L2"},{"course":"MATH F111","section":"L2"},{"course":"","section":""},{"course":"BIO F110","section":"P3"},{"course":"BIO F110","section":"P3"},{"course":"","section":""},{"course":"BITS F112","section":"L2"},{"course":"BITS F110","section":"P2"},{"course":"BITS F110","section":"P2"}],[{"course":"BITS F110","section":"L1"},{"course":"CHEM F111","section":"L2"},{"course":"CS F111","section":"L2"},{"course":"BIO F111","section":"L2"},{"course":"","section":""},{"course":"","section":""},{"course":"MATH F111","section":"L2"},{"course":"","section":""},{"course":"","section":""}],[{"course":"MATH F111","section":"L2"},{"course":"","section":""},{"course":"CHEM F110","section":"P5"},{"course":"CHEM F110","section":"P5"},{"course":"CS F111","section":"L2"},{"course":"BIO F111","section":"L2"},{"course":"","section":""},{"course":"CS F111","section":"P3"},{"course":"CS F111","section":"P3"}],[{"course":"CS F111","section":"L2"},{"course":"BIO F111","section":"L2"},{"course":"","section":""},{"course":"CHEM F111","section":"L2"},{"course":"BITS F112","section":"L2"}]],
-    "050 - Aditya Agarwal": [[{"course":"BIO F111","section":"L2"},{"course":"CS F111","section":"L2"},{"course":"","section":""},{"course":"","section":""},{"course":"MATH F111","section":"L2"},{"course":"CHEM F111","section":"L2"},{"course":"","section":""},{"course":"BIO F110","section":"P2"},{"course":"BIO F110","section":"P2"}],[{"course":"CHEM F111","section":"L2"},{"course":"MATH F111","section":"L2"},{"course":"","section":""},{"course":"","section":""},{"course":"","section":""},{"course":"","section":""},{"course":"BITS F112","section":"L2"},{"course":"BITS F110","section":"P2"},{"course":"BITS F110","section":"P2"}],[{"course":"BITS F110","section":"L1"},{"course":"CHEM F111","section":"L2"},{"course":"CS F111","section":"L2"},{"course":"BIO F111","section":"L2"},{"course":"","section":""},{"course":"","section":""},{"course":"MATH F111","section":"L2"},{"course":"","section":""},{"course":"","section":""}],[{"course":"MATH F111","section":"L2"},{"course":"","section":""},{"course":"CHEM F110","section":"P5"},{"course":"CHEM F110","section":"P5"},{"course":"CS F111","section":"L2"},{"course":"BIO F111","section":"L2"},{"course":"","section":""},{"course":"CS F111","section":"P3"},{"course":"CS F111","section":"P3"}],[{"course":"CS F111","section":"L2"},{"course":"BIO F111","section":"L2"},{"course":"","section":""},{"course":"CHEM F111","section":"L2"},{"course":"BITS F112","section":"L2"}]],
-    "003 - Stellin John": [[{"course":"BIO F111","section":"L1"},{"course":"CS F111","section":"L1"},{"course":"BITS F110","section":"P1"},{"course":"BITS F110","section":"P1"},{"course":"MATH F111","section":"L1"},{"course":"CHEM F111","section":"L1"},{"course":"","section":""},{"course":"","section":""},{"course":"","section":""}],[{"course":"CHEM F111","section":"L1"},{"course":"MATH F111","section":"L1"},{"course":"","section":""},{"course":"","section":""},{"course":"BITS F110","section":"L2"},{"course":"","section":""},{"course":"BITS F112","section":"L1"},{"course":"","section":""},{"course":"","section":""}],[{"course":"","section":""},{"course":"CHEM F111","section":"L1"},{"course":"CS F111","section":"L1"},{"course":"BIO F111","section":"L1"},{"course":"","section":""},{"course":"","section":""},{"course":"MATH F111","section":"L1"},{"course":"CS F111","section":"P2"},{"course":"CS F111","section":"P2"}],[{"course":"MATH F111","section":"L1"},{"course":"","section":""},{"course":"BIO F110","section":"P6"},{"course":"BIO F110","section":"P6"},{"course":"CS F111","section":"L1"},{"course":"BIO F111","section":"L1"},{"course":"","section":""},{"course":"CHEM F110","section":"P6"},{"course":"CHEM F110","section":"P6"}],[{"course":"CS F111","section":"L1"},{"course":"BIO F111","section":"L1"},{"course":"","section":""},{"course":"CHEM F111","section":"L1"},{"course":"BITS F112","section":"L1"}]],
-    "321 - Karthik Narayan": [[{"course":"EEE F111","section":"L3"},{"course":"PHY F111","section":"L3"},{"course":"MATH F111","section":"L6"},{"course":"BITS F111","section":"L3"},{"course":"MATH F113","section":"L3"},{"course":"","section":""},{"course":"","section":""},{"course":"","section":""},{"course":"","section":""}],[{"course":"BITS F111","section":"L3"},{"course":"MATH F113","section":"L3"},{"course":"PHY F110","section":"P2"},{"course":"PHY F110","section":"P2"},{"course":"MATH F111","section":"L6"},{"course":"PHY F111","section":"L3"},{"course":"","section":""},{"course":"ME F112","section":"P3"},{"course":"ME F112","section":"P3"}],[{"course":"PHY F111","section":"L3"},{"course":"BITS F111","section":"L3"},{"course":"","section":""},{"course":"","section":""},{"course":"MATH F111","section":"L6"},{"course":"EEE F111","section":"L3"},{"course":"","section":""},{"course":"","section":""},{"course":"MATH F113","section":"L3"}],[{"course":"","section":""},{"course":"EEE F111","section":"L3"},{"course":"MATH F113","section":"L3"},{"course":"ME F112","section":"L3"},{"course":"MATH F111","section":"L6"},{"course":"PHY F111","section":"L3"},{"course":"","section":""},{"course":"","section":""},{"course":"","section":""}],[{"course":"","section":""},{"course":"","section":""},{"course":"","section":""},{"course":"EEE F111","section":"L3"},{"course":"BITS F111","section":"L3"}]],
-    "298 - Lakesh Thangadurai": [[{"course":"EEE F111","section":"L2"},{"course":"PHY F111","section":"L2"},{"course":"MATH F111","section":"L5"},{"course":"BITS F111","section":"L2"},{"course":"","section":""},{"course":"","section":""},{"course":"MATH F113","section":"L2"},{"course":"","section":""},{"course":"","section":""}],[{"course":"BITS F111","section":"L2"},{"course":"","section":""},{"course":"PHY F110","section":"P2"},{"course":"PHY F110","section":"P2"},{"course":"MATH F111","section":"L5"},{"course":"PHY F111","section":"L2"},{"course":"","section":""},{"course":"","section":""},{"course":"MATH F113","section":"L2"}],[{"course":"PHY F111","section":"L2"},{"course":"BITS F111","section":"L2"},{"course":"","section":""},{"course":"","section":""},{"course":"MATH F113","section":"L2"},{"course":"EEE F111","section":"L2"},{"course":"","section":""},{"course":"ME F112","section":"L2"},{"course":"","section":""}],[{"course":"","section":""},{"course":"EEE F111","section":"L2"},{"course":"","section":""},{"course":"","section":""},{"course":"MATH F111","section":"L5"},{"course":"PHY F111","section":"L2"},{"course":"","section":""},{"course":"ME F112","section":"P7"},{"course":"ME F112","section":"P7"}],[{"course":"MATH F113","section":"L2"},{"course":"","section":""},{"course":"MATH F111","section":"L5"},{"course":"EEE F111","section":"L2"},{"course":"BITS F111","section":"L2"}]],
-};
 
 //=| DOM related |============================================================//
 
@@ -50,46 +40,13 @@ function createHeaderRow() {
 
         const cell_row2 = document.createElement("td");
         cell_row2.classList.add("heading-period-time");
-        cell_row2.innerText = `${formatTime(time_start)} - ${formatTime(time_end)}`;
+        cell_row2.innerText = `${Helper.formatTime(time_start)} - ${Helper.formatTime(time_end)}`;
         row2.append(cell_row2);
     }
 
     const df = document.createDocumentFragment();
     df.append(row1); df.append(row2);
     return df;
-}
-
-/** Returns a new timetable with complete details (a.k.a. "fields") added to the
- * periods of the given timetable.
- * @param {*} json A timetable which contains only Course ID and Section. */
-function getTimetableFull(json) {
-    const timetable = [];
-
-    for (const day of json) {
-        const day_detailed = [];
-        for (const period of day) {
-            /** @type {string} */ const course = period["course"];
-            /** @type {string} */ const section = period["section"];
-
-            const course_details = Constants.COURSES[course] || Constants.EMPTY_COURSE;
-            const section_details = (Constants.SECTIONS[course] || Constants.EMPTY_COURSE_SECTION)[section] || Constants.EMPTY_SECTION;
-
-            day_detailed.push({
-                "course": course,
-                "title": course_details["title"],
-                "title_short": course_details["title_short"],
-                "IC": course_details["IC"],
-
-                "section": section,
-                "instructor": section_details["instructor"],
-                "room": section_details["room"],
-                "section_room": `${section} - ${section_details["room"]}`
-            })
-        }
-        timetable.push(day_detailed);
-    }
-
-    return timetable;
 }
 
 /** Returns a string Array containing the timetable names selected by the user.
@@ -149,13 +106,13 @@ function displayTimetable(timetable, fields) {
         for (let i_period = 0; i_period < day.length; i_period++) {
             const period = day[i_period];
             const isFree = !period["course"];
-            const isNonCommon = compareJSON(period, Constants.PERIOD_NON_COMMON);
+            const isNonCommon = Helper.compareJSON(period, Constants.PERIOD_NON_COMMON);
 
             // If current period is same as previous, extend the previous cell,
             // i.e. account for block periods.
             if (i_period > 0
                 && !isFree && !isNonCommon
-                && compareJSON(period, day[i_period - 1])) {
+                && Helper.compareJSON(period, day[i_period - 1])) {
                 row.lastChild.colSpan++;
                 continue;
             }
@@ -186,25 +143,25 @@ function displayTimetable(timetable, fields) {
 }
 
 /** Displays the given timetable.
- * @param {*} timetableKey The key of the timetable. Refer to `TIMETABLES`.
+ * @param {*} timetableKey The key of the timetable. Refer to `Constants.TIMETABLES`.
  * @param {string[]} fields The fields to display. Refer to `Constants.FIELDS`. */
 function displayTimetableKey(timetableKey, fields) {
-    return displayTimetable(getTimetableFull(TIMETABLES[timetableKey]), fields);
+    return displayTimetable(Helper.getTimetableFull(Constants.TIMETABLES[timetableKey]), fields);
 }
 
 /** Compares two or more timetables, and displays the common periods.
- * @param {string[]} timetableKeys The keys of the timetables to compare. Refer to `TIMETABLES`.
+ * @param {string[]} timetableKeys The keys of the timetables to compare. Refer to `Constants.TIMETABLES`.
  * @param {string[]} fields The fields to display. Refer to `Constants.FIELDS`. */
 function compareTimetables(timetableKeys, fields) {
     const fieldsFiltered = fields.filter((x) => Constants.FIELDS.includes(x));
     if (!fieldsFiltered) {return;}
-    const timetables = timetableKeys.map((key) => TIMETABLES[key]).filter((tt) => tt).map((tt) => getTimetableFull(tt));
+    const timetables = timetableKeys.map((key) => Constants.TIMETABLES[key]).filter((tt) => tt).map((tt) => getTimetableFull(tt));
     if (!timetables.length) {return;}
 
     const commonTimetable = [];
 
-    // Build a common timetable with 3 types of periods: Busy period, Free period,
-    // and Non-common period.
+    // Build a common timetable with 3 types of periods: common busy period,
+    // common free period, and non-common period.
 
     // For each day...
     for (let i_day = 0; i_day < timetables[0].length; i_day++) {
@@ -226,7 +183,7 @@ function compareTimetables(timetableKeys, fields) {
             for (let i_tt = 1; i_tt < timetables.length; i_tt++) {
                 const tt = timetables[i_tt];
                 const tt_period = tt[i_day][i_period];
-                isCommon = compareJSON(tt_period, period);
+                isCommon = Helper.compareJSON(tt_period, period);
                 if (!isCommon) break;
             }
             day.push(isCommon ? period : Constants.PERIOD_NON_COMMON);
@@ -240,7 +197,7 @@ function compareTimetables(timetableKeys, fields) {
     displayTimetable(commonTimetable, fields);
 }
 
-/** Rebuilds the list of available timetables, as per `TIMETABLES`.
+/** Rebuilds the list of available timetables, as per `Constants.TIMETABLES`.
  * If user has selected "Compare timetables", then all choices will have
  * checkboxes rather than radio buttons.
  * Note that, if not in compare mode and `preserveSelections` is `true`, only
@@ -263,9 +220,9 @@ function refreshTimetablesList(preserveSelection) {
 
     var firstOption = null; // Used later to focus the first option
     var index = 1;
-    for (const key in TIMETABLES) {
+    for (const key in Constants.TIMETABLES) {
         // Create label and radio elements
-        if (!Object.hasOwnProperty.call(TIMETABLES, key)) {continue;}
+        if (!Object.hasOwnProperty.call(Constants.TIMETABLES, key)) {continue;}
         const label = document.createElement("label");
         const option = document.createElement("input");
         option.type = isCompareMode ? "checkbox" : "radio";
@@ -316,22 +273,6 @@ function handleSelectionChange() {
 }
 
 //=| General |================================================================//
-
-/** Converts given minutes into h:mm format.
- * @param {number} minutes
- * @returns {string} */
-function formatTime(minutes) {
-    minutes = minutes % 1440;
-    const h = Math.floor(minutes / 60);
-    const m = Math.floor(minutes - h * 60);
-    const h_12 = (h % 12) || 12; // if h%12 is 0, then it'll be taken as 12.
-    const am_pm = h > 11 ? "pm" : "am";
-    const m_str = (m < 10 ? '0' : '') + m;
-    return `${h_12}:${m_str}${am_pm}`;
-}
-
-/** Compares two objects by converting to a JSON string. @returns {boolean} */
-function compareJSON(a, b) { return JSON.stringify(a) == JSON.stringify(b); }
 
 function init() {
     refreshTimetablesList(false);
