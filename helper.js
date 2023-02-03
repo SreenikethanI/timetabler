@@ -53,7 +53,7 @@ export function getTimetableFull(json) {
 /** Parses a "days" string.
  * @param {string} daysString A "days" string, example: `"M2 W3 Th5 F12"`
  * @returns {Map<string,Set<number>>} A map containing day number (0 = Monday)
- * as key, and a Set of period numbers as value.
+ * as key, and a Set of period numbers as value (1 = 1st period).
  * @example
  * <caption>Example for return value:</caption>
  * new Map([
@@ -84,11 +84,26 @@ export function parseDays(daysString) {
 }
 
 /** Compiles a weekly timetable object containing Course ID and Section from
- * the given list of subjects and sections enrolled by the student.
- * @param {*[]} courses An array of objects containing Course ID and Section.
+ * the given list of courses and sections enrolled by the student.
+ * @param {Object.<string, string[]>} student_courses_sections An object whose
+ * "keys" are course IDs and whose "values" are arrays containing section names.
+ * @param {number} sem_index The index of the semester in `Constants.COURSES`.
+ * @example
+ * <caption>Example for `courses`:</caption>
+ * {
+ *     "BIO F110":  ["P1"],
+ *     "BIO F111":  ["L2"],
+ *     "BITS F110": ["L1", "P2"],
+ *     "BITS F112": ["L1"],
+ *     "CHEM F110": ["P4"],
+ *     "CHEM F111": ["L2"],
+ *     "CS F111":   ["L2", "P3"],
+ *     "MATH F111": ["L2"],
+ * }
  */
-export function compileTimetable(courses) {
+export function getTimetableMinimal(student_courses_sections, sem_index) {
     const timetable = [];
+    const semester_courses = Constants.COURSES[sem_index];
 
     // Preparing a template
     for (let i = 0; i < 5; i++) {
@@ -99,10 +114,28 @@ export function compileTimetable(courses) {
         timetable.push(day);
     }
 
-    courses.forEach(course => {
-        const courseID = course["course"], section = course["section"];
+    for (const course_id in student_courses_sections) {
+        const all_sections = semester_courses[course_id].sections;
 
-    });
+        student_courses_sections[course_id].forEach((section) => {
+            const days_list = parseDays(all_sections[section].days);
+            for (const [day, hours_list] of days_list.entries()) {
+
+                hours_list.forEach((hour) => {
+
+                    const period = timetable[day][hour - 1];
+                    if (period.course != "") {
+                        timetable[day][hour - 1] = Constants.PERIOD_CONFLICT;
+                        return;
+                    }
+                    period.course = course_id;
+                    period.section = section;
+
+                });
+
+            }
+        });
+    }
 
     return timetable;
 }

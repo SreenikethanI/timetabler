@@ -44,3 +44,6 @@ function toggleTheme() {
     const link = e("darkThemeCSS");
     link.disabled = !link.disabled;
 }
+
+window.addEventListener("load", init, false);
+e("theme_toggle").addEventListener("click", toggleTheme, false);
