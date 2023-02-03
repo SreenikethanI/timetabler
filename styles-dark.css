@@ -1,0 +1,32 @@
+:root {
+    color-scheme: dark;
+    color: gainsboro;
+}
+
+.heading-period-num {
+    color: rgb(var(--color-heading-period-num));
+    background-color: rgba(var(--color-heading-period-num), var(--alpha-background));
+}
+
+.heading-period-time {
+    color: rgb(var(--color-heading-period-time));
+    background-color: rgba(var(--color-heading-period-time), var(--alpha-background));
+}
+
+.day-name {
+    color: rgb(var(--color-day-name));
+    background-color: rgba(var(--color-day-name), var(--alpha-background));
+}
+
+.period-free {
+    color: rgb(var(--color-period-free));
+    background-color: rgba(var(--color-period-free), var(--alpha-background));
+}
+
+td, th {
+    border: 1px solid #939393;
+}
+
+td > p:nth-child(even) {
+    color: white;
+}

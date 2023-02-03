@@ -1,0 +1,107 @@
+/* GENERAL ------------------------------------------------------------------ */
+:root {
+    --color-heading-period-num: 156, 91, 205;
+    --color-heading-period-time: 75, 208, 255;
+    --color-day-name: 237, 125, 49;
+    --color-period-free: 146, 208, 0;
+    --color-period-noncommon: 255, 0, 0;
+    --alpha-background: 0.4;
+}
+
+button, select {
+    font: inherit;
+}
+
+fieldset {
+    display: inline-block;
+    column-count: 3;
+}
+
+label > b {
+    color: red;
+}
+
+/* TABLE -------------------------------------------------------------------- */
+table {
+    empty-cells: hide;
+    border-collapse: collapse;
+}
+
+td, th {
+    border: 1px solid black;
+    text-align: center;
+    vertical-align: middle;
+    padding: 0.5em;
+}
+
+/* PERIODS ------------------------------------------------------------------ */
+.blank {
+    border: none;
+}
+
+.heading-period-num {
+    background-color: rgb(var(--color-heading-period-num));
+    font-size: 2em;
+}
+
+.heading-period-time {
+    background-color: rgb(var(--color-heading-period-time));
+    font-size: 0.9em;
+}
+
+.day-name {
+    background-color: rgb(var(--color-day-name));
+    font-size: 1.75em;
+    text-align: right;
+    border-right: none;
+}
+
+.day-fields {
+    border-left: none;
+    text-align: left;
+}
+
+.period {
+    white-space: nowrap;
+}
+
+.period-free {
+    background-color: rgb(var(--color-period-free));
+}
+
+.period-noncommon {
+    color: rgb(var(--color-period-noncommon));
+    background-color: rgba(var(--color-period-noncommon), var(--alpha-background));
+    font-size: 3em;
+    padding: 0;
+}
+
+td > p {
+    margin: 0;
+    line-height: 1.75em;
+}
+
+td > p:nth-child(even) {
+    /* color: gainsboro; */
+    border-top: 1px dotted gray;
+    border-bottom: 1px dotted gray;
+}
+
+/* PRINT -------------------------------------------------------------------- */
+/* Reference: https://stackoverflow.com/a/2618980/ */
+@media print {
+    body * {
+        visibility: hidden;
+    }
+
+    #timetable, #timetable * {
+        visibility: visible;
+    }
+
+    #timetable {
+        white-space: nowrap;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}

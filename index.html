@@ -1,0 +1,27 @@
+<!DOCTYPE html><html><head>
+
+    <title>Timetabler</title>
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="styles.css"/>
+    <link rel="stylesheet" href="styles-dark.css" id="darkThemeCSS" disabled/>
+
+</head><body onload="init()">
+
+    <p>
+        <button onclick="toggleTheme()" accesskey="T"><u>T</u>oggle theme</button>
+        Click <a href="builder.html" accesskey="h"><b>h</b>ere</a> to go to Builder.
+    </p>
+    <hr />
+
+    <label>
+        <input type="checkbox" accesskey="C" id="check_compare_mode" oninput="refreshTimetablesList(true);" />
+        <u>C</u>ompare timetables
+    </label>
+    <br />
+
+    <fieldset id="list"></fieldset>
+    <hr />
+
+    <table id="timetable"></table>
+
+</body></html>
