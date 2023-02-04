@@ -5,6 +5,7 @@
     --color-day-name: 237, 125, 49;
     --color-period-free: 146, 208, 0;
     --color-period-noncommon: 255, 0, 0;
+    --color-period-conflict: 0, 127, 255;
     --alpha-background: 0.4;
 }
 
@@ -72,6 +73,13 @@ td, th {
 .period-noncommon {
     color: rgb(var(--color-period-noncommon));
     background-color: rgba(var(--color-period-noncommon), var(--alpha-background));
+    font-size: 3em;
+    padding: 0;
+}
+
+.period-conflict {
+    color: rgb(var(--color-period-conflict));
+    background-color: rgba(var(--color-period-conflict), var(--alpha-background));
     font-size: 3em;
     padding: 0;
 }

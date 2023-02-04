@@ -3,8 +3,12 @@ import * as Constants from './constants.js';
 
 //=| General helper functions |===============================================//
 
-/** Compares two objects by converting to a JSON string. @returns {boolean} */
-export function compareJSON(a, b) { return JSON.stringify(a) == JSON.stringify(b); }
+/** Compares equality of two periods.
+ * @param {Constants.PeriodDetailed} a
+ * @param {Constants.PeriodDetailed} b */
+export function arePeriodsEqual(a, b) {
+    return JSON.stringify(a) == JSON.stringify(b);
+}
 
 /** Converts given minutes into h:mm format.
  * @param {number} minutes
@@ -109,7 +113,7 @@ export function getTimetableMinimal(student, sem_index) {
 
                     const period = timetable_minimal[day][hour - 1];
                     if (period.course != "") {
-                        timetable_minimal[day][hour - 1] = Constants.PERIOD_CONFLICT;
+                        timetable_minimal[day][hour - 1] = Constants.GET_PERIOD_CONFLICT();
                         return;
                     }
                     period.course = course_id;

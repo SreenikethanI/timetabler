@@ -106,13 +106,14 @@ function displayTimetable(timetable, fields) {
         for (let i_period = 0; i_period < day.length; i_period++) {
             const period = day[i_period];
             const isFree = !period["course"];
-            const isNonCommon = Helper.compareJSON(period, Constants.PERIOD_NON_COMMON);
+            const isNonCommon = Constants.IS_PERIOD_NON_COMMON(period);
+            const isConflict = Constants.IS_PERIOD_CONFLICT(period);
 
             // If current period is same as previous, extend the previous cell,
             // i.e. account for block periods.
             if (i_period > 0
-                && !isFree && !isNonCommon
-                && Helper.compareJSON(period, day[i_period - 1])) {
+                && !isFree && !isNonCommon && !isConflict
+                && Helper.arePeriodsEqual(period, day[i_period - 1])) {
                 row.lastChild.colSpan++;
                 continue;
             }
@@ -120,20 +121,27 @@ function displayTimetable(timetable, fields) {
             /** Table cell that represents a single period. */
             const cell_period = document.createElement("td");
             cell_period.classList.add("period");
-            if (isFree) { // Free period
+
+            if (isFree) {
                 cell_period.classList.add("period-free");
                 cell_period.innerHTML = "&nbsp;";
-            } else if (isNonCommon) { // Non-common period. Relevant when the
-                // provided timetable is given by the `compareTimetables` function.
+
+            } else if (isNonCommon) {
                 cell_period.classList.add("period-noncommon");
                 cell_period.innerHTML = "&times;";
-            } else { // Normal busy period
+
+            } else if (isConflict) {
+                cell_period.classList.add("period-conflict");
+                cell_period.textContent = "?";
+
+            } else {
                 cell_period.append(...fields.map((field) => {
                     const p = document.createElement("p");
                     p.innerText = period[field];
                     return p;
                 }));
             };
+
             row.append(cell_period);
         }
         df.append(row);
@@ -170,8 +178,8 @@ function compareTimetables(timetableKeys, fields) {
 
         // For each period in the current day...
         for (let i_period = 0; i_period < period_count; i_period++) {
-            /** Determines whether the current period is common to all the given
-             * timetables or not. @type {boolean} */
+            /** Determines whether the current period is common to all the
+             * selected timetables or not. @type {boolean} */
             let isCommon = true;
             /** Temporary variable for holding the current period. It is initialized
              * to the current period in the *first timetable*. The current period
@@ -183,10 +191,10 @@ function compareTimetables(timetableKeys, fields) {
             for (let i_tt = 1; i_tt < timetables.length; i_tt++) {
                 const tt = timetables[i_tt];
                 const tt_period = tt[i_day][i_period];
-                isCommon = Helper.compareJSON(tt_period, period);
+                isCommon = Helper.arePeriodsEqual(tt_period, period);
                 if (!isCommon) break;
             }
-            day.push(isCommon ? period : Constants.PERIOD_NON_COMMON);
+            day.push(isCommon ? period : Constants.GET_PERIOD_NON_COMMON());
         }
 
         commonTimetable.push(day);
