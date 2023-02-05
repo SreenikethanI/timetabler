@@ -1,7 +1,5 @@
 "use strict";
 
-export const SEM_INDEX_INITIAL = 1;
-
 export const DOM_TIMETABLE = "timetable";
 export const DOM_LIST = "list";
 export const DOM_LIST_OPTIONS = "list_options";

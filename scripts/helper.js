@@ -70,10 +70,12 @@ function parseDays(daysString) {
 
 /** Compiles a weekly timetable object containing Course ID and Section from
  * the given list of courses and sections enrolled by the student.
- * @param {Constants.Student} student An object containing courses mapped to the sections enrolled by the student.
+ * @param {Constants.Student} student An object containing courses mapped to the
+ * sections enrolled by the student.
  * "keys" are course IDs and whose "values" are arrays containing section names.
- * @param {number} sem_index The index of the semester in `Constants.COURSES`.
- * @returns {Constants.TimetableMinimal} A minimal timetable constructed from given st.
+ * @param {number} semIndex The index of the semester in `Constants.COURSES`.
+ * @returns {Constants.TimetableMinimal} A minimal timetable constructed from
+ * given student.
  * @example
  * <caption>Example for `courses`:</caption>
  * {
@@ -87,10 +89,10 @@ function parseDays(daysString) {
  *     "MATH F111": ["L2"],
  * }
  */
-export function getTimetableMinimal(student, sem_index) {
+export function getTimetableMinimal(student, semIndex) {
     /** @type {Constants.TimetableMinimal} */
     const timetable_minimal = [];
-    const semester_courses = Constants.SEMESTERS[sem_index];
+    const semester_courses = Constants.SEMESTERS[semIndex];
 
     // Preparing a template
     for (let i = 0; i < 5; i++) {
@@ -130,15 +132,15 @@ export function getTimetableMinimal(student, sem_index) {
     return timetable_minimal;
 }
 
-/** Returns a new timetable with complete details (a.k.a. "fields") added to the
- * periods of the given timetable.
+/** Returns a new timetable object with complete details (a.k.a. "fields") added
+ * to the periods of the given timetable.
  * @param {Constants.TimetableMinimal} timetable_minimal The minimal timetable to elaborate.
- * @param {number} sem_index The index of the semester in `Constants.COURSES`.
+ * @param {number} semIndex The index of the semester in `Constants.COURSES`.
  * @returns {Constants.TimetableDetailed} */
-export function getTimetableDetailed(timetable_minimal, sem_index) {
+export function getTimetableDetailed(timetable_minimal, semIndex) {
     /** @type {Constants.TimetableDetailed} */
     const timetable_full = [];
-    const semester = Constants.SEMESTERS[sem_index] || {};    
+    const semester = Constants.SEMESTERS[semIndex] || {};    
 
     for (const day of timetable_minimal) {
         /** @type {Constants.DayDetailed} */ const day_detailed = [];
@@ -166,4 +168,22 @@ export function getTimetableDetailed(timetable_minimal, sem_index) {
     }
 
     return timetable_full;
+}
+
+/** Compiles a weekly timetable object with complete details (a.k.a. "fields")
+ * from the given list of courses and sections enrolled by the student.
+ * @see {@link getTimetableMinimal}
+ * @see {@link getTimetableDetailed}
+ * @param {Constants.Student} student An object containing courses mapped to the
+ * sections enrolled by the student.
+ * "keys" are course IDs and whose "values" are arrays containing section names.
+ * @param {number} semIndex The index of the semester in `Constants.COURSES`.
+ * @returns {Constants.TimetableDetailed} A detailed timetable constructed from
+ * given student.
+ */
+export function getTimetableDetailedFromStudent(student, semIndex) {
+    return getTimetableDetailed(
+        getTimetableMinimal(student, semIndex),
+        semIndex
+    );
 }
