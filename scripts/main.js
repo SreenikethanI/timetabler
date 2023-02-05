@@ -1,6 +1,7 @@
 "use strict";
 import * as Constants from './constants.js';
 import * as Helper from './helper.js';
+import * as DOM from './constants_dom.js'
 
 const FIELDS_TO_SHOW = ["course", "title_short", "section_room"/*, "instructor"*/];
 
@@ -8,14 +9,27 @@ const FIELDS_TO_SHOW = ["course", "title_short", "section_room"/*, "instructor"*
 
 /** @param {string} id */
 const e = (id) => document.getElementById(id);
-const DOM_TIMETABLE = "timetable";
-const DOM_LIST = "list";
-const DOM_LIST_OPTIONS = "list_options";
-const DOM_COMPARE_MODE = "check_compare_mode";
-const LEGEND_DISPLAY = "Choose timetable to display:";
-const LEGEND_COMPARE = "Select timetables to compare:";
 
 //=| Timetable helper methods |===============================================//
+
+/** Returns a string Array containing the timetable names selected by the user.
+ * @param {boolean} isCompareMode If `true`, only the first user choice will be
+ * returned.
+ * @returns {string[]} */
+function getSelections(isCompareMode) {
+    /** @type {HTMLFieldSetElement} */ const list = e(DOM.DOM_LIST);
+    /** @type {string[]} */ const sels = [];
+
+    for (const option of list.querySelectorAll('label > input')) {
+        if (option.checked) { sels.push(option.value); }
+        if (!isCompareMode && sels.length) { break; }
+    }
+    return sels;
+}
+
+/** Gets whether compare mode is enabled by the user.
+ * @returns {boolean} */
+function getIsCompareMode() { return e(DOM.DOM_COMPARE_MODE).checked; }
 
 /** Creates a `DocumentFragment` containing header rows.
  * @returns {DocumentFragment} */
@@ -49,28 +63,34 @@ function createHeaderRow() {
     return df;
 }
 
-/** Returns a string Array containing the timetable names selected by the user.
- * @param {boolean} isCompareMode If `true`, only the first user choice will be
- * returned.
- * @returns {string[]} */
-function getSelections(isCompareMode) {
-    /** @type {HTMLFieldSetElement} */ const list = e(DOM_LIST);
-    const sels = [];
-
-    for (const option of list.querySelectorAll('label > input')) {
-        if (option.checked) { sels.push(option.value); }
-        if (!isCompareMode && sels.length) { break; }
-    }
-    return sels;
+/** For use by `displayTimetable`. Creates a table cell for day of week.
+ * @param {number} day_number 0=Monday, 1=Tuesday, ...
+ * @returns {HTMLTableCellElement} */
+function createCellDay(day_number) {
+    const cell_day = document.createElement("th");
+    cell_day.classList.add("day-name");
+    cell_day.innerText = Constants.DAYS[day_number];
+    return cell_day;
 }
 
-/** Gets whether compare mode is enabled by the user. @returns {boolean} */
-function getIsCompareMode() { return e(DOM_COMPARE_MODE).checked; }
+/** For use by `displayTimetable`. Creates a table cell for field names.
+ * @param {string[]} fields The fields to show.
+ * @returns {HTMLTableCellElement} */
+function createCellFields(fields) {
+    const cell_fields = document.createElement("td");
+    cell_fields.classList.add("day-fields");
+    cell_fields.append(...fields.map((x) => {
+        const p = document.createElement("p");
+        p.innerText = Constants.FIELDS_NAMES[x];
+        return p;
+    }));
+    return cell_fields;
+}
 
 //=| Timetable display/compare methods |======================================//
 
 /** Displays the given timetable.
- * @param {object} timetable Timetable object as returned by `getTimetableFull`.
+ * @param {Constants.TimetableDetailed} timetable Timetable object as returned by `getTimetableFull`.
  * @param {string[]} fields A string array of field names to display. */
 function displayTimetable(timetable, fields) {
     if (!timetable) {return;}
@@ -85,27 +105,12 @@ function displayTimetable(timetable, fields) {
         /** An Array of periods in the current day. */
         const day = timetable[i_day];
         const row = document.createElement("tr");
-
-        /** Table cell for showing the Day name. */
-        const cell_day = document.createElement("th");
-        cell_day.classList.add("day-name");
-        cell_day.innerText = Constants.DAYS[i_day];
-
-        /** Table cell for showing the field names (Course ID, room #, etc.) */
-        const cell_fields = document.createElement("td");
-        cell_fields.classList.add("day-fields");
-        cell_fields.append(...fields.map((x) => {
-            const p = document.createElement("p");
-            p.innerText = Constants.FIELDS_NAMES[x];
-            return p;
-        }));
-
-        row.append(cell_day, cell_fields);
+        row.append(createCellDay(i_day), createCellFields(fields));
 
         // For each period in the current day...
         for (let i_period = 0; i_period < day.length; i_period++) {
             const period = day[i_period];
-            const isFree = !period["course"];
+            const isFree = !period.course;
             const isNonCommon = Constants.IS_PERIOD_NON_COMMON(period);
             const isConflict = Constants.IS_PERIOD_CONFLICT(period);
 
@@ -120,19 +125,19 @@ function displayTimetable(timetable, fields) {
 
             /** Table cell that represents a single period. */
             const cell_period = document.createElement("td");
-            cell_period.classList.add("period");
+            cell_period.classList.add(DOM.CSS_PERIOD);
 
             if (isFree) {
-                cell_period.classList.add("period-free");
-                cell_period.innerHTML = "&nbsp;";
+                cell_period.classList.add(DOM.CSS_PERIOD_FREE);
+                cell_period.innerHTML = DOM.CONTENTS_PERIOD_FREE;
 
             } else if (isNonCommon) {
-                cell_period.classList.add("period-noncommon");
-                cell_period.innerHTML = "&times;";
+                cell_period.classList.add(DOM.CSS_PERIOD_NONCOMMON);
+                cell_period.innerHTML = DOM.CONTENTS_PERIOD_NONCOMMON;
 
             } else if (isConflict) {
-                cell_period.classList.add("period-conflict");
-                cell_period.textContent = "?";
+                cell_period.classList.add(DOM.CSS_PERIOD_CONFLICT);
+                cell_period.textContent = DOM.CONTENTS_PERIOD_CONFLICT;
 
             } else {
                 cell_period.append(...fields.map((field) => {
@@ -147,7 +152,7 @@ function displayTimetable(timetable, fields) {
         df.append(row);
     }
 
-    e(DOM_TIMETABLE).replaceChildren(df);
+    e(DOM.DOM_TIMETABLE).replaceChildren(df);
 }
 
 /** Displays the given timetable.
@@ -213,7 +218,7 @@ function compareTimetables(timetableKeys, fields) {
  * @param {*} preserveSelection `true` if the current user selection(s) are to be
  * preserved, else `false`.*/
 function refreshTimetablesList(preserveSelection) {
-    /** @type {HTMLFieldSetElement} */ const list = e(DOM_LIST);
+    /** @type {HTMLFieldSetElement} */ const list = e(DOM.DOM_LIST);
     const isCompareMode = getIsCompareMode();
 
     // Get previous selections
@@ -223,7 +228,7 @@ function refreshTimetablesList(preserveSelection) {
     // the current mode)
     const listDf = document.createDocumentFragment();
     const legend = document.createElement("legend");
-    legend.innerText = isCompareMode ? LEGEND_COMPARE : LEGEND_DISPLAY;
+    legend.innerText = isCompareMode ? DOM.LEGEND_COMPARE : DOM.LEGEND_DISPLAY;
     listDf.append(legend);
 
     var firstOption = null; // Used later to focus the first option
@@ -234,7 +239,7 @@ function refreshTimetablesList(preserveSelection) {
         const label = document.createElement("label");
         const option = document.createElement("input");
         option.type = isCompareMode ? "checkbox" : "radio";
-        option.name = DOM_LIST_OPTIONS;
+        option.name = DOM.DOM_LIST_OPTIONS;
         option.value = key;
         option.checked = previousSels.includes(key);
         option.addEventListener("input", handleSelectionChange);
@@ -272,7 +277,7 @@ function handleSelectionChange() {
     const sels = getSelections(getIsCompareMode());
 
     if (!sels.length) { // No selection made
-        e(DOM_TIMETABLE).replaceChildren(); // Clears all child elements
+        e(DOM.DOM_TIMETABLE).replaceChildren(); // Clears all child elements
     } else if (!getIsCompareMode()) { // Display mode
         displayTimetableKey( sels[0], FIELDS_TO_SHOW );
     } else { // Compare mode
@@ -297,6 +302,8 @@ function toggleTheme() {
 // window.addEventListener("load", init, false);
 e("theme_toggle").addEventListener("click", toggleTheme, false);
 e("check_compare_mode").addEventListener("input", refreshTimetablesList, false);
+
+//=| Testing |================================================================//
 
 const sem_index = 1;
 const friend_name = "Sreeni";

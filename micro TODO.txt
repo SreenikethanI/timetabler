@@ -3,10 +3,11 @@
   • Builder = builder.html
 
 === TODO ===
-  • add docstrings to all constants (@const) and functions in modules
+  • 
 
 === DONE ===
   • builder.js > parseDays: try to parse "M34 ..." instead of "M_34 ..."
   • convert `Constants.SECTIONS` into a list for corresponding semesters (now
     renamed to `Constants.SEMESTERS`)
   • pass `sem_index` to `getTimetableFull` as well
+  • add docstrings to all constants (@const) and functions in modules
