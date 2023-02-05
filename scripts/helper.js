@@ -23,6 +23,15 @@ export function formatTime(minutes) {
     return `${h_12}:${m_str}${am_pm}`;
 }
 
+/** Merges section_number and room with a hyphen in between. Hyphen is removed
+ * if either or both are blank.
+ * @param {string} section_number The section number.
+ * @param {string} room The room number.
+ */
+function getSectionRoom(section_number, room) {
+    return [section_number, room].filter((entry) => entry).join(" - ");
+}
+
 /** Parses a "days" string.
  * @param {string} daysString A "days" string, example: `"M2 W3 Th5 F12"`
  * @returns {Map<number,Set<number>>} A map containing day number (0 = Monday)
@@ -55,13 +64,6 @@ function parseDays(daysString) {
     });
 
     return parsed;
-}
-
-/** Merges section_number and room with a hyphen in between. Hyphen is removed
- * if either or both are blank.
- */
-function getSectionRoom(section_number, room) {
-    return [section_number, room].filter((entry) => entry).join(" - ");
 }
 
 //=| Timetable builder functions |============================================//
@@ -130,9 +132,11 @@ export function getTimetableMinimal(student, sem_index) {
 
 /** Returns a new timetable with complete details (a.k.a. "fields") added to the
  * periods of the given timetable.
- * @param {Constants.TimetableMinimal} timetable_minimal A timetable which contains only Course ID and Section. */
-export function getTimetableFull(timetable_minimal, sem_index) {
-    /** @type {Constants.getTimetableFull} */
+ * @param {Constants.TimetableMinimal} timetable_minimal The minimal timetable to elaborate.
+ * @param {number} sem_index The index of the semester in `Constants.COURSES`.
+ * @returns {Constants.TimetableDetailed} */
+export function getTimetableDetailed(timetable_minimal, sem_index) {
+    /** @type {Constants.TimetableDetailed} */
     const timetable_full = [];
     const semester = Constants.SEMESTERS[sem_index] || {};    
 

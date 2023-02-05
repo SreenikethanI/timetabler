@@ -27,6 +27,13 @@ function getSelections(isCompareMode) {
     return sels;
 }
 
+/** Returns currently selected semester index.
+ * @returns {number} */
+function getSemIndex() {
+    // TODO: This should be later derived from the actual value of the dropdown.
+    return 1;
+}
+
 /** Gets whether compare mode is enabled by the user.
  * @returns {boolean} */
 function getIsCompareMode() { return e(DOM.DOM_COMPARE_MODE).checked; }
@@ -102,7 +109,7 @@ function displayTimetable(timetable, fields) {
 
     // For each day...
     for (let i_day = 0; i_day < timetable.length; i_day++) {
-        /** An Array of periods in the current day. */
+        /** An array of periods in the current day. */
         const day = timetable[i_day];
         const row = document.createElement("tr");
         row.append(createCellDay(i_day), createCellFields(fields));
@@ -156,21 +163,36 @@ function displayTimetable(timetable, fields) {
 }
 
 /** Displays the given timetable.
- * @param {*} timetableKey The key of the timetable. Refer to `Constants.TIMETABLES`.
+ * @param {string} timetableKey The key of the timetable. Refer to `Constants.FRIENDS`.
+ * @param {number} sem_index The index of the semester in `Constants.COURSES`.
  * @param {string[]} fields The fields to display. Refer to `Constants.FIELDS`. */
-function displayTimetableKey(timetableKey, fields) {
-    return displayTimetable(Helper.getTimetableFull(Constants.TIMETABLES[timetableKey]), fields);
+function displayTimetableKey(timetableKey, sem_index, fields) {
+    const timetableMinimal = Helper.getTimetableMinimal(
+        Constants.FRIENDS[sem_index][timetableKey],
+        sem_index
+    );
+    return displayTimetable(
+        Helper.getTimetableDetailed(timetableMinimal, sem_index),
+        fields
+    );
 }
 
 /** Compares two or more timetables, and displays the common periods.
- * @param {string[]} timetableKeys The keys of the timetables to compare. Refer to `Constants.TIMETABLES`.
+ * @param {string[]} timetableKeys The keys of the timetables to compare. Refer to `Constants.FRIENDS`.
+ * @param {number} sem_index The index of the semester in `Constants.COURSES`.
  * @param {string[]} fields The fields to display. Refer to `Constants.FIELDS`. */
-function compareTimetables(timetableKeys, fields) {
+function compareTimetables(timetableKeys, sem_index, fields) {
     const fieldsFiltered = fields.filter((x) => Constants.FIELDS.includes(x));
     if (!fieldsFiltered) {return;}
-    const timetables = timetableKeys.map((key) => Constants.TIMETABLES[key]).filter((tt) => tt).map((tt) => getTimetableFull(tt));
+
+    const timetables = (timetableKeys
+        .map((key) => Constants.TIMETABLES[sem_index][key])
+        .filter((tt) => tt)
+        .map((tt) => Helper.getTimetableDetailed(tt, sem_index))
+    );
     if (!timetables.length) {return;}
 
+    /** @type {Constants.TimetableDetailed} */
     const commonTimetable = [];
 
     // Build a common timetable with 3 types of periods: common busy period,
@@ -179,6 +201,7 @@ function compareTimetables(timetableKeys, fields) {
     // For each day...
     for (let i_day = 0; i_day < timetables[0].length; i_day++) {
         const period_count = timetables[0][i_day].length;
+        /** @type {Constants.DayDetailed} */
         const day = [];
 
         // For each period in the current day...
@@ -210,18 +233,17 @@ function compareTimetables(timetableKeys, fields) {
     displayTimetable(commonTimetable, fields);
 }
 
-/** Rebuilds the list of available timetables, as per `Constants.TIMETABLES`.
+/** Rebuilds the list of available timetables, as per `Constants.FRIENDS`.
  * If user has selected "Compare timetables", then all choices will have
  * checkboxes rather than radio buttons.
  * Note that, if not in compare mode and `preserveSelections` is `true`, only
  * the first selection will be retained, and all choices will become radio buttons.
- * @param {*} preserveSelection `true` if the current user selection(s) are to be
+ * @param {number} sem_index The index of the semester in `Constants.COURSES`.
+ * @param {boolean} preserveSelection `true` if the current user selection(s) are to be
  * preserved, else `false`.*/
-function refreshTimetablesList(preserveSelection) {
+function refreshTimetablesList(sem_index, preserveSelection) {
     /** @type {HTMLFieldSetElement} */ const list = e(DOM.DOM_LIST);
     const isCompareMode = getIsCompareMode();
-
-    // Get previous selections
     const previousSels = preserveSelection ? getSelections(isCompareMode) : [];
 
     // Create document fragment and a fieldset legend (its text depends on
@@ -231,11 +253,14 @@ function refreshTimetablesList(preserveSelection) {
     legend.innerText = isCompareMode ? DOM.LEGEND_COMPARE : DOM.LEGEND_DISPLAY;
     listDf.append(legend);
 
-    var firstOption = null; // Used later to focus the first option
+    /** Used later to focus the first option.
+     * @type {HTMLInputElement} */
+    var firstOption = null;
+
     var index = 1;
-    for (const key in Constants.TIMETABLES) {
+    for (const key in Constants.FRIENDS[sem_index]) {
         // Create label and radio elements
-        if (!Object.hasOwnProperty.call(Constants.TIMETABLES, key)) {continue;}
+        // if (!Object.hasOwnProperty.call(Constants.FRIENDS[sem_index], key)) {continue;}
         const label = document.createElement("label");
         const option = document.createElement("input");
         option.type = isCompareMode ? "checkbox" : "radio";
@@ -246,6 +271,7 @@ function refreshTimetablesList(preserveSelection) {
         label.append(option);
 
         // Add numbering for each option, with accessKey set as well
+        // TODO: Split this into a separate function. Also 
         const optionNumber = document.createElement("b");
         optionNumber.append(" ");
         if (index <= 10) {
@@ -275,20 +301,21 @@ function refreshTimetablesList(preserveSelection) {
 
 function handleSelectionChange() {
     const sels = getSelections(getIsCompareMode());
+    const sem_index = getSemIndex();
 
     if (!sels.length) { // No selection made
         e(DOM.DOM_TIMETABLE).replaceChildren(); // Clears all child elements
     } else if (!getIsCompareMode()) { // Display mode
-        displayTimetableKey( sels[0], FIELDS_TO_SHOW );
+        displayTimetableKey( sels[0], sem_index, FIELDS_TO_SHOW );
     } else { // Compare mode
-        compareTimetables( sels, FIELDS_TO_SHOW );
+        compareTimetables( sels, sem_index, FIELDS_TO_SHOW );
     }
 }
 
 //=| General |================================================================//
 
 function init() {
-    refreshTimetablesList(false);
+    refreshTimetablesList(DOM.SEM_INDEX_INITIAL, false);
     handleSelectionChange();
 }
 
@@ -299,14 +326,14 @@ function toggleTheme() {
 
 //=| DOM Event handlers |=====================================================//
 
-// window.addEventListener("load", init, false);
+window.addEventListener("load", init, false);
 e("theme_toggle").addEventListener("click", toggleTheme, false);
 e("check_compare_mode").addEventListener("input", refreshTimetablesList, false);
 
 //=| Testing |================================================================//
 
-const sem_index = 1;
-const friend_name = "Sreeni";
-const ttMinimal = Helper.getTimetableMinimal(Constants.FRIENDS[sem_index][friend_name], sem_index);
-console.log(ttMinimal);
-displayTimetable(Helper.getTimetableFull(ttMinimal, sem_index), FIELDS_TO_SHOW);
+// const sem_index = 1;
+// const friend_name = "Sreeni";
+// const ttMinimal = Helper.getTimetableMinimal(Constants.FRIENDS[sem_index][friend_name], sem_index);
+// console.log(ttMinimal);
+// displayTimetable(Helper.getTimetableDetailed(ttMinimal, sem_index), FIELDS_TO_SHOW);

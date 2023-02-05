@@ -59,9 +59,9 @@ export const GET_PERIOD_NON_COMMON = () => ({course: "NON_COMMON", section: ""})
 /** @returns {PeriodMinimal} */
 export const GET_PERIOD_CONFLICT = () => ({course: "CONFLICT", section: ""});
 
-/** @param {PeriodMinimal} period @returns {bool} */
+/** @param {PeriodMinimal} period @returns {boolean} */
 export const IS_PERIOD_NON_COMMON = (period) => period.course == "NON_COMMON";
-/** @param {PeriodMinimal} period @returns {bool} */
+/** @param {PeriodMinimal} period @returns {boolean} */
 export const IS_PERIOD_CONFLICT = (period) => period.course == "CONFLICT";
 
 //=| Courses |================================================================//
