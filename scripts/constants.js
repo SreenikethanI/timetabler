@@ -437,12 +437,10 @@ const FRIENDS_Y1S1 = {
     "003 - Stellin John":       {"BIO F110":["P6"],"BIO F111":["L1"],"BITS F110":["L2","P1"],"BITS F112":["L1"],"CHEM F110":["P6"],"CHEM F111":["L1"],"CS F111":["L1","P2"],"MATH F111":["L1"]},
     "321 - Karthik Narayan":    {"BITS F111":["L3"],"EEE F111":["L3"],"MATH F111":["L6"],"MATH F113":["L3"],"ME F112":["L3","P3"],"PHY F110":["P2"],"PHY F111":["L3"]},
     "298 - Lakesh Thangadurai": {"BITS F111":["L2"],"EEE F111":["L2"],"MATH F111":["L5"],"MATH F113":["L2"],"ME F112":["L2","P7"],"PHY F110":["P2"],"PHY F111":["L2"]},
-
     // "sample": {"BIO F110":["P1"],"BIO F111":["L2"],"BITS F110":["L1","P2"],"BITS F112":["L1"],"CHEM F110":["P4"],"CHEM F111":["L2"],"CS F111":["L2","P3"],"MATH F111":["L2"]},
     // "sample": {"BIO F111":["L2","L1"]},
     // "sample": {"BIO F111":["L2"],"CS F111":["L2"]},
-    "sample": {"BIO F111":["L2"],"CS F111":["L2","P3","L1"]},
-
+    // "sample": {"BIO F111":["L2"],"CS F111":["L2","P3","L1"]},
 };
 
 /** @type {Students} Friends' timetables under Year 1 Semester 2 */

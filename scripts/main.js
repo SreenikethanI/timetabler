@@ -268,7 +268,6 @@ function refreshTimetablesList(semIndex, preserveSelection) {
         label.append(option);
 
         // Add numbering for each option, with accessKey set as well
-        // TODO: Split this into a separate function. Also 
         const optionNumber = document.createElement("b");
         optionNumber.append(" ");
         if (index <= 10) {
@@ -318,8 +317,8 @@ function init() {
     // Since this is a module, event handlers can't be attached in the HTML
     // file itself. Hence, event listeners are attached here:
     e("theme_toggle").addEventListener("click", toggleTheme, false);
-    e("check_compare_mode").addEventListener("input", () => refreshTimetablesList(getSemIndex(), true), false);    
-    
+    e("check_compare_mode").addEventListener("input", () => refreshTimetablesList(getSemIndex(), true), false);
+
     refreshTimetablesList(getSemIndex(), false);
     handleSelectionChange();
 }

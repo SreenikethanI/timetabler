@@ -28,6 +28,14 @@ table {
     border-collapse: collapse;
 }
 
+#timetable {
+    white-space: nowrap;
+}
+
+#timetable_container {
+    overflow-x: auto;
+}
+
 td, th {
     border: 1px solid black;
     text-align: center;
