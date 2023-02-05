@@ -1,0 +1,69 @@
+BIO F110,Biology Laboratory,Bio Lab,P1,D J SHARIFF,307,M34
+,,,P2,Pallab Sanpui,307,M89
+,,,P3,D J Shariff,307,T34
+,,,P4,Neeru Sood,307,W12
+,,,P5,Mainak Dutta,307,W89
+,,,P6,Neeru Sood,307,Th34
+,,,P7,D J Shariff,307,Th89
+BIO F111,General Biology,Biology,L1,NEERU SOOD,101,M5 T6 Th1 F2
+,,,L2,D J Shariff,123,M1 T6 W2 F2
+,,,L3,S Ramachandran,165,M5 T6 Th1 F2
+BITS F110,Engineering Graphics,EG,L1,Akshay Venkateshwaran,101,T2
+,,,L2,MEGHANA S CHARDE,165,M1
+,,,L3,MEGHANA S CHARDE,123,T2
+,,,P1,MEGHANA S CHARDE,MS5,M89
+,,,P2,Akshay Venkateshwaran,MS5,W34
+,,,P3,MEGHANA S CHARDE,MS5,Th89
+BITS F111,Thermodynamics,Thermo,L1,SHASHANK KHURANA,183,T1 W6 Th2 F4
+,,,L2,Vincent Kumar,189,T1 W6 Th2 F4
+,,,L3,Majid H Khan,190,T1 W6 Th2 F4
+BITS F112,Technical Report Writing,TRW,L1,SAYANTAN CHAKRABORTY,334,T8 F5
+,,,L2,Shazi S J,336,T8 F5
+CHEM F110,Chemistry Laboratory,Chem Lab,P1,Rusal Raj,306,M34
+,,,P2,VIJAYA ILANGO,306,M89
+,,,P3,Rusal Raj,306,W34
+,,,P4,VIJAYA ILANGO,306,W89
+,,,P5,Rusal Raj,306,Th34
+,,,P6,Geetha,306,Th89
+CHEM F111,General Chemistry,Chemistry,L1,VIJAYA ILANGO,101,M6 T1 Th6 F3
+,,,L2,Geetha,123,M6 T1 Th6 F3
+,,,L3,Rusal Raj,165,M6 T1 Th6 F3
+CS F111,Computer Programming,CP,L1,SAPNA SADHWANI,101,M1 T9 W6 Th2
+,,,L2,Pramod Gaur,123,M2 T9 W6 Th2
+,,,L3,Sapna Sadhwani,165,T2 W2 Th4 F4
+,,,P1,Sapna Sadhwani,333,M34
+,,,P2,Pramod Gaur,333,T34
+,,,P3,Sapna Sadhwani,333,W89
+EEE F111,Electrical Sciences,EEE,L1,T G THOMAS,183,M5 T2 Th7 F5
+,,,L2,Sunil Thomas,189,M5 T2 Th7 F5
+,,,L3,T G Thomas,190,M1 W2 Th3 F3
+MATH F112,Mathematics II,Math II,L1,S BASKARAN,101,T5 W5 Th5 F1
+,,,L2,K Kumar,123,T5 W5 Th5 F4
+,,,L3,Priti Bajpai,165,T5 W5 Th5 F1
+,,,L4,A Somasundaram,183,T5 W5 Th5 F1
+,,,L5,Suhel Ahmed Khan,190,T5 W5 Th5 F1
+,,,L6,Priti Bajpai,189,M2 T3 W8 Th8
+MATH F113,Probability & Statistics,P&S,L1,SUHEL AHMED KHAN,183,M1 T8 W2 F3
+,,,L2,Maneesha,190,M5 T2 Th7 F5
+,,,L3,Maneesha,189,M1 T4 W2 F3
+ME F112,Workshop Practice,Workshop,L1,RAVINDRA D BHARDWAJ,190,M2
+,,,L2,Ravindra D Bhardwaj,189,W9
+,,,L3,Ravindra D Bhardwaj,183,Th1
+,,,P1,Majid H Khan,MG1,M34
+,,,P2,Harpreet Singh,MG1,M89
+,,,P3,Naveen Shrivastava,MG1,T34
+,,,P4,Majid H Khan,MG1,T89
+,,,P5,Harpreet Singh,MG1,W34
+,,,P6,Priyank Upadhyaya,MG1,Th34
+,,,P7,Naveen Shrivastava,MG1,Th89
+PHY F110,Physics Laboratory,Phy Lab,P1,R ROOPKUMAR,309,M34
+,,,P2,Amarnath,309,M89
+,,,P3,R Roopkumar,309,T34
+,,,P4,K K Singh,309,T89
+,,,P5,K K Singh,309,W34
+,,,P6,Amarnath,309,W89
+,,,P7,R Roopkumar,309,Th34
+,,,P8,Amarnath,309,Th89
+PHY F111,Mech Oscillations & Wave,MOW,L1,AMARNATH,183,M6 T6 W1 F2
+,,,L2,K K Singh,189,M6 T6 W1 F2
+,,,L3,R Roopkumar,190,M6 T6 W1 F2

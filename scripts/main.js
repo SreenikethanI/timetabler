@@ -298,7 +298,8 @@ function toggleTheme() {
 e("theme_toggle").addEventListener("click", toggleTheme, false);
 e("check_compare_mode").addEventListener("input", refreshTimetablesList, false);
 
-const sem_index = 0;
-const ttMinimal = Helper.getTimetableMinimal(Constants.FRIENDS[sem_index]['sample'], sem_index);
+const sem_index = 1;
+const friend_name = "Sreeni";
+const ttMinimal = Helper.getTimetableMinimal(Constants.FRIENDS[sem_index][friend_name], sem_index);
 console.log(ttMinimal);
 displayTimetable(Helper.getTimetableFull(ttMinimal, sem_index), FIELDS_TO_SHOW);
