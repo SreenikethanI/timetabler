@@ -106,18 +106,19 @@ td > p:nth-child(even) {
 /* PRINT -------------------------------------------------------------------- */
 /* Reference: https://stackoverflow.com/a/2618980/ */
 @media print {
-    body * {
-        visibility: hidden;
+    @page {
+        size: A4 landscape;
     }
 
-    #timetable, #timetable * {
-        visibility: visible;
+    body {
+        font-size: 9pt;
+    }
+
+    body > :not(#timetable_container) {
+        display: none;
     }
 
     #timetable {
         white-space: nowrap;
-        position: absolute;
-        top: 0;
-        left: 0;
     }
 }

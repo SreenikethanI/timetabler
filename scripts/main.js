@@ -316,7 +316,9 @@ function handleSelectionChange() {
 function init() {
     // Since this is a module, event handlers can't be attached in the HTML
     // file itself. Hence, event listeners are attached here:
-    e("theme_toggle").addEventListener("click", toggleTheme, false);
+
+    // e("theme_toggle").addEventListener("click", toggleTheme, false);
+    e("print_button").addEventListener("click", () => window.print(), false);
     e("check_compare_mode").addEventListener("input", () => refreshTimetablesList(getSemIndex(), true), false);
 
     refreshTimetablesList(getSemIndex(), false);
