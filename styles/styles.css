@@ -13,6 +13,7 @@ button, select {
     font: inherit;
 }
 
+/* TIMETABLE LIST - OLD ----------------------------------------------------- */
 fieldset {
     display: inline-block;
     column-count: 3;
@@ -22,8 +23,8 @@ label > b {
     color: red;
 }
 
-/* TIMETABLE LIST ----------------------------------------------------------- */
-#timetable-list {
+/* TIMETABLE LIST - NEW ----------------------------------------------------- */
+div#timetable-list {
     background-color: #e0e0e0;
     border-radius: 8pt;
     padding: 8pt;
@@ -43,7 +44,16 @@ label > b {
     min-width: 10em;
 }
 
-#timetable-list-add {
+.timetable-entry > button.action {
+    float: right;
+    background-color: unset;
+    border: none;
+    border-radius: 4pt;
+    padding: 0 0 0 2pt;
+    cursor: pointer;
+}
+
+button#timetable-list-add {
     background-color: unset;
     border: none;
     font-size: 2em;
@@ -55,14 +65,15 @@ label > b {
     cursor: pointer;
 }
 
-#timetable-list-add:hover {
+button#timetable-list-add:hover {
     color: #00da00;
 }
 
-#timetable-list-add:active {
+button#timetable-list-add:active {
     color: #00b100;
 }
 
+/* TODO */
 /* #timetable-list-add .attr-name {
 
 } */
@@ -142,10 +153,8 @@ td > p {
     line-height: 1.75em;
 }
 
-td > p:nth-child(even) {
-    /* color: gainsboro; */
+td > p:not(:nth-child(1)) { /* Select all but 1st element */
     border-top: 1px dotted gray;
-    border-bottom: 1px dotted gray;
 }
 
 /* PRINT -------------------------------------------------------------------- */

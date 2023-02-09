@@ -2,6 +2,7 @@
 import * as Constants from './constants.js';
 import * as Helper from './helper.js';
 import * as DOM from './constants_dom.js'
+import * as Storage from './storage.js'
 
 const FIELDS_TO_SHOW = ["course", "title_short", "section_room", "instructor"];
 
@@ -231,7 +232,7 @@ function compareTimetables(timetableKeys, semIndex, fields) {
     displayTimetable(commonTimetable, fields);
 }
 
-/** Rebuilds the list of available timetables, as per `Constants.FRIENDS`.
+/** Builds the list of available timetables, as per `Constants.FRIENDS`.
  * If user has selected "Compare timetables", then all choices will have
  * checkboxes rather than radio buttons.
  * Note that, if not in compare mode and `preserveSelections` is `true`, only
@@ -239,7 +240,7 @@ function compareTimetables(timetableKeys, semIndex, fields) {
  * @param {number} semIndex The index of the semester in `Constants.COURSES`.
  * @param {boolean} preserveSelection `true` if the current user selection(s) are to be
  * preserved, else `false`.*/
-function refreshTimetablesList(semIndex, preserveSelection) {
+function loadTimetablesListOld(semIndex, preserveSelection) {
     /** @type {HTMLFieldSetElement} */ const list = e(DOM.DOM_LIST);
     const isCompareMode = getIsCompareMode();
     const previousSels = preserveSelection ? getSelections(isCompareMode) : [];
@@ -297,6 +298,18 @@ function refreshTimetablesList(semIndex, preserveSelection) {
     handleSelectionChange();
 }
 
+/** Builds the list of available timetables, as per `Constants.FRIENDS`.
+ * If user has selected "Compare timetables", then all choices will have
+ * checkboxes rather than radio buttons.
+ * Note that, if not in compare mode and `preserveSelections` is `true`, only
+ * the first selection will be retained, and all choices will become radio buttons.
+ * @param {number} semIndex The index of the semester in `Constants.COURSES`.
+ * @param {boolean} preserveSelection `true` if the current user selection(s) are to be
+ * preserved, else `false`.*/
+function loadTimetablesList(semIndex, preserveSelection) {
+    
+}
+
 /** Renders whenever a selection is made or if comparison mode is changed. */
 function handleSelectionChange() {
     const sels = getSelections(getIsCompareMode());
@@ -319,9 +332,9 @@ function init() {
 
     // e(DOM.DOM_THEME_TOGGLE).addEventListener("click", toggleTheme, false);
     e(DOM.DOM_PRINT_BUTTON).addEventListener("click", () => window.print(), false);
-    e(DOM.DOM_CHECK_COMPARE_MODE).addEventListener("input", () => refreshTimetablesList(getSemIndex(), true), false);
+    e(DOM.DOM_CHECK_COMPARE_MODE).addEventListener("input", () => loadTimetablesListOld(getSemIndex(), true), false);
 
-    refreshTimetablesList(getSemIndex(), false);
+    loadTimetablesListOld(getSemIndex(), false);
     handleSelectionChange();
 }
 

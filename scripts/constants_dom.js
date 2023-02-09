@@ -16,6 +16,6 @@ export const CSS_PERIOD_FREE = "period-free";
 export const CSS_PERIOD_NONCOMMON = "period-noncommon";
 export const CSS_PERIOD_CONFLICT = "period-conflict";
 
-export const CONTENTS_PERIOD_FREE = "&nbsp;";
+export const CONTENTS_PERIOD_FREE = "";
 export const CONTENTS_PERIOD_NONCOMMON = "&times;";
 export const CONTENTS_PERIOD_CONFLICT = "?";
