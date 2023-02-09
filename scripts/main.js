@@ -3,7 +3,7 @@ import * as Constants from './constants.js';
 import * as Helper from './helper.js';
 import * as DOM from './constants_dom.js'
 
-const FIELDS_TO_SHOW = ["course", "title_short", "section_room"/*, "instructor"*/];
+const FIELDS_TO_SHOW = ["course", "title_short", "section_room", "instructor"];
 
 //=| DOM related |============================================================//
 
@@ -317,9 +317,9 @@ function init() {
     // Since this is a module, event handlers can't be attached in the HTML
     // file itself. Hence, event listeners are attached here:
 
-    // e("theme_toggle").addEventListener("click", toggleTheme, false);
-    e("print_button").addEventListener("click", () => window.print(), false);
-    e("check_compare_mode").addEventListener("input", () => refreshTimetablesList(getSemIndex(), true), false);
+    // e(DOM.DOM_THEME_TOGGLE).addEventListener("click", toggleTheme, false);
+    e(DOM.DOM_PRINT_BUTTON).addEventListener("click", () => window.print(), false);
+    e(DOM.DOM_CHECK_COMPARE_MODE).addEventListener("input", () => refreshTimetablesList(getSemIndex(), true), false);
 
     refreshTimetablesList(getSemIndex(), false);
     handleSelectionChange();

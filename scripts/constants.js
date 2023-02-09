@@ -257,7 +257,7 @@ const SEMESTER_Y1S2 = {
         title_short: "Bio Lab",
         IC: "D J Shariff",
         sections: {
-            "P1": {instructor: "D J SHARIFF"           , room: "307" , days: "M34"},
+            "P1": {instructor: "D J Shariff"           , room: "307" , days: "M34"},
             "P2": {instructor: "Pallab Sanpui"         , room: "307" , days: "M89"},
             "P3": {instructor: "D J Shariff"           , room: "307" , days: "T34"},
             "P4": {instructor: "Neeru Sood"            , room: "307" , days: "W12"},
@@ -271,7 +271,7 @@ const SEMESTER_Y1S2 = {
         title_short: "Biology",
         IC: "Neeru Sood",
         sections: {
-            "L1": {instructor: "NEERU SOOD"            , room: "101" , days: "M5 T6 Th1 F2"},
+            "L1": {instructor: "Neeru Sood"            , room: "101" , days: "M5 T6 Th1 F2"},
             "L2": {instructor: "D J Shariff"           , room: "123" , days: "M1 T6 W2 F2"},
             "L3": {instructor: "S Ramachandran"        , room: "165" , days: "M5 T6 Th1 F2"},
         },
@@ -282,11 +282,11 @@ const SEMESTER_Y1S2 = {
         IC: "Meghana S Charde",
         sections: {
             "L1": {instructor: "Akshay Venkateshwaran" , room: "101" , days: "T2"},
-            "L2": {instructor: "MEGHANA S CHARDE"      , room: "165" , days: "M1"},
-            "L3": {instructor: "MEGHANA S CHARDE"      , room: "123" , days: "T2"},
-            "P1": {instructor: "MEGHANA S CHARDE"      , room: "MS5" , days: "M89"},
+            "L2": {instructor: "Meghana S Charde"      , room: "165" , days: "M1"},
+            "L3": {instructor: "Meghana S Charde"      , room: "123" , days: "T2"},
+            "P1": {instructor: "Meghana S Charde"      , room: "MS5" , days: "M89"},
             "P2": {instructor: "Akshay Venkateshwaran" , room: "MS5" , days: "W34"},
-            "P3": {instructor: "MEGHANA S CHARDE"      , room: "MS5" , days: "Th89"},
+            "P3": {instructor: "Meghana S Charde"      , room: "MS5" , days: "Th89"},
         },
     },
     "BITS F111": {
@@ -294,7 +294,7 @@ const SEMESTER_Y1S2 = {
         title_short: "Thermodynamics",
         IC: "Shashank Khurana",
         sections: {
-            "L1": {instructor: "SHASHANK KHURANA"      , room: "183" , days: "T1 W6 Th2 F4"},
+            "L1": {instructor: "Shashank Khurana"      , room: "183" , days: "T1 W6 Th2 F4"},
             "L2": {instructor: "Vincent Kumar"         , room: "189" , days: "T1 W6 Th2 F4"},
             "L3": {instructor: "Majid H Khan"          , room: "190" , days: "T1 W6 Th2 F4"},
         },
@@ -304,7 +304,7 @@ const SEMESTER_Y1S2 = {
         title_short: "TRW",
         IC: "Sayantan Chakraborty",
         sections: {
-            "L1": {instructor: "SAYANTAN CHAKRABORTY"  , room: "334" , days: "T8 F5"},
+            "L1": {instructor: "Sayantan Chakraborty"  , room: "334" , days: "T8 F5"},
             "L2": {instructor: "Shazi S J"             , room: "336" , days: "T8 F5"},
         },
     },
@@ -314,9 +314,9 @@ const SEMESTER_Y1S2 = {
         IC: "Vijaya Ilango",
         sections: {
             "P1": {instructor: "Rusal Raj"             , room: "306" , days: "M34"},
-            "P2": {instructor: "VIJAYA ILANGO"         , room: "306" , days: "M89"},
+            "P2": {instructor: "Vijaya Ilango"         , room: "306" , days: "M89"},
             "P3": {instructor: "Rusal Raj"             , room: "306" , days: "W34"},
-            "P4": {instructor: "VIJAYA ILANGO"         , room: "306" , days: "W89"},
+            "P4": {instructor: "Vijaya Ilango"         , room: "306" , days: "W89"},
             "P5": {instructor: "Rusal Raj"             , room: "306" , days: "Th34"},
             "P6": {instructor: "Geetha"                , room: "306" , days: "Th89"},
         },
@@ -326,7 +326,7 @@ const SEMESTER_Y1S2 = {
         title_short: "Chemistry",
         IC: "Vijaya Ilango",
         sections: {
-            "L1": {instructor: "VIJAYA ILANGO"         , room: "101" , days: "M6 T1 Th6 F3"},
+            "L1": {instructor: "Vijaya Ilango"         , room: "101" , days: "M6 T1 Th6 F3"},
             "L2": {instructor: "Geetha"                , room: "123" , days: "M6 T1 Th6 F3"},
             "L3": {instructor: "Rusal Raj"             , room: "165" , days: "M6 T1 Th6 F3"},
         },
@@ -336,7 +336,7 @@ const SEMESTER_Y1S2 = {
         title_short: "Computer Prog.",
         IC: "Sapna Sadhwani",
         sections: {
-            "L1": {instructor: "SAPNA SADHWANI"        , room: "101" , days: "M1 T9 W6 Th2"},
+            "L1": {instructor: "Sapna Sadhwani"        , room: "101" , days: "M1 T9 W6 Th2"},
             "L2": {instructor: "Pramod Gaur"           , room: "123" , days: "M2 T9 W6 Th2"},
             "L3": {instructor: "Sapna Sadhwani"        , room: "165" , days: "T2 W2 Th4 F4"},
             "P1": {instructor: "Sapna Sadhwani"        , room: "333" , days: "M34"},
@@ -349,7 +349,7 @@ const SEMESTER_Y1S2 = {
         title_short: "Electrical",
         IC: "T G Thomas",
         sections: {
-            "L1": {instructor: "T G THOMAS"            , room: "183" , days: "M5 T2 Th7 F5"},
+            "L1": {instructor: "T G Thomas"            , room: "183" , days: "M5 T2 Th7 F5"},
             "L2": {instructor: "Sunil Thomas"          , room: "189" , days: "M5 T2 Th7 F5"},
             "L3": {instructor: "T G Thomas"            , room: "190" , days: "M1 W2 Th3 F3"},
         },
@@ -359,8 +359,8 @@ const SEMESTER_Y1S2 = {
         title_short: "Math II",
         IC: "S Baskaran",
         sections: {
-            "L1": {instructor: "S BASKARAN"            , room: "101" , days: "T5 W5 Th5 F1"},
-            "L2": {instructor: "K Kumar"               , room: "123" , days: "T5 W5 Th5 F4"},
+            "L1": {instructor: "S Baskaran"            , room: "101" , days: "T5 W5 Th5 F1"},
+            "L2": {instructor: "K Kumar"               , room: "123" , days: "T5 W5 Th5 F1"}, // Coursewise timetable says F4, friends got F1
             "L3": {instructor: "Priti Bajpai"          , room: "165" , days: "T5 W5 Th5 F1"},
             "L4": {instructor: "A Somasundaram"        , room: "183" , days: "T5 W5 Th5 F1"},
             "L5": {instructor: "Suhel Ahmed Khan"      , room: "190" , days: "T5 W5 Th5 F1"},
@@ -372,7 +372,7 @@ const SEMESTER_Y1S2 = {
         title_short: "Prob. & Stats",
         IC: "Suhel Ahmed Khan",
         sections: {
-            "L1": {instructor: "SUHEL AHMED KHAN"      , room: "183" , days: "M1 T8 W2 F3"},
+            "L1": {instructor: "Suhel Ahmed Khan"      , room: "183" , days: "M1 T8 W2 F3"},
             "L2": {instructor: "Maneesha"              , room: "190" , days: "M5 T2 Th7 F5"},
             "L3": {instructor: "Maneesha"              , room: "189" , days: "M1 T4 W2 F3"},
         },
@@ -382,7 +382,7 @@ const SEMESTER_Y1S2 = {
         title_short: "Workshop",
         IC: "Ravindra D Bhardwaj",
         sections: {
-            "L1": {instructor: "RAVINDRA D BHARDWAJ"   , room: "190" , days: "M2"},
+            "L1": {instructor: "Ravindra D Bhardwaj"   , room: "190" , days: "M2"},
             "L2": {instructor: "Ravindra D Bhardwaj"   , room: "189" , days: "W9"},
             "L3": {instructor: "Ravindra D Bhardwaj"   , room: "183" , days: "Th1"},
             "P1": {instructor: "Majid H Khan"          , room: "MG1" , days: "M34"},
@@ -399,7 +399,7 @@ const SEMESTER_Y1S2 = {
         title_short: "Phy Lab",
         IC: "R Roopkumar",
         sections: {
-            "P1": {instructor: "R ROOPKUMAR"           , room: "309" , days: "M34"},
+            "P1": {instructor: "R Roopkumar"           , room: "309" , days: "M34"},
             "P2": {instructor: "Amarnath"              , room: "309" , days: "M89"},
             "P3": {instructor: "R Roopkumar"           , room: "309" , days: "T34"},
             "P4": {instructor: "K K Singh"             , room: "309" , days: "T89"},
@@ -414,7 +414,7 @@ const SEMESTER_Y1S2 = {
         title_short: "MOWaves",
         IC: "Amarnath",
         sections: {
-            "L1": {instructor: "AMARNATH"              , room: "183" , days: "M6 T6 W1 F2"},
+            "L1": {instructor: "Amarnath"              , room: "183" , days: "M6 T6 W1 F2"},
             "L2": {instructor: "K K Singh"             , room: "189" , days: "M6 T6 W1 F2"},
             "L3": {instructor: "R Roopkumar"           , room: "190" , days: "M6 T6 W1 F2"},
         },
@@ -453,6 +453,10 @@ const FRIENDS_Y1S2 = {
     "Aditya Agarwal":     {"BITS F111": ["L2"], "EEE F111": ["L2"], "MATH F112": ["L6"], "MATH F113": ["L3"], "ME F112": ["L2","P2"], "PHY F110": ["P4"], "PHY F111": ["L2"]},
     "Adithya Sunoj":      {"BITS F111": ["L2"], "EEE F111": ["L2"], "MATH F112": ["L6"], "MATH F113": ["L3"], "ME F112": ["L2","P6"], "PHY F110": ["P5"], "PHY F111": ["L2"]},
     "Stephen":            {"BITS F111": ["L2"], "EEE F111": ["L2"], "MATH F112": ["L6"], "MATH F113": ["L3"], "ME F112": ["L2","P6"], "PHY F110": ["P5"], "PHY F111": ["L2"]},
+    "Haroon":             {"BITS F111": ["L3"], "EEE F111": ["L3"], "MATH F112": ["L5"], "MATH F113": ["L2"], "ME F112": ["L1","P5"], "PHY F110": ["P3"], "PHY F111": ["L3"]},
+    "Karthik":            {"BIO F110": ["P2"], "BIO F111": ["L2"], "BITS F110": ["L3","P3"], "BITS F112": ["L2"], "CHEM F110": ["P3"], "CHEM F111": ["L2"], "CS F111": ["L2","P2"], "MATH F112": ["L2"]},
+    "Lakesh":             {"BIO F110": ["P6"], "BIO F111": ["L2"], "BITS F110": ["L3","P3"], "BITS F112": ["L2"], "CHEM F110": ["P3"], "CHEM F111": ["L2"], "CS F111": ["L2","P2"], "MATH F112": ["L2"]},
+    "Vignesh":            {"BIO F110": ["P1"], "BIO F111": ["L3"], "BITS F110": ["L2","P2"], "BITS F112": ["L2"], "CHEM F110": ["P6"], "CHEM F111": ["L3"], "CS F111": ["L3","P3"], "MATH F112": ["L3"]},
 };
 
 //=| Collections of all semesters |===========================================//

@@ -22,6 +22,51 @@ label > b {
     color: red;
 }
 
+/* TIMETABLE LIST ----------------------------------------------------------- */
+#timetable-list {
+    background-color: #e0e0e0;
+    border-radius: 8pt;
+    padding: 8pt;
+    margin-top: 1em; margin-bottom: 1em;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 8pt;
+}
+
+.timetable-entry {
+    padding: 8pt;
+    border-radius: 8pt;
+    background-color: #d0d0d0;
+    min-width: 10em;
+}
+
+#timetable-list-add {
+    background-color: unset;
+    border: none;
+    font-size: 2em;
+    font-weight: bold;
+    padding: 8pt;
+    border-radius: 8pt;
+    vertical-align: bottom;
+    align-self: center;
+    cursor: pointer;
+}
+
+#timetable-list-add:hover {
+    color: #00da00;
+}
+
+#timetable-list-add:active {
+    color: #00b100;
+}
+
+/* #timetable-list-add .attr-name {
+
+} */
+
 /* TABLE -------------------------------------------------------------------- */
 table {
     empty-cells: hide;
@@ -32,7 +77,7 @@ table {
     white-space: nowrap;
 }
 
-#timetable_container {
+#timetable-container {
     overflow-x: auto;
 }
 
@@ -114,7 +159,7 @@ td > p:nth-child(even) {
         font-size: 9pt;
     }
 
-    body > :not(#timetable_container) {
+    body > :not(#timetable-container) {
         display: none;
     }
 

@@ -2,8 +2,12 @@
 
 export const DOM_TIMETABLE = "timetable";
 export const DOM_LIST = "list";
-export const DOM_LIST_OPTIONS = "list_options";
-export const DOM_COMPARE_MODE = "check_compare_mode";
+export const DOM_LIST_OPTIONS = "list-options";
+export const DOM_COMPARE_MODE = "check-compare-mode";
+export const DOM_THEME_TOGGLE = "theme-toggle";
+export const DOM_PRINT_BUTTON = "print-button";
+export const DOM_CHECK_COMPARE_MODE = "check-compare-mode";
+
 export const LEGEND_DISPLAY = "Choose timetable to display:";
 export const LEGEND_COMPARE = "Select timetables to compare:";
 
