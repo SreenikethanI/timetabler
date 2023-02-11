@@ -54,9 +54,14 @@ export const GET_SECTION_BLANK = () => ({room: "", instructor: "", days: ""});
 /** @returns {Course} */
 export const GET_COURSE_BLANK = () => ({title: "", title_short: "", IC: "", sections: {}});
 /** @returns {PeriodMinimal} */
+
+export const GET_PERIOD_FREE = () => ({course: "", section: ""});
+/** @returns {PeriodMinimal} */
 export const GET_PERIOD_NON_COMMON = () => ({course: "NON_COMMON", section: ""});
 /** @returns {PeriodMinimal} */
 export const GET_PERIOD_CONFLICT = () => ({course: "CONFLICT", section: ""});
+/** @returns {PeriodMinimal} */
+export const GET_PERIOD_INDETERMINATE = () => ({course: "INDETERMINATE", section: ""});
 
 //=| Courses |================================================================//
 
@@ -439,7 +444,8 @@ const FRIENDS_Y1S1 = {
 
 /** @type {Students} Friends' timetables under Year 1 Semester 2 */
 const FRIENDS_Y1S2 = {
-    "sample conflict":    {"BITS F111": ["L1","L2"], "EEE F111": ["L2"], "MATH F112": ["L4"], "MATH F113": ["L3"], "ME F112": ["L2","P2"], "PHY F110": ["P8"], "PHY F111": ["L2"]},
+    "sample conflict 1":  {"BITS F111": ["L1","L2"], "EEE F111": ["L2"], "MATH F112": ["L4"], "MATH F113": ["L3"], "ME F112": ["L2","P2"], "PHY F110": ["P8"], "PHY F111": ["L2"]},
+    "sample conflict 2":  {"BITS F111": ["L1"], "EEE F111": ["L2"], "MATH F112": ["L4"], "MATH F113": ["L3"], "ME F112": ["L2","P2"], "PHY F110": ["P8"], "PHY F111": ["L2"]},
 
     "Ryan":               {"BITS F111": ["L1"], "EEE F111": ["L1"], "MATH F112": ["L4"], "MATH F113": ["L1"], "ME F112": ["L3","P2"], "PHY F110": ["P7"], "PHY F111": ["L1"]},
     "Ritvik":             {"BITS F111": ["L1"], "EEE F111": ["L1"], "MATH F112": ["L4"], "MATH F113": ["L1"], "ME F112": ["L3","P2"], "PHY F110": ["P7"], "PHY F111": ["L1"]},

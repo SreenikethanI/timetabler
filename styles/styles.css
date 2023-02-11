@@ -13,6 +13,31 @@ button, select {
     font: inherit;
 }
 
+div#loading {
+    position: fixed;
+    top: 0; bottom: 0; left: 0; right: 0;
+    background-color: #000000b0;
+    font-size: 5em;
+    font-weight: bold;
+    color: white;
+    text-shadow: black 0pt 0pt 10pt;
+    
+    backdrop-filter: blur(15px);
+
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+div#loading.complete {
+    background-color: transparent;
+    visibility: hidden;
+    backdrop-filter: blur(0px);
+    transition: backdrop-filter 0.2s 0s ease-in, visibility 0s 0.2s, background-color 0.2s 0s linear;
+}
+
 /* TIMETABLE LIST - OLD ----------------------------------------------------- */
 fieldset {
     display: inline-block;

@@ -215,7 +215,7 @@ function displayTimetable(timetable, fields) {
         // For each period in the current day...
         for (let i_period = 0; i_period < day.length; i_period++) {
             const period = day[i_period];
-            const isFree = !period.course;
+            const isFree = Helper.isPeriodFree(period);
             const isNonCommon = Helper.isPeriodNonCommon(period);
             const isConflict = Helper.isPeriodConflict(period);
 
@@ -326,7 +326,7 @@ function compareTimetables(timetableKeys, semIndex, fields) {
 
                 if (Helper.arePeriodsEqual(period_tt, period_result)) {
                     continue;
-                } else if (Helper) {
+                } else if (Helper) { // TODO
 
                 }
                 period_result = Constants.GET_PERIOD_NON_COMMON();
@@ -355,11 +355,16 @@ function init() {
 
     loadTimetablesListOld(getSemIndex(), false);
     handleSelectionChange();
+    removeLoading();
 }
 
 function toggleTheme() {
     const link = e("darkThemeCSS");
     link.disabled = !link.disabled;
+}
+
+function removeLoading() {
+    e(DOM.DOM_LOADING).classList.add(DOM.CSS_COMPLETE);
 }
 
 //=| DOM Event handlers |=====================================================//

@@ -4,13 +4,15 @@ import * as Constants from './constants.js';
 //=| Period helper functions |================================================//
 
 /** @param {Constants.PeriodDetailed} a @param {Constants.PeriodDetailed} b @returns {boolean} */
-export function arePeriodsEqual(a, b) {return JSON.stringify(a) == JSON.stringify(b);}
-
-/** @param {PeriodMinimal} period @returns {boolean} */
-export function isPeriodNonCommon(period) {return period.course == "NON_COMMON";}
-
-/** @param {PeriodMinimal} period @returns {boolean} */
-export function isPeriodConflict(period) {return period.course == "CONFLICT";}
+export const arePeriodsEqual = (a, b) => JSON.stringify(a) == JSON.stringify(b);
+/** @param {Constants.PeriodMinimal} period @returns {boolean} */
+export const isPeriodNonCommon = (period) => period.course == "NON_COMMON";
+/** @param {Constants.PeriodMinimal} period @returns {boolean} */
+export const isPeriodConflict = (period) => period.course == "CONFLICT";
+/** @param {Constants.PeriodMinimal} period @returns {boolean} */
+export const isPeriodFree = (period) => period.course.trim() == "";
+/** @param {Constants.PeriodMinimal} period @returns {boolean} */
+export const isPeriodIndeterminate = (period) => period.course == "INDETERMINATE";
 
 //=| General helper functions |===============================================//
 
