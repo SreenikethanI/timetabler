@@ -40,7 +40,6 @@ export const DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri"];
 /** List of days in short form, as given in the Coursewise Timetable. */
 export const DAYS_SHORT = ["M", "T", "W", "Th", "F"];
 
-// Below are in minutes.
 /** Starting time of a period, i.e. 7:30 AM. Represented as number of minutes from 12 AM. */
 export const PERIOD_START = 7*60 + 30;
 /** Duration of a period, in minutes. */
@@ -58,11 +57,6 @@ export const GET_COURSE_BLANK = () => ({title: "", title_short: "", IC: "", sect
 export const GET_PERIOD_NON_COMMON = () => ({course: "NON_COMMON", section: ""});
 /** @returns {PeriodMinimal} */
 export const GET_PERIOD_CONFLICT = () => ({course: "CONFLICT", section: ""});
-
-/** @param {PeriodMinimal} period @returns {boolean} */
-export const IS_PERIOD_NON_COMMON = (period) => period.course == "NON_COMMON";
-/** @param {PeriodMinimal} period @returns {boolean} */
-export const IS_PERIOD_CONFLICT = (period) => period.course == "CONFLICT";
 
 //=| Courses |================================================================//
 
@@ -445,6 +439,8 @@ const FRIENDS_Y1S1 = {
 
 /** @type {Students} Friends' timetables under Year 1 Semester 2 */
 const FRIENDS_Y1S2 = {
+    "sample conflict":    {"BITS F111": ["L1","L2"], "EEE F111": ["L2"], "MATH F112": ["L4"], "MATH F113": ["L3"], "ME F112": ["L2","P2"], "PHY F110": ["P8"], "PHY F111": ["L2"]},
+
     "Ryan":               {"BITS F111": ["L1"], "EEE F111": ["L1"], "MATH F112": ["L4"], "MATH F113": ["L1"], "ME F112": ["L3","P2"], "PHY F110": ["P7"], "PHY F111": ["L1"]},
     "Ritvik":             {"BITS F111": ["L1"], "EEE F111": ["L1"], "MATH F112": ["L4"], "MATH F113": ["L1"], "ME F112": ["L3","P2"], "PHY F110": ["P7"], "PHY F111": ["L1"]},
     "Adithya Nandakumar": {"BITS F111": ["L1"], "EEE F111": ["L1"], "MATH F112": ["L4"], "MATH F113": ["L1"], "ME F112": ["L3","P2"], "PHY F110": ["P7"], "PHY F111": ["L1"]},
@@ -472,3 +468,4 @@ export const FRIENDS = [
     FRIENDS_Y1S1,
     FRIENDS_Y1S2,
 ];
+

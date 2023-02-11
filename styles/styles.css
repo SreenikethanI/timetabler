@@ -141,7 +141,7 @@ td, th {
     padding: 0;
 }
 
-.period-conflict {
+.period-conflict, .period-indeterminate {
     color: rgb(var(--color-period-conflict));
     background-color: rgba(var(--color-period-conflict), var(--alpha-background));
     font-size: 3em;

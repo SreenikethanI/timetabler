@@ -1,14 +1,18 @@
 "use strict";
 import * as Constants from './constants.js';
 
-//=| General helper functions |===============================================//
+//=| Period helper functions |================================================//
 
-/** Compares equality of two periods.
- * @param {Constants.PeriodDetailed} a
- * @param {Constants.PeriodDetailed} b */
-export function arePeriodsEqual(a, b) {
-    return JSON.stringify(a) == JSON.stringify(b);
-}
+/** @param {Constants.PeriodDetailed} a @param {Constants.PeriodDetailed} b @returns {boolean} */
+export function arePeriodsEqual(a, b) {return JSON.stringify(a) == JSON.stringify(b);}
+
+/** @param {PeriodMinimal} period @returns {boolean} */
+export function isPeriodNonCommon(period) {return period.course == "NON_COMMON";}
+
+/** @param {PeriodMinimal} period @returns {boolean} */
+export function isPeriodConflict(period) {return period.course == "CONFLICT";}
+
+//=| General helper functions |===============================================//
 
 /** Converts given minutes into h:mm format.
  * @param {number} minutes
