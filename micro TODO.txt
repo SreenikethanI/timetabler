@@ -3,7 +3,8 @@
   • Builder = builder.html
 
 === TODO ===
-  • 
+  • font style selection (serif, sans-serif)
+  • split function into compareTimetablesKeys and compareTimetables
 
 === DONE ===
   • builder.js > parseDays: try to parse "M34 ..." instead of "M_34 ..."

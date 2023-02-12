@@ -6,11 +6,11 @@ import * as Constants from './constants.js';
 /** @param {Constants.PeriodDetailed} a @param {Constants.PeriodDetailed} b @returns {boolean} */
 export const arePeriodsEqual = (a, b) => JSON.stringify(a) == JSON.stringify(b);
 /** @param {Constants.PeriodMinimal} period @returns {boolean} */
+export const isPeriodFree = (period) => period.course.trim() == "";
+/** @param {Constants.PeriodMinimal} period @returns {boolean} */
 export const isPeriodNonCommon = (period) => period.course == "NON_COMMON";
 /** @param {Constants.PeriodMinimal} period @returns {boolean} */
 export const isPeriodConflict = (period) => period.course == "CONFLICT";
-/** @param {Constants.PeriodMinimal} period @returns {boolean} */
-export const isPeriodFree = (period) => period.course.trim() == "";
 /** @param {Constants.PeriodMinimal} period @returns {boolean} */
 export const isPeriodIndeterminate = (period) => period.course == "INDETERMINATE";
 
@@ -146,7 +146,7 @@ export function getTimetableMinimal(student, semIndex) {
 export function getTimetableDetailed(timetable_minimal, semIndex) {
     /** @type {Constants.TimetableDetailed} */
     const timetable_full = [];
-    const semester = Constants.SEMESTERS[semIndex] || {};    
+    const semester = Constants.SEMESTERS[semIndex] || {};
 
     for (const day of timetable_minimal) {
         /** @type {Constants.DayDetailed} */ const day_detailed = [];

@@ -3,11 +3,13 @@
 export const DOM_LOADING = "loading";
 export const DOM_TIMETABLE = "timetable";
 export const DOM_LIST = "list";
-export const DOM_LIST_OPTIONS = "list-options";
+export const DOM_TIMETABLE_LIST = "timetable-list";
+export const DOM_TIMETABLE_LIST_ADD = "timetable-list-add";
+export const DOM_LIST_OPTIONS_OLD = "list-options-old"; // radio button grouping
+export const DOM_LIST_OPTIONS = "list-options"; // radio button grouping
 export const DOM_COMPARE_MODE = "check-compare-mode";
 export const DOM_THEME_TOGGLE = "theme-toggle";
 export const DOM_PRINT_BUTTON = "print-button";
-export const DOM_CHECK_COMPARE_MODE = "check-compare-mode";
 
 export const LEGEND_DISPLAY = "Choose timetable to display:";
 export const LEGEND_COMPARE = "Select timetables to compare:";
@@ -29,3 +31,4 @@ export const CSS_PERIOD_INDETERMINATE = "period-indeterminate";
 export const CONTENTS_PERIOD_FREE = "";
 export const CONTENTS_PERIOD_NONCOMMON = "&times;";
 export const CONTENTS_PERIOD_CONFLICT = "?";
+export const CONTENTS_PERIOD_INDETERMINATE = "?";

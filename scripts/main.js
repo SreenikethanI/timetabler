@@ -130,7 +130,7 @@ function loadTimetablesListOld(semIndex, preserveSelection) {
         const label = document.createElement("label");
         const option = document.createElement("input");
         option.type = isCompareMode ? "checkbox" : "radio";
-        option.name = DOM.DOM_LIST_OPTIONS;
+        option.name = DOM.DOM_LIST_OPTIONS_OLD;
         option.value = key;
         option.checked = previousSels.includes(key);
         option.addEventListener("input", handleSelectionChange);
@@ -175,6 +175,21 @@ function loadTimetablesListOld(semIndex, preserveSelection) {
  * @param {boolean} preserveSelection `true` if the current user selection(s) are to be
  * preserved, else `false`.*/
 function loadTimetablesList(semIndex, preserveSelection) {
+    /** @type {HTMLDivElement} */ const list = e(DOM.DOM_TIMETABLE_LIST);
+    const isCompareMode = getIsCompareMode();
+    const previousSels = preserveSelection ? getSelections(isCompareMode) : [];
+
+    const addButton = e(DOM.DOM_TIMETABLE_LIST_ADD);
+    const listDf = document.createDocumentFragment();
+
+    /** Used later to focus the first option.
+     * @type {HTMLInputElement} */
+    var firstOption = null;
+
+    var index = 1;
+    for (const key in Storage.getAll()[semIndex]) {
+        
+    }
 
 }
 
@@ -218,11 +233,12 @@ function displayTimetable(timetable, fields) {
             const isFree = Helper.isPeriodFree(period);
             const isNonCommon = Helper.isPeriodNonCommon(period);
             const isConflict = Helper.isPeriodConflict(period);
+            const isIndeterminate = Helper.isPeriodIndeterminate(period);
 
             // If current period is same as previous, extend the previous cell,
             // i.e. block periods.
             if (i_period > 0
-                && !isFree && !isNonCommon && !isConflict
+                && !isFree && !isNonCommon && !isConflict && !isIndeterminate
                 && Helper.arePeriodsEqual(period, day[i_period - 1])) {
                 row.lastChild.colSpan++;
                 continue;
@@ -241,6 +257,9 @@ function displayTimetable(timetable, fields) {
             } else if (isConflict) {
                 cell_period.classList.add(DOM.CSS_PERIOD_CONFLICT);
                 cell_period.textContent = DOM.CONTENTS_PERIOD_CONFLICT;
+            } else if (isIndeterminate) {
+                cell_period.classList.add(DOM.CSS_PERIOD_INDETERMINATE);
+                cell_period.textContent = DOM.CONTENTS_PERIOD_INDETERMINATE;
             } else {
                 cell_period.append(...fieldsFiltered.map((field) => {
                     const p = document.createElement("p");
@@ -288,8 +307,8 @@ function compareTimetables(timetableKeys, semIndex, fields) {
     /** @type {Constants.TimetableDetailed} */
     const commonTimetable = [];
 
-    // Build a common timetable with 4 types of periods: common busy period,
-    // common free period, non-common period, and indeterminate period.
+    // Task is to build a common timetable with 4 types of periods: common busy
+    // period, common free period, non-common period, and indeterminate period.
 
     // For each day...
     for (let i_day = 0; i_day < timetables[0].length; i_day++) {
@@ -299,38 +318,63 @@ function compareTimetables(timetableKeys, semIndex, fields) {
 
         // For each period in the current day...
         for (let i_period = 0; i_period < period_count; i_period++) {
-            // /** Stores whether the current period is common to all the selected
-            //  * timetables or not.
-            //  * @type {boolean} */
-            // let isCommon = true;
-            // /** Stores whether it is indeterminate whether the current period is
-            //  * a conflict. In other words, at a given period, if two timetables
-            //  * have a busy period each, but one of them is conflict, then it
-            //  * won't be possible to *meaningfully compare* these two timetables.
-            //  *
-            //  * Setting this to `true` implies that the comparison is
-            //  * meaningless, as described above.
-            //  * @type {boolean}
-            //  */
-            // let isConflict = false;
-
-            /** Temporary variable for holding the current period. It is initialized
-             * to the current period in the *first timetable*. The current period
-             * in the remaining timetables will be compared with this one, and
-             * `isCommon` will be updated accordingly.*/
+            /** The final period to be appended to the resulting common timetable. */
             let period_result = timetables[0][i_day][i_period];
 
             // Note that i_tt starts at 1 (not 0) and ends at length-1.
             for (let i_tt = 1; i_tt < timetables.length; i_tt++) {
                 const period_tt = timetables[i_tt][i_day][i_period];
 
-                if (Helper.arePeriodsEqual(period_tt, period_result)) {
-                    continue;
-                } else if (Helper) { // TODO
+                // See "/docs/comparison decision table.xlsx" to visually
+                // understand how these if-blocks are crafted.
 
+                if (Helper.arePeriodsEqual(period_tt, period_result)
+                && !Helper.isPeriodConflict(period_result)) {
+                    // This if-block handles common period.
+
+                    // Note that, ideally both period_result and period_tt
+                    // should be checked for conflict or not. But at this stage
+                    // of code, both periods are equal, so checking only one of
+                    // them for conflict is enough.
+                    // i.e. `&& !Helper.isPeriodConflict(period_tt)` is NOT
+                    // required.
+                    continue;
+
+                } else if ((Helper.isPeriodConflict(period_result) || Helper.isPeriodConflict(period_tt))
+                    && !(Helper.isPeriodFree(period_result) || Helper.isPeriodFree(period_tt))) {
+                    // This if-block handles one/both of them being conflict
+                    // periods, except when one of them is free.
+
+                    // Reason being, if one of them is free and the other isn't,
+                    // then we don't necessarily need to actually know whether
+                    // that other period is a regular busy period or a conflict
+                    // period. Hence this if-block won't handle when one of them
+                    // is free.
+                    period_result = Constants.GET_PERIOD_INDETERMINATE();
+
+                } else {
+                    // This else-block handles all the remaining situations:
+                    //   • Both are busy periods but with different course/sec
+                    //   • One is free and the other is a regular busy period
+                    //   • One is free and the other is a conflict period
+
+                    // All these above cases are considered as non-common.
+                    period_result = Constants.GET_PERIOD_NON_COMMON();
                 }
-                period_result = Constants.GET_PERIOD_NON_COMMON();
+
+                // Except for the case where it's a common period, the remaining
+                // timetables need not be checked, so we break the loop.
                 break;
+
+                // On second thought, I'm not sure how to classify a situation
+                // where, at a certain period, first timetable is free, second
+                // timetable has a conflict, and third timetable also has a
+                // conflict. Do we classify it as "indeterminate"? The above
+                // code currently classifies it as "non-common".
+
+                // On third thought, I think the "non-common" result is best,
+                // since the three people won't have a common period, regardless
+                // of whether these two conflicts were resolved or not.
             }
             day.push(period_result);
         }
@@ -351,7 +395,7 @@ function init() {
 
     // e(DOM.DOM_THEME_TOGGLE).addEventListener("click", toggleTheme, false);
     e(DOM.DOM_PRINT_BUTTON).addEventListener("click", () => window.print(), false);
-    e(DOM.DOM_CHECK_COMPARE_MODE).addEventListener("input", () => loadTimetablesListOld(getSemIndex(), true), false);
+    e(DOM.DOM_COMPARE_MODE).addEventListener("input", () => loadTimetablesListOld(getSemIndex(), true), false);
 
     loadTimetablesListOld(getSemIndex(), false);
     handleSelectionChange();
@@ -368,8 +412,8 @@ function removeLoading() {
 }
 
 //=| DOM Event handlers |=====================================================//
+//   See explanation in `init`.
 
-// See explanation in `init`.
 window.addEventListener("load", init, false);
 
 //=| Testing |================================================================//
