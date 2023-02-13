@@ -67,7 +67,7 @@ label > b {
 }
 
 /* TIMETABLE LIST - NEW ----------------------------------------------------- */
-div#timetable-list {
+#timetable-list, .timetable-list {
     background-color: #e0e0e0;
     border-radius: 8pt;
     padding: 8pt;
@@ -75,7 +75,7 @@ div#timetable-list {
 
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap; /* was previously nowrap */
     overflow-x: auto;
     gap: 8pt;
 }
@@ -85,8 +85,11 @@ div#timetable-list {
     border-radius: 8pt;
     background-color: #d0d0d0;
     min-width: 10em;
+    cursor: pointer;
 }
-
+.timetable-entry:has(input:checked) {
+    background-color: #a0f0a0;
+}
 .timetable-entry > button.action {
     float: right;
     background-color: unset;
@@ -94,6 +97,16 @@ div#timetable-list {
     border-radius: 4pt;
     padding: 0 0 0 2pt;
     cursor: pointer;
+}
+
+.timetable-entry p {margin: 0;}
+.timetable-entry .attr-key {
+    font-weight: bold;
+    display: inline;
+}
+.timetable-entry .attr-course-id {
+    font-style: italic;
+    color: rgba(0, 0, 0, 0.5)
 }
 
 button#timetable-list-add {
@@ -107,19 +120,8 @@ button#timetable-list-add {
     align-self: center;
     cursor: pointer;
 }
-
-button#timetable-list-add:hover {
-    color: #00da00;
-}
-
-button#timetable-list-add:active {
-    color: #00b100;
-}
-
-/* TODO */
-/* #timetable-list-add .attr-name {
-
-} */
+button#timetable-list-add:hover {color: #00da00;}
+button#timetable-list-add:active {color: #00b100;}
 
 /* TABLE -------------------------------------------------------------------- */
 table {

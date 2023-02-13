@@ -4,7 +4,14 @@ import * as Constants from './constants.js';
 //=| Period helper functions |================================================//
 
 /** @param {Constants.PeriodDetailed} a @param {Constants.PeriodDetailed} b @returns {boolean} */
-export const arePeriodsEqual = (a, b) => JSON.stringify(a) == JSON.stringify(b);
+export function arePeriodsEqual(a, b) {
+    const a_ent = Object.entries(a), b_ent = Object.entries(b);
+    if (a_ent.length != b_ent.length) {return false;}
+    for (const [key, value] of a_ent) {
+        if (value != b[key]) {return false;}
+    }
+    return true;
+};
 /** @param {Constants.PeriodMinimal} period @returns {boolean} */
 export const isPeriodFree = (period) => period.course.trim() == "";
 /** @param {Constants.PeriodMinimal} period @returns {boolean} */
@@ -72,6 +79,22 @@ function parseDays(daysString) {
     return parsed;
 }
 
+/** Creates a HTMLElement with content and class names added to it.
+ * @param {string} tagName Tag name, such as div, p, span, etc.
+ * @param {string[]} classList A string array of class names.
+ * @param {(string | Node)[]} content A list of nodes and/or strings to add.
+ * Note that `element.append` won't parse any strings as HTML, but rather as
+ * text, so no escaping is required.
+ * @returns {HTMLElement}
+ */
+export function createElement(tagName, classList, ...content) {
+    /** @type {HTMLElement} */
+    const elem = document.createElement(tagName);
+    if (content && content.length > 0) {elem.append(...content);}
+    if (classList && classList.length > 0) {elem.classList.add(...classList);}
+    return elem;
+}
+
 //=| Timetable builder functions |============================================//
 
 /** Compiles a weekly timetable object containing Course ID and Section from
@@ -97,7 +120,7 @@ function parseDays(daysString) {
  */
 export function getTimetableMinimal(student, semIndex) {
     /** @type {Constants.TimetableMinimal} */
-    const timetable_minimal = [];
+    const timetable = [];
     const semester_courses = Constants.SEMESTERS[semIndex];
 
     // Preparing a template
@@ -108,26 +131,27 @@ export function getTimetableMinimal(student, semIndex) {
         // The 9,9,9,9,5 denotes the number of periods per day
         for (let j = [9,9,9,9,5][i] - 1; j >= 0; j--)
             day.push({course: "", section: ""});
-        timetable_minimal.push(day);
+        timetable.push(day);
     }
 
     for (const course_id in student) {
+        if (!semester_courses[course_id]) {continue;}
         const all_sections = semester_courses[course_id].sections;
 
-        student[course_id].forEach((section_number) => {
-            const section = all_sections[section_number] || Constants.GET_SECTION_BLANK();
+        student[course_id].forEach((section_num) => {
+            const section = all_sections[section_num] || Constants.GET_SECTION_BLANK();
             const days_list = parseDays(section.days);
             for (const [day, hours_list] of days_list.entries()) {
 
                 hours_list.forEach((hour) => {
 
-                    const period = timetable_minimal[day][hour - 1];
+                    const period = timetable[day][hour - 1];
                     if (period.course != "") {
-                        timetable_minimal[day][hour - 1] = Constants.GET_PERIOD_CONFLICT();
+                        timetable[day][hour - 1] = Constants.GET_PERIOD_CONFLICT();
                         return;
                     }
                     period.course = course_id;
-                    period.section = section_number;
+                    period.section = section_num;
 
                 });
 
@@ -135,12 +159,13 @@ export function getTimetableMinimal(student, semIndex) {
         });
     }
 
-    return timetable_minimal;
+    return timetable;
 }
 
 /** Returns a new timetable object with complete details (a.k.a. "fields") added
  * to the periods of the given timetable.
- * @param {Constants.TimetableMinimal} timetable_minimal The minimal timetable to elaborate.
+ * @param {Constants.TimetableMinimal} timetable_minimal The minimal timetable to
+ * elaborate.
  * @param {number} semIndex The index of the semester in `Constants.COURSES`.
  * @returns {Constants.TimetableDetailed} */
 export function getTimetableDetailed(timetable_minimal, semIndex) {
@@ -153,10 +178,10 @@ export function getTimetableDetailed(timetable_minimal, semIndex) {
 
         for (const period of day) {
             const course_id = period.course || "";
-            const section_number = period.section || "";
+            const section_num = period.section || "";
 
             const course = semester[course_id] || Constants.GET_COURSE_BLANK();
-            const section = course.sections[section_number] || Constants.GET_SECTION_BLANK();
+            const section = course.sections[section_num] || Constants.GET_SECTION_BLANK();
 
             day_detailed.push({
                 course:       course_id,
@@ -164,10 +189,10 @@ export function getTimetableDetailed(timetable_minimal, semIndex) {
                 title_short:  course.title_short || "",
                 IC:           course.IC || "",
 
-                section:      section_number,
+                section:      section_num,
                 instructor:   section.instructor || "",
                 room:         section.room || "",
-                section_room: getSectionRoom(section_number, section.room),
+                section_room: getSectionRoom(section_num, section.room),
             });
         }
         timetable_full.push(day_detailed);

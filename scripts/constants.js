@@ -10,7 +10,8 @@ The following are constant pre-determined data, given by the university:
 
 The following are real-life data which can change depending on person:
   • A `Students` object consists of student names mapped to a `Student` each.
-  • A `Student`  object consists of course IDs mapped to arrays of section numbers to which they're enrolled into.
+  • A `Student`  object consists of course IDs mapped to arrays of section numbers
+    to which they're enrolled into.
 
 The following are timetable information derived/constructed from each `Student`:
   • A `TimetableMinimal` object is an array of `DayMinimal`.
@@ -40,7 +41,7 @@ export const DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri"];
 /** List of days in short form, as given in the Coursewise Timetable. */
 export const DAYS_SHORT = ["M", "T", "W", "Th", "F"];
 
-/** Starting time of a period, i.e. 7:30 AM. Represented as number of minutes from 12 AM. */
+/** Start time of a period, i.e. 7:30 AM. Represented as number of minutes from 12 AM. */
 export const PERIOD_START = 7*60 + 30;
 /** Duration of a period, in minutes. */
 export const PERIOD_DURATION = 50;
@@ -52,7 +53,7 @@ export const PERIOD_BREAK = 5;
 /** @returns {Section} */
 export const GET_SECTION_BLANK = () => ({room: "", instructor: "", days: ""});
 /** @returns {Course} */
-export const GET_COURSE_BLANK = () => ({title: "", title_short: "", IC: "", sections: {}});
+export const GET_COURSE_BLANK = () => ({title:"",title_short:"",IC:"",sections:{}});
 /** @returns {PeriodMinimal} */
 
 export const GET_PERIOD_FREE = () => ({course: "", section: ""});
@@ -436,10 +437,6 @@ const FRIENDS_Y1S1 = {
     "003 - Stellin John":       {"BIO F110":["P6"],"BIO F111":["L1"],"BITS F110":["L2","P1"],"BITS F112":["L1"],"CHEM F110":["P6"],"CHEM F111":["L1"],"CS F111":["L1","P2"],"MATH F111":["L1"]},
     "321 - Karthik Narayan":    {"BITS F111":["L3"],"EEE F111":["L3"],"MATH F111":["L6"],"MATH F113":["L3"],"ME F112":["L3","P3"],"PHY F110":["P2"],"PHY F111":["L3"]},
     "298 - Lakesh Thangadurai": {"BITS F111":["L2"],"EEE F111":["L2"],"MATH F111":["L5"],"MATH F113":["L2"],"ME F112":["L2","P7"],"PHY F110":["P2"],"PHY F111":["L2"]},
-    // "sample": {"BIO F110":["P1"],"BIO F111":["L2"],"BITS F110":["L1","P2"],"BITS F112":["L1"],"CHEM F110":["P4"],"CHEM F111":["L2"],"CS F111":["L2","P3"],"MATH F111":["L2"]},
-    // "sample": {"BIO F111":["L2","L1"]},
-    // "sample": {"BIO F111":["L2"],"CS F111":["L2"]},
-    // "sample": {"BIO F111":["L2"],"CS F111":["L2","P3","L1"]},
 };
 
 /** @type {Students} Friends' timetables under Year 1 Semester 2 */

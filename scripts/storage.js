@@ -62,7 +62,7 @@ export function set(semIndex, key, value) {
  * LocalStorage.
  * @param {number} semIndex The index of the semester.
  * @param {string} key
- * @returns {Constants.Student | null}
+ * @returns {Constants.Student?}
  */
 export function get(semIndex, key) {
     return isKey(semIndex, key) ? structuredClone(timetables[semIndex][key]) : null;
@@ -103,7 +103,6 @@ export function setAll(newTimetables) {
  * @param {string} key
  * @param {Constants.Student} timetable
  */
-
 /** Loops through every student in the given semester.
  * @param {number} semIndex
  * @param {forEachCallback} callback
