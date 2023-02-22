@@ -578,4 +578,4 @@ window.addEventListener("load", init, false);
 
 //=| Testing |================================================================//
 
-// Storage.ttSetAll(Constants.FRIENDS);
+Storage.ttSetAll(Constants.FRIENDS);

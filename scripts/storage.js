@@ -193,7 +193,7 @@ export function ttForEach(semIndex, callback) {
  */
 export function selectionsGet(semIndex) {
     if (semIndex == null || semIndex < 0) {throw RangeError("semIndex null or negative.");}
-    return selections[semIndex];
+    return selections[semIndex] || [];
 }
 
 /** Set the given list of selected keys into local storage.
