@@ -90,11 +90,10 @@ label > b {
     transition: background-color var(--transition-duration), transform var(--transition-duration) ease-in-out;
 }
 .timetable-entry:hover {background-color: #f0f0f0;}
-.timetable-entry:active {background-color: #c7c7c7;}
-.timetable-entry:active:not(:has(> button.action:active, > input:active)) {transform: scale(calc(1 / 1.05));}
+.timetable-entry:active:not(:has(button.action:active, input:active)) {background-color: #c7c7c7; transform: scale(calc(1 / 1.05));}
 .timetable-entry:has(input:checked) {background-color: #80f080;}
 .timetable-entry:has(input:checked):hover {background-color: #a0ffa0;}
-.timetable-entry:has(input:checked):active {background-color: #70e070;}
+.timetable-entry:has(input:checked):active:not(:has(button.action:active, input:active)) {background-color: #70e070;}
 .timetable-entry > button.action {
     float: right;
     background-color: unset;
