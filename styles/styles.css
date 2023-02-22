@@ -7,6 +7,7 @@
     --color-period-noncommon: 255, 0, 0;
     --color-period-conflict: 0, 127, 255;
     --alpha-background: 0.4;
+    --transition-duration: 0.1s;
 }
 
 button, select {
@@ -86,10 +87,14 @@ label > b {
     background-color: #d0d0d0;
     min-width: 10em;
     cursor: pointer;
+    transition: background-color var(--transition-duration), transform var(--transition-duration) ease-in-out;
 }
-.timetable-entry:has(input:checked) {
-    background-color: #a0f0a0;
-}
+.timetable-entry:hover {background-color: #f0f0f0;}
+.timetable-entry:active {background-color: #c7c7c7;}
+.timetable-entry:active:not(:has(> button.action:active, > input:active)) {transform: scale(calc(1 / 1.05));}
+.timetable-entry:has(input:checked) {background-color: #80f080;}
+.timetable-entry:has(input:checked):hover {background-color: #a0ffa0;}
+.timetable-entry:has(input:checked):active {background-color: #70e070;}
 .timetable-entry > button.action {
     float: right;
     background-color: unset;
@@ -97,7 +102,10 @@ label > b {
     border-radius: 4pt;
     padding: 0 0 0 2pt;
     cursor: pointer;
+    transition: transform var(--transition-duration) ease-in-out;
 }
+.timetable-entry > button.action:hover {transform: scale(1.2);}
+.timetable-entry > button.action:active {transform: scale(calc(1 / 1.2));}
 
 .timetable-entry p {margin: 0;}
 .timetable-entry .attr-key {
@@ -119,6 +127,7 @@ button#timetable-list-add {
     vertical-align: bottom;
     align-self: center;
     cursor: pointer;
+    transition: color var(--transition-duration);
 }
 button#timetable-list-add:hover {color: #00da00;}
 button#timetable-list-add:active {color: #00b100;}
@@ -131,6 +140,7 @@ table {
 
 #timetable {
     white-space: nowrap;
+    transform-origin: top left;
 }
 
 #timetable-container {
@@ -174,18 +184,15 @@ td, th {
 .period {
     white-space: nowrap;
 }
-
 .period-free {
     background-color: rgb(var(--color-period-free));
 }
-
 .period-noncommon {
     color: rgb(var(--color-period-noncommon));
     background-color: rgba(var(--color-period-noncommon), var(--alpha-background));
     font-size: 3em;
     padding: 0;
 }
-
 .period-conflict, .period-indeterminate {
     color: rgb(var(--color-period-conflict));
     background-color: rgba(var(--color-period-conflict), var(--alpha-background));
@@ -210,7 +217,7 @@ td > p:not(:nth-child(1)) { /* Select all but 1st element */
     }
 
     body {
-        font-size: 9pt;
+        font-size: 8pt;
     }
 
     body > :not(#timetable-container) {
@@ -219,5 +226,6 @@ td > p:not(:nth-child(1)) { /* Select all but 1st element */
 
     #timetable {
         white-space: nowrap;
+        zoom: unset !important;
     }
 }

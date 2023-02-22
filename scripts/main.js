@@ -5,6 +5,7 @@ import * as DOM from './constants_dom.js'
 import * as Storage from './storage.js'
 
 const FIELDS_TO_SHOW = ["course", "title_short", "section_room", "instructor"];
+var initComplete = false;
 
 //=| DOM related |============================================================//
 
@@ -16,13 +17,10 @@ const e = (id) => document.getElementById(id);
 
 /** Gets whether compare mode is enabled by the user.
  * @returns {boolean} */
-function getIsCompareMode() { return e(DOM.DOM_COMPARE_MODE).checked; }
-
-/** Returns currently selected semester index.
- * @returns {number} */
-function getSemIndex() {
-    // TODO: This should be later derived from the actual value of the dropdown.
-    return 1;
+function getIsCompareMode() {
+    const checked = e(DOM.DOM_COMPARE_MODE).checked;
+    Storage.compareModeSet(checked);
+    return checked;
 }
 
 /** Returns a string Array containing the timetable names selected by the user.
@@ -43,18 +41,28 @@ function getSelectionsOld(isCompareMode) {
 }
 
 /** Returns a string Array containing the timetable names selected by the user.
- * @param {boolean} isCompareMode If `true`, only the first user choice will be
- * returned.
  * @returns {string[]}
  */
-function getSelections(isCompareMode) {
+function getSelections() {
     /** @type {HTMLDivElement} */ const list = e(DOM.DOM_TIMETABLE_LIST);
-    /** @type {string[]} */ const sels = [];
 
+    if (!initComplete) {
+        // Load from storage //
+        const fromStorage = Storage.selectionsGet(Storage.semIndexGet());
+        for (const option of list.querySelectorAll('input')) {
+            option.checked = fromStorage.includes(option.value);
+        }
+    }
+
+    /** @type {string[]} */ const sels = [];
+    const isCompareMode = getIsCompareMode();
     for (const option of list.querySelectorAll('input:checked')) {
-        if (option.checked) { sels.push(option.value); }
+        sels.push(option.value);
         if (!isCompareMode && sels.length > 0) { break; }
     }
+
+    Storage.selectionsSet(Storage.semIndexGet(), sels);
+
     return sels;
 }
 
@@ -167,8 +175,8 @@ function timetableListActionEdit(key) {
  */
 function timetableListActionDelete(key) {
     if (!confirm(`Are you sure you want to delete ${key}'s timetable?`)) {return;}
-    const semIndex = getSemIndex();
-    Storage.remove(semIndex, key);
+    const semIndex = Storage.semIndexGet();
+    Storage.ttRemove(semIndex, key);
     loadTimetablesList(semIndex, false);
 }
 
@@ -182,8 +190,8 @@ function timetableListActionDelete(key) {
  * preserved, else `false`.*/
 function loadTimetablesList(semIndex, preserveSelection) {
     /** @type {HTMLDivElement} */ const list = e(DOM.DOM_TIMETABLE_LIST);
+    const previousSels = (preserveSelection ? getSelections() : []);
     const isCompareMode = getIsCompareMode();
-    const previousSels = preserveSelection ? getSelections(isCompareMode) : [];
 
     const addButton = e(DOM.DOM_TIMETABLE_LIST_ADD);
     const listDf = document.createDocumentFragment();
@@ -193,8 +201,8 @@ function loadTimetablesList(semIndex, preserveSelection) {
     var firstOption = null;
 
     const courses = Constants.SEMESTERS[semIndex];
-    for (const key in Storage.getAll()[semIndex]) {
-        const student = Storage.get(semIndex, key);
+    for (const key in Storage.ttGetAll()[semIndex]) {
+        const student = Storage.ttGet(semIndex, key);
         if (!student) {continue;}
         const entry = Helper.createElement("div", [DOM.CSS_TIMETABLE_ENTRY]);
 
@@ -227,7 +235,17 @@ function loadTimetablesList(semIndex, preserveSelection) {
             )
         ));
 
-        entry.addEventListener("click", () => {option.click()});
+        entry.addEventListener("click", (event) => {
+            // When `option.click()` is called, THIS event gets fired again,
+            // since `entry` is a parent of `option`. God knows how to stop this
+            // shit    I read articles on "Event Bubbling and Capturing", but
+            // changing any of those options has literally no effect, even
+            // including `event.stopPropagation()`. So at this point, I'm
+            // manually checking for this event getting triggered DUE to the
+            // below `option.click()`, and preventing further calls to
+            // `option.click()`.
+            if (event.target != option) {option.click();}
+        });
         listDf.append(entry);
         if (!firstOption) {firstOption = option;}
     }
@@ -249,7 +267,7 @@ function loadTimetablesList(semIndex, preserveSelection) {
  */
 function handleSelectionChangeOld() {
     const sels = getSelectionsOld(getIsCompareMode());
-    const semIndex = getSemIndex();
+    const semIndex = Storage.semIndexGet();
 
     if (sels.length == 0) { // No selection made
         e(DOM.DOM_TIMETABLE).replaceChildren(); // Clears all child elements
@@ -264,8 +282,8 @@ function handleSelectionChangeOld() {
  * If called directly, the timetable is forcefully refreshed.
  */
 function handleSelectionChange() {
-    const sels = getSelections(getIsCompareMode());
-    const semIndex = getSemIndex();
+    const sels = getSelections();
+    const semIndex = Storage.semIndexGet();
 
     if (sels.length == 0) { // No selection made
         e(DOM.DOM_TIMETABLE).replaceChildren(); // Clears all child elements
@@ -350,6 +368,7 @@ function displayTimetable(timetable, fields, renderTarget) {
     }
 
     renderTarget.replaceChildren(df);
+    fitTimetable();
 }
 
 /** Displays the timetable given by the student name.
@@ -375,7 +394,7 @@ function displayTimetableKeyOld(timetableKey, semIndex, fields) {
 function displayTimetableKey(timetableKey, semIndex, fields) {
     return displayTimetable(
         Helper.getTimetableDetailedFromStudent(
-            Storage.get(semIndex, timetableKey),
+            Storage.ttGet(semIndex, timetableKey),
             semIndex),
         fields
     );
@@ -493,7 +512,6 @@ function compareTimetablesKeysOld(timetableKeys, semIndex, fields) {
 
 /** Compares two or more timetables and displays the common periods, as per the
  * timetable keys given.
- * @deprecated instead use {@link compareTimetablesKeys}
  * @param {string[]} timetableKeys The keys of the timetables.
  * {@link Constants.FIELDS}.
  * @param {number} semIndex The index of the semester in {@link Constants.COURSES}.
@@ -501,7 +519,7 @@ function compareTimetablesKeysOld(timetableKeys, semIndex, fields) {
  */
 function compareTimetablesKeys(timetableKeys, semIndex, fields) {
     const timetables = (timetableKeys
-        .map((key) => Storage.get(semIndex, key))
+        .map((key) => Storage.ttGet(semIndex, key))
         .filter((tt) => tt)
         .map((tt) => Helper.getTimetableDetailedFromStudent(tt, semIndex))
     );
@@ -511,26 +529,46 @@ function compareTimetablesKeys(timetableKeys, semIndex, fields) {
 //=| General |================================================================//
 
 function init() {
+    initComplete = false;
+    e(DOM.DOM_COMPARE_MODE).checked = Storage.compareModeGet();
+    loadTimetablesList(Storage.semIndexGet(), false);
+
     // Since this is a module, event handlers can't be attached in the HTML
     // file itself. Hence, event listeners are attached here:
-
     // e(DOM.DOM_THEME_TOGGLE).addEventListener("click", toggleTheme, false);
-    e(DOM.DOM_PRINT_BUTTON).addEventListener("click", () => window.print(), false);
-    // e(DOM.DOM_COMPARE_MODE).addEventListener("input", () => loadTimetablesListOld(getSemIndex(), true), false);
-    e(DOM.DOM_COMPARE_MODE).addEventListener("input", () => loadTimetablesList(getSemIndex(), true), false);
+    // e(DOM.DOM_PRINT_BUTTON).addEventListener("click", () => window.print(), false);
+    // e(DOM.DOM_COMPARE_MODE).addEventListener("input", () => loadTimetablesListOld(Storage.semIndexGet(), true), false);
+    // loadTimetablesListOld(Storage.semIndexGet(), false);
 
-    // loadTimetablesListOld(getSemIndex(), false);
-    loadTimetablesList(getSemIndex(), false);
+    e(DOM.DOM_COMPARE_MODE).addEventListener("input", () => {
+        getIsCompareMode();
+        loadTimetablesList(Storage.semIndexGet(), true);
+    }, false);
+    window.addEventListener("resize", fitTimetable);
+
+    initComplete = true;
     removeLoading();
 }
 
 function toggleTheme() {
-    const link = e("darkThemeCSS");
+    const link = e(DOM.DOM_DARK_THEME_CSS);
     link.disabled = !link.disabled;
 }
 
 function removeLoading() {
     e(DOM.DOM_LOADING).classList.add(DOM.CSS_COMPLETE);
+}
+
+function fitTimetable() {
+    const TT = e(DOM.DOM_TIMETABLE);
+    TT.style.zoom = 1;
+    const TTw = TT.scrollWidth, TTh = TT.scrollHeight;
+
+    const Cw = e(DOM.DOM_TIMETABLE_CONTAINER).clientWidth - 10;
+    const Ch = Math.min(document.body.scrollHeight, window.innerHeight - 20);
+
+    const factor = Math.min(1, Math.min(Cw / TTw, Ch / TTh));
+    TT.style.zoom = factor;
 }
 
 //=| DOM Event handlers |=====================================================//
@@ -540,4 +578,4 @@ window.addEventListener("load", init, false);
 
 //=| Testing |================================================================//
 
-Storage.setAll(Constants.FRIENDS);
+// Storage.ttSetAll(Constants.FRIENDS);

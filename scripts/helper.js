@@ -83,8 +83,8 @@ function parseDays(daysString) {
  * @param {string} tagName Tag name, such as div, p, span, etc.
  * @param {string[]} classList A string array of class names.
  * @param {(string | Node)[]} content A list of nodes and/or strings to add.
- * Note that `element.append` won't parse any strings as HTML, but rather as
- * text, so no escaping is required.
+ * Note that `element.append` parses any strings as text, so no escaping is
+ * required.
  * @returns {HTMLElement}
  */
 export function createElement(tagName, classList, ...content) {
