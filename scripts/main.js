@@ -145,7 +145,7 @@ function loadTimetablesList(semIndex, preserveSelection) {
         // Add details like key, courses and sections
         entry.append(Helper.createElement("p", [DOM.CSS_ATTR_KEY], key));
         entry.append(...Object.entries(student).map(([cid, sections]) =>
-            Helper.createElement("p", [],
+            Helper.createElement("p", [DOM.CSS_ATTR_COURSE],
                 Helper.createElement("span", [DOM.CSS_ATTR_COURSE_ID], courses[cid].title_short + ": "),
                 structuredClone(sections).sort().join(", "),
             )
@@ -203,7 +203,7 @@ function handleSelectionChange() {
  * @param {HTMLElement?} renderTarget The `table` element where the actual render
  * takes place. If left null, it will render in the table of ID {@link DOM.DOM_TIMETABLE}.
  */
-function displayTimetable(timetable, fields, renderTarget) {
+function displayTimetable(timetable, fields, renderTarget, title) {
     if (!renderTarget) {renderTarget = e(DOM.DOM_TIMETABLE);}
     if (!timetable) {return;}
     const fieldsFiltered = fields.filter((x) => Constants.FIELDS.includes(x));
@@ -280,7 +280,9 @@ function displayTimetableKey(timetableKey, semIndex, fields) {
         Helper.getTimetableDetailedFromStudent(
             Storage.ttGet(semIndex, timetableKey),
             semIndex),
-        fields
+        fields,
+        null,
+        `${timetableKey}'s timetable`
     );
 }
 
@@ -427,15 +429,15 @@ function removeLoading() {
 }
 
 function fitTimetable() {
-    const TT = e(DOM.DOM_TIMETABLE);
-    TT.style.zoom = 1;
-    const TTw = TT.scrollWidth, TTh = TT.scrollHeight;
+    const container = e(DOM.DOM_TIMETABLE_CONTAINER);
+    container.style.zoom = 1;
+    const w = container.scrollWidth, h = container.scrollHeight;
 
-    const Cw = e(DOM.DOM_TIMETABLE_CONTAINER).clientWidth - 10;
-    const Ch = Math.min(document.body.scrollHeight, window.innerHeight - 20);
+    const wBound = document.body.clientWidth - 10;
+    const hBound = Math.min(document.body.scrollHeight, window.innerHeight - 20);
 
-    const factor = Math.min(1, Math.min(Cw / TTw, Ch / TTh));
-    TT.style.zoom = factor;
+    const factor = Math.min(1, Math.min(wBound / w, hBound / h));
+    container.style.zoom = factor;
 }
 
 //=| DOM Event handlers |=====================================================//
