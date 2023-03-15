@@ -1,8 +1,8 @@
 "use strict";
 import * as Constants from './constants.js';
 import * as Helper from './helper.js';
-import * as DOM from './constants_dom.js'
-import * as Storage from './storage.js'
+import * as DOM from './constants_dom.js';
+import * as Storage from './storage.js';
 
 const FIELDS_TO_SHOW = ["course", "title_short", "section_room", "instructor"];
 var initComplete = false;
@@ -202,6 +202,8 @@ function handleSelectionChange() {
  * @param {string[]} fieldsFiltered A string array of field names to display.
  * @param {HTMLElement?} renderTarget The `table` element where the actual render
  * takes place. If left null, it will render in the table of ID {@link DOM.DOM_TIMETABLE}.
+ * @param {string} title The title to display above the timetable. Newlines are
+ * retained.
  */
 function displayTimetable(timetable, fields, renderTarget, title) {
     if (!renderTarget) {renderTarget = e(DOM.DOM_TIMETABLE);}
@@ -266,6 +268,7 @@ function displayTimetable(timetable, fields, renderTarget, title) {
         df.append(row);
     }
 
+    e(DOM.DOM_TIMETABLE_TITLE).textContent = (title || "");
     renderTarget.replaceChildren(df);
     fitTimetable();
 }
@@ -289,15 +292,19 @@ function displayTimetableKey(timetableKey, semIndex, fields) {
 /** Compares two or more timetables and displays the common periods.
  * @param {Constants.TimetableDetailed[]} timetables Timetable objects to compare.
  * @param {string[]} fields The fields to display. Refer to {@link Constants.FIELDS}.
+ * @param {boolean} doNotRender If `true`, the new timetable will only be 
+ * returned, and not rendered.
  * @see {@link displayTimetable} for more info on `timetables`.
+ * @returns {Constants.TimetableDetailed}
  */
-function compareTimetables(timetables, fields) {
-    if (timetables.length == 0) {return;}
-    const fieldsFiltered = fields.filter((x) => Constants.FIELDS.includes(x));
-    if (fieldsFiltered.length == 0) {return;}
-
+function compareTimetables(timetables, fields, doNotRender) {
     /** @type {Constants.TimetableDetailed} */
+    
     const commonTimetable = [];
+
+    if (timetables.length == 0) {return commonTimetable;}
+    const fieldsFiltered = fields.filter((x) => Constants.FIELDS.includes(x));
+    if (fieldsFiltered.length == 0) {return commonTimetable;}
 
     // Task is to build a common timetable with 4 types of periods: common busy
     // period, common free period, non-common period, and indeterminate period.
@@ -374,9 +381,12 @@ function compareTimetables(timetables, fields) {
         commonTimetable.push(day);
     }
 
-    // Finally call the `displayTimetable` function to actually handle displaying
-    // the timetable to the user.
-    displayTimetable(commonTimetable, fields);
+    if (!doNotRender) {
+        // Finally call the `displayTimetable` function to actually handle
+        // displaying the timetable to the user.
+        displayTimetable(commonTimetable, fields, null, "Common timetable");
+    }
+    return commonTimetable;
 }
 
 /** Compares two or more timetables and displays the common periods, as per the

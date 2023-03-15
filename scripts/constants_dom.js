@@ -4,6 +4,9 @@
 
 // General
 export const DOM_DARK_THEME_CSS      = "dark-theme-css";
+export const DOM_COMPARE_MODE        = "check-compare-mode";
+export const DOM_THEME_TOGGLE        = "theme-toggle";
+export const DOM_PRINT_BUTTON        = "print-button";
 export const DOM_LOADING             = "loading";
 
 // Timetable list
