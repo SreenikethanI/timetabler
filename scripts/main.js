@@ -3,6 +3,7 @@ import * as Constants from './constants.js';
 import * as Helper from './helper.js';
 import * as DOM from './constants_dom.js';
 import * as Storage from './storage.js';
+import * as Builder from './builder.js';
 
 const FIELDS_TO_SHOW = ["course", "title_short", "section_room", "instructor"];
 var initComplete = false;
@@ -458,3 +459,4 @@ window.addEventListener("load", init, false);
 //=| Testing |================================================================//
 
 Storage.ttSetAll(Constants.FRIENDS);
+// console.log(await Builder.showDialog());

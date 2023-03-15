@@ -1,6 +1,21 @@
 "use strict";
 import * as Constants from './constants.js';
 
+//=| DeferredPromise |========================================================//
+/** A promise which can be resolved or rejected manually. */
+export class DeferredPromise {
+    constructor() {
+        /** The Promise, which awaits for a resolve or reject signal.
+         * @type {Promise} */
+        this.promise = new Promise((resolve, reject) => {
+            /** Call this function to send a reject signal. */
+            this.reject = reject;
+            /** Call this function to send a resolve signal. */
+            this.resolve = resolve;
+        });
+    }
+}
+
 //=| Period helper functions |================================================//
 
 /** @param {Constants.PeriodDetailed} a @param {Constants.PeriodDetailed} b @returns {boolean} */

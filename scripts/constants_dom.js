@@ -25,6 +25,12 @@ export const DOM_TIMETABLE_CONTAINER = "timetable-container";
 export const DOM_TIMETABLE           = "timetable";
 export const DOM_TIMETABLE_TITLE     = "timetable-title";
 
+// Builder
+export const DOM_BUILDER_CONTAINER   = "builder-container";
+export const DOM_BUILDER_TITLE       = "builder-title";
+export const DOM_BUILDER_OK          = "builder-ok";
+export const DOM_BUILDER_CANCEL      = "builder-cancel";
+
 //=| CSS |====================================================================//
 
 // General
@@ -48,6 +54,9 @@ export const CSS_PERIOD_FREE          = "period-free";
 export const CSS_PERIOD_NONCOMMON     = "period-noncommon";
 export const CSS_PERIOD_CONFLICT      = "period-conflict";
 export const CSS_PERIOD_INDETERMINATE = "period-indeterminate";
+
+// Builder
+export const CSS_BUILDER_HIDDEN = "hidden";
 
 //=| Contents |===============================================================//
 
