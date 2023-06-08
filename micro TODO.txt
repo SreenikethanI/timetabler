@@ -12,3 +12,5 @@
     renamed to `Constants.SEMESTERS`)
   • pass `sem_index` to `getTimetableFull` as well
   • add docstrings to all constants (@const) and functions in modules
+  • wrap timetable container into another container to prevent page from jumping
+    when timetable's zoom factor is changed

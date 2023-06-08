@@ -4,9 +4,10 @@
     --color-heading-period-time: 75, 208, 255;
     --color-day-name: 237, 125, 49;
     --color-period-free: 146, 208, 0;
-    --color-period-noncommon: 255, 0, 0;
+    --color-period-noncommon-text: 220, 0, 0;
+    --color-period-noncommon: 255, 96, 96;
+    --color-period-conflict-text: 255, 255, 255;
     --color-period-conflict: 0, 127, 255;
-    --alpha-background: 0.4;
     --transition-duration: 0.1s;
 }
 
@@ -22,6 +23,7 @@ button, select {
     color: white;
     text-shadow: black 0pt 0pt 10pt;
     user-select: none;
+    z-index: 9999;
 
     backdrop-filter: blur(15px);
 
@@ -93,7 +95,7 @@ label > b {color: red;} */
     border: none;
     padding: 0 0 0 2pt;
     cursor: pointer;
-    transition: transform var(--transition-duration) ease-in-out;
+    /* transition: transform var(--transition-duration) ease-in-out; Useless since whole timetable is rebuilt */
 }
 .timetable-entry > button.action:hover {transform: scale(1.2);}
 .timetable-entry > button.action:active {transform: scale(calc(1 / 1.2));}
@@ -126,38 +128,46 @@ button#timetable-list-add:hover {color: #00da00;}
 button#timetable-list-add:active {color: #00b100;}
 
 /* TABLE -------------------------------------------------------------------- */
-table {
-    empty-cells: hide;
-    border-collapse: collapse;
-}
-
 #timetable {
+    border-collapse: separate;
+    border-spacing: 4pt;
     white-space: nowrap;
     transform-origin: top left;
+    /* box-shadow: 0pt 0pt 10pt 0pt rgba(0, 0, 0, 1); */
+    /* background-color: transparent; */
+    filter: drop-shadow(0pt 0pt 2pt rgba(0,0,0,0.5));
+}
+
+#timetable-resize-container {
+    overflow-x: auto;
 }
 
 #timetable-container {
-    overflow-x: auto;
+    /* overflow-x: auto; */
     display: inline-block;
     border: 1px dotted gray;
     padding: 8pt;
+    border-radius: 8pt;
 }
 
 #timetable-title {
-    font-family: Georgia, serif;
+    font-family: Cambria, Georgia, serif;
     text-align: center;
 }
 
 td, th {
-    border: 1px solid black;
+    border-radius: 4pt;
     text-align: center;
     vertical-align: middle;
     padding: 0.5em;
+    background-color: white;
+    transition: width var(--transition-duration) ease-in-out;
 }
 
 /* PERIODS ------------------------------------------------------------------ */
 .blank {
     border: none;
+    visibility: hidden;
 }
 
 .heading-period-num {
@@ -175,11 +185,15 @@ td, th {
     font-size: 1.75em;
     text-align: right;
     border-right: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
 .day-fields {
     border-left: none;
     text-align: left;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
 }
 
 .period {
@@ -189,14 +203,14 @@ td, th {
     background-color: rgb(var(--color-period-free));
 }
 .period-noncommon {
-    color: rgb(var(--color-period-noncommon));
-    background-color: rgba(var(--color-period-noncommon), var(--alpha-background));
+    color: rgb(var(--color-period-noncommon-text));
+    background-color: rgb(var(--color-period-noncommon));
     font-size: 3em;
     padding: 0;
 }
 .period-conflict, .period-indeterminate {
-    color: rgb(var(--color-period-conflict));
-    background-color: rgba(var(--color-period-conflict), var(--alpha-background));
+    color: rgb(var(--color-period-conflict-text));
+    background-color: rgb(var(--color-period-conflict));
     font-size: 3em;
     padding: 0;
 }
@@ -270,7 +284,7 @@ button#builder-ok:active {background-color: #70e070;}
         font-size: 8pt;
     }
 
-    body > :not(#timetable-container) {
+    body > :not(#timetable-resize-container) {
         display: none;
     }
 

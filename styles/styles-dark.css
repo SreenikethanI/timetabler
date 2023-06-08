@@ -1,6 +1,7 @@
 :root {
     color-scheme: dark;
     color: gainsboro;
+    --alpha-background: 1;
 }
 
 .heading-period-num {

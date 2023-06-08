@@ -454,7 +454,7 @@ const FRIENDS_Y1S2 = {
     //  • CS F111: L1, L2
     //  • MATH F113: L1, L3
 
-    // "sample conflict 1":  {},
+    // "sample conflict 1":  {"CS F111": ["L1", "L2"]},
     // "sample conflict 2":  {},
 
     "(031) Ritvik,\n(029) Adithya Nandakumar,\n(032) Ryan": {"BITS F111": ["L1"], "EEE F111": ["L1"], "MATH F112": ["L4"], "MATH F113": ["L1"], "ME F112": ["L3","P2"], "PHY F110": ["P7"], "PHY F111": ["L1"]},

@@ -1,5 +1,8 @@
 <!DOCTYPE html><html><head>
 
+    <meta charset="UTF-8">
+    <meta name="author" content="Sreenikethan I">
+    <meta name="description" content="A timetable renderer for BITS Pilani Dubai Campus students.">
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>Timetabler</title>
     <script type="module" src="scripts/main.js"></script>
@@ -11,7 +14,7 @@
 
     <div id="loading">
         Loading&hellip;
-        <span><br>⏳ Waiting too long?<br>Something's probably wrong. ❌</span>
+        <span><br>⏳ Waiting too long?<br>Something's <i>probably</i> wrong. ❌</span>
     </div>
 
     <h1>NOTE: Website <u>may</u> not be fully functional as long as this sentence
@@ -33,9 +36,11 @@
     </div>
     <!-- <hr /> -->
 
-    <div id="timetable-container">
-        <h2 id="timetable-title"></h2>
-        <table id="timetable"></table>
+    <div id="timetable-resize-container">
+        <div id="timetable-container">
+            <h2 id="timetable-title" class="timetable-title"></h2>
+            <table id="timetable" class="timetable"></table>
+        </div>
     </div>
 
     <div id="builder-container" class="hidden">
