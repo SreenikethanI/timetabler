@@ -5,12 +5,16 @@
     <meta name="description" content="A timetable renderer for BITS Pilani Dubai Campus students.">
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>Timetabler</title>
-    <script type="module" src="scripts/main.js"></script>
     <link rel="stylesheet" href="styles/styles.css"/>
     <link rel="stylesheet" href="styles/styles-dark.css" id="dark-theme-css" disabled/>
     <link rel="icon" href="media/favicon/idea 2.ico">
     <link rel="manifest" href="manifest.json">
-
+    <script type="module" src="scripts/main.js"></script>
+    <script>
+        if (typeof navigator.serviceWorker !== 'undefined') {
+          navigator.serviceWorker.register('scripts/service_worker_offline.js');
+        }
+    </script>
 </head><body>
 
     <!-- LOADING SCREEN ---------------------------------------------------- -->
