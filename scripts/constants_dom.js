@@ -3,33 +3,34 @@
 //=| DOM IDs and stuff |======================================================//
 
 // General
-export const DOM_DARK_THEME_CSS      = "dark-theme-css";
-export const DOM_COMPARE_MODE        = "check-compare-mode";
-export const DOM_THEME_TOGGLE        = "theme-toggle";
-export const DOM_PRINT_BUTTON        = "print-button";
-export const DOM_LOADING             = "loading";
+export const DOM_DARK_THEME_CSS       = "dark-theme-css";
+export const DOM_LOADING              = "loading";
+export const DOM_PRINT_BUTTON         = "print-button";
+export const DOM_THEME_TOGGLE         = "theme-toggle";
+export const DOM_COMPARE_MODE         = "check-compare-mode";
+export const DOM_SHOW_COURSES_IN_LIST = "check-show-courses";
 
 // Timetable list
-export const DOM_LIST                = "list";
-export const DOM_TIMETABLE_LIST      = "timetable-list";
-export const DOM_TIMETABLE_LIST_ADD  = "timetable-list-add";
-export const DOM_LIST_OPTIONS        = "list-options"; // radio button grouping
+export const DOM_LIST                 = "list";
+export const DOM_TIMETABLE_LIST       = "timetable-list";
+export const DOM_TIMETABLE_LIST_ADD   = "timetable-list-add";
+export const DOM_LIST_OPTIONS         = "list-options"; // radio button grouping
 
 // Timetable list - old
-export const DOM_LIST_OPTIONS_OLD    = "list-options-old"; // radio button grouping
-export const DOM_LEGEND_DISPLAY      = "Choose timetable to display:";
-export const DOM_LEGEND_COMPARE      = "Select timetables to compare:";
+export const DOM_LIST_OPTIONS_OLD     = "list-options-old"; // radio button grouping
+export const DOM_LEGEND_DISPLAY       = "Choose timetable to display:";
+export const DOM_LEGEND_COMPARE       = "Select timetables to compare:";
 
 // Timetable
-export const DOM_TIMETABLE_CONTAINER = "timetable-container";
-export const DOM_TIMETABLE           = "timetable";
-export const DOM_TIMETABLE_TITLE     = "timetable-title";
+export const DOM_TIMETABLE_CONTAINER  = "timetable-container";
+export const DOM_TIMETABLE            = "timetable";
+export const DOM_TIMETABLE_TITLE      = "timetable-title";
 
 // Builder
-export const DOM_BUILDER_CONTAINER   = "builder-container";
-export const DOM_BUILDER_TITLE       = "builder-title";
-export const DOM_BUILDER_OK          = "builder-ok";
-export const DOM_BUILDER_CANCEL      = "builder-cancel";
+export const DOM_BUILDER_CONTAINER    = "builder-container";
+export const DOM_BUILDER_TITLE        = "builder-title";
+export const DOM_BUILDER_OK           = "builder-ok";
+export const DOM_BUILDER_CANCEL       = "builder-cancel";
 
 //=| CSS |====================================================================//
 

@@ -74,6 +74,7 @@ label > b {color: red;} */
     flex-wrap: wrap; /* was previously nowrap */
     overflow-x: auto;
     gap: 8pt;
+    user-select: none;
 }
 
 .timetable-entry {
@@ -106,7 +107,9 @@ label > b {color: red;} */
     display: inline;
     white-space: pre-line;
 }
-.timetable-entry .attr-course {font-size: 0.9em;}
+.timetable-entry .attr-course {
+    font-size: 0.9em;
+}
 .timetable-entry .attr-course-id {
     font-style: italic;
     color: rgba(0, 0, 0, 0.5)
@@ -140,6 +143,9 @@ button#timetable-list-add:active {color: #00b100;}
 
 #timetable-resize-container {
     overflow-x: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #timetable-container {

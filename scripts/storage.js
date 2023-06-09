@@ -85,7 +85,7 @@ function sync(updateTT, updateSels, updateSemIndex, updateCompareMode) {
                 // Replace null entries with empty string array []
                 if (!selections[i]) {selections[i] = [];}
             }
-            lsSet(JSON.stringify(selections), KEY_SELECTIONS);
+            // lsSet(JSON.stringify(selections), KEY_SELECTIONS);
         }
     }
 
@@ -95,7 +95,7 @@ function sync(updateTT, updateSels, updateSemIndex, updateCompareMode) {
             semIndex = Math.max(0, fromLs ? JSON.parse(fromLs) || 0 : semIndexDefault);
             sync(false, false, true, false);
         } else { // Store into LS
-            lsSet(JSON.stringify(Math.max(0, semIndex || 0)), KEY_SEM_INDEX);
+            // lsSet(JSON.stringify(Math.max(0, semIndex || 0)), KEY_SEM_INDEX);
         }
     }
 
@@ -104,7 +104,7 @@ function sync(updateTT, updateSels, updateSemIndex, updateCompareMode) {
             compareMode = Boolean(JSON.parse(lsGet(KEY_COMPARE_MODE)));
             sync(false, false, false, true);
         } else { // Store into LS
-            lsSet(JSON.stringify(compareMode), KEY_COMPARE_MODE);
+            // lsSet(JSON.stringify(compareMode), KEY_COMPARE_MODE);
         }
     }
 
@@ -205,7 +205,7 @@ export function selectionsSet(semIndex, value) {
     if (semIndex == null || semIndex < 0) {throw RangeError("semIndex null or negative.");}
     if (!Array.isArray(value)) {throw TypeError("selections must be an array.");}
     selections[semIndex] = value;
-    sync(false, true, false, false);
+    // sync(false, true, false, false);
 }
 
 // >===========================================================================<
@@ -224,7 +224,7 @@ export function semIndexGet() {
 export function semIndexSet(index) {
     if (index == null || index < 0) {throw RangeError("semIndex null or negative.");}
     semIndex = index;
-    sync(false, false, true, false);
+    // sync(false, false, true, false);
 }
 
 // >===========================================================================<
@@ -237,7 +237,7 @@ export function compareModeGet() {return compareMode;}
  * @param {boolean} newValue */
 export function compareModeSet(newValue) {
     compareMode = Boolean(newValue);
-    sync(false, false, false, true);
+    // sync(false, false, false, true);
 }
 
 // >===========================================================================<

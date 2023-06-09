@@ -12,30 +12,38 @@
 
 </head><body>
 
+    <!-- LOADING SCREEN ---------------------------------------------------- -->
     <div id="loading">
         Loading&hellip;
         <span><br>⏳ Waiting too long?<br>Something's <i>probably</i> wrong. ❌</span>
     </div>
 
+    <!-- GENERAL ----------------------------------------------------------- -->
     <h1>NOTE: Website <u>may</u> not be fully functional as long as this sentence
         is here.</h1>
-    <p>
-        <!-- <button id="print-button">Print</button> -->
-        <!-- <button id="theme-toggle" accesskey="T"><u>T</u>oggle theme</button> -->
-    </p>
+    <!-- <p>
+        <button id="print-button">Print</button>
+        <button id="theme-toggle" accesskey="T"><u>T</u>oggle theme</button>
+    </p> -->
 
+    <!-- CHECKBOXES -------------------------------------------------------- -->
     <label>
         <input type="checkbox" accesskey="C" id="check-compare-mode" />
         <u>C</u>ompare timetables
-    </label>
-    <br />
+    </label><br />
+    <label>
+        <input type="checkbox" accesskey="S" id="check-show-courses" checked />
+        <u>S</u>how courses in timetable list
+    </label><br />
 
-    <!-- <fieldset id="list"></fieldset> -->
+    <!-- TIMETABLE LIST ---------------------------------------------------- -->
     <div id="timetable-list">
         <button id="timetable-list-add">+</button>
     </div>
+    <!-- <fieldset id="list"></fieldset> -->
     <!-- <hr /> -->
 
+    <!-- TIMETABLE --------------------------------------------------------- -->
     <div id="timetable-resize-container">
         <div id="timetable-container">
             <h2 id="timetable-title" class="timetable-title"></h2>
@@ -43,6 +51,7 @@
         </div>
     </div>
 
+    <!-- BUILDER ----------------------------------------------------------- -->
     <div id="builder-container" class="hidden">
         <div id="builder">
 

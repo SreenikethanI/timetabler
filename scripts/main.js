@@ -176,6 +176,7 @@ function loadTimetablesList(semIndex, preserveSelection) {
     }
 
     handleSelectionChange();
+    timetableListToggleCourses();
 }
 
 /** Callback to handle when a selection is made, or if comparison mode is toggled.
@@ -192,6 +193,14 @@ function handleSelectionChange() {
     } else { // Compare mode
         compareTimetablesKeys( sels, semIndex, FIELDS_TO_SHOW );
     }
+}
+
+/** Toggles showing the names of courses  */
+function timetableListToggleCourses() {
+    const checked = e(DOM.DOM_SHOW_COURSES_IN_LIST).checked;
+    Array.from(document.getElementsByClassName(DOM.CSS_ATTR_COURSE)).forEach((elem) => {
+        elem.style.display = checked ? "" : "none";
+    })
 }
 
 //=| Timetable display/compare methods |======================================//
@@ -293,14 +302,14 @@ function displayTimetableKey(timetableKey, semIndex, fields) {
 /** Compares two or more timetables and displays the common periods.
  * @param {Constants.TimetableDetailed[]} timetables Timetable objects to compare.
  * @param {string[]} fields The fields to display. Refer to {@link Constants.FIELDS}.
- * @param {boolean} doNotRender If `true`, the new timetable will only be 
+ * @param {boolean} doNotRender If `true`, the new timetable will only be
  * returned, and not rendered.
  * @see {@link displayTimetable} for more info on `timetables`.
  * @returns {Constants.TimetableDetailed}
  */
 function compareTimetables(timetables, fields, doNotRender) {
     /** @type {Constants.TimetableDetailed} */
-    
+
     const commonTimetable = [];
 
     if (timetables.length == 0) {return commonTimetable;}
@@ -415,16 +424,19 @@ function init() {
 
     // Since this is a module, event handlers can't be attached in the HTML
     // file itself. Hence, event listeners are attached here:
+
     // e(DOM.DOM_THEME_TOGGLE).addEventListener("click", toggleTheme, false);
     // e(DOM.DOM_PRINT_BUTTON).addEventListener("click", () => window.print(), false);
     // e(DOM.DOM_COMPARE_MODE).addEventListener("input", () => loadTimetablesListOld(Storage.semIndexGet(), true), false);
     // loadTimetablesListOld(Storage.semIndexGet(), false);
-
     e(DOM.DOM_COMPARE_MODE).addEventListener("input", () => {
         getIsCompareMode();
         loadTimetablesList(Storage.semIndexGet(), true);
     }, false);
     window.addEventListener("resize", fitTimetable);
+    e(DOM.DOM_SHOW_COURSES_IN_LIST).addEventListener("input", () => {
+        timetableListToggleCourses();
+    });
 
     initComplete = true;
     removeLoading();

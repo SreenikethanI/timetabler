@@ -1,6 +1,6 @@
 === Some terms ===
-  • Renderer = index.html
-  • Builder = builder.html
+  Renderer = index.html
+  Builder = builder.html
 
 === TODO ===
   • font style selection (serif, sans-serif)
