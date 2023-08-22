@@ -117,37 +117,52 @@ function loadTimetablesList(semIndex, preserveSelection) {
      * @type {HTMLInputElement} */
     var firstOption = null;
 
+    /** Courses available for the semester `semIndex` */
     const courses = Constants.SEMESTERS[semIndex];
-    for (const key in Storage.ttGetAll()[semIndex]) {
-        const student = Storage.ttGet(semIndex, key);
-        if (!student) {continue;}
+
+    for (/** Student name */ const studentName in Storage.ttGetAll()[semIndex]) {
+        /** The courses registered by the student */
+        const studentCourses = Storage.ttGet(semIndex, studentName);
+        if (!studentCourses) {continue;}
+
+        /** This is the entry which will be added to the List of timetables */
         const entry = Helper.createElement("div", [DOM.CSS_TIMETABLE_ENTRY]);
 
+        // Adding action buttons and their event handlers
         const actionEdit = Helper.createElement("button", [DOM.CSS_ACTION], DOM.CONTENTS_ACTION_EDIT);
         const actionDelete = Helper.createElement("button", [DOM.CSS_ACTION], DOM.CONTENTS_ACTION_DELETE);
         actionEdit.addEventListener("click", (event) => {
-            timetableListActionEdit(key);
+            timetableListActionEdit(studentName);
             event.stopPropagation();
         }, false);
         actionDelete.addEventListener("click", (event) => {
-            timetableListActionDelete(key);
+            timetableListActionDelete(studentName);
             event.stopPropagation();
         }, false);
         entry.append(actionEdit, actionDelete);
 
+        // Adding checkbox/radio button
         const option = document.createElement("input");
         option.type = isCompareMode ? "checkbox" : "radio";
         option.name = DOM.DOM_LIST_OPTIONS;
-        option.value = key;
-        option.checked = previousSels.includes(key);
+        option.value = studentName;
+        option.checked = previousSels.includes(studentName);
         option.addEventListener("input", handleSelectionChange);
         entry.append(option);
 
-        // Add details like key, courses and sections
-        entry.append(Helper.createElement("p", [DOM.CSS_ATTR_KEY], key));
-        entry.append(...Object.entries(student).map(([cid, sections]) =>
+        // Adding student name a.k.a. key
+        entry.append(Helper.createElement("p", [DOM.CSS_ATTR_KEY], studentName));
+
+        // Adding names of courses and their sections
+        entry.append(...Object.entries(studentCourses).map(([cid, sections]) =>
             Helper.createElement("p", [DOM.CSS_ATTR_COURSE],
-                Helper.createElement("span", [DOM.CSS_ATTR_COURSE_ID], courses[cid].title_short + ": "),
+                Helper.createElement("span", [DOM.CSS_ATTR_COURSE_ID],
+                    // The below expression gives the short title of the course.
+                    // If it doesn't exist, gives the regular title of the course.
+                    // If that doesn't exist as well, gives the course ID itself.
+                    (courses[cid] ? (courses[cid].title_short || courses[cid].title || cid) : cid)
+                    + ": "
+                ),
                 structuredClone(sections).sort().join(", "),
             )
         ));
@@ -464,9 +479,13 @@ function fitTimetable() {
 }
 
 //=| DOM Event handlers |=====================================================//
-//   See explanation in `init`.
+//   For attaching event handlers, see explanation in `init`.
 
-window.addEventListener("load", init, false);
+if (document.readyState === "complete") {
+    init();
+} else {
+    window.addEventListener("load", init, false);
+}
 
 //=| Testing |================================================================//
 
