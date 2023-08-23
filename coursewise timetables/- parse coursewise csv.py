@@ -2,6 +2,8 @@ from csv import reader
 from os.path import isfile
 from sys import argv
 from typing import TypedDict
+from rich.pretty import pprint
+from json import dumps
 
 # Type definitions
 Section = TypedDict("Section", {"room": str, "instructor": str, "days": str})
@@ -32,7 +34,7 @@ if not isfile(path_in):
 # >>==========================================================================<<
 
 semester: Semester = {}
-with open(path_in, "r") as f:
+with open(path_in, "r", encoding="utf-8-sig") as f:
     r = reader(f)
 
     # Synopsis:
@@ -47,6 +49,7 @@ with open(path_in, "r") as f:
     temp_course: Course = create_empty_course()
     for course_id, title, title_short, section_number, instructor, room, days in r:
         if course_id:
+            # Next course, so create a new Course object
             temp_course = create_empty_course()
             semester[course_id] = temp_course
 
@@ -54,7 +57,7 @@ with open(path_in, "r") as f:
             temp_course["title_short"] = title_short.strip()
 
         instructor = instructor.strip()
-        if not temp_course["IC"] and instructor == instructor.upper():
+        if not temp_course["IC"] and instructor.isupper():
             temp_course["IC"] = instructor.title()
 
         temp_course["sections"][section_number] = {
@@ -65,8 +68,8 @@ with open(path_in, "r") as f:
 
 # >>==========================================================================<<
 
-result = repr(semester)
-print(result)
+pprint(semester)
+result = dumps(semester)
 
 try:
     from pyperclip import copy

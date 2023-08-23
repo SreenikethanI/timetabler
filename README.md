@@ -9,6 +9,12 @@ You can also enter your friends' timetables and compare it with yours, giving yo
 Supports these semesters so far:
 - (2022) Year 1 - Semester 1
 - (2023) Year 1 - Semester 2
+- (2023) Year 2 - Semester 1
+
+## Documentation
+Check the [/docs/](/docs/) folder for info on how the project code is structured.
+
+Other folders also have a README file to describe what's going on.
 
 ## Website
 This website is hosted using GitHub Pages. You can find the live version of this website here:
