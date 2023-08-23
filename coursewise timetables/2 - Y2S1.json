@@ -224,7 +224,7 @@
     },
     "BITS F225": {
         "title": "Environmental Studies",
-        "title_short": "",
+        "title_short": "EvS",
         "IC": "Rusal Raj",
         "sections": {
             "L1": {"instructor": "Vijaya Ilango"                    , "room": "228" , "days": "W2 Th1 F4"},
