@@ -478,6 +478,11 @@ function fitTimetable() {
     container.style.zoom = factor;
 }
 
+//=| Testing |================================================================//
+
+Storage.ttSetAll(Constants.FRIENDS);
+// console.log(await Builder.showDialog());
+
 //=| DOM Event handlers |=====================================================//
 //   For attaching event handlers, see explanation in `init`.
 
@@ -486,8 +491,3 @@ if (document.readyState === "complete") {
 } else {
     window.addEventListener("load", init, false);
 }
-
-//=| Testing |================================================================//
-
-Storage.ttSetAll(Constants.FRIENDS);
-// console.log(await Builder.showDialog());
