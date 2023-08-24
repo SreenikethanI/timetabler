@@ -18,7 +18,7 @@
         "title_short": "Biology",
         "IC": "Neeru Sood",
         "sections": {
-            "P1": {"instructor": "Debostuti Ghosh"                  , "room": "101" , "days": "M1 T6 Th5 F5"},
+            "P1": {"instructor": "Debostuti Ghosh"                  , "room": "101" , "days": "M1 T6 Th4 F5"},
             "P2": {"instructor": "Aditya Sharma"                    , "room": "105" , "days": "M1 T4 W1 Th5"},
             "P3": {"instructor": "NEERU SOOD"                       , "room": "123" , "days": "M1 T4 Th5 F5"}
         }
@@ -78,7 +78,7 @@
         "title_short": "",
         "IC": "Pallab Sanpui",
         "sections": {
-            "L1": {"instructor": "PALLAB SANPUI"                    , "room": "271" , "days": "M2 T3 W1 Th2"}
+            "L1": {"instructor": "PALLAB SANPUI"                    , "room": "271" , "days": "M2 T3 W2 Th2"}
         }
     },
     "BIOT F314": {
@@ -195,7 +195,7 @@
         "sections": {
             "L1": {"instructor": "MEGHANA S CHARDE"                 , "room": "101" , "days": "Th3"},
             "L2": {"instructor": "Akshay Venkateshwaran"            , "room": "105" , "days": "Th4"},
-            "L3": {"instructor": "Meghana S Charde"                 , "room": "123" , "days": "T3"},
+            "L3": {"instructor": "Deepthi Mary Dilip"               , "room": "123" , "days": "T3"},
             "P1": {"instructor": "Meghana S Charde"                 , "room": "MS5" , "days": "M89"},
             "P2": {"instructor": "Meghana S Charde"                 , "room": "MS5" , "days": "W89"},
             "P3": {"instructor": "Deepthi Mary Dilip"               , "room": "MS5" , "days": "Th34"}
@@ -224,11 +224,11 @@
     },
     "BITS F225": {
         "title": "Environmental Studies",
-        "title_short": "",
+        "title_short": "EvS",
         "IC": "Rusal Raj",
         "sections": {
             "L1": {"instructor": "Vijaya Ilango"                    , "room": "228" , "days": "W2 Th1 F4"},
-            "L2": {"instructor": "RUSAL RAJ"                        , "room": "220" , "days": "M4 W2 F4"}
+            "L2": {"instructor": "RUSAL RAJ"                        , "room": "220" , "days": "M4 W9 F4"}
         }
     },
     "BITS F226": {
@@ -464,7 +464,7 @@
         "title_short": "",
         "IC": "Souvik K Paul",
         "sections": {
-            "L1": {"instructor": "SOUVIK K PAUL"                    , "room": "245" , "days": "M8 T5 W3 F3"}
+            "L1": {"instructor": "SOUVIK K PAUL"                    , "room": "245" , "days": "M8 T1 W3 F3"}
         }
     },
     "CHE F214": {
@@ -472,7 +472,7 @@
         "title_short": "",
         "IC": "Tejal Patel",
         "sections": {
-            "L1": {"instructor": "TEJAL PATEL"                      , "room": "245" , "days": "M5 T3 W8 Th2"}
+            "L1": {"instructor": "TEJAL PATEL"                      , "room": "245" , "days": "T3 W1 Th23"}
         }
     },
     "CHE F266": {
@@ -496,8 +496,8 @@
         "title_short": "",
         "IC": "SOUVIK K PAUL",
         "sections": {
-            "P1": {"instructor": "SOUVIK K PAUL / Nishant H Pandya / B G Prakash Kumar / Murchana Changmai" , "room": "340" , "days": "W789"},
-            "P2": {"instructor": "SOUVIK K PAUL / Nishant H Pandya / B G Prakash Kumar / Murchana Changmai" , "room": "340" , "days": "Th123"}
+            "P1": {"instructor": "NISHANT H PANDYA / B G Prakash Kumar / Murchana Changmai" , "room": "340" , "days": "W789"},
+            "P2": {"instructor": "NISHANT H PANDYA / B G Prakash Kumar / Murchana Changmai" , "room": "340" , "days": "Th123"}
         }
     },
     "CHE F313": {
@@ -848,7 +848,7 @@
         "IC": "R Gomathi Bhavani",
         "sections": {
             "L1": {"instructor": "R GOMATHI BHAVANI"                , "room": "228" , "days": "M5 T1 Th9 F5"},
-            "P1": {"instructor": "R Gomathi Bhavani"                , "room": "313" , "days": "T34"}
+            "P1": {"instructor": "R Gomathi Bhavani"                , "room": "313" , "days": "W67"}
         }
     },
     "ECE F212": {
@@ -992,7 +992,7 @@
         "IC": "R Gomathi Bhavani",
         "sections": {
             "L1": {"instructor": "R GOMATHI BHAVANI"                , "room": "228" , "days": "M5 T1 Th9 F5"},
-            "P1": {"instructor": "R Gomathi Bhavani"                , "room": "313" , "days": "T34"}
+            "P1": {"instructor": "R Gomathi Bhavani"                , "room": "313" , "days": "W67"}
         }
     },
     "EEE F212": {
@@ -1262,7 +1262,7 @@
         "IC": "Pramod Gaur",
         "sections": {
             "L1": {"instructor": "PRAMOD GAUR"                      , "room": "223" , "days": "M6 T7 Th3"},
-            "P1": {"instructor": "PRAMOD GAUR"                      , "room": "335" , "days": ""}
+            "P1": {"instructor": "PRAMOD GAUR"                      , "room": "335" , "days": "M89"}
         }
     },
     "MATH D021": {
@@ -1383,7 +1383,7 @@
         "title_short": "",
         "IC": "Priyank Upadhyaya",
         "sections": {
-            "L1": {"instructor": "PRIYANK UPADHYAYA"                , "room": "219" , "days": "M1 T3 Th2 F5"}
+            "L1": {"instructor": "PRIYANK UPADHYAYA"                , "room": "219" , "days": "M1 T3 W3 Th2"}
         }
     },
     "ME F212": {

@@ -184,8 +184,10 @@ function loadTimetablesList(semIndex, preserveSelection) {
 
     listDf.append(addButton);
     list.replaceChildren(listDf);
-    if (!isCompareMode && previousSels.length == 0 && firstOption) {
-        // Focus first option if nothing was selected previously
+    if (initComplete && !isCompareMode && previousSels.length == 0 && firstOption) {
+        // Focus first option if nothing was selected previously.
+        // If page is still initializing (initComplete == false), then there's no
+        // point in selecting any option, since it'll be overwritten later anyway.
         firstOption.checked = true;
         firstOption.focus();
     }
@@ -231,7 +233,8 @@ function timetableListToggleCourses() {
  * retained.
  */
 function displayTimetable(timetable, fields, renderTarget, title) {
-    if (!renderTarget) {renderTarget = e(DOM.DOM_TIMETABLE);}
+    const defaultRenderTarget = e(DOM.DOM_TIMETABLE);
+    if (!renderTarget) {renderTarget = defaultRenderTarget;}
     if (!timetable) {return;}
     const fieldsFiltered = fields.filter((x) => Constants.FIELDS.includes(x));
     if (!fieldsFiltered) {return;}
@@ -293,7 +296,10 @@ function displayTimetable(timetable, fields, renderTarget, title) {
         df.append(row);
     }
 
-    e(DOM.DOM_TIMETABLE_TITLE).textContent = (title || "");
+
+    if (renderTarget == defaultRenderTarget) {
+        e(DOM.DOM_TIMETABLE_TITLE).textContent = (title || "");
+    }
     renderTarget.replaceChildren(df);
     fitTimetable();
 }
@@ -478,16 +484,19 @@ function fitTimetable() {
     container.style.zoom = factor;
 }
 
-//=| DOM Event handlers |=====================================================//
-//   For attaching event handlers, see explanation in `init`.
-
-if (document.readyState === "complete") {
-    init();
-} else {
-    window.addEventListener("load", init, false);
-}
-
 //=| Testing |================================================================//
 
 Storage.ttSetAll(Constants.FRIENDS);
 // console.log(await Builder.showDialog());
+
+//=| DOM Event handlers |=====================================================//
+//   For attaching event handlers, see explanation in `init`.
+
+if (document.readyState === "complete") {
+    // If the document completes loading before the script does, (for example,
+    // when async-loading Course list in constants.js), directly invoke the init
+    // function instead of attaching an event handler.
+    init();
+} else {
+    window.addEventListener("load", init, false);
+}
