@@ -130,6 +130,11 @@ const FRIENDS_Y1S2 = {
     "(321) Karthik": {"BIO F110": ["P2"], "BIO F111": ["L2"], "BITS F110": ["L3","P3"], "BITS F112": ["L2"], "CHEM F110": ["P3"], "CHEM F111": ["L2"], "CS F111": ["L2","P2"], "MATH F112": ["L2"]},
 };
 
+/** @type {Students} Friends' timetables under Year 2 Semester 1 */
+const FRIENDS_Y2S1 = {
+    "test": {"CS F213": ["L3", "P3"], "CS F214": ["L4"], "CS F215": ["L2", "P5"], "CS F222": ["L2"], "HSS F211": ["L1"]},
+}
+
 //=| Collections of all semesters |===========================================//
 
 /** @type {Semester[]} List of courses under all semesters. */
@@ -142,5 +147,5 @@ for (let i = 0; i < SEMESTERS_PROMISES.length; i++) {
 export const FRIENDS = [
     FRIENDS_Y1S1,
     FRIENDS_Y1S2,
-    FRIENDS_Y1S2,
+    FRIENDS_Y2S1,
 ];
