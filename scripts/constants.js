@@ -3,25 +3,25 @@
 /*
 === Some terminology ===
 The following are constant pre-determined data, given by the university:
-  • A `Semester` object consists of `Course`s.
-  • A `Course`   object consists of some properties, including a `Sections`.
-  • A `Sections` object consists of `Section`s.
-  • A `Section`  object consists of many properties.
+ • A `Semester` object consists of `Course`s.
+ • A `Course`   object consists of some properties, including a `Sections`.
+ • A `Sections` object consists of `Section`s.
+ • A `Section`  object consists of many properties.
 
 The following are real-life data which can change depending on person:
-  • A `Students` object consists of student names mapped to a `Student` each.
-  • A `Student`  object consists of course IDs mapped to arrays of section numbers
+ • A `Students` object consists of student names mapped to a `Student` each.
+ • A `Student`  object consists of course IDs mapped to arrays of section numbers
     to which they're enrolled into.
 
 The following are timetable information derived/constructed from each `Student`:
-  • A `TimetableMinimal` object is an array of `DayMinimal`.
-  • A `DayMinimal`       object is an array of `PeriodMinimal`.
-  • A `PeriodMinimal`    object consists of course ID and section of ONE period.
+ • A `TimetableMinimal` object is an array of `DayMinimal`.
+ • A `DayMinimal`       object is an array of `PeriodMinimal`.
+ • A `PeriodMinimal`    object consists of course ID and section of ONE period.
 
 The following are the detailed equivalents of the corresponding minimal objects:
-  • A `TimetableDetailed` object is an array of `DayDetailed`.
-  • A `DayDetailed`       object is an array of `PeriodDetailed`.
-  • A `PeriodDetailed`    object consists of all relevant info for ONE period.
+ • A `TimetableDetailed` object is an array of `DayDetailed`.
+ • A `DayDetailed`       object is an array of `PeriodDetailed`.
+ • A `PeriodDetailed`    object consists of all relevant info for ONE period.
 */
 
 /** @typedef {{course: string, section: string}} PeriodMinimal */
@@ -73,6 +73,7 @@ export const GET_PERIOD_INDETERMINATE = () => ({course: "INDETERMINATE", section
 
 /** Load JSON from path.
  * @param {string} path
+ * @returns {Promise<Semester>}
  */
 async function loadJSON(path) {
     const response = await fetch(path);
@@ -132,7 +133,6 @@ const FRIENDS_Y1S2 = {
 
 /** @type {Students} Friends' timetables under Year 2 Semester 1 */
 const FRIENDS_Y2S1 = {
-    "test": {"CS F213": ["L3", "P3"], "CS F214": ["L4"], "CS F215": ["L2", "P5"], "CS F222": ["L2"], "HSS F211": ["L1"]},
 }
 
 //=| Collections of all semesters |===========================================//
@@ -140,7 +140,19 @@ const FRIENDS_Y2S1 = {
 /** @type {Semester[]} List of courses under all semesters. */
 export const SEMESTERS = [];
 for (let i = 0; i < SEMESTERS_PROMISES.length; i++) {
-    SEMESTERS.push(await SEMESTERS_PROMISES[i]);
+    const semester = await SEMESTERS_PROMISES[i];
+
+    // If short_title is empty, replace it with title.
+    for (const courseID in semester) {
+        if (Object.hasOwnProperty.call(semester, courseID)) {
+            const course = semester[courseID];
+            if (!course.title_short) {
+                course.title_short = course.title;
+            }
+        }
+    }
+
+    SEMESTERS.push(semester);
 }
 
 /** @type {Students[]} List of friends' timetables under all semesters. */
