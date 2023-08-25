@@ -8,26 +8,26 @@
 BIO F111,General Biology,Biology,P1,Debostuti Ghosh,101,M1 T6 Th5 F5
 ,,,P2,Aditya Sharma,105,M1 T4 W1 Th5
 ,,,P3,NEERU SOOD,123,M1 T4 Th5 F5
-BIOT F211,Biological Chemistry,,L1,MAINAK DUTTA,220,M1 T9 W6 Th9
-BIOT F212,Microbiology,,L1,TRUPTI GOKHALE,220,M5 T8 W1 F2
+BIOT F211,Biological Chemistry,Bio. chem,L1,MAINAK DUTTA,220,M1 T9 W6 Th9
+BIOT F212,Microbiology,Microbio,L1,TRUPTI GOKHALE,220,M5 T8 W1 F2
 ,,,P1,TRUPTI GOKHALE,307,T345
 ,,,P2,TRUPTI GOKHALE,307,Th234
-BIOT F213,Cell Biology,,L1,NEERU SOOD,220,M6 T7 W5 F3
-BIOT F215,Biophysics,,L1,DEBOSTUTI GHOSH,220,M3 W3 Th8 F1
-BIOT F242,Intro to Bioinformatics,,L1,ADITYA SHARMA,271,M5 W5 Th9
+BIOT F213,Cell Biology,Cell bio,L1,NEERU SOOD,220,M6 T7 W5 F3
+BIOT F215,Biophysics,Biophy,L1,DEBOSTUTI GHOSH,220,M3 W3 Th8 F1
+BIOT F242,Intro to Bioinformatics,Intro to bioinfo,L1,ADITYA SHARMA,271,M5 W5 Th9
 BIOT F266,Study Project,,1,NEERU SOOD,,
-BIOT F311,Recombinant DNA Tech,,L1,PALLAB SANPUI,271,M2 T3 W1 Th2
+BIOT F311,Recombinant DNA Tech,Recomb. DNA,L1,PALLAB SANPUI,271,M2 T3 W1 Th2
 BIOT F314,Ind Microbio & Biopro Engg,,L1,S RAMACHANDRAN,271,M9 T5
 ,,,P1,S Ramachandran/ Debostuti Ghosh,307,M67
 ,,,P2,S Ramachandran/ Debostuti Ghosh,307,W67
-BIOT F343,Experiments in Biotech,,P1,Mainak Dutta/ Pallab Sanpui,308,Th567
+BIOT F343,Experiments in Biotech,Expt in biotech,P1,Mainak Dutta/ Pallab Sanpui,308,Th567
 ,,,P2,Mainak Dutta/ Pallab Sanpui,308,F345
 BIOT F345,Proteomics,,L1,S RAMACHANDRAN,271,T7 W3 Th1
-BIOT F366,Laboratory Project,,1,NEERU SOOD,,
-BIOT F367,Laboratory Project,,1,NEERU SOOD,,
+BIOT F366,Laboratory Project,Lab project,1,NEERU SOOD,,
+BIOT F367,Laboratory Project,Lab project,1,NEERU SOOD,,
 BIOT F376,Design Project,,1,NEERU SOOD,,
 BIOT F377,Design Project,,1,NEERU SOOD,,
-BIOT F424,Food Biotechnology,,L1,TRUPTI GOKHALE,271,M3 T1 W4
+BIOT F424,Food Biotechnology,Food biotech,L1,TRUPTI GOKHALE,271,M3 T1 W4
 BIOT F491,Special Project,,1,NEERU SOOD,,
 BITS C791T,Teaching Practice I,,1,RAM KARTHIKEYAN,,
 BITS C797T,PhD Seminar,,1,RAM KARTHIKEYAN,,
@@ -48,7 +48,7 @@ BITS F112,Technical Report Writing,TRW,L1,SAYANTAN CHAKRABORTY,101,T5 Th2
 ,,,L4,Shazi S J,105,W2 F1
 BITS F225,Environmental Studies,EvS,L1,Vijaya Ilango,228,W2 Th1 F4
 ,,,L2,RUSAL RAJ,220,M4 W2 F4
-BITS F226,Soft Skills For Professionals,,L1,ROHIT,220,M7 T2 Th6
+BITS F226,Soft Skills For Professionals,Soft skills for profs,L1,ROHIT,220,M7 T2 Th6
 BITS F312,Neural Net & Fuzzy Logic,,L1,V KALAICHELVI,221,M5 W5 Th9
 BITS F327,AI in Robotics,,L1,RAM KARTHIKEYAN,276,M6 W6 Th5
 ,,,L2,RAM KARTHIKEYAN,MS2,Th12
@@ -57,22 +57,22 @@ BITS F416,Intro to Nano Science,,L1,K K SINGH,226,M5 W5 Th9
 BITS F421T,Thesis,,1,K KUMAR,,
 BITS F422T,Thesis,,1,K KUMAR,,
 BITS F423T,Thesis,,1,K KUMAR,,
-BITS F452,Blockchain Technology,,L1,RAJA M,223,T6 W1 Th7
-BITS F464,Machine Learning,,L1,PRANAV MOTHABHAU PAWAR,268,T6 W1 Th7
+BITS F452,Blockchain Technology,Blockchain tech,L1,RAJA M,223,T6 W1 Th7
+BITS F464,Machine Learning,ML,L1,PRANAV MOTHABHAU PAWAR,268,T6 W1 Th7
 BITS G661,Research Methodology I,,1,RAM KARTHIKEYAN,,
-CE F211,Mechanics of Solids,,L1,AKSHAY VENKATESHWARAN,222,T6 W1 Th2 F3
+CE F211,Mechanics of Solids,Mech. of solids,L1,AKSHAY VENKATESHWARAN,222,T6 W1 Th2 F3
 CE F213,Surveying,,L1,MEGHANA S CHARDE,222,T5 W6 Th8 F5
 ,,,P1,Meghana S Charde,MF1,F12
-CE F230,Civil Engineering Materials,,L1,DEEPTHI MARY DILIP,222,M9 T1 W8 Th9
+CE F230,Civil Engineering Materials,Civ engg materials,L1,DEEPTHI MARY DILIP,222,M9 T1 W8 Th9
 ,,,P1,Vivek B Kartha,MG2,M56
-CE F231,Fluid Mechanics,,L1,BRIJ KISHORE PANDEY,222,M4 T7 W9 Th4
+CE F231,Fluid Mechanics,Fluid mech,L1,BRIJ KISHORE PANDEY,222,M4 T7 W9 Th4
 CE F266,Study Project,,1,VIVEK B KARTHA,,
-CE F312,Hydraulic Engineering,,L1,BRIJ KISHORE PANDEY,256,M7 T1 Th7 F3
+CE F312,Hydraulic Engineering,Hydraulic engg,L1,BRIJ KISHORE PANDEY,256,M7 T1 Th7 F3
 ,,,P1,Brij Kishore Pandey,MF4,W34
-CE F313,Foundation Engineering,,L1,VIVEK B KARTHA,256,M3 T3 W1 Th6
-CE F320,Design of Reinforced Concrete Structure,,L1,AKSHAY VENKATESHWARAN,256,M6 T8 W6 F5
-CE F366,Laboratory Project,,1,VIVEK B KARTHA,,
-CE F367,Laboratory Project,,1,VIVEK B KARTHA,,
+CE F313,Foundation Engineering,Foundation engg,L1,VIVEK B KARTHA,256,M3 T3 W1 Th6
+CE F320,Design of Reinforced Concrete Structure,Design of reinf conc struc,L1,AKSHAY VENKATESHWARAN,256,M6 T8 W6 F5
+CE F366,Laboratory Project,Lab project,1,VIVEK B KARTHA,,
+CE F367,Laboratory Project,Lab project,1,VIVEK B KARTHA,,
 CE F376,Design Project,,1,VIVEK B KARTHA,,
 CE F377,Design Project,,1,VIVEK B KARTHA,,
 CE F425,Airport Rail & Waterways,,L1,DEEPTHI MARY DILIP,256,M2 T6 F4
@@ -88,8 +88,8 @@ CHE F312,Chemical Engg Lab I,,P1,SOUVIK K PAUL / Nishant H Pandya / B G Prakash 
 ,,,P2,SOUVIK K PAUL / Nishant H Pandya / B G Prakash Kumar / Murchana Changmai,340,Th123
 CHE F313,Separation Processes II,,L1,MURCHANA CHANGMAI,226,M7 T3 W1 Th6
 CHE F314,Process Des Principles I,,L1,NISHANT H PANDYA,226,M4 T6 W3 F4
-CHE F366,Laboratory Project,,1,B G PRAKASH KUMAR,,
-CHE F367,Laboratory Project,,1,B G PRAKASH KUMAR,,
+CHE F366,Laboratory Project,Lab project,1,B G PRAKASH KUMAR,,
+CHE F367,Laboratory Project,Lab project,1,B G PRAKASH KUMAR,,
 CHE F376,Design Project,,1,B G PRAKASH KUMAR,,
 CHE F377,Design Project,,1,B G PRAKASH KUMAR,,
 CHE F411,Envir Pollution Control,,L1,MURCHANA CHANGMAI,226,M2 T8 F5
@@ -105,8 +105,8 @@ CHEM F111,General Chemistry,Chemistry,L1,RUSAL RAJ,101,M6 T1 W6 F2
 ,,,L2,Vijaya Ilango,105,M6 T1 Th3 F2
 ,,,L3,Geetha Kannan,123,M6 T1 W6 F2
 CHEM F266,Study Project,,1,R ROOP KUMAR,,
-CHEM F366,Laboratory Project,,1,R ROOP KUMAR,,
-CHEM F367,Laboratory Project,,1,R ROOP KUMAR,,
+CHEM F366,Laboratory Project,Lab project,1,R ROOP KUMAR,,
+CHEM F367,Laboratory Project,Lab project,1,R ROOP KUMAR,,
 CHEM F376,Design Project,,1,R ROOP KUMAR,,
 CHEM F377,Design Project,,1,R ROOP KUMAR,,
 CHEM F491,Special Project,,1,R ROOP KUMAR,,
@@ -147,31 +147,31 @@ CS F266,Study Project,,1,B VIJAYAKUMAR,,
 CS F301,Principles of Progg Lang,,L1,B VIJAYAKUMAR,269,W3 Th2
 ,,,L2,Pranav Mothabhau Pawar,268,W3 Th2
 ,,,L3,B Vijayakumar,267,Th6 F4
-CS F320,Foundation of Data Science,,L1,SIDDHALING UROLAGIN,268,M6 T7 Th3
-CS F342,Computer Architecture,,L1,TAMIZHARASAN PERIYASAMY,269,M3 T4 Th1 F5
+CS F320,Foundation of Data Science,Foundation of DS,L1,SIDDHALING UROLAGIN,268,M6 T7 Th3
+CS F342,Computer Architecture,Comp arch,L1,TAMIZHARASAN PERIYASAMY,269,M3 T4 Th1 F5
 ,,,L2,Raja M,268,M3 T4 Th1 F5
 ,,,L3,Raja M,267,T1 W3 Th5 F3
 ,,,P1,Tamizharasan Periyasamy,332,W89
 ,,,P2,Raja M,335,W89
 ,,,P3,Angel A Jothi,336,W89
-CS F351,Theory of Computation,,L1,ELAKKIYA RAJASEKAR,269,T1 W4 Th5 F3
+CS F351,Theory of Computation,Theory of comp,L1,ELAKKIYA RAJASEKAR,269,T1 W4 Th5 F3
 ,,,L2,S Jeyalatha,268,T1 W4 Th5 F3
 ,,,L3,Elakkiya Rajasekar,267,M3 T4 Th2 F5
-CS F366,Laboratory Project,,1,B VIJAYAKUMAR,,
-CS F367,Laboratory Project,,1,B VIJAYAKUMAR,,
-CS F372,Operating Systems,,L1,ANGEL A JOTHI,269,T5 W2 Th6 F4
+CS F366,Laboratory Project,Lab project,1,B VIJAYAKUMAR,,
+CS F367,Laboratory Project,Lab project,1,B VIJAYAKUMAR,,
+CS F372,Operating Systems,OS,L1,ANGEL A JOTHI,269,T5 W2 Th6 F4
 ,,,L2,Pramod Gaur,268,T5 W2 Th6 F4
 ,,,L3,Angel A Jothi,267,M2 W4 Th1 F2
 CS F376,Design Project,,1,B VIJAYAKUMAR,,
 CS F377,Design Project,,1,B VIJAYAKUMAR,,
-CS F407,Artificial Intelligence,,L1,SUJALA D SHETTY,269,M6 T7 Th3
+CS F407,Artificial Intelligence,AI,L1,SUJALA D SHETTY,269,M6 T7 Th3
 CS F415,Data Mining,,L1,ANGEL A JOTHI,267,M6 T7 Th3
 CS F425,Deep Learning,,L1,TAMIZHARASAN PERIYASAMY,267,T6 W1 Th7
-CS F429,Natural Language Processing,,L1,ELAKKIYA RAJASEKAR,269,T6 W1 Th7
+CS F429,Natural Language Processing,NLP,L1,ELAKKIYA RAJASEKAR,269,T6 W1 Th7
 CS F491,Special Project,,1,B VIJAYAKUMAR,,
 ECE F211,Electrical Machines,,L1,R GOMATHI BHAVANI,228,M5 T1 Th9 F5
 ,,,P1,R Gomathi Bhavani,313,T34
-ECE F212,Electromagnetic Theo,,L1,G AMARANATH,228,M6 T7 Th8 F3
+ECE F212,Electromagnetic Theo,EM theory,L1,G AMARANATH,228,M6 T7 Th8 F3
 ECE F214,Electronic Devices,,L1,M B SRINIVAS,228,M1 T8 W5 F2
 ECE F215,Digital Design,DD,L1,JAGADISH NAYAK,210,M2 T6 W1 Th2
 ,,,L2,R Swarnalatha,257,M2 T6 W1 Th2
@@ -186,14 +186,14 @@ ECE F215,Digital Design,DD,L1,JAGADISH NAYAK,210,M2 T6 W1 Th2
 ,,,P7,Abdul Razak,304,Th89
 ,,,P8,R Swarnalatha,304,F34
 ECE F266,Study Project,,1,V KALAICHELVI,,
-ECE F311,Communication Systems,,L1,JAGADISH NAYAK,221,M6 T1 W3 F3
+ECE F311,Communication Systems,Comm systems,L1,JAGADISH NAYAK,221,M6 T1 W3 F3
 ,,,P1,T G Thomas,330,T567
 ECE F314,EM Fields & Micro Engg,,L1,ABDUL RAZAK,223,M9 W7 Th2 F4
-ECE F366,Laboratory Project,,1,V KALAICHELVI,,
-ECE F367,Laboratory Project,,1,V KALAICHELVI,,
+ECE F366,Laboratory Project,Lab project,1,V KALAICHELVI,,
+ECE F367,Laboratory Project,Lab project,1,V KALAICHELVI,,
 ECE F376,Design Project,,1,V KALAICHELVI,,
 ECE F377,Design Project,,1,V KALAICHELVI,,
-ECE F434,Digital Signal Process,,L1,SHAZIA HASAN,223,M8 T4 W4 F5
+ECE F434,Digital Signal Process,DSP,L1,SHAZIA HASAN,223,M8 T4 W4 F5
 ,,,P1,Shazia Hasan,303,Th567
 ECE F472,Satellite Communication,,L1,ABDUL RAZAK,221,M3 W1 F2
 ECE F491,Special Project,,1,V KALAICHELVI,,
@@ -205,7 +205,7 @@ EEE F211,Electrical Machines,,L1,R GOMATHI BHAVANI,228,M5 T1 Th9 F5
 ,,,P1,R Gomathi Bhavani,313,T34
 EEE F212,Electromagnetic Theo,,L1,G AMARANATH,228,M6 T7 Th8 F3
 EEE F214,Electronic Devices,,L1,M B SRINIVAS,228,M1 T8 W5 F2
-EEE F215,Digital Design,,L1,JAGADISH NAYAK,210,M2 T6 W1 Th2
+EEE F215,Digital Design,DD,L1,JAGADISH NAYAK,210,M2 T6 W1 Th2
 ,,,L2,R Swarnalatha,257,M2 T6 W1 Th2
 ,,,L3,Vilas H Gaidhane,229,M2 T6 W1 Th2
 ,,,L4,Shazia Hasan,205,M2 T6 W1 Th2
@@ -218,18 +218,18 @@ EEE F215,Digital Design,,L1,JAGADISH NAYAK,210,M2 T6 W1 Th2
 ,,,P7,Abdul Razak,304,Th89
 ,,,P8,R Swarnalatha,304,F34
 EEE F266,Study Project,,1,V KALAICHELVI,,
-EEE F311,Communication Systems,,L1,JAGADISH NAYAK,221,M6 T1 W3 F3
+EEE F311,Communication Systems,Comm systems,L1,JAGADISH NAYAK,221,M6 T1 W3 F3
 ,,,P1,T G Thomas,330,T567
 EEE F312,Power Systems,,L1,SUNIL THOMAS,221,M8 W7 Th7 F5
 EEE F313,Analog & Digit VLSI Des,,L1,VILAS H GAIDHANE,229,M9 W4 Th5 F4
-EEE F366,Laboratory Project,,1,V KALAICHELVI,,
-EEE F367,Laboratory Project,,1,V KALAICHELVI,,
+EEE F366,Laboratory Project,Lab project,1,V KALAICHELVI,,
+EEE F367,Laboratory Project,Lab project,1,V KALAICHELVI,,
 EEE F376,Design Project,,1,V KALAICHELVI,,
 EEE F377,Design Project,,1,V KALAICHELVI,,
-EEE F411,Internet of Things,,L1,NILESH GOEL,269,M4 W6 F1
+EEE F411,Internet of Things,IoT,L1,NILESH GOEL,269,M4 W6 F1
 ,,,P1,Nilesh Goel,330,T23
 EEE F417,Comp Based Control Sys,,L1,R GOMATHI BHAVANI,223,M3 W9 F2
-EEE F432,Medical Instrumentation,,L1,R SWARNALATHA,221,M4 W8 F1
+EEE F432,Medical Instrumentation,Medical inst.,L1,R SWARNALATHA,221,M4 W8 F1
 EEE F472,Satellite Communication,,L1,ABDUL RAZAK,221,M3 W1 F2
 FIN F212,Funda of Fin and Account,,L1,ASGAR ALI,210,M7 T2 Th6
 FIN F311,Derivatives & Risk Mgmt,,L1,FAISAL NAZIR ZARGAR,267,M5 W5 Th9
@@ -245,11 +245,11 @@ HSS F232,Intro to Dev Studies,,L1,MRUTUYANJAYA SAHU,257,M7 T2 Th6
 HSS F266,Study Project,,1,SARTAJ RASOOL,,
 HSS F346,International Relations,,L1,SHAMSHAD KHAN,267,M1 T9 Th4
 HSS F349,Ecocriticism,,L1,SAYANTAN CHAKRABORTY,221,M1 T9 Th4
-HSS F350,"Human Rights: History, Theory and Practice",,L1,MRUTUYANJAYA SAHU,268,M5 W5 Th9
-HSS F365,Science of Sustainable Happiness,,L1,SHAZI S J,205,M7 T2 Th6
-IS F341,Software Engineering,,L1,PRAMOD GAUR,223,M6 T7 Th3
+HSS F350,"Human Rights: History, Theory and Practice",Human rights,L1,MRUTUYANJAYA SAHU,268,M5 W5 Th9
+HSS F365,Science of Sustainable Happiness,Happiness,L1,SHAZI S J,205,M7 T2 Th6
+IS F341,Software Engineering,Software engg,L1,PRAMOD GAUR,223,M6 T7 Th3
 ,,,P1,PRAMOD GAUR,335,
-MATH D021,Remedial Mathematics,,L1,K KUMAR,221,M7 T6 W2 Th5
+MATH D021,Remedial Mathematics,Remedial math,L1,K KUMAR,221,M7 T6 W2 Th5
 MATH F111,Mathematics I,Math I,L1,SUHEL AHMAD KHAN,101,T2 W5 Th1 F3
 ,,,L2,K Kumar,105,T2 W5 Th1 F5
 ,,,L3,TBA,123,T2 W5 Th1 F3
@@ -263,8 +263,8 @@ MATH F211,Mathematics III,Math III,L1,S BASKARAN,228,M3 T4 W4 Th5
 ,,,L2,S BASKARAN,220,T1 W8 Th1 F5
 MATH F212,Optimization,,L1,MANEESHA,223,M5 W5 Th9
 MATH F266,Study Project,,1,R ROOP KUMAR,,
-MATH F366,Laboratory Project,,1,R ROOP KUMAR,,
-MATH F367,Laboratory Project,,1,R ROOP KUMAR,,
+MATH F366,Laboratory Project,Lab project,1,R ROOP KUMAR,,
+MATH F367,Laboratory Project,Lab project,1,R ROOP KUMAR,,
 MATH F376,Design Project,,1,R ROOP KUMAR,,
 MATH F377,Design Project,,1,R ROOP KUMAR,,
 MATH F491,Special Project,,1,R ROOP KUMAR,,
@@ -280,18 +280,18 @@ ME F112,Workshop Practice,Workshop,L1,RAVINDRA BHARDWAJ,165,T5
 ,,,P7,Gulshan Kumar,MG1,Th89
 ME F211,Mechanics of Solids,,L1,PRIYANK UPADHYAYA,219,M1 T3 Th2 F5
 ME F212,Fluid Mechanics,,L1,MAJID HASAN KHAN,219,T6 W9 Th4 F2
-ME F216,Materials Science & Engineering,,L1,VINCENT S KUMAR,219,M9 T8 W1 Th8
+ME F216,Materials Science & Engineering,MS and engg,L1,VINCENT S KUMAR,219,M9 T8 W1 Th8
 ,,,P1,Vincent S Kumar,MF3,W56
-ME F217,Applied Thermodynamics,,L1,Snehaunshu Choudhury,219,T5 W8 Th3 F1
+ME F217,Applied Thermodynamics,Applied thermo.,L1,Snehaunshu Choudhury,219,T5 W8 Th3 F1
 ,,,P1,Majid Hasan Khan,MF4,M456
 ME F266,Study Project,,1,PRIYANK UPADHYAYA,,
 ME F314,Design of Machine Elements,,L1,RAVINDRA BHARDWAJ,276,M3 W3 Th3 F1
-ME F315,Advanced Manufacturing Processes,,L1,HARPREET SINGH BEDI,276,M8 T5 W1
+ME F315,Advanced Manufacturing Processes,Adv. manuf. processes,L1,HARPREET SINGH BEDI,276,M8 T5 W1
 ,,,P1,Harpreet Singh Bedi,MG1,F345
-ME F316,Manufacturing Management,,L1,GULSHAN KUMAR,276,M4 T1 Th6
+ME F316,Manufacturing Management,Manuf. mgmt.,L1,GULSHAN KUMAR,276,M4 T1 Th6
 ME F317,"Engines, Motors and Mobility",,L1,SHASHANK KHURANA,276,T4 W8 F2
-ME F366,Laboratory Project,,1,PRIYANK UPADHYAYA,,
-ME F367,Laboratory Project,,1,PRIYANK UPADHYAYA,,
+ME F366,Laboratory Project,Lab project,1,PRIYANK UPADHYAYA,,
+ME F367,Laboratory Project,Lab project,1,PRIYANK UPADHYAYA,,
 ME F376,Design Project,,1,PRIYANK UPADHYAYA,,
 ME F377,Design Project,,1,PRIYANK UPADHYAYA,,
 ME F461,Refrigeration & Aircond,,L1,HARPREET SINGH BEDI,276,T8 W4 Th8
@@ -313,8 +313,8 @@ PHY F111,Mech Oscillations & Wave,MOW,L1,R ROOP KUMAR,165,T1 W6 Th6 F1
 ,,,L3,G Amaranath,190,T1 W5 Th6 F1
 PHY F215,Intro to Astro & Astroph,,L1,TBA,276,M5 W5 Th9
 PHY F266,Study Project,,1,R ROOP KUMAR,,
-PHY F366,Laboratory Project,,1,R ROOP KUMAR,,
-PHY F367,Laboratory Project,,1,R ROOP KUMAR,,
+PHY F366,Laboratory Project,Lab project,1,R ROOP KUMAR,,
+PHY F367,Laboratory Project,Lab project,1,R ROOP KUMAR,,
 PHY F376,Design Project,,1,R ROOP KUMAR,,
 PHY F377,Design Project,,1,R ROOP KUMAR,,
 PHY F491,Special Project,,1,R ROOP KUMAR,,
