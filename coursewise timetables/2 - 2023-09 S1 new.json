@@ -1516,7 +1516,7 @@
         "sections": {
             "L1": {"instructor": "Sepideh S"                        , "room": "210" , "days": "M5 T5 W5"},
             "L2": {"instructor": "Aqila Begum"                      , "room": "257" , "days": "M5 T5 W5"},
-            "L3": {"instructor": "Aqila Begum"                      , "room": "334" , "days": "M8 Th4 F4"}
+            "L3": {"instructor": "Aqila Begum"                      , "room": "334" , "days": "M8 Th3 F4", "comment": "ERP shows Th3 instead of Th4"}
         }
     },
     "PHY F110": {
