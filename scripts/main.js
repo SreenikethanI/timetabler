@@ -50,34 +50,6 @@ function getSelections() {
     return sels;
 }
 
-//=| Helper methods - timetable rendering |===================================//
-
-/** Creates a `DocumentFragment` containing header rows.
- * @returns {DocumentFragment} */
-function createHeaderRow() {
-    const row1 = document.createElement("tr");
-    const row2 = document.createElement("tr");
-    const blank = Helper.createElement("th", [DOM.CSS_BLANK]);
-    blank.rowSpan = 2; blank.colSpan = 2;
-    row1.append(blank);
-
-    for (let i = 0; i < 9; i++) {
-        row1.append(Helper.createElement("th", [DOM.CSS_HEADING_PERIOD_NUM], i+1));
-
-        const time_start = (Constants.PERIOD_START
-            + Constants.PERIOD_DURATION * i
-            + Constants.PERIOD_BREAK * i);
-        const time_end = time_start + Constants.PERIOD_DURATION;
-
-        row2.append(Helper.createElement("td", [DOM.CSS_HEADING_PERIOD_TIME],
-            `${Helper.formatTime(time_start)} - ${Helper.formatTime(time_end)}`));
-    }
-
-    const df = document.createDocumentFragment();
-    df.append(row1, row2);
-    return df;
-}
-
 //=| Timetable list methods |=================================================//
 
 /** Callback to be attached to the Edit "✏️" button on a timetable entry.
@@ -227,81 +199,14 @@ function timetableListToggleCourses() {
  * by {@link Helper.getTimetableDetailed}, {@link Helper.getTimetableDetailedFromStudent},
  * and the like.
  * @param {string[]} fieldsFiltered A string array of field names to display.
- * @param {HTMLElement?} renderTarget The `table` element where the actual render
- * takes place. If left null, it will render in the table of ID {@link DOM.DOM_TIMETABLE}.
  * @param {string} title The title to display above the timetable. Newlines are
- * retained.
+ * retained as-is.
  */
-function displayTimetable(timetable, fields, renderTarget, title) {
-    const defaultRenderTarget = e(DOM.DOM_TIMETABLE);
-    if (!renderTarget) {renderTarget = defaultRenderTarget;}
-    if (!timetable) {return;}
-    const fieldsFiltered = fields.filter((x) => Constants.FIELDS.includes(x));
-    if (!fieldsFiltered) {return;}
-
-    const df = document.createDocumentFragment();
-    df.append(createHeaderRow());
-
-    // For each day...
-    for (let i_day = 0; i_day < timetable.length; i_day++) {
-        /** An array of periods in the current day. */
-        const day = timetable[i_day];
-        const row = Helper.createElement("tr", [],
-            Helper.createElement("th", [DOM.CSS_DAY_NAME], Constants.DAYS[i_day]),
-            Helper.createElement("td", [DOM.CSS_DAY_FIELDS], ...fieldsFiltered.map((f) =>
-                Helper.createElement("p", [], Constants.FIELDS_NAMES[f]))
-            ),
-        );
-
-        // For each period in the current day...
-        for (let i_period = 0; i_period < day.length; i_period++) {
-            const period = day[i_period];
-            const isFree = Helper.isPeriodFree(period);
-            const isNonCommon = Helper.isPeriodNonCommon(period);
-            const isConflict = Helper.isPeriodConflict(period);
-            const isIndeterminate = Helper.isPeriodIndeterminate(period);
-
-            // If current period is same as previous, extend the previous cell,
-            // i.e. block periods.
-            if (i_period > 0
-                && !isFree && !isNonCommon && !isConflict && !isIndeterminate
-                && Helper.arePeriodsEqual(period, day[i_period - 1])) {
-                row.lastChild.colSpan++;
-                continue;
-            }
-
-            /** Table cell that represents a single period. */
-            const cell_period = Helper.createElement("td", [DOM.CSS_PERIOD]);
-
-            if (isFree) {
-                cell_period.classList.add(DOM.CSS_PERIOD_FREE);
-                cell_period.innerHTML = DOM.CONTENTS_PERIOD_FREE;
-            } else if (isNonCommon) {
-                cell_period.classList.add(DOM.CSS_PERIOD_NONCOMMON);
-                cell_period.innerHTML = DOM.CONTENTS_PERIOD_NONCOMMON;
-            } else if (isConflict) {
-                cell_period.classList.add(DOM.CSS_PERIOD_CONFLICT);
-                cell_period.textContent = DOM.CONTENTS_PERIOD_CONFLICT;
-            } else if (isIndeterminate) {
-                cell_period.classList.add(DOM.CSS_PERIOD_INDETERMINATE);
-                cell_period.textContent = DOM.CONTENTS_PERIOD_INDETERMINATE;
-            } else {
-                cell_period.append(...fieldsFiltered.map((field) =>
-                    Helper.createElement("p", [], period[field]))
-                );
-            }
-
-            row.append(cell_period);
-        }
-        df.append(row);
-    }
-
-
-    if (renderTarget == defaultRenderTarget) {
-        e(DOM.DOM_TIMETABLE_TITLE).textContent = (title || "");
-    }
-    renderTarget.replaceChildren(df);
-    fitTimetable();
+function displayTimetable(timetable, fields, title) {
+    return Helper.displayTimetable(
+        timetable, fields, title,
+        e(DOM.DOM_TIMETABLE), e(DOM.DOM_TIMETABLE_TITLE),
+    );
 }
 
 /** Displays the timetable given by the student name.
@@ -310,14 +215,15 @@ function displayTimetable(timetable, fields, renderTarget, title) {
  * @param {string[]} fields The fields to display. Refer to {@link Constants.FIELDS}.
  */
 function displayTimetableKey(timetableKey, semIndex, fields) {
-    return displayTimetable(
-        Helper.getTimetableDetailedFromStudent(
-            Storage.ttGet(semIndex, timetableKey),
-            semIndex),
-        fields,
-        null,
-        `${timetableKey}'s timetable`
+    return Helper.displayTimetableKey(
+        timetableKey, semIndex, fields,
+        e(DOM.DOM_TIMETABLE), e(DOM.DOM_TIMETABLE_TITLE),
     );
+}
+
+/** Scales the timetable container by setting its CSS `zoom` value. */
+function fitContainerByZoom() {
+    return Helper.fitContainerByZoom(e(DOM.DOM_TIMETABLE_CONTAINER));
 }
 
 /** Compares two or more timetables and displays the common periods.
@@ -415,7 +321,7 @@ function compareTimetables(timetables, fields, doNotRender) {
     if (!doNotRender) {
         // Finally call the `displayTimetable` function to actually handle
         // displaying the timetable to the user.
-        displayTimetable(commonTimetable, fields, null, "Common timetable");
+        displayTimetable(commonTimetable, fields, "Common timetable");
     }
     return commonTimetable;
 }
@@ -454,7 +360,7 @@ function init() {
         getIsCompareMode();
         loadTimetablesList(Storage.semIndexGet(), true);
     }, false);
-    window.addEventListener("resize", fitTimetable);
+    window.addEventListener("resize", fitContainerByZoom);
     e(DOM.DOM_SHOW_COURSES_IN_LIST).addEventListener("input", () => {
         timetableListToggleCourses();
     });
@@ -472,26 +378,10 @@ function removeLoading() {
     e(DOM.DOM_LOADING).classList.add(DOM.CSS_COMPLETE);
 }
 
-function fitTimetable() {
-    const container = e(DOM.DOM_TIMETABLE_CONTAINER);
-    container.style.zoom = 1;
-    const w = container.scrollWidth, h = container.scrollHeight;
-
-    const wBound = document.body.clientWidth - 10;
-    const hBound = Math.min(document.body.scrollHeight, window.innerHeight - 20);
-
-    const factor = Math.min(1, Math.min(wBound / w, hBound / h));
-    container.style.zoom = factor;
-}
-
-//=| Testing |================================================================//
-
+//=| Testing - before init |==================================================//
 Storage.ttSetAll(Constants.FRIENDS);
-// console.log(await Builder.showDialog());
 
-//=| DOM Event handlers |=====================================================//
-//   For attaching event handlers, see explanation in `init`.
-
+//=| Init |===================================================================//
 if (document.readyState === "complete") {
     // If the document completes loading before the script does, (for example,
     // when async-loading Course list in constants.js), directly invoke the init
@@ -500,3 +390,6 @@ if (document.readyState === "complete") {
 } else {
     window.addEventListener("load", init, false);
 }
+
+//=| Testing - after init |===================================================//
+// console.log(await Builder.showDialog());

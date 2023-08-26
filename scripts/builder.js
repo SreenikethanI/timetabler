@@ -26,20 +26,26 @@ const PALETTE = {
 
 //=| General |================================================================//
 
-/** Shows the builder dialog with a pre-filled timetable.
- * @param {Constants.Student} student The list of courses to initially display.
- * @param {string} name The name of the student.
- * @returns `true` if OK was clicked, `false` if Cancel was clicked.
+/** Shows the builder dialog optionally with a pre-filled timetable.
+ * @param {Constants.Student} courses The list of courses to initially display.
+ * @param {string} title The name of the student, which will be automatically
+ * suffixed with "'s timetable"
+ * @returns `true` if Save was clicked, `false` if Discard was clicked.
  */
-export async function showDialog(student, name) {
+export async function showDialog(courses, title) {
     if (isDialogShown) {throw "Dialog is already visible.";}
     isDialogShown = true;
     const deferred = new Helper.DeferredPromise();
+
+    // Attach event handlers for dialog buttons
     e(DOM.DOM_BUILDER_OK).addEventListener("click", () => deferred.resolve(true), {once: true});
     e(DOM.DOM_BUILDER_CANCEL).addEventListener("click", () => deferred.resolve(false), {once: true});
 
+    // Present dialog and wait for user response
     e(DOM.DOM_BUILDER_CONTAINER).classList.remove(DOM.CSS_BUILDER_HIDDEN);
     /** @type {boolean} */ const dialogResult = await deferred.promise;
+
+    // Finish up and return
     e(DOM.DOM_BUILDER_CONTAINER).classList.add(DOM.CSS_BUILDER_HIDDEN);
     isDialogShown = false;
     return dialogResult;
