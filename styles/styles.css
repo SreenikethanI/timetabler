@@ -274,9 +274,25 @@ button#builder-ok:active {background-color: #70e070;}
     text-align: center;
 }
 
-#builder-title-edit {
+/* #builder-title-edit { // Button
     text-align: center;
     display: block;
+} */
+
+#builder-title-edit, .builder-title-edit {
+    font: inherit;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid gray;
+    text-align: right;
+}
+#builder-title-edit:focus {
+    outline: none;
+    border-bottom: 2px solid #70e070;
+}
+#builder-title-edit:read-only {
+    border-bottom: none;
 }
 
 /* PRINT -------------------------------------------------------------------- */
