@@ -1,5 +1,7 @@
 "use strict";
 import * as Constants from './constants.js';
+import * as DOM from './constants_dom.js';
+import * as Storage from './storage.js';
 
 //=| DeferredPromise |========================================================//
 /** A promise which can be resolved or rejected manually. */
@@ -232,4 +234,153 @@ export function getTimetableDetailedFromStudent(student, semIndex) {
         getTimetableMinimal(student, semIndex),
         semIndex
     );
+}
+
+//=| Timetable render functions |=============================================//
+
+/** Creates a `DocumentFragment` containing header rows.
+ * @returns {DocumentFragment} */
+function createHeaderRow() {
+    const row1 = document.createElement("tr");
+    const row2 = document.createElement("tr");
+    const blank = createElement("th", [DOM.CSS_BLANK]);
+    blank.rowSpan = 2; blank.colSpan = 2;
+    row1.append(blank);
+
+    for (let i = 0; i < 9; i++) {
+        row1.append(createElement("th", [DOM.CSS_HEADING_PERIOD_NUM], i+1));
+
+        const time_start = (Constants.PERIOD_START
+            + Constants.PERIOD_DURATION * i
+            + Constants.PERIOD_BREAK * i);
+        const time_end = time_start + Constants.PERIOD_DURATION;
+
+        row2.append(createElement("td", [DOM.CSS_HEADING_PERIOD_TIME],
+            `${formatTime(time_start)} - ${formatTime(time_end)}`));
+    }
+
+    const df = document.createDocumentFragment();
+    df.append(row1, row2);
+    return df;
+}
+
+/** Displays the given timetable.
+ * @param {Constants.TimetableDetailed} timetable Timetable object as returned
+ * by {@link getTimetableDetailed}, {@link getTimetableDetailedFromStudent},
+ * and the like.
+ * @param {string[]} fields A string array of field names to display.
+ * @param {string} title The title to display above the timetable. Newlines are
+ * retained as-is.
+ * @param {HTMLTableElement} renderTarget The table element where the actual
+ * render takes place.
+ * @param {HTMLHeadingElement} titleRenderTarget The heading element where the
+ * title is set.
+ */
+export function displayTimetable(timetable, fields, title, renderTarget, titleRenderTarget) {
+    // const defaultRenderTarget = e(DOM.DOM_TIMETABLE);
+    // if (!renderTarget) {renderTarget = defaultRenderTarget;}
+    if (!timetable) {return;}
+    const fieldsFiltered = fields.filter((x) => Constants.FIELDS.includes(x));
+    if (!fieldsFiltered) {return;}
+
+    const df = document.createDocumentFragment();
+    df.append(createHeaderRow());
+
+    // For each day...
+    for (let i_day = 0; i_day < timetable.length; i_day++) {
+        /** An array of periods in the current day. */
+        const day = timetable[i_day];
+        const row = createElement("tr", [],
+            createElement("th", [DOM.CSS_DAY_NAME], Constants.DAYS[i_day]),
+            createElement("td", [DOM.CSS_DAY_FIELDS], ...fieldsFiltered.map((f) =>
+                createElement("p", [], Constants.FIELDS_NAMES[f]))
+            ),
+        );
+
+        // For each period in the current day...
+        for (let i_period = 0; i_period < day.length; i_period++) {
+            const period = day[i_period];
+            const isFree = isPeriodFree(period);
+            const isNonCommon = isPeriodNonCommon(period);
+            const isConflict = isPeriodConflict(period);
+            const isIndeterminate = isPeriodIndeterminate(period);
+
+            // If current period is same as previous, extend the previous cell,
+            // i.e. block periods.
+            if (i_period > 0
+                && !isFree && !isNonCommon && !isConflict && !isIndeterminate
+                && arePeriodsEqual(period, day[i_period - 1])) {
+                row.lastChild.colSpan++;
+                continue;
+            }
+
+            /** Table cell that represents a single period. */
+            const cell_period = createElement("td", [DOM.CSS_PERIOD]);
+
+            if (isFree) {
+                cell_period.classList.add(DOM.CSS_PERIOD_FREE);
+                cell_period.innerHTML = DOM.CONTENTS_PERIOD_FREE;
+            } else if (isNonCommon) {
+                cell_period.classList.add(DOM.CSS_PERIOD_NONCOMMON);
+                cell_period.innerHTML = DOM.CONTENTS_PERIOD_NONCOMMON;
+            } else if (isConflict) {
+                cell_period.classList.add(DOM.CSS_PERIOD_CONFLICT);
+                cell_period.textContent = DOM.CONTENTS_PERIOD_CONFLICT;
+            } else if (isIndeterminate) {
+                cell_period.classList.add(DOM.CSS_PERIOD_INDETERMINATE);
+                cell_period.textContent = DOM.CONTENTS_PERIOD_INDETERMINATE;
+            } else {
+                cell_period.append(...fieldsFiltered.map((field) =>
+                    createElement("p", [], period[field]))
+                );
+            }
+
+            row.append(cell_period);
+        }
+        df.append(row);
+    }
+
+
+    if (titleRenderTarget) {
+        titleRenderTarget.textContent = (title || "");
+    }
+    renderTarget.replaceChildren(df);
+    fitContainerByZoom(renderTarget.parentElement);
+}
+
+/** Displays the timetable given by the student name.
+ * @param {string} timetableKey The key of the timetable.
+ * @param {number} semIndex The index of the semester in {@link Constants.COURSES}.
+ * @param {string[]} fields The fields to display. Refer to {@link Constants.FIELDS}.
+ * @param {HTMLTableElement} renderTarget The table element where the actual
+ * render takes place.
+ * @param {HTMLHeadingElement} titleRenderTarget The heading element where the
+ * title is set.
+ */
+export function displayTimetableKey(timetableKey, semIndex, fields, renderTarget, titleRenderTarget) {
+    return displayTimetable(
+        getTimetableDetailedFromStudent(
+            Storage.ttGet(semIndex, timetableKey),
+            semIndex),
+        fields,
+        `${timetableKey}'s timetable`,
+        renderTarget,
+        titleRenderTarget,
+    );
+}
+
+/** Scales the given container by setting its CSS `zoom` value. Note that this
+ * requires a parent whose width is independent of this container's width.
+ * @param {HTMLElement} container The container which will be scaled.
+ */
+export function fitContainerByZoom(container) {
+    // container = container || e(DOM.DOM_TIMETABLE_CONTAINER);
+    container.style.zoom = 1;
+    const w = container.scrollWidth, h = container.scrollHeight;
+
+    const wBound = document.body.clientWidth - 10;
+    const hBound = Math.min(document.body.scrollHeight, window.innerHeight - 20);
+
+    const factor = Math.min(1, Math.min(wBound / w, hBound / h));
+    container.style.zoom = factor;
 }
