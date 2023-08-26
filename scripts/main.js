@@ -484,14 +484,10 @@ function fitTimetable() {
     container.style.zoom = factor;
 }
 
-//=| Testing |================================================================//
-
+//=| Testing - before init |==================================================//
 Storage.ttSetAll(Constants.FRIENDS);
-// console.log(await Builder.showDialog());
 
-//=| DOM Event handlers |=====================================================//
-//   For attaching event handlers, see explanation in `init`.
-
+//=| Init |===================================================================//
 if (document.readyState === "complete") {
     // If the document completes loading before the script does, (for example,
     // when async-loading Course list in constants.js), directly invoke the init
@@ -500,3 +496,6 @@ if (document.readyState === "complete") {
 } else {
     window.addEventListener("load", init, false);
 }
+
+//=| Testing - after init |===================================================//
+console.log(await Builder.showDialog());
