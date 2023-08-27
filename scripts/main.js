@@ -184,7 +184,7 @@ function handleSelectionChange() {
     }
 }
 
-/** Toggles showing the names of courses  */
+/** Toggles showing the titles of courses  */
 function timetableListToggleCourses() {
     const checked = e(DOM.DOM_SHOW_COURSES_IN_LIST).checked;
     Array.from(document.getElementsByClassName(DOM.CSS_ATTR_COURSE)).forEach((elem) => {
@@ -392,4 +392,4 @@ if (document.readyState === "complete") {
 }
 
 //=| Testing - after init |===================================================//
-// console.log(await Builder.showDialog());
+console.log(await Builder.showDialog());

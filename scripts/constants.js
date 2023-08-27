@@ -3,15 +3,15 @@
 /*
 === Some terminology ===
 The following are constant pre-determined data, given by the university:
- • A `Semester` object consists of `Course`s.
+ • A `Semester` object consists of multiple `Course`s.
  • A `Course`   object consists of some properties, including a `Sections`.
- • A `Sections` object consists of `Section`s.
+ • A `Sections` object consists of multiple `Section`s.
  • A `Section`  object consists of many properties.
 
 The following are real-life data which can change depending on person:
  • A `Students` object consists of student names mapped to a `Student` each.
  • A `Student`  object consists of course IDs mapped to arrays of section numbers
-    to which they're enrolled into.
+                to which they're enrolled into.
 
 The following are timetable information derived/constructed from each `Student`:
  • A `TimetableMinimal` object is an array of `DayMinimal`.
@@ -112,7 +112,7 @@ const FRIENDS_Y1S2 = {
     //  • MATH F112: L1, L2, L3, L4, L5
     //  • PHY F111: L1, L2, L3
 
-    // The following course have *some* same days/hours for *some* of the sections:
+    // The following courses have *some* same days/hours for *some* of the sections:
     //  • CS F111: L1, L2
     //  • MATH F113: L1, L3
 

@@ -29,11 +29,12 @@ const PALETTE = {
 function loadCourses() {
     const listAvailable = e(DOM.DOM_BUILDER_COURSES_AVAILABLE);
     const listSelected  = e(DOM.DOM_BUILDER_COURSES_SELECTED);
-
+    // TODO
 }
 
 /** Shows the builder dialog optionally with a pre-filled timetable.
- * @param {Constants.Student} courses The list of courses to initially display.
+ * @param {Constants.Student} courses The list of courses and sections to
+ * pre-fill the dialog with.
  * @param {string} title The name of the student, which will be automatically
  * suffixed with "'s timetable".
  * @param {number} semIndex The index of the semester in {@link Constants.SEMESTERS}.
