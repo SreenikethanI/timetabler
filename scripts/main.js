@@ -74,7 +74,7 @@ function timetableListActionDelete(key) {
  * checkboxes rather than radio buttons.
  * Note that, if not in compare mode and `preserveSelections` is `true`, only
  * the first selection will be retained, and all choices will become radio buttons.
- * @param {number} semIndex The index of the semester in `Constants.COURSES`.
+ * @param {number} semIndex The index of the semester in {@link Constants.SEMESTERS}.
  * @param {boolean} preserveSelection `true` if the current user selection(s) are to be
  * preserved, else `false`.*/
 function loadTimetablesList(semIndex, preserveSelection) {
@@ -90,7 +90,7 @@ function loadTimetablesList(semIndex, preserveSelection) {
     var firstOption = null;
 
     /** Courses available for the semester `semIndex` */
-    const courses = Constants.SEMESTERS[semIndex];
+    const semester = Constants.SEMESTERS[semIndex] || {};
 
     for (/** Student name */ const studentName in Storage.ttGetAll()[semIndex]) {
         /** The courses registered by the student */
@@ -132,7 +132,7 @@ function loadTimetablesList(semIndex, preserveSelection) {
                     // The below expression gives the short title of the course.
                     // If it doesn't exist, gives the regular title of the course.
                     // If that doesn't exist as well, gives the course ID itself.
-                    (courses[cid] ? (courses[cid].title_short || courses[cid].title || cid) : cid)
+                    (semester[cid] ? (semester[cid].title_short || semester[cid].title || cid) : cid)
                     + ": "
                 ),
                 structuredClone(sections).sort().join(", "),
@@ -211,7 +211,7 @@ function displayTimetable(timetable, fields, title) {
 
 /** Displays the timetable given by the student name.
  * @param {string} timetableKey The key of the timetable.
- * @param {number} semIndex The index of the semester in {@link Constants.COURSES}.
+ * @param {number} semIndex The index of the semester in {@link Constants.SEMESTERS}.
  * @param {string[]} fields The fields to display. Refer to {@link Constants.FIELDS}.
  */
 function displayTimetableKey(timetableKey, semIndex, fields) {
@@ -330,7 +330,7 @@ function compareTimetables(timetables, fields, doNotRender) {
  * timetable keys given.
  * @param {string[]} timetableKeys The keys of the timetables.
  * {@link Constants.FIELDS}.
- * @param {number} semIndex The index of the semester in {@link Constants.COURSES}.
+ * @param {number} semIndex The index of the semester in {@link Constants.SEMESTERS}.
  * @param {string[]} fields The fields to display. Refer to {@link Constants.FIELDS}.
  */
 function compareTimetablesKeys(timetableKeys, semIndex, fields) {

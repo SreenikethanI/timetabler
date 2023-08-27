@@ -31,7 +31,7 @@ function getSelectionsOld(isCompareMode) {
  * Note that, if not in compare mode and `preserveSelections` is `true`, only
  * the first selection will be retained, and all choices will become radio buttons.
  * @deprecated instead use {@link loadTimetablesList}
- * @param {number} semIndex The index of the semester in `Constants.COURSES`.
+ * @param {number} semIndex The index of the semester in {@link Constants.SEMESTERS}.
  * @param {boolean} preserveSelection `true` if the current user selection(s) are to be
  * preserved, else `false`.
  */
@@ -114,7 +114,7 @@ function handleSelectionChangeOld() {
 /** Displays the timetable given by the student name.
  * @deprecated instead use {@link displayTimetableKey}
  * @param {string} timetableKey The key of the timetable. Refer to {@link Constants.FRIENDS}.
- * @param {number} semIndex The index of the semester in {@link Constants.COURSES}.
+ * @param {number} semIndex The index of the semester in {@link Constants.SEMESTERS}.
  * @param {string[]} fields The fields to display. Refer to {@link Constants.FIELDS}.
  */
 function displayTimetableKeyOld(timetableKey, semIndex, fields) {
@@ -131,7 +131,7 @@ function displayTimetableKeyOld(timetableKey, semIndex, fields) {
  * @deprecated instead use {@link compareTimetablesKeys}
  * @param {string[]} timetableKeys The keys of the timetables. Refer to {@link Constants.FRIENDS}.
  * {@link Constants.FIELDS}.
- * @param {number} semIndex The index of the semester in {@link Constants.COURSES}.
+ * @param {number} semIndex The index of the semester in {@link Constants.SEMESTERS}.
  * @param {string[]} fields The fields to display. Refer to {@link Constants.FIELDS}.
  */
 function compareTimetablesKeysOld(timetableKeys, semIndex, fields) {

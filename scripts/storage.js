@@ -33,7 +33,7 @@ function lsSet(value, key) {if (LS_AVAILABLE) localStorage.setItem(key, value);}
 // >===========================================================================<
 
 /** Safely checks whether `key` exists in `timetables`.
- * @param {number} semIndex The index of the semester.
+ * @param {number} semIndex The index of the semester in {@link Constants.SEMESTERS}.
  * @param {string} key The key to check
  * @see https://eslint.org/docs/latest/rules/no-prototype-builtins#:~:text=a%20malicious%20client%20could%20send%20a%20JSON%20value%20like%20%7B%22hasOwnProperty%22%3A%201%7D%20and%20cause%20the%20server%20to%20crash.
  * @returns {boolean}
@@ -116,7 +116,7 @@ function sync(updateTT, updateSels, updateSemIndex, updateCompareMode) {
  * `structuredClone`d, so any changes further made will not reflect in
  * LocalStorage.
  * @param {string} key
- * @param {number} semIndex The index of the semester.
+ * @param {number} semIndex The index of the semester in {@link Constants.SEMESTERS}.
  * @param {Constants.Student} value
  * @throws {RangeError} semIndex must be not null and >= 0.
  */
@@ -130,7 +130,7 @@ export function ttSet(semIndex, key, value) {
 /** Gets the timetable for the given `key` and semester. Note that the returned
  * object is `structuredClone`d, so any changes further made will not reflect in
  * LocalStorage.
- * @param {number} semIndex The index of the semester.
+ * @param {number} semIndex The index of the semester in {@link Constants.SEMESTERS}.
  * @param {string} key
  * @returns {Constants.Student?}
  */
@@ -139,7 +139,7 @@ export function ttGet(semIndex, key) {
 }
 
 /** Removes the timetable for the given key and semester.
- * @param {number} semIndex The index of the semester.
+ * @param {number} semIndex The index of the semester in {@link Constants.SEMESTERS}.
  * @param {string} key
  */
 export function ttRemove(semIndex, key) {
@@ -174,7 +174,7 @@ export function ttSetAll(newTimetables) {
  * @param {Constants.Student} timetable
  */
 /** Loops through every student in the given semester.
- * @param {number} semIndex
+ * @param {number} semIndex The index of the semester in {@link Constants.SEMESTERS}.
  * @param {forEachCallback} callback
 */
 export function ttForEach(semIndex, callback) {
@@ -187,7 +187,7 @@ export function ttForEach(semIndex, callback) {
 // >===========================================================================<
 
 /** Get an array of selected keys from the local storage
- * @param {number} semIndex
+ * @param {number} semIndex The index of the semester in {@link Constants.SEMESTERS}.
  * @returns {string[]?}
  * @throws {RangeError} semIndex must be not null and >= 0.
  */
@@ -197,7 +197,7 @@ export function selectionsGet(semIndex) {
 }
 
 /** Set the given list of selected keys into local storage.
- * @param {number} semIndex
+ * @param {number} semIndex The index of the semester in {@link Constants.SEMESTERS}.
  * @param {string[]} value A string array of keys.
  * @throws {RangeError} semIndex must be not null and >= 0.
 */

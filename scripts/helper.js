@@ -119,7 +119,7 @@ export function createElement(tagName, classList, ...content) {
  * @param {Constants.Student} student An object containing courses mapped to the
  * sections enrolled by the student.
  * "keys" are course IDs and whose "values" are arrays containing section names.
- * @param {number} semIndex The index of the semester in `Constants.COURSES`.
+ * @param {number} semIndex The index of the semester in {@link Constants.SEMESTERS}.
  * @returns {Constants.TimetableMinimal} A minimal timetable constructed from
  * given student.
  * @example
@@ -138,7 +138,7 @@ export function createElement(tagName, classList, ...content) {
 export function getTimetableMinimal(student, semIndex) {
     /** @type {Constants.TimetableMinimal} */
     const timetable = [];
-    const semester_courses = Constants.SEMESTERS[semIndex];
+    const semester = Constants.SEMESTERS[semIndex] || {};
 
     // Preparing a template
     for (let i = 0; i < 5; i++) {
@@ -152,8 +152,8 @@ export function getTimetableMinimal(student, semIndex) {
     }
 
     for (const course_id in student) {
-        if (!semester_courses[course_id]) {continue;}
-        const all_sections = semester_courses[course_id].sections;
+        if (!semester[course_id]) {continue;}
+        const all_sections = semester[course_id].sections;
 
         student[course_id].forEach((section_num) => {
             const section = all_sections[section_num] || Constants.GET_SECTION_BLANK();
@@ -183,7 +183,7 @@ export function getTimetableMinimal(student, semIndex) {
  * to the periods of the given timetable.
  * @param {Constants.TimetableMinimal} timetable_minimal The minimal timetable to
  * elaborate.
- * @param {number} semIndex The index of the semester in `Constants.COURSES`.
+ * @param {number} semIndex The index of the semester in {@link Constants.SEMESTERS}.
  * @returns {Constants.TimetableDetailed} */
 export function getTimetableDetailed(timetable_minimal, semIndex) {
     /** @type {Constants.TimetableDetailed} */
@@ -225,7 +225,7 @@ export function getTimetableDetailed(timetable_minimal, semIndex) {
  * @param {Constants.Student} student An object containing courses mapped to the
  * sections enrolled by the student.
  * "keys" are course IDs and whose "values" are arrays containing section names.
- * @param {number} semIndex The index of the semester in `Constants.COURSES`.
+ * @param {number} semIndex The index of the semester in {@link Constants.SEMESTERS}.
  * @returns {Constants.TimetableDetailed} A detailed timetable constructed from
  * given student.
  */
@@ -350,7 +350,7 @@ export function displayTimetable(timetable, fields, title, renderTarget, titleRe
 
 /** Displays the timetable given by the student name.
  * @param {string} timetableKey The key of the timetable.
- * @param {number} semIndex The index of the semester in {@link Constants.COURSES}.
+ * @param {number} semIndex The index of the semester in {@link Constants.SEMESTERS}.
  * @param {string[]} fields The fields to display. Refer to {@link Constants.FIELDS}.
  * @param {HTMLTableElement} renderTarget The table element where the actual
  * render takes place.
