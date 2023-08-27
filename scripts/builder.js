@@ -26,13 +26,20 @@ const PALETTE = {
 
 //=| General |================================================================//
 
+function loadCourses() {
+    const listAvailable = e(DOM.DOM_BUILDER_COURSES_AVAILABLE);
+    const listSelected  = e(DOM.DOM_BUILDER_COURSES_SELECTED);
+
+}
+
 /** Shows the builder dialog optionally with a pre-filled timetable.
  * @param {Constants.Student} courses The list of courses to initially display.
  * @param {string} title The name of the student, which will be automatically
- * suffixed with "'s timetable"
+ * suffixed with "'s timetable".
+ * @param {number} semIndex The index of the semester in {@link Constants.SEMESTERS}.
  * @returns `true` if Save was clicked, `false` if Discard was clicked.
  */
-export async function showDialog(courses, title) {
+export async function showDialog(courses, title, semIndex) {
     if (isDialogShown) {throw "Dialog is already visible.";}
     isDialogShown = true;
     const deferred = new Helper.DeferredPromise();

@@ -284,16 +284,50 @@ button#builder-ok:active {background-color: #70e070;}
     border-top: none;
     border-left: none;
     border-right: none;
-    border-bottom: 2px solid gray;
+    border-bottom: 2pt solid gray;
     text-align: right;
 }
 #builder-title-edit:focus {
     outline: none;
-    border-bottom: 2px solid #70e070;
+    border-bottom: 2pt solid #70e070;
 }
 #builder-title-edit:read-only {
     border-bottom: none;
 }
+
+#builder-flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+#builder-flex-container > div {
+    display: inline;
+    flex-basis: auto;
+    border: 1px dashed lightgray;
+    min-width: 300px;
+    padding: 4pt;
+    align-items: stretch;
+}
+#builder-courses-available-container {
+    flex-grow: 1;
+    flex-basis: auto;
+}
+#builder-courses-selected-container {
+    flex-grow: 1;
+    flex-basis: auto;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4pt;
+    cursor: default;
+}
+.list-heading {font-weight: bold;}
+.list-item {padding-left: 12pt;}
 
 /* PRINT -------------------------------------------------------------------- */
 /* Reference: https://stackoverflow.com/a/2618980/ */
