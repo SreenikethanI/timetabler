@@ -244,7 +244,7 @@
         "title_short": "",
         "IC": "V Kalaichelvi",
         "sections": {
-            "L1": {"instructor": "V KALAICHELVI"                    , "room": "221" , "days": "M5 W5 Th9"}
+            "L1": {"instructor": "V KALAICHELVI"                    , "room": "184" , "days": "M5 W5 Th9", "comment": "Room # originally 221"}
         }
     },
     "BITS F327": {
@@ -899,7 +899,7 @@
         "title_short": "Comm systems",
         "IC": "Jagadish Nayak",
         "sections": {
-            "L1": {"instructor": "JAGADISH NAYAK"                   , "room": "221" , "days": "M6 T1 W3 F3"},
+            "L1": {"instructor": "JAGADISH NAYAK"                   , "room": "184" , "days": "M6 T1 W3 F3"}, "comment": "Room # originally 221",
             "P1": {"instructor": "T G Thomas"                       , "room": "330" , "days": "T567"}
         }
     },
@@ -957,7 +957,7 @@
         "title_short": "",
         "IC": "Abdul Razak",
         "sections": {
-            "L1": {"instructor": "ABDUL RAZAK"                      , "room": "221" , "days": "M3 W1 F2"}
+            "L1": {"instructor": "ABDUL RAZAK"                      , "room": "184" , "days": "M3 W1 F2", "comment": "Room # originally 221"}
         }
     },
     "ECE F491": {
@@ -1043,7 +1043,7 @@
         "title_short": "Comm systems",
         "IC": "Jagadish Nayak",
         "sections": {
-            "L1": {"instructor": "JAGADISH NAYAK"                   , "room": "221" , "days": "M6 T1 W3 F3"},
+            "L1": {"instructor": "JAGADISH NAYAK"                   , "room": "184" , "days": "M6 T1 W3 F3"}, "comment": "Room # originally 221",
             "P1": {"instructor": "T G Thomas"                       , "room": "330" , "days": "T567"}
         }
     },
@@ -1052,7 +1052,7 @@
         "title_short": "",
         "IC": "Sunil Thomas",
         "sections": {
-            "L1": {"instructor": "SUNIL THOMAS"                     , "room": "221" , "days": "M8 W7 Th7 F5"}
+            "L1": {"instructor": "SUNIL THOMAS"                     , "room": "184" , "days": "M8 W7 Th7 F5", "comment": "Room # originally 221"}
         }
     },
     "EEE F313": {
@@ -1117,7 +1117,7 @@
         "title_short": "Medical inst.",
         "IC": "R Swarnalatha",
         "sections": {
-            "L1": {"instructor": "R SWARNALATHA"                    , "room": "221" , "days": "M4 W8 F1"}
+            "L1": {"instructor": "R SWARNALATHA"                    , "room": "184" , "days": "M4 W8 F1", "comment": "Room # originally 221"}
         }
     },
     "EEE F472": {
@@ -1125,7 +1125,7 @@
         "title_short": "",
         "IC": "Abdul Razak",
         "sections": {
-            "L1": {"instructor": "ABDUL RAZAK"                      , "room": "221" , "days": "M3 W1 F2"}
+            "L1": {"instructor": "ABDUL RAZAK"                      , "room": "184" , "days": "M3 W1 F2", "comment": "Room # originally 221"}
         }
     },
     "FIN F212": {
@@ -1237,7 +1237,7 @@
         "title_short": "",
         "IC": "Sayantan Chakraborty",
         "sections": {
-            "L1": {"instructor": "SAYANTAN CHAKRABORTY"             , "room": "221" , "days": "M1 T9 Th4"}
+            "L1": {"instructor": "SAYANTAN CHAKRABORTY"             , "room": "184" , "days": "M1 T9 Th4", "comment": "Room # originally 221"}
         }
     },
     "HSS F350": {
@@ -1270,7 +1270,7 @@
         "title_short": "Remedial math",
         "IC": "K Kumar",
         "sections": {
-            "L1": {"instructor": "K KUMAR"                          , "room": "221" , "days": "M7 T6 W2 Th5"}
+            "L1": {"instructor": "K KUMAR"                          , "room": "184" , "days": "M7 T6 W2 Th5", "comment": "Room # originally 221"}
         }
     },
     "MATH F111": {

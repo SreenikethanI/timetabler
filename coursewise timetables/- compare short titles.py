@@ -1,13 +1,9 @@
 from json import load
 from csv import reader
-from typing import TypedDict
 from rich.table import Table
 import rich
 
-# Type hints for JSON file structure
-SectionJSON = TypedDict("Section", {"instructor": str, "room": str, "days": str})
-CourseJSON = TypedDict("Course", {"title": str, "title_short": str, "IC": str, "sections": dict[str, SectionJSON]})
-SemesterJSON = dict[str, CourseJSON]
+from _common import *
 
 def compare_short_titles(path_csv: str, path_json: str):
     full_titles: dict[str, str] = {} # Mappings from Course ID to Full title
@@ -24,8 +20,7 @@ def compare_short_titles(path_csv: str, path_json: str):
             full_titles[course_id] = title_full
 
     # Load JSON
-    with open(path_json, "r", encoding="utf-8-sig") as f:
-        data_json: SemesterJSON = load(f)
+    data_json = load_semester(path_json)
     for course_id, course in data_json.items():
         if course_id not in full_titles:
             full_titles[course_id] = course["title"]

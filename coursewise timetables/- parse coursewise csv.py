@@ -1,21 +1,16 @@
 from csv import reader
 from os.path import isfile
 from sys import argv
-from typing import TypedDict
 from rich.pretty import pprint
 from json import dumps
 
-# Type definitions
-Section = TypedDict("Section", {"room": str, "instructor": str, "days": str})
-Sections = dict[str, Section]
-Course = TypedDict("Course", {"title": str, "title_short": str, "IC": str, "sections": Sections})
-Semester = dict[str, Course]
+from _common import *
 
 def bye():
     input("Press Enter to exit.")
     raise SystemExit
 
-def create_empty_course() -> Course:
+def create_empty_course() -> CourseJSON:
     return {"title":"", "title_short":"", "IC":"", "sections": {}}
 
 # >>==========================================================================<<
@@ -33,7 +28,7 @@ if not isfile(path_in):
 
 # >>==========================================================================<<
 
-semester: Semester = {}
+semester: SemesterJSON = {}
 with open(path_in, "r", encoding="utf-8-sig") as f:
     r = reader(f)
 
@@ -46,7 +41,7 @@ with open(path_in, "r", encoding="utf-8-sig") as f:
     #   Since a `dict` is mutable, we can read further rows and just modify
     #   `temp_course` and it'll automatically reflect in `semester`.
 
-    temp_course: Course = create_empty_course()
+    temp_course: CourseJSON = create_empty_course()
     for course_id, title, title_short, section_number, instructor, room, days in r:
         if course_id:
             # Next course, so create a new Course object
