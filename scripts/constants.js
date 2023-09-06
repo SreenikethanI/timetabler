@@ -32,6 +32,14 @@ The following are the detailed equivalents of the corresponding minimal objects:
 /** @typedef {PeriodDetailed[]} DayDetailed */
 /** @typedef {DayDetailed[]} TimetableDetailed */
 
+/** @typedef {{room:string, instructor:string, days:string}} Section */
+/** @typedef {Object.<string, Section>} Sections */
+/** @typedef {{title:string, title_short:string, IC:string, sections:Sections}} Course */
+/** @typedef {Object.<string, Course>} Semester */
+
+/** @typedef {Object.<string, string[]>} Student */
+/** @typedef {Object.<string, Student>} Students */
+
 /** List of fields for a period. */
 export const FIELDS = ["course", "title", "title_short", "IC", "section", "instructor", "room", "section_room"];
 /** Human-friendly names of fields for a period. */
@@ -66,11 +74,6 @@ export const GET_PERIOD_INDETERMINATE = () => ({course: "INDETERMINATE", section
 
 //=| Courses |================================================================//
 
-/** @typedef {{room:string, instructor:string, days:string}} Section */
-/** @typedef {Object.<string, Section>} Sections */
-/** @typedef {{title:string, title_short:string, IC:string, sections:Sections}} Course */
-/** @typedef {Object.<string, Course>} Semester */
-
 /** Load JSON from path.
  * @param {string} path
  * @returns {Promise<Semester>}
@@ -87,9 +90,6 @@ const SEMESTERS_PROMISES = [
 ];
 
 //=| Friends |================================================================//
-
-/** @typedef {Object.<string, string[]>} Student */
-/** @typedef {Object.<string, Student>} Students */
 
 /** @type {Students} Friends' timetables under Year 1 Semester 1 */
 const FRIENDS_Y1S1 = {
