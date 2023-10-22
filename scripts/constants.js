@@ -72,7 +72,7 @@ export const GET_PERIOD_CONFLICT = () => ({course: "CONFLICT", section: ""});
 /** @returns {PeriodMinimal} */
 export const GET_PERIOD_INDETERMINATE = () => ({course: "INDETERMINATE", section: ""});
 
-//=| Courses |================================================================//
+//=| JSON load function |=====================================================//
 
 /** Load JSON from path.
  * @param {string} path
@@ -82,6 +82,8 @@ async function loadJSON(path) {
     const response = await fetch(path);
     return await response.json();
 }
+
+//=| Promises |===============================================================//
 
 const SEMESTERS_PROMISES = [
     loadJSON("coursewise timetables\\0 - Y1S1.json"),
@@ -161,3 +163,4 @@ export const FRIENDS = [
     FRIENDS_Y1S2,
     FRIENDS_Y2S1,
 ];
+// export const FRIENDS = await loadJSON("testing\\friends.json");
