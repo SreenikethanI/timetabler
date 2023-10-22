@@ -1,4 +1,5 @@
 /* BUILDER ------------------------------------------------------------------ */
+/* Container, for providing a dimmed background */
 #builder-container {
     position: fixed; top: 0; bottom: 0; left: 0; right: 0;
     background-color: #000000b0;
@@ -6,6 +7,7 @@
 #builder-container.hidden {display: none;}
 body:has(#builder-container):not(:has(#builder-container.hidden)) {overflow: hidden;}
 
+/* Builder dialog itself */
 #builder {
     position: absolute; top: 0; bottom: 0; left: 0; right: 0;
     background-color: white;
@@ -17,9 +19,11 @@ body:has(#builder-container):not(:has(#builder-container.hidden)) {overflow: hid
     row-gap: 8pt;
 }
 
+/* Divides the builder into two parts: main contents, and the action buttons. */
 #builder-contents {grid-row: 1; overflow-y: auto;}
 #builder-actions {grid-row: 2;}
 
+/* All buttons inside builder */
 #builder button {
     cursor: pointer;
     float: right;
@@ -37,16 +41,11 @@ button#builder-ok {background-color: #80f080;}
 button#builder-ok:hover {background-color: #a0ffa0;}
 button#builder-ok:active {background-color: #70e070;}
 
+/* Timetable title box */
 #builder-title {
     font-family: Georgia, serif;
     text-align: center;
 }
-
-/* #builder-title-edit { // Button
-    text-align: center;
-    display: block;
-} */
-
 #builder-title-edit, .builder-title-edit {
     font: inherit;
     border-top: none;
@@ -63,14 +62,15 @@ button#builder-ok:active {background-color: #70e070;}
     border-bottom: none;
 }
 
-#builder-flex-container {
+/* Container for holding two blocks: Available courses and selected courses */
+#builder-courses-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: stretch;
 }
-#builder-flex-container > div {
+#builder-courses-container > div {
     display: inline;
     flex-basis: auto;
     border: 1px dashed lightgray;
@@ -87,6 +87,7 @@ button#builder-ok:active {background-color: #70e070;}
     flex-basis: auto;
 }
 
+/* General replacement for a multi-line <select>. */
 .list {
     display: flex;
     flex-direction: column;
