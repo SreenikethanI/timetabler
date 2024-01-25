@@ -42,6 +42,7 @@ with open(path_in, "r", encoding="utf-8-sig") as f:
     #   `temp_course` and it'll automatically reflect in `semester`.
 
     temp_course: CourseJSON = create_empty_course()
+    raise ValueError("Change code to exclude title_short, and read from csv.")
     for course_id, title, title_short, section_number, instructor, room, days in r:
         if course_id:
             # Next course, so create a new Course object
