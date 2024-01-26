@@ -29,7 +29,7 @@ export const DOM_TIMETABLE_TITLE     = "timetable-title";
 // Builder
 export const DOM_BUILDER_CONTAINER         = "builder-container";
 export const DOM_BUILDER_TITLE             = "builder-title";
-export const DOM_BUILDER_TITLE_EDIT        = "builder-title-edit";
+export const DOM_BUILDER_TITLE_EDITABLE    = "builder-title-editable";
 export const DOM_BUILDER_OK                = "builder-ok";
 export const DOM_BUILDER_CANCEL            = "builder-cancel";
 export const DOM_BUILDER_COURSES_AVAILABLE = "builder-courses-available";

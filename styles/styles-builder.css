@@ -46,7 +46,7 @@ button#builder-ok:active {background-color: #70e070;}
     font-family: Georgia, serif;
     text-align: center;
 }
-#builder-title-edit, .builder-title-edit {
+#builder-title-editable, .builder-title-edit {
     font: inherit;
     border-top: none;
     border-left: none;
@@ -54,11 +54,11 @@ button#builder-ok:active {background-color: #70e070;}
     border-bottom: 2pt solid gray;
     text-align: right;
 }
-#builder-title-edit:focus {
+#builder-title-editable:focus {
     outline: none;
     border-bottom: 2pt solid #70e070;
 }
-#builder-title-edit:read-only {
+#builder-title-editable:read-only {
     border-bottom: none;
 }
 
@@ -73,7 +73,7 @@ button#builder-ok:active {background-color: #70e070;}
 #builder-courses-container > div {
     display: inline;
     flex-basis: auto;
-    border: 1px dashed lightgray;
+    border: 1px dashed lightgray; /* TODO: remove border */
     min-width: 300px;
     padding: 4pt;
     align-items: stretch;
@@ -93,7 +93,10 @@ button#builder-ok:active {background-color: #70e070;}
     flex-direction: column;
     align-items: stretch;
     gap: 4pt;
-    cursor: default;
+    cursor: pointer;
+    border: 1pt solid lightgray;
+    padding: 4pt;
+    user-select: none;
 }
 .list-heading {font-weight: bold;}
 .list-item {padding-left: 12pt;}
