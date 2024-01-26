@@ -5,20 +5,41 @@ This folder contains the main course list as received from BITS official emails.
 Each file here is prefixed with a number (0, 1, 2, ...) which will be referred
 to as the "Semester index" in the code.
 
+## Files
+The **pdf**, **xlsx**, **csv**, **json** files are documented in the section
+[#Creating a file for a Semester](#creating-a-file-for-a-semester). The
+remaining files are documented here:
+| File | Description |
+| ---: | --- |
+| [_course_titles.**csv**](_course_titles.csv) | A file that contains course titles and short titles for every course ID. I use this instead of relying on the PDF, since<br>1. it's easy to maintain short titles in one place<br>2. the titles in the PDF files are ... inconsistent 💀 |
+| [_common.**py**](_common.py) | Some common functions and type hints. |
+| [_parse coursewise csv.**py**](<_parse coursewise csv.py>) | Converts the CSV files into JSON files. |
+| [_VBA Add prefix.**bas**](<_VBA Add prefix.bas>) | A quick VBA code to add a prefix to the selected cells, e.g. to convert "**1**","**2**","**3**","**4**" to "**P1**","**P2**","**P3**","**P4**" |
+
+| File | Description |
+| ---: | --- |
+| [_compare short titles.**py**](<_compare short titles.py>) | This was meant to compare  |
+| [_room number change notice.**py**](<_room number change notice.py>) |  |
+
 ## Creating a file for a Semester
 A "Semester" here refers to the entire list of courses available for a certain
 semester. This information is received as a PDF in email from the AUGSD
 department, for example: "*Draft Timetable_FD_Second  Sem 23-24_19 1 2024.pdf*"
 
 ### 👉 Brief steps
-Here's a brief on what shall be done with the PDF. Each point is elaborated into
-1. The table from the PDF file is imported into an Excel spreadsheet. Manual
-   clean-up and data sanitization is performed. (refer to
+Here's a brief on what shall be done with the PDF. The chain is **PDF** →
+**XLSX** → **CSV** → **JSON**.
+1. The table from the PDF file is imported into Excel. Manual clean-up and data
+   sanitization is performed. Motive: Excel felt like the best tool to organize
+   tabular data (refer to
    [#Cleaning and sanitizing data](#👉-cleaning-and-sanitizing-data))
-2. The above Excel file is exported as CSV for easy portability of data.
+2. The Excel file is exported as CSV. Movie: easy portability of data, i.e. can
+   be parsed using built-in Python `csv` module, etc.
 3. This CSV file is then fed into
-   [the Python script](-%20parse%20coursewise%20csv.py) and a resulting JSON
-   file is created.
+   [the Python script](<_parse coursewise csv.py>) and a resulting JSON
+   file is created. Motive: JavaScript doesn't have native support for CSV, and
+   JSON is natively supported by JavaScript, and also its hierarchial nature
+   felt most suitable for representing semester info.
 4. This JSON file is then referenced in the [Constants](/scripts/constants.js)
    file under `SEMESTERS_PROMISES`.
 
@@ -34,9 +55,7 @@ Here's a brief on what shall be done with the PDF. Each point is elaborated into
 
 3. Import this table into Excel (and delete the other sheets, if any).
 
-4. Add the following columns manually:
-   - "#" that just contains the row number. ([More info](#the--column))
-   <!-- - "Short title" that contains the shortened title. -->
+4. Add a "#" that just contains the row number. ([More info](#the--column))
 
 ---
 ## More info
