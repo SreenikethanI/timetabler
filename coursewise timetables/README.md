@@ -11,10 +11,10 @@ The **pdf**, **xlsx**, **csv**, **json** files are documented in the section
 remaining files are documented here:
 | File | Description |
 | ---: | --- |
-| [_course_titles.**csv**](_course_titles.csv) | A file that contains course titles and short titles for every course ID. I use this instead of relying on the PDF, since<br>1. it's easy to maintain short titles in one place<br>2. the titles in the PDF files are ... inconsistent 💀 |
+| [_course_titles.**csv**](_course_titles.csv) | A file that contains course titles and short titles for every course ID. I use this instead of relying on the PDF, since:<br>1. it's easy to maintain short titles in one place<br>2. the titles in the PDF files are ... inconsistent 💀 |
 | [_common.**py**](_common.py) | Some common functions and type hints. |
 | [_parse coursewise csv.**py**](<_parse coursewise csv.py>) | Converts the CSV files into JSON files. |
-| [_VBA Add prefix.**bas**](<_VBA Add prefix.bas>) | A quick VBA code to add a prefix to the selected cells, e.g. to convert "**1**","**2**","**3**","**4**" to "**P1**","**P2**","**P3**","**P4**" |
+| [_VBA Add prefix.**bas**](<_VBA Add prefix.bas>) | A quick VBA code to add a prefix to the selected cells.<br>e.g. to convert "**1**","**2**","**3**" to "**P1**","**P2**","**P3**" |
 
 | File | Description |
 | ---: | --- |
@@ -30,14 +30,14 @@ department, for example: "*Draft Timetable_FD_Second  Sem 23-24_19 1 2024.pdf*"
 Here's a brief on what shall be done with the PDF. The chain is **PDF** →
 **XLSX** → **CSV** → **JSON**.
 1. The table from the PDF file is imported into Excel. Manual clean-up and data
-   sanitization is performed. Motive: Excel felt like the best tool to organize
+   sanitization is performed. **Motive:** Excel felt like the best tool to organize
    tabular data (refer to
    [#Cleaning and sanitizing data](#👉-cleaning-and-sanitizing-data))
-2. The Excel file is exported as CSV. Movie: easy portability of data, i.e. can
+2. The Excel file is exported as CSV. **Motive:** easy portability of data, i.e. can
    be parsed using built-in Python `csv` module, etc.
 3. This CSV file is then fed into
    [the Python script](<_parse coursewise csv.py>) and a resulting JSON
-   file is created. Motive: JavaScript doesn't have native support for CSV, and
+   file is created. **Motive:** JavaScript doesn't have native support for CSV, and
    JSON is natively supported by JavaScript, and also its hierarchial nature
    felt most suitable for representing semester info.
 4. This JSON file is then referenced in the [Constants](/scripts/constants.js)
@@ -47,10 +47,10 @@ Here's a brief on what shall be done with the PDF. The chain is **PDF** →
 1. Import PDF into Excel: *Data* tab → *Get Data* → *From <u>F</u>ile* →
    *From <u>P</u>DF*
 
-2. If each page gets imported as its own table, then ensure all pages have the
-   same number of columns, and create a new "Append" query to combine all these
-   tables, and click "Use First Row as Headers" (after removing any useless
-   Top rows).<br>
+2. If each page gets imported as its own table, then ensure all tables have the
+   same number of columns, and create a new Append query to combine all these
+   tables. Finally remove any useless Top rows, and click "Use First Row as
+   Headers".<br>
    Optionally, rename the columns to something more legible.
 
 3. Import this table into Excel (and delete the other sheets, if any).
@@ -64,7 +64,7 @@ Here's a brief on what shall be done with the PDF. The chain is **PDF** →
 **Here's what it is:**
 This column contains "row numbers". Start typing 1, 2, 3 for the first 3 cells,
 and Auto Fill to the remaining rows. Example:<br>
-![Example for the # column](<../docs/cwtt appendix hash.png>)
+![Example for the # column](<../docs/cwtt appendix hash 1.png>)
 
 **Here's the purpose:**
 Say you want to temporarily sort by a column, make some changes, and revert the
@@ -72,13 +72,14 @@ order of the rows. This # column will help you to get back the original order of
 the rows.
 
 **Here's why it matters:**
-Take the rows 10 thru 13 in the screenshot above. The
+For example, take the rows 10 thru 13 in the screenshot above. The
 "*BIO F111 General Biology*" course thus takes up 4 rows. Only row 10 has the
 course number and the title, and the other rows (rows 11 thru 13) are blank
 for these two columns.
 
 So I think you must've figured it out by now that, if we reorder any rows,
-then we are losing critical information (example, row 12 was inserted after row
-4, then it would add an extra section for *Bio Lab* and remove a section from
-*General Bio*, which will be incorrect). Hence it is critical that we preserve
-the original order of the rows, which can be achieved using this "#" column.
+then we are losing critical information. For example, IF row 12 was inserted
+after row 4, then it would add an extra section for *Bio Lab* and remove a
+section from *General Bio*, which will be incorrect). Hence it is critical that
+we preserve the original order of the rows, which can be achieved using this "#"
+column.
