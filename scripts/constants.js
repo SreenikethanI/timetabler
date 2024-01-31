@@ -86,9 +86,9 @@ async function loadJSON(path) {
 //=| Promises |===============================================================//
 
 const SEMESTERS_PROMISES = [
-    loadJSON("coursewise timetables\\0 - Y1S1.json"),
-    loadJSON("coursewise timetables\\1 - Y1S2 new.json"),
-    loadJSON("coursewise timetables\\2 - 2023-09 S1 new.json"),
+    loadJSON("coursewise timetables\\0 - 2022-09 Sem1 (Year 1 only).json"),
+    loadJSON("coursewise timetables\\1 - 2023-02 Sem2 (Year 1 only).json"),
+    loadJSON("coursewise timetables\\2 - 2023-09 Sem1 v2.json"),
 ];
 
 //=| Friends |================================================================//
