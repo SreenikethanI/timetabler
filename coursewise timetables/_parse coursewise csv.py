@@ -1,7 +1,8 @@
 from csv import reader
 from json import dump
 from typing import NamedTuple
-from collections import defaultdict
+# from collections import defaultdict
+from os.path import realpath
 
 from _common import *
 
@@ -30,11 +31,14 @@ class ParseWarning(NamedTuple):
 
 # >>==========================================================================<<
 
-def bye():
-    input("Press Enter to exit.")
+def bye(msg):
+    """Print the given message and exit."""
+    input(f"{msg}\nPress Enter to exit.")
     raise SystemExit
 
 def create_empty_course() -> CourseJSON:
+    """Create a `CourseJSON` object with all properties set to empty strings,
+    empty dicts, etc. as applicable."""
     return {"title":"", "title_short":"", "IC":"", "sections": {}}
 
 # >>==========================================================================<<
@@ -54,6 +58,7 @@ def load_course_titles(path_in: str) -> dict[str, tuple[str, str]]:
 
     with open(path_in, "r", encoding="utf-8-sig") as f:
         r = reader(f)
+        next(r) # Skip headers
         for cols in r:
             (course_id, title, title_short) = map(str.strip,
                                                   resize_list(cols, 3, ""))
@@ -178,7 +183,11 @@ def parse_csv(path_csv: str, path_titles: str) -> tuple[SemesterJSON, list[Parse
             if course_id:
                 curr_course = create_empty_course()
                 semester[course_id] = curr_course
-                (curr_course["title"], curr_course["title_short"]) = titles[course_id]
+                if course_id in titles:
+                    (curr_course["title"], curr_course["title_short"]) = titles[course_id]
+                else:
+                    warn(row_num_csv, f"Course ID {course_id} not found in Titles CSV.")
+                    curr_course["title"] = course_title
                 section_prefix = "L"
 
                 try:
@@ -247,39 +256,50 @@ def parse_csv(path_csv: str, path_titles: str) -> tuple[SemesterJSON, list[Parse
 # >>==========================================================================<<
 
 if __name__ == "__main__":
-    # Import modules
+    ### Import modules
     from sys import argv
     from os.path import isfile, splitext
 
-    # Load file path from command-line argument.
-    if len(argv) < 2:
-        print("Drag and drop a file onto this script, i.e. pass it as an "
-              "argument to this script.")
-        bye()
-    path_in = argv[1]
-    if not isfile(path_in):
-        print("Given file path doesn't exist.")
-        print("   ", path_in)
-        bye()
+    ### Load CSV file path from command-line argument.
+    path_in = argv[1] if len(argv) >= 2 else ""
+    while True:
+        if isfile(path_in): break
+        if path_in: print("  Error: CSV file path doesn't exist.")
+        path_in = input("Enter CSV path: ").replace('"', '').strip()
+
     path_out = splitext(path_in)[0] + ".json"
 
-    print("Input path :", path_in)
-    print("Output path:", path_out)
+    ### Load Titles CSV file path from command-line argument.
+    path_titles = argv[2] if len(argv) >= 3 else "_course_titles.csv"
+    while True:
+        if isfile(path_titles): break
+        if path_titles: print("  Error: Titles CSV path doesn't exist.")
+        path_titles = input("Enter path for \"_course_titles.csv\": ").replace('"', '').strip()
+    print()
+
+    ### Confirm before start
+    print("These are the paths:")
+    print("  Input CSV  :", path_in)
+    print("  Output JSON:", path_out)
+    print("  Titles CSV :", path_titles)
     if isfile(path_out):
         yn = input("Output file already exists, overwrite? [y/N] ").strip()[-1:].lower()
-        # Check for just "y", so that other inputs will be interpreted as "No".
-        if yn != "y":
-            bye()
+        # Check for just "y", so that other inputs will be interpreted as a No.
+        if yn != "y": bye("Cancelling.")
+    else:
+        yn = input("Start? [Y/n] ").strip()[-1:].lower()
+        if yn != "y": bye("Cancelling.")
+    print()
 
-    # Parse
-    semester, warnings = parse_csv_old(path_in)
+    ### Parse
+    semester, warnings = parse_csv(path_in, path_titles)
     print("Parsed CSV.")
     if warnings:
         print(len(warnings), "warnings found:")
         for w in warnings:
             print(w)
 
-    # Output
+    ### Output
     with open(path_out, "w") as f:
         dump(semester, f, indent=4)
     print("Written to output path.")
