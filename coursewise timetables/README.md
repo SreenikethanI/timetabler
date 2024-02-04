@@ -92,3 +92,11 @@ information. For example, IF row 12 was inserted after row 4, then it would add
 an extra section for *Bio Lab* and remove a section from *General Bio*, which
 will be incorrect. Hence it is critical that we preserve the original order of
 the rows, which can be achieved using this "#" column.
+
+<!-- you get a cookie for reading this 😃😄 -->
+
+<!-- cookies are tasty -->
+
+<!-- except if you have diabetes -->
+
+<!-- sorry if you have diabetes -->
