@@ -130,17 +130,19 @@ def parse_csv(path_csv: str, path_titles: str) -> tuple[SemesterJSON, list[Parse
 
     The CSV file SHOULD have a header row, and SHOULD have the following columns
     in the same order mentioned below:
-    1. row number a.k.a. "#" (check `coursewise timetables/README.md` for info)
-    2. COM COD
-    3. course id
-    4. course title
-    5. credit (L P U)
-    6. section
-    7. instructor/IC
-    8. room
-    9. days/hours
+    1. COM COD
+    2. course id
+    3. course title
+    4. credit (L P U)
+    5. section
+    6. instructor/IC
+    7. room
+    8. days/hours
 
     Extra columns are ignored, and missing columns are taken as blank."""
+
+    # Removed from docstring above (ignore, basically):
+    # 1. row number a.k.a. "#" (check `coursewise timetables/README.md` for info)
 
     semester: SemesterJSON = {}
     warnings: list[ParseWarning] = []
@@ -150,7 +152,7 @@ def parse_csv(path_csv: str, path_titles: str) -> tuple[SemesterJSON, list[Parse
 
     titles = load_course_titles(path_titles)
     # course_has_LP: dict[str, tuple[bool, bool]] = defaultdict(lambda: (False, False))
-    row_num_prev: int | None = None
+    # row_num_prev: int | None = None
     with open(path_csv, "r", encoding="utf-8-sig") as f:
         r = reader(f)
         next(r) # Skip headers
@@ -165,18 +167,32 @@ def parse_csv(path_csv: str, path_titles: str) -> tuple[SemesterJSON, list[Parse
                 continue
 
             # Unpack columns and strip all columns.
-            (row_num, _com_cod, course_id, course_title, credit_LPU, section_number,
-             instructor, room, days) = map(str.strip, resize_list(cols, 9, ""))
+            cols_filtered = list(map(str.strip, resize_list(cols, 8, "")))
+
+            for col_index, col in enumerate(cols_filtered):
+                if "\n" in col or "\r" in col:
+                    warn(row_num_csv, "Newline found, replacing with space.",
+                         col_index + 1)
+                    cols_filtered[col_index] = (col
+                                                .replace("\r\n", " ")
+                                                .replace("\n", " ")
+                                                .replace("\r", " ")
+                                                )
+
+            (_com_cod, course_id, course_title, credit_LPU, section_number,
+             instructor, room, days) = cols_filtered
 
             # Verify Row number, just for redundancy.
-            try:
-                row_num_int = int(row_num)
-                if row_num_prev is None:
-                    row_num_prev = row_num_int
-                elif row_num_int < row_num_prev:
-                    warn(row_num_csv, "Row # is not ascending, did you forget to sort?", 1)
-            except:
-                warn(row_num_csv, "Row number isn't an int.", 1)
+            # NOTE: This was a temporary idea, but I feel now it's unnecessary
+            # and just extra effort.
+            # try:
+            #     row_num_int = int(row_num)
+            #     if row_num_prev is None:
+            #         row_num_prev = row_num_int
+            #     elif row_num_int < row_num_prev:
+            #         warn(row_num_csv, "Row # is not ascending, did you forget to sort?", 1)
+            # except:
+            #     warn(row_num_csv, "Row number isn't an int.", 1)
 
             # Course ID encountered, so create a new Course object, and figure
             # out whether the course has lectures and/or practicals sections
