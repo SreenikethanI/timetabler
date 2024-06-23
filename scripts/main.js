@@ -17,7 +17,7 @@ const e = (id) => document.getElementById(id);
 
 //#endregion
 //=| Helper methods - user input |============================================//
-//#region Helper - user input
+//#region User input
 
 /** Gets whether compare mode is enabled by the user.
  * @returns {boolean} */
@@ -55,7 +55,7 @@ function getSelections() {
 
 //#endregion
 //=| Timetable list methods |=================================================//
-//#region Timetable list
+//#region TT list
 
 /** Callback to be attached to the Edit "✏️" button on a timetable entry.
  * @param {string} key The key of the timetable to edit.
@@ -132,7 +132,9 @@ function loadTimetablesList(semIndex, preserveSelection) {
         entry.append(Helper.createElement("p", [DOM.CSS_ATTR_KEY], studentName));
 
         // Adding names of courses and their sections
-        entry.append(...Object.entries(studentCourses).map(([cid, sections]) =>
+        (entry.append(...Object.entries(studentCourses)
+        .filter(([cid, sections]) => sections.length > 0) // remove empty
+        .map(([cid, sections]) =>
             Helper.createElement("p", [DOM.CSS_ATTR_COURSE],
                 Helper.createElement("span", [DOM.CSS_ATTR_COURSE_ID],
                     // The below expression gives the short title of the course.
@@ -143,7 +145,7 @@ function loadTimetablesList(semIndex, preserveSelection) {
                 ),
                 structuredClone(sections).sort().join(", "),
             )
-        ));
+        )));
 
         entry.addEventListener("click", (event) => {
             // When `option.click()` is called, THIS event gets fired again,
@@ -200,7 +202,7 @@ function timetableListToggleCourses() {
 
 //#endregion
 //=| Timetable display/compare methods |======================================//
-//#region Timetable display/compare
+//#region TT display/compare
 
 /** Displays the given timetable.
  * @param {Constants.Timetable} timetable Timetable object as returned

@@ -121,7 +121,8 @@ const FRIENDS_Y2S1 = {
 const FRIENDS_Y2S2 = {
     "Test": {
         "CHE F341": ["P1"],
-        "BIOT F244": ["P2"]
+        "BIOT F244": ["P2"],
+        "CS F266": ["L1"]
     }
 };
 
