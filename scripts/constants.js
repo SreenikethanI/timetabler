@@ -86,12 +86,6 @@ const SEMESTERS_PROMISES = [
 
 /** @type {Students} Friends' timetables under Year 1 Semester 1 */
 const FRIENDS_Y1S1 = {
-    "(003) Stellin": {"BIO F110":["P6"],"BIO F111":["L1"],"BITS F110":["L2","P1"],"BITS F112":["L1"],"CHEM F110":["P6"],"CHEM F111":["L1"],"CS F111":["L1","P2"],"MATH F111":["L1"]},
-    "(031) Ritvik,\n(029) Adithya Nandakumar,\n(034) Sreeni,\n(036) Emaan": {"BIO F110":["P1"],"BIO F111":["L2"],"BITS F110":["L1","P2"],"BITS F112":["L1"],"CHEM F110":["P4"],"CHEM F111":["L2"],"CS F111":["L2","P3"],"MATH F111":["L2"]},
-    "(050) Aditya Agarwal": {"BIO F110":["P2"],"BIO F111":["L2"],"BITS F110":["L1","P2"],"BITS F112":["L2"],"CHEM F110":["P5"],"CHEM F111":["L2"],"CS F111":["L2","P3"],"MATH F111":["L2"]},
-    "(077) Adithya Sunoj": {"BIO F110":["P3"],"BIO F111":["L2"],"BITS F110":["L1","P2"],"BITS F112":["L2"],"CHEM F110":["P5"],"CHEM F111":["L2"],"CS F111":["L2","P3"],"MATH F111":["L2"]},
-    "(298) Lakesh": {"BITS F111":["L2"],"EEE F111":["L2"],"MATH F111":["L5"],"MATH F113":["L2"],"ME F112":["L2","P7"],"PHY F110":["P2"],"PHY F111":["L2"]},
-    "(321) Karthik": {"BITS F111":["L3"],"EEE F111":["L3"],"MATH F111":["L6"],"MATH F113":["L3"],"ME F112":["L3","P3"],"PHY F110":["P2"],"PHY F111":["L3"]},
 };
 
 /** @type {Students} Friends' timetables under Year 1 Semester 2 */
@@ -109,24 +103,19 @@ const FRIENDS_Y1S2 = {
     //  • CS F111: L1, L2
     //  • MATH F113: L1, L3
 
-    // "sample conflict 1":  {"CS F111": ["L1", "L2"]},
-    // "sample conflict 2":  {},
-
-    "(031) Ritvik,\n(029) Adithya Nandakumar,\n(032) Ryan": {"BITS F111": ["L1"], "EEE F111": ["L1"], "MATH F112": ["L4"], "MATH F113": ["L1"], "ME F112": ["L3","P2"], "PHY F110": ["P7"], "PHY F111": ["L1"]},
-    "(034) Sreeni,\n(036) Emaan": {"BITS F111": ["L2"], "EEE F111": ["L2"], "MATH F112": ["L4"], "MATH F113": ["L3"], "ME F112": ["L2","P2"], "PHY F110": ["P8"], "PHY F111": ["L2"]},
-    "(050) Aditya Agarwal": {"BITS F111": ["L2"], "EEE F111": ["L2"], "MATH F112": ["L6"], "MATH F113": ["L3"], "ME F112": ["L2","P2"], "PHY F110": ["P4"], "PHY F111": ["L2"]},
-    "(079) Stephen,\n(077) Adithya Sunoj": {"BITS F111": ["L2"], "EEE F111": ["L2"], "MATH F112": ["L6"], "MATH F113": ["L3"], "ME F112": ["L2","P6"], "PHY F110": ["P5"], "PHY F111": ["L2"]},
-    "(085) Haroon":  {"BITS F111": ["L3"], "EEE F111": ["L3"], "MATH F112": ["L5"], "MATH F113": ["L2"], "ME F112": ["L1","P5"], "PHY F110": ["P3"], "PHY F111": ["L3"]},
-    "(110) Anish":   {"BITS F111": ["L3"], "EEE F111": ["L3"], "MATH F112": ["L5"], "MATH F113": ["L2"], "ME F112": ["L1","P1"], "PHY F110": ["P8"], "PHY F111": ["L3"]},
-
-    "(025) Vignesh": {"BIO F110": ["P1"], "BIO F111": ["L3"], "BITS F110": ["L2","P2"], "BITS F112": ["L2"], "CHEM F110": ["P6"], "CHEM F111": ["L3"], "CS F111": ["L3","P3"], "MATH F112": ["L3"]},
-    "(298) Lakesh":  {"BIO F110": ["P6"], "BIO F111": ["L2"], "BITS F110": ["L3","P3"], "BITS F112": ["L2"], "CHEM F110": ["P3"], "CHEM F111": ["L2"], "CS F111": ["L2","P2"], "MATH F112": ["L2"]},
-    "(321) Karthik": {"BIO F110": ["P2"], "BIO F111": ["L2"], "BITS F110": ["L3","P3"], "BITS F112": ["L2"], "CHEM F110": ["P3"], "CHEM F111": ["L2"], "CS F111": ["L2","P2"], "MATH F112": ["L2"]},
+    "Test for conflict":  {"CS F111": ["L1", "L2"]},
 };
 
 /** @type {Students} Friends' timetables under Year 2 Semester 1 */
 const FRIENDS_Y2S1 = {
-}
+    "Test": {
+        "CS F214": ["L1"],
+        "CS F215": ["L1", "P1"],
+        "CS F222": ["L1"],
+        "CS F213": ["L3", "P1"],
+        "MGTS F211": ["L3"],
+        "HSS F211": ["L1"],
+    },
 };
 
 /** @type {Students} Friends' timetables under Year 2 Semester 2 */
