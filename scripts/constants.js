@@ -5,7 +5,6 @@
 The following are constant pre-determined data, given by the university:
  • A `Semester` object consists of multiple `Course`s.
  • A `Course`   object consists of some properties and an array of `Section`s.
-//  • A `Sections` object consists of multiple `Section`s.
  • A `Section`  object consists of many properties.
 
 The following are real-life data which can change depending on person:
