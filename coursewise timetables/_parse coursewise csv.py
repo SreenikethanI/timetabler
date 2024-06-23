@@ -36,10 +36,15 @@ def bye(msg):
     input(f"{msg}\nPress Enter to exit.")
     raise SystemExit
 
+def create_empty_course_old() -> CourseJSON_Old:
+    """[deprecated] Create a `CourseJSON` object with all properties set to
+    empty strings, empty dicts, etc. as applicable."""
+    return {"title":"", "title_short":"", "IC":"", "sections": {}}
+
 def create_empty_course() -> CourseJSON:
     """Create a `CourseJSON` object with all properties set to empty strings,
-    empty dicts, etc. as applicable."""
-    return {"title":"", "title_short":"", "IC":"", "sections": {}}
+    empty lists, etc. as applicable."""
+    return {"title":"", "title_short":"", "IC":"", "sections": []}
 
 # >>==========================================================================<<
 
@@ -67,7 +72,7 @@ def load_course_titles(path_in: str) -> dict[str, tuple[str, str]]:
 
     return titles
 
-def parse_csv_old(path_in: str) -> tuple[SemesterJSON, list[ParseWarning]]:
+def parse_csv_old(path_in: str) -> tuple[SemesterJSON_Old, list[ParseWarning]]:
     """[deprecated] Parse the given CSV file and return a dict.
 
     The CSV file SHOULD NOT have a header row, and SHOULD have the following
@@ -84,13 +89,13 @@ def parse_csv_old(path_in: str) -> tuple[SemesterJSON, list[ParseWarning]]:
 
     warnings: list[ParseWarning] = []
 
-    semester: SemesterJSON = {}
+    semester: SemesterJSON_Old = {}
     with open(path_in, "r", encoding="utf-8-sig") as f:
         r = reader(f)
 
         # Start with an empty course, to which we keep adding entries, until we
         # encounter the next course ID.
-        current_course: CourseJSON = create_empty_course()
+        current_course: CourseJSON_Old = create_empty_course_old()
         for row_num, cols in enumerate(r, start=1):
             if not any(cols):
                 warnings.append(ParseWarning(row_num, "Empty row."))
@@ -101,7 +106,7 @@ def parse_csv_old(path_in: str) -> tuple[SemesterJSON, list[ParseWarning]]:
 
             # Next course ID, so create a new Course object
             if course_id:
-                current_course = create_empty_course()
+                current_course = create_empty_course_old()
                 semester[course_id] = current_course
                 current_course["title"] = title
                 current_course["title_short"] = title_short
@@ -261,11 +266,14 @@ def parse_csv(path_csv: str, path_titles: str) -> tuple[SemesterJSON, list[Parse
                 curr_course["IC"] = instructor.title()
 
             # Create a section object in the current course.
-            curr_course["sections"][section_number_prefixed] = {
+            # NOTE: This is the most important change, i.e. the new section
+            # object is being **appended** to the **list** of sections.
+            curr_course["sections"].append({
+                "section_name": section_number_prefixed,
                 "instructor": instructor,
                 "room": room,
                 "days": days,
-            }
+            })
 
     return semester, warnings
 

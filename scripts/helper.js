@@ -20,7 +20,7 @@ export class DeferredPromise {
 
 //=| Period helper functions |================================================//
 
-/** @param {Constants.PeriodDetailed} a @param {Constants.PeriodDetailed} b @returns {boolean} */
+/** @param {Constants.Period} a @param {Constants.Period} b @returns {boolean} */
 export function arePeriodsEqual(a, b) {
     const a_ent = Object.entries(a), b_ent = Object.entries(b);
     if (a_ent.length != b_ent.length) {return false;}
@@ -29,13 +29,13 @@ export function arePeriodsEqual(a, b) {
     }
     return true;
 };
-/** @param {Constants.PeriodMinimal} period @returns {boolean} */
+/** @param {Constants.Period} period @returns {boolean} */
 export const isPeriodFree = (period) => period.course.trim() == "";
-/** @param {Constants.PeriodMinimal} period @returns {boolean} */
+/** @param {Constants.Period} period @returns {boolean} */
 export const isPeriodNonCommon = (period) => period.course == "NON_COMMON";
-/** @param {Constants.PeriodMinimal} period @returns {boolean} */
+/** @param {Constants.Period} period @returns {boolean} */
 export const isPeriodConflict = (period) => period.course == "CONFLICT";
-/** @param {Constants.PeriodMinimal} period @returns {boolean} */
+/** @param {Constants.Period} period @returns {boolean} */
 export const isPeriodIndeterminate = (period) => period.course == "INDETERMINATE";
 
 //=| General helper functions |===============================================//
@@ -53,8 +53,8 @@ export function formatTime(minutes) {
     return `${h_12}:${m_str}${am_pm}`;
 }
 
-/** Merges section_number and room with a hyphen in between. Hyphen is removed
- * if either or both are blank.
+/** Merges `section_number` and `room` with a hyphen in between. Hyphen is
+ * removed if either or both are blank.
  * @param {string} section_number The section number.
  * @param {string} room The room number.
  */
@@ -64,20 +64,14 @@ function getSectionRoom(section_number, room) {
 
 /** Parses a "days" string.
  * @param {string} daysString A "days" string, example: `"M2 W3 Th5 F12"`
- * @returns {Map<number,Set<number>>} A map containing day number (0 = Monday)
- * as key, and a Set of period numbers as value (1 = 1st period).
+ * @returns {[number, number][]} An array of [day, hour] pairs.
  * @example
  * <caption>Example for return value:</caption>
- * new Map([
- *     [ 0, new Set([2]) ],
- *     [ 2, new Set([3]) ],
- *     [ 3, new Set([5]) ],
- *     [ 4, new Set([1, 2]) ],
- * ])
+ * [ [0, 2], [2, 3], [3, 5], [4, 1], [4, 2] ]
  */
 function parseDays(daysString) {
-    /** @type {Map<number,Set<number>>} */
-    const parsed = new Map();
+    /** @type {[number, number][]} */
+    const parsed = [];
 
     daysString.split(" ").forEach(dayString => {
         const splitPoint = dayString.search(/\d/);
@@ -86,11 +80,8 @@ function parseDays(daysString) {
         const periodsString = dayString.substring(splitPoint);
 
         /** @type {Set<number>} */
-        const periods = new Set();
         for (const period of periodsString)
-            periods.add(parseInt(period));
-
-        parsed.set(day, periods);
+            parsed.push([day, parseInt(period)]);
     });
 
     return parsed;
@@ -114,16 +105,25 @@ export function createElement(tagName, classList, ...content) {
 
 //=| Timetable builder functions |============================================//
 
-/** Compiles a weekly timetable object containing Course ID and Section from
- * the given list of courses and sections enrolled by the student.
+/** Returns the sections in the given course that match the given section name.
+ * @param {Constants.Course} course The course object to search
+ * @param {string} sectionName The section name to match, e.g. "L1"
+ * @returns {Constants.Section[]} An array of Section objects
+ */
+function getSections(course, sectionName) {
+    return course.sections.filter((sec) => (sec.section_name == sectionName))
+}
+
+/** Compiles a weekly timetable object with complete details (a.k.a. "fields")
+ * from the given list of courses and sections enrolled by the student.
  * @param {Constants.Student} student An object containing courses mapped to the
  * sections enrolled by the student.
  * "keys" are course IDs and whose "values" are arrays containing section names.
  * @param {number} semIndex The index of the semester in {@link Constants.SEMESTERS}.
- * @returns {Constants.TimetableMinimal} A minimal timetable constructed from
+ * @returns {Constants.Timetable} A minimal timetable constructed from
  * given student.
  * @example
- * <caption>Example for `courses`:</caption>
+ * <caption>Example for `student`:</caption>
  * {
  *     "BIO F110":  ["P1"],
  *     "BIO F111":  ["L2"],
@@ -135,14 +135,14 @@ export function createElement(tagName, classList, ...content) {
  *     "MATH F111": ["L2"],
  * }
  */
-export function getTimetableMinimal(student, semIndex) {
-    /** @type {Constants.TimetableMinimal} */
+export function getTimetable(student, semIndex) {
+    /** @type {Constants.Timetable} */
     const timetable = [];
     const semester = Constants.SEMESTERS[semIndex] || {};
 
     // Preparing a template
     for (let i = 0; i < 5; i++) {
-        /** @type {Constants.DayMinimal} */
+        /** @type {Constants.Day} */
         const day = [];
 
         // The 9,9,9,9,5 denotes the number of periods per day
@@ -151,89 +151,50 @@ export function getTimetableMinimal(student, semIndex) {
         timetable.push(day);
     }
 
-    for (const course_id in student) {
-        if (!semester[course_id]) {continue;}
-        const all_sections = semester[course_id].sections;
+    // NOTE: With the change that there can be multiple entries for the same
+    // `sectionName`, hence `sectionName` can no longer be used as a key. So, we
+    // collect the list of all Section objects into an array, and then populate
+    // the detailed timetable using it.
 
-        student[course_id].forEach((section_num) => {
-            const section = all_sections[section_num] || Constants.GET_SECTION_BLANK();
-            const days_list = parseDays(section.days);
-            for (const [day, hours_list] of days_list.entries()) {
+    // for each course:
+    for (const [courseId, sectionNames] of Object.entries(student)) {
+        if (!semester[courseId]) {continue;}
+        const course = semester[courseId];
 
-                hours_list.forEach((hour) => {
+        /** The sections this student is in. @type {Constants.Section[]} */
+        const sections = [];
+        sectionNames.forEach((sectionName) => {
+            sections.push(...getSections(course, sectionName));
+        });
 
-                    const period = timetable[day][hour - 1];
-                    if (period.course != "") {
-                        timetable[day][hour - 1] = Constants.GET_PERIOD_CONFLICT();
-                        return;
-                    }
-                    period.course = course_id;
-                    period.section = section_num;
+        // for each section:
+        sections.forEach((section) => {
 
-                });
+            // for each period:
+            parseDays(section.days).forEach((entry) => {
+                const [day, hour] = entry;
 
-            }
+                const period = timetable[day][hour - 1];
+                if (period.course != "") {
+                    // this period is a conflict, so skip it.
+                    timetable[day][hour - 1] = Constants.GET_PERIOD_CONFLICT();
+                    return; // "continue" to next period
+                }
+                period.course = courseId;
+                period.title = course.title  || "";
+                period.title_short = course.title_short  || "";
+                period.IC = course.IC || "";
+
+                period.section = section.section_name;
+                period.instructor = section.instructor || "";
+                period.room = section.room || "";
+                period.section_room = getSectionRoom(section.section_name, section.room);
+            });
+
         });
     }
 
     return timetable;
-}
-
-/** Returns a new timetable object with complete details (a.k.a. "fields") added
- * to the periods of the given timetable.
- * @param {Constants.TimetableMinimal} timetable_minimal The minimal timetable to
- * elaborate.
- * @param {number} semIndex The index of the semester in {@link Constants.SEMESTERS}.
- * @returns {Constants.TimetableDetailed} */
-export function getTimetableDetailed(timetable_minimal, semIndex) {
-    /** @type {Constants.TimetableDetailed} */
-    const timetable_full = [];
-    const semester = Constants.SEMESTERS[semIndex] || {};
-
-    for (const day of timetable_minimal) {
-        /** @type {Constants.DayDetailed} */ const day_detailed = [];
-
-        for (const period of day) {
-            const course_id = period.course || "";
-            const section_num = period.section || "";
-
-            const course = semester[course_id] || Constants.GET_COURSE_BLANK();
-            const section = course.sections[section_num] || Constants.GET_SECTION_BLANK();
-
-            day_detailed.push({
-                course:       course_id,
-                title:        course.title || "",
-                title_short:  course.title_short || "",
-                IC:           course.IC || "",
-
-                section:      section_num,
-                instructor:   section.instructor || "",
-                room:         section.room || "",
-                section_room: getSectionRoom(section_num, section.room),
-            });
-        }
-        timetable_full.push(day_detailed);
-    }
-
-    return timetable_full;
-}
-
-/** Compiles a weekly timetable object with complete details (a.k.a. "fields")
- * from the given list of courses and sections enrolled by the student.
- * @see {@link getTimetableMinimal}
- * @see {@link getTimetableDetailed}
- * @param {Constants.Student} student An object containing courses mapped to the
- * sections enrolled by the student.
- * "keys" are course IDs and whose "values" are arrays containing section names.
- * @param {number} semIndex The index of the semester in {@link Constants.SEMESTERS}.
- * @returns {Constants.TimetableDetailed} A detailed timetable constructed from
- * given student.
- */
-export function getTimetableDetailedFromStudent(student, semIndex) {
-    return getTimetableDetailed(
-        getTimetableMinimal(student, semIndex),
-        semIndex
-    );
 }
 
 //=| Timetable render functions |=============================================//
@@ -265,9 +226,8 @@ function createHeaderRow() {
 }
 
 /** Displays the given timetable.
- * @param {Constants.TimetableDetailed} timetable Timetable object as returned
- * by {@link getTimetableDetailed}, {@link getTimetableDetailedFromStudent},
- * and the like.
+ * @param {Constants.Timetable} timetable Timetable object as returned by
+ * {@link getTimetable}.
  * @param {string[]} fields A string array of field names to display.
  * @param {string} title The title to display above the timetable. Newlines are
  * retained as-is.
@@ -359,7 +319,7 @@ export function displayTimetable(timetable, fields, title, renderTarget, titleRe
  */
 export function displayTimetableKey(timetableKey, semIndex, fields, renderTarget, titleRenderTarget) {
     return displayTimetable(
-        getTimetableDetailedFromStudent(
+        getTimetable(
             Storage.ttGet(semIndex, timetableKey),
             semIndex),
         fields,

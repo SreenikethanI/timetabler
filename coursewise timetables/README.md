@@ -62,16 +62,31 @@ Here's a brief on what shall be done with the PDF. The chain is **PDF** →
    Headers".<br>
    Optionally, rename the columns to something more legible.
 
-3. Import this table into Excel (and delete the other sheets, if any).
+3. Check if any extra columns are imported, such as any empty columns. Make sure
+   the columns are in the same order as the following:
+   1. COM COD
+   2. course id
+   3. course title
+   4. credit (L P U)
+   5. section
+   6. instructor/IC
+   7. room
+   8. days/hours
 
-4. Select ALL cells in the worksheet, and enable "Word Wrap". You have to now
+   See function `parse_csv()` in
+   [_parse coursewise csv.py](<_parse coursewise csv.py>) for more info.
+
+4. Import this table into Excel (and delete the other sheets, if any). Do not
+   delete the header rows, keep them as-is.
+
+5. Select ALL cells in the worksheet, and enable "Word Wrap". You have to now
    visually search for cells which have more than 1 line in it, and compare that
    cell with the PDF. Make changes to ensure it matches the data intended by the
    PDF.
 
 That's it, you may move to the next step in the process.
 
-<!-- 4. Add a "#" that just contains the row number. ([More info](#the--column)) -->
+<!-- 5. Add a "#" that just contains the row number. ([More info](#the--column)) -->
 
 ---
 ## More info

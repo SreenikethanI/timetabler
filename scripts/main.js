@@ -9,12 +9,15 @@ const FIELDS_TO_SHOW = ["course", "title_short", "section_room", "instructor"];
 var initComplete = false;
 
 //=| DOM related |============================================================//
+//#region DOM
 
 /** Shorthand method for document.getElementById.
  * @param {string} id */
 const e = (id) => document.getElementById(id);
 
+//#endregion
 //=| Helper methods - user input |============================================//
+//#region Helper - user input
 
 /** Gets whether compare mode is enabled by the user.
  * @returns {boolean} */
@@ -50,7 +53,9 @@ function getSelections() {
     return sels;
 }
 
+//#endregion
 //=| Timetable list methods |=================================================//
+//#region Timetable list
 
 /** Callback to be attached to the Edit "✏️" button on a timetable entry.
  * @param {string} key The key of the timetable to edit.
@@ -73,10 +78,11 @@ function timetableListActionDelete(key) {
  * If user has selected "Compare timetables", then all choices will have
  * checkboxes rather than radio buttons.
  * Note that, if not in compare mode and `preserveSelections` is `true`, only
- * the first selection will be retained, and all choices will become radio buttons.
+ * the first selection will be retained, and all choices will become radio
+ * buttons.
  * @param {number} semIndex The index of the semester in {@link Constants.SEMESTERS}.
- * @param {boolean} preserveSelection `true` if the current user selection(s) are to be
- * preserved, else `false`.*/
+ * @param {boolean} preserveSelection `true` if the current user selection(s)
+ * are to be preserved, else `false`.*/
 function loadTimetablesList(semIndex, preserveSelection) {
     /** @type {HTMLDivElement} */ const list = e(DOM.DOM_TIMETABLE_LIST);
     const previousSels = (preserveSelection ? getSelections() : []);
@@ -92,7 +98,7 @@ function loadTimetablesList(semIndex, preserveSelection) {
     /** Courses available for the semester `semIndex` */
     const semester = Constants.SEMESTERS[semIndex] || {};
 
-    for (/** Student name */ const studentName in Storage.ttGetAll()[semIndex]) {
+    for (const studentName in Storage.ttGetAll()[semIndex]) {
         /** The courses registered by the student */
         const studentCourses = Storage.ttGet(semIndex, studentName);
         if (!studentCourses) {continue;}
@@ -192,12 +198,13 @@ function timetableListToggleCourses() {
     })
 }
 
+//#endregion
 //=| Timetable display/compare methods |======================================//
+//#region Timetable display/compare
 
 /** Displays the given timetable.
- * @param {Constants.TimetableDetailed} timetable Timetable object as returned
- * by {@link Helper.getTimetableDetailed}, {@link Helper.getTimetableDetailedFromStudent},
- * and the like.
+ * @param {Constants.Timetable} timetable Timetable object as returned
+ * by {@link Helper.getTimetable}.
  * @param {string[]} fieldsFiltered A string array of field names to display.
  * @param {string} title The title to display above the timetable. Newlines are
  * retained as-is.
@@ -227,15 +234,15 @@ function fitContainerByZoom() {
 }
 
 /** Compares two or more timetables and displays the common periods.
- * @param {Constants.TimetableDetailed[]} timetables Timetable objects to compare.
+ * @param {Constants.Timetable[]} timetables Timetable objects to compare.
  * @param {string[]} fields The fields to display. Refer to {@link Constants.FIELDS}.
  * @param {boolean} doNotRender If `true`, the new timetable will only be
  * returned, and not rendered.
  * @see {@link displayTimetable} for more info on `timetables`.
- * @returns {Constants.TimetableDetailed}
+ * @returns {Constants.Timetable}
  */
 function compareTimetables(timetables, fields, doNotRender) {
-    /** @type {Constants.TimetableDetailed} */
+    /** @type {Constants.Timetable} */
 
     const commonTimetable = [];
 
@@ -249,7 +256,7 @@ function compareTimetables(timetables, fields, doNotRender) {
     // For each day...
     for (let i_day = 0; i_day < timetables[0].length; i_day++) {
         const period_count = timetables[0][i_day].length;
-        /** @type {Constants.DayDetailed} */
+        /** @type {Constants.Day} */
         const day = [];
 
         // For each period in the current day...
@@ -337,12 +344,14 @@ function compareTimetablesKeys(timetableKeys, semIndex, fields) {
     const timetables = (timetableKeys
         .map((key) => Storage.ttGet(semIndex, key))
         .filter((tt) => tt)
-        .map((tt) => Helper.getTimetableDetailedFromStudent(tt, semIndex))
+        .map((tt) => Helper.getTimetable(tt, semIndex))
     );
     compareTimetables(timetables, fields);
 }
 
+//#endregion
 //=| General |================================================================//
+//#region General
 
 function init() {
     initComplete = false;
@@ -378,10 +387,14 @@ function removeLoading() {
     e(DOM.DOM_LOADING).classList.add(DOM.CSS_COMPLETE);
 }
 
+//#endregion
 //=| Testing - before init |==================================================//
+//#region Testing - before init
 Storage.ttSetAll(Constants.FRIENDS);
 
+//#endregion
 //=| Init |===================================================================//
+//#region Init
 if (document.readyState === "complete") {
     // If the document completes loading before the script does, (for example,
     // when async-loading Course list in constants.js), directly invoke the init
@@ -391,5 +404,9 @@ if (document.readyState === "complete") {
     window.addEventListener("load", init, false);
 }
 
+//#endregion
 //=| Testing - after init |===================================================//
+//#region Testing - after init
 console.log(await Builder.showDialog());
+
+//#endregion

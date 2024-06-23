@@ -4,8 +4,8 @@
 === Some terminology ===
 The following are constant pre-determined data, given by the university:
  • A `Semester` object consists of multiple `Course`s.
- • A `Course`   object consists of some properties, including a `Sections`.
- • A `Sections` object consists of multiple `Section`s.
+ • A `Course`   object consists of some properties and an array of `Section`s.
+//  • A `Sections` object consists of multiple `Section`s.
  • A `Section`  object consists of many properties.
 
 The following are real-life data which can change depending on person:
@@ -14,27 +14,17 @@ The following are real-life data which can change depending on person:
                 to which they're enrolled into.
 
 The following are timetable information derived/constructed from each `Student`:
- • A `TimetableMinimal` object is an array of `DayMinimal`.
- • A `DayMinimal`       object is an array of `PeriodMinimal`.
- • A `PeriodMinimal`    object consists of course ID and section of ONE period.
-
-The following are the detailed equivalents of the corresponding minimal objects:
- • A `TimetableDetailed` object is an array of `DayDetailed`.
- • A `DayDetailed`       object is an array of `PeriodDetailed`.
- • A `PeriodDetailed`    object consists of all relevant info for ONE period.
+ • A `Timetable` object is an array of `Day`.
+ • A `Day`       object is an array of `Period`.
+ • A `Period`    object consists of all relevant info for ONE period.
 */
 
-/** @typedef {{course: string, section: string}} PeriodMinimal */
-/** @typedef {PeriodMinimal[]} DayMinimal */
-/** @typedef {DayMinimal[]} TimetableMinimal */
+/** @typedef {{course:string, title:string, title_short:string, IC:string, section:string, instructor:string, room:string, section_room:string}} Period */
+/** @typedef {Period[]} Day */
+/** @typedef {Day[]} Timetable */
 
-/** @typedef {{course:string, title:string, title_short:string, IC:string, section:string, instructor:string, room:string, section_room:string}} PeriodDetailed */
-/** @typedef {PeriodDetailed[]} DayDetailed */
-/** @typedef {DayDetailed[]} TimetableDetailed */
-
-/** @typedef {{room:string, instructor:string, days:string}} Section */
-/** @typedef {Object.<string, Section>} Sections */
-/** @typedef {{title:string, title_short:string, IC:string, sections:Sections}} Course */
+/** @typedef {{section_name:string, room:string, instructor:string, days:string}} Section */
+/** @typedef {{title:string, title_short:string, IC:string, sections:Section[]}} Course */
 /** @typedef {Object.<string, Course>} Semester */
 
 /** @typedef {Object.<string, string[]>} Student */
@@ -59,17 +49,17 @@ export const PERIOD_BREAK = 5;
 //=| Template objects |=======================================================//
 
 /** @returns {Section} */
-export const GET_SECTION_BLANK = () => ({room: "", instructor: "", days: ""});
+export const GET_SECTION_BLANK = () => ({section_name: "", room: "", instructor: "", days: ""});
 /** @returns {Course} */
-export const GET_COURSE_BLANK = () => ({title:"",title_short:"",IC:"",sections:{}});
-/** @returns {PeriodMinimal} */
+export const GET_COURSE_BLANK = () => ({title: "", title_short: "", IC: "", sections: []});
 
+/** @returns {Period} */
 export const GET_PERIOD_FREE = () => ({course: "", section: ""});
-/** @returns {PeriodMinimal} */
+/** @returns {Period} */
 export const GET_PERIOD_NON_COMMON = () => ({course: "NON_COMMON", section: ""});
-/** @returns {PeriodMinimal} */
+/** @returns {Period} */
 export const GET_PERIOD_CONFLICT = () => ({course: "CONFLICT", section: ""});
-/** @returns {PeriodMinimal} */
+/** @returns {Period} */
 export const GET_PERIOD_INDETERMINATE = () => ({course: "INDETERMINATE", section: ""});
 
 //=| JSON load function |=====================================================//
@@ -88,7 +78,8 @@ async function loadJSON(path) {
 const SEMESTERS_PROMISES = [
     loadJSON("coursewise timetables\\0 - 2022-09 Sem1 (Year 1 only).json"),
     loadJSON("coursewise timetables\\1 - 2023-02 Sem2 (Year 1 only).json"),
-    loadJSON("coursewise timetables\\2 - 2023-09 Sem1 v2.json"),
+    loadJSON("coursewise timetables\\2 - 2023-09 Sem1 (v2).json"),
+    loadJSON("coursewise timetables\\3 - 2024-02 Sem2 (v3).json"),
 ];
 
 //=| Friends |================================================================//
@@ -136,6 +127,15 @@ const FRIENDS_Y1S2 = {
 /** @type {Students} Friends' timetables under Year 2 Semester 1 */
 const FRIENDS_Y2S1 = {
 }
+};
+
+/** @type {Students} Friends' timetables under Year 2 Semester 2 */
+const FRIENDS_Y2S2 = {
+    "Test": {
+        "CHE F341": ["P1"],
+        "BIOT F244": ["P2"]
+    }
+};
 
 //=| Collections of all semesters |===========================================//
 
@@ -162,5 +162,6 @@ export const FRIENDS = [
     FRIENDS_Y1S1,
     FRIENDS_Y1S2,
     FRIENDS_Y2S1,
+    FRIENDS_Y2S2,
 ];
 // export const FRIENDS = await loadJSON("testing\\friends.json");

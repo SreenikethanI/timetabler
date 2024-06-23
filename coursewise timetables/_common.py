@@ -41,11 +41,13 @@ from json import load
 #             return o.json_str()
 #         return super().encode(o)
 
-SectionJSON = TypedDict("Section", {"instructor": str, "room": str, "days": str})
-
-CourseJSON = TypedDict("Course", {"title": str, "title_short": str, "IC": str, "sections": dict[str, SectionJSON]})
-
+SectionJSON = TypedDict("SectionJSON", {"section_name": str, "instructor": str, "room": str, "days": str})
+CourseJSON = TypedDict("CourseJSON", {"title": str, "title_short": str, "IC": str, "sections": list[SectionJSON]})
 SemesterJSON = dict[str, CourseJSON]
+
+SectionJSON_Old = TypedDict("SectionJSON_Old", {"instructor": str, "room": str, "days": str})
+CourseJSON_Old = TypedDict("CourseJSON_Old", {"title": str, "title_short": str, "IC": str, "sections": dict[str, SectionJSON_Old]})
+SemesterJSON_Old = dict[str, CourseJSON_Old]
 
 def load_semester(path: str) -> SemesterJSON:
     """Load the contents of the given JSON file.
