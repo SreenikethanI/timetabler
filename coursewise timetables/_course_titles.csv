@@ -2,33 +2,33 @@ Course ID,Title,Short title
 AN F311,Principles of Aerodynamics,Aerodynamics
 BIO F110,Biology Laboratory,Bio Lab
 BIO F111,General Biology,Biology
-BIOT F211,Biological Chemistry,Biochem Engg
+BIOT F211,Biological Chemistry,Biochem
 BIOT F212,Microbiology,Micro Bio
 BIOT F213,Cell Biology,Cell Bio
 BIOT F215,Biophysics,Biophy
-BIOT F241,Genetic Engineering Tech,
-BIOT F242,Intro to Bioinformatics,Intro to Bioinfo
+BIOT F241,Genetic Engineering Tech,Genetic Engg Tech
+BIOT F242,Intro to Bioinformatics,Bioinfo
 BIOT F243,Genetics,
 BIOT F244,Instru Methods of Analysis,
-BIOT F245,Intro to Environ Biotech,
+BIOT F245,Intro to Environ Biotech,Environ Biotech
 BIOT F266,Study Project,Study Proj
 BIOT F311,Recombinant DNA Tech,Recomb DNA
 BIOT F314,Ind Microbio & Biopro Engg,
 BIOT F342,Immunology,
-BIOT F343,Experiments in Biotech,
-BIOT F344,Downstream Processing,
+BIOT F343,Experiments in Biotech,Expt in Biotech
+BIOT F344,Downstream Processing,DP
 BIOT F345,Proteomics,
 BIOT F366,Laboratory Project,Lab Proj
 BIOT F367,Laboratory Project,Lab Proj
 BIOT F376,Design Project,Design Proj
 BIOT F377,Design Project,Design Proj
-BIOT F416,Intro to Pharma Biotech,
+BIOT F416,Intro to Pharma Biotech,Pharma Biotech
 BIOT F417,Biomolecular Modeling,
 BIOT F422,Nanobiotechnology,Nanobiotech
-BIOT F423,Drug Design and Delivery,
+BIOT F423,Drug Design and Delivery,Drug Design
 BIOT F424,Food Biotechnology,Food Biotech
 BIOT F491,Special Project,Spl Proj
-BITS C791T,Teaching Practice I,
+BITS C791T,Teaching Practice I,TP I
 BITS C797T,PhD Seminar,
 BITS C799T,PhD Thesis,
 BITS E661,Research Methodology I,
@@ -37,10 +37,10 @@ BITS F111,Thermodynamics,Thermo
 BITS F112,Technical Report Writing,TRW
 BITS F225,Environmental Studies,EvS
 BITS F226,Soft Skills For Professionals,Soft Skills
-BITS F312,Neural Net & Fuzzy Logic,
+BITS F312,Neural Net & Fuzzy Logic,NN & FL
 BITS F327,AI in Robotics,
-BITS F412,Practice School II,
-BITS F416,Intro to Nanoscience,Nanosc
+BITS F412,Practice School II,PS II
+BITS F416,Intro to Nanoscience,Nanosci
 BITS F421T,Thesis,
 BITS F422T,Thesis,
 BITS F423T,Thesis,
@@ -51,44 +51,44 @@ BITS F464,Machine Learning,ML
 BITS G661,Research Methodology I,
 CE F211,Mechanics of Solids,Mech of Solids
 CE F213,Surveying,
-CE F230,Civil Engineering Materials,
+CE F230,Civil Engineering Materials,Civil Engg Materials
 CE F231,Fluid Mechanics,Fluid Mech
 CE F241,Analysis of Structures,
 CE F242,Construction Plan & Tech,
-CE F243,Soil Mechanics,
-CE F244,Highway Engineering,
+CE F243,Soil Mechanics,Soil Mech
+CE F244,Highway Engineering,Highway Engg
 CE F266,Study Project,Study Proj
 CE F312,Hydraulic Engineering,
 CE F313,Foundation Engineering,
-CE F320,Design of Reinforced Concrete Structure,
+CE F320,Design of Reinforced Concrete Structure,Design of Reinforced CS
 CE F321,Engineering Hydrology,
 CE F342,Water & Wastewater Treat,
-CE F343,Design of Steel Structures,
+CE F343,Design of Steel Structures,Design of Steel Struc
 CE F366,Laboratory Project,Lab Proj
 CE F367,Laboratory Project,Lab Proj
 CE F376,Design Project,Design Proj
 CE F377,Design Project,Design Proj
-CE F415,Design of Prestressed Concrete Structures,
+CE F415,Design of Prestressed Concrete Structures,Design of Prestressed CS
 CE F423,Green Build & Ener Conse,
 CE F425,Airport Rail & Waterways,
 CE F434,Env Impact Assessment,
 CE F491,Special Project,Spl Proj
 CHE F211,Chemical Process Calcula,Chem Calc
 CHE F212,Fluid Mechanics,Fluid Mech
-CHE F213,Chem Engg Thermodynamics,
+CHE F213,Chem Engg Thermodynamics,Chem Engg Thermo
 CHE F214,Engineering Chemistry,Engg Chem
 CHE F241,Heat Transfer,
 CHE F242,Num Method for Chem Engg,
-CHE F243,Material Science & Engg,
-CHE F244,Separation Processes I,
+CHE F243,Material Science & Engg,Materials Sci & Engg
+CHE F244,Separation Processes I,SP I
 CHE F266,Study Project,Study Proj
 CHE F311,Kinetics & Reactor Desig,
 CHE F312,Chemical Engg Lab I,Chem Engg Lab I
-CHE F313,Separation Processes II,
-CHE F314,Process Des Principles I,
+CHE F313,Separation Processes II,SP II
+CHE F314,Process Des Principles I,PDP I
 CHE F341,Chemical Engg Lab II,Chem Engg Lab II
 CHE F342,Process Dyn & Control,
-CHE F343,Process Des Principle II,
+CHE F343,Process Des Principle II,PDP II
 CHE F366,Laboratory Project,Lab Proj
 CHE F367,Laboratory Project,Lab Proj
 CHE F376,Design Project,Design Proj
@@ -117,11 +117,11 @@ CS F241,Microproc & Interfacing,Microproc
 CS F266,Study Project,Study Proj
 CS F301,Principles of Progg Lang,PoPL
 CS F303,Computer Networks,Comp Networks
-CS F320,Foundation of Data Science,
+CS F320,Foundation of Data Science,Foundation of Data Sci
 CS F342,Computer Architecture,Comp Arch
-CS F351,Theory of Computation,
-CS F363,Compiler Construction,Compiler
-CS F364,Design & Anal of Algo,
+CS F351,Theory of Computation,Theory of Comp
+CS F363,Compiler Construction,CC
+CS F364,Design & Anal of Algo,DAA
 CS F366,Laboratory Project,Lab Proj
 CS F367,Laboratory Project,Lab Proj
 CS F372,Operating Systems,OS
@@ -139,13 +139,13 @@ ECE F215,Digital Design,DD
 ECE F241,Microproc & Interfacing,Microproc
 ECE F242,Control Systems,Control Sys
 ECE F243,Signals & Systems,
-ECE F244,Microelectronic Circuits,
+ECE F244,Microelectronic Circuits,Microelec Circuits
 ECE F266,Study Project,Study Proj
 ECE F311,Communication Systems,Comm Sys
-ECE F314,EM Fields & Micro Engg,
+ECE F314,EM Fields & Micro Engg,EMF & Micro Engg
 ECE F341,Analog Electronics,Analog Elec
 ECE F343,Communication Networks,Comm Networks
-ECE F344,Info Theory & Coding,
+ECE F344,Info Theory & Coding,ITC
 ECE F366,Laboratory Project,Lab Proj
 ECE F367,Laboratory Project,Lab Proj
 ECE F376,Design Project,Design Proj
@@ -156,7 +156,7 @@ ECE F472,Satellite Communication,Satellite Comms
 ECE F491,Special Project,Spl Proj
 ECON F211,Principles of Economics,PoE
 ECON F312,Money Bank & Fin Markets,
-ECON F412,Security Analysis and Portfolio Mgmt,
+ECON F412,Security Analysis and Portfolio Mgmt,Security Anal & Portfolio Mgmt
 EEE F111,Electrical Sciences,ES
 EEE F211,Electrical Machines,Elec Mach
 EEE F212,Electromagnetic Theo,EM Theory
@@ -165,7 +165,7 @@ EEE F215,Digital Design,DD
 EEE F241,Microproc & Interfacing,Microproc
 EEE F242,Control Systems,Control Sys
 EEE F243,Signals & Systems,
-EEE F244,Microelectronic Circuits,
+EEE F244,Microelectronic Circuits,Microelec Circuits
 EEE F266,Study Project,Study Proj
 EEE F311,Communication Systems,Comm Sys
 EEE F312,Power Systems,
@@ -181,8 +181,8 @@ EEE F417,Computer Based Control System,Comp based Control Sys
 EEE F432,Medical Instrumentation,Medical Instr
 EEE F472,Satellite Communication,Satellite Comms
 EEE F491,Special Project,Spl Proj
-FIN F212,Funda of Fin and Account,
-FIN F311,Derivatives & Risk Mgmt,
+FIN F212,Funda of Fin and Account,FFA
+FIN F311,Derivatives & Risk Mgmt,DRM
 FIN F315,Financial Management,Fin Mgmt
 GS F211,Modern Political Concepts,Mod Pol Concepts
 GS F212,Environ Dev & Climate Ch,
@@ -193,15 +193,15 @@ GS F377,Design Project,Design Proj
 HSS F211,Introduction to Arabic,Arabic
 HSS F222,Linguistics,
 HSS F232,Intro to Dev Studies,IDS
-HSS F252,International Law,
+HSS F252,International Law,IL
 HSS F266,Study Project,Study Proj
-HSS F346,International Relations,
+HSS F346,International Relations,IR
 HSS F349,Ecocriticism,
 HSS F350,"Human Rights: History, Theory and Practice",Human Rights
-HSS F354,Intro to Islamic Economy,
+HSS F354,Intro to Islamic Economy,Islamic Eco
 HSS F365,Science of Sustainable Happiness,Happiness
 IS F341,Software Engineering,Software Engg
-MATH D021,Remedial Mathematics,
+MATH D021,Remedial Mathematics,Rem Math
 MATH F111,Mathematics I,Math I
 MATH F112,Mathematics II,Math II
 MATH F113,Probability & Statistics,P&S
@@ -218,20 +218,20 @@ MATH F491,Special Project,Spl Proj
 ME F112,Workshop Practice,Workshop
 ME F211,Mechanics of Solids,Mech of Solids
 ME F212,Fluid Mechanics,Fluid Mech
-ME F216,Materials Science & Engineering,
+ME F216,Materials Science & Engineering,Materials Sci & Engg
 ME F217,Applied Thermodynamics,Appl Thermo
-ME F218,Advanced Mechanics of Solids,
+ME F218,Advanced Mechanics of Solids,Adv Mech of Solids
 ME F219,Manufacturing Processes,Manuf Proc
 ME F220,Heat Transfer,
 ME F221,Mechanisms and Machines,
 ME F266,Study Project,Study Proj
-ME F314,Design of Machine Elements,
-ME F315,Advanced Manufacturing Processes,
+ME F314,Design of Machine Elements,Design of Machine Elem
+ME F315,Advanced Manufacturing Processes,Adv Manuf Proc
 ME F316,Manufacturing Management,Manuf Mgmt
 ME F317,"Engines, Motors and Mobility",
 ME F318,Computer Aided Design,CAD
 ME F319,Vibrations and Control,
-ME F320,Engineering Optimization,
+ME F320,Engineering Optimization,Engg Optimization
 ME F341,Primemovers & Fluid Mach,
 ME F366,Laboratory Project,Lab Proj
 ME F367,Laboratory Project,Lab Proj
@@ -240,12 +240,12 @@ ME F377,Design Project,Design Proj
 ME F443,Quali Contro Assur & Rel,
 ME F461,Refrigeration & Aircond,
 ME F491,Special Project,Spl Proj
-MF F219,Operations Management,
+MF F219,Operations Management,OM
 MF F418,Lean Manufacturing,
 MGTS F211,Principles of Management,PoM
 PHY F110,Physics Laboratory,Phy Lab
 PHY F111,Mech Oscillations & Wave,MOW
-PHY F215,Intro to Astro & Astroph,
+PHY F215,Intro to Astro & Astroph,Astrophysics
 PHY F266,Study Project,Study Proj
 PHY F366,Laboratory Project,Lab Proj
 PHY F367,Laboratory Project,Lab Proj
