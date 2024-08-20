@@ -1,4 +1,3 @@
-/* BUILDER ------------------------------------------------------------------ */
 /* Container, for providing a dimmed background */
 #builder-container {
     position: fixed; top: 0; bottom: 0; left: 0; right: 0;
@@ -14,16 +13,12 @@ body:has(#builder-container):not(:has(#builder-container.hidden)) {overflow: hid
     margin: 8pt;
     border-radius: 8pt;
     padding: 8pt;
+
     display: grid;
-    grid-template-rows: auto max-content;
+    grid-template-rows: max-content auto max-content;
     row-gap: 8pt;
 }
 
-/* Divides the builder into two parts: main contents, and the action buttons. */
-#builder-contents {grid-row: 1; overflow-y: auto;}
-#builder-actions {grid-row: 2;}
-
-/* All buttons inside builder */
 #builder button {
     cursor: pointer;
     float: right;
@@ -37,66 +32,74 @@ body:has(#builder-container):not(:has(#builder-container.hidden)) {overflow: hid
 #builder button + button {margin-right: 8pt;}
 #builder button:hover {background-color: #f0f0f0;}
 #builder button:active {background-color: #c7c7c7; transform: scale(calc(1 / 1.05));}
+
+/* |---------------|
+   | BUILDER PARTS |------------------------------------------------------------
+   |---------------|
+   Divides the builder into three parts: title, contents, action buttons. */
+
+#builder-title {font-family: Georgia, serif; text-align: center; grid-row: 1;}
+#builder-title-editable, .builder-title-edit {
+    font: inherit;
+    border-top: none; border-left: none; border-right: none;
+    border-bottom: 2pt solid gray; border-bottom-left-radius: 8pt;
+    text-align: right;
+}
+#builder-title-editable:focus {outline: none; border-bottom: 2pt solid #70e070;}
+#builder-title-editable:read-only {border-bottom: none;}
+
+#builder-contents {grid-row: 2;}
+
+#builder-actions {grid-row: 3;}
 button#builder-ok {background-color: #80f080;}
 button#builder-ok:hover {background-color: #a0ffa0;}
 button#builder-ok:active {background-color: #70e070;}
 
-/* Timetable title box */
-#builder-title {
-    font-family: Georgia, serif;
-    text-align: center;
-}
-#builder-title-editable, .builder-title-edit {
-    font: inherit;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-bottom: 2pt solid gray;
-    text-align: right;
-}
-#builder-title-editable:focus {
-    outline: none;
-    border-bottom: 2pt solid #70e070;
-}
-#builder-title-editable:read-only {
-    border-bottom: none;
-}
-
-/* Container for holding two blocks: Available courses and selected courses */
-#builder-courses-container {
+/* |-------------------------------|
+   | BUILDER PARTS > CONTENT PANES |--------------------------------------------
+   |-------------------------------|
+   Divides the contents into two panes horizontally:
+   Available and selected courses. */
+#builder-courses-panes {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: stretch;
 }
-#builder-courses-container > div {
-    display: inline;
-    flex-basis: auto;
-    border: 1px dashed lightgray; /* TODO: remove border */
-    min-width: 300px;
-    padding: 4pt;
-    align-items: stretch;
-}
-#builder-courses-available-container {
-    flex-grow: 1;
-    flex-basis: auto;
-}
-#builder-courses-selected-container {
-    flex-grow: 1;
-    flex-basis: auto;
-}
-
-/* General replacement for a multi-line <select>. */
-.list {
+#builder-courses-available-pane {
     display: flex;
     flex-direction: column;
-    align-items: stretch;
+}
+#builder-courses-selected-pane {
+    flex-grow: 1;
+    flex-basis: auto;
+}
+
+.listbox-scroller {
+    display: flex;
+    overflow: auto;
+}
+
+/* General replacement for a multi-line <select>, like WinForms ListBox.
+Motive: Native <select size=x> does not allow selecting an optgroup. */
+.listbox {
+    display: flex;
+    flex-direction: column;
+    min-height: min-content;
+
     gap: 4pt;
-    cursor: pointer;
     border: 1pt solid lightgray;
     padding: 4pt;
     user-select: none;
+    list-style-type: none;
+    max-height: 500px;
+    overflow-y: auto;
 }
-.list-heading {font-weight: bold;}
-.list-item {padding-left: 12pt;}
+.listbox-heading {font-weight: bold;}
+.listbox-item {padding-left: 12pt;}
+.listbox-heading, .listbox-item {
+    padding-top: 2pt;
+    padding-bottom: 2pt;
+    cursor: pointer;
+}
+.listbox-heading:hover, .listbox-item:hover, .listbox-heading:hover ~ .listbox-item
+{
+    background-color: rgb(0,0,0,20%);
+}

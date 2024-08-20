@@ -60,7 +60,10 @@ export const CSS_PERIOD_CONFLICT      = "period-conflict";
 export const CSS_PERIOD_INDETERMINATE = "period-indeterminate";
 
 // Builder
-export const CSS_BUILDER_HIDDEN = "hidden";
+export const CSS_BUILDER_HIDDEN          = "hidden";
+export const CSS_BUILDER_LISTBOX_GROUP   = "listbox-group";
+export const CSS_BUILDER_LISTBOX_HEADING = "listbox-heading";
+export const CSS_BUILDER_LISTBOX_ITEM    = "listbox-item";
 
 //=| Contents |===============================================================//
 

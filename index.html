@@ -57,32 +57,43 @@
     </div>
 
     <!-- BUILDER ----------------------------------------------------------- -->
+    <!-- #builder-container provides the backdrop (i.e. translucent black
+     background) and #builder contains the actual features. -->
     <div id="builder-container" class="hidden">
         <div id="builder">
+            <!-- The builder consists of three parts: title, contents, action
+            buttons (i.e. "Save" and "Discard") -->
+
+            <h2 id="builder-title">
+                <input id="builder-title-editable" placeholder="Unnamed">'s timetable
+            </h2>
 
             <div id="builder-contents">
-                <h2 id="builder-title"><input id="builder-title-editable" value="Unnamed">'s timetable</h2>
 
-                <div id="builder-courses-container">
-                    <div id="builder-courses-available-container">
+                <div id="builder-courses-panes">
+                    <div id="builder-courses-available-pane">
                         Click/tap on course to add:
-                        <div class="list" id="builder-courses-available">
-                            <div class="list-heading">Heading test</div>
-                            <div class="list-item">Test</div>
+                        <div class="listbox-scroller">
+                            <ul class="listbox" id="builder-courses-available">
+                                <li class="listbox-heading">Heading test</li>
+                                <li class="listbox-item">Test</li>
+                            </ul>
                         </div>
                     </div>
-                    <div id="builder-courses-selected-container">
+                    <div id="builder-courses-selected-pane">
                         <table id="builder-courses-selected">
 
                         </table>
                     </div>
                 </div>
 
+                <!-- TODO: add timetable render preview here -->
+
             </div>
 
             <div id="builder-actions">
                 <button id="builder-ok">✔️ Save</button>
-                <button id="builder-cancel">❌ Discard</button>
+                <button id="builder-cancel">❌ Discard changes</button>
             </div>
 
         </div>

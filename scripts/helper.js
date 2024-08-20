@@ -300,7 +300,6 @@ export function displayTimetable(timetable, fields, title, renderTarget, titleRe
         df.append(row);
     }
 
-
     if (titleRenderTarget) {
         titleRenderTarget.textContent = (title || "");
     }
