@@ -312,7 +312,7 @@ if __name__ == "__main__":
         if yn != "y": bye("Cancelling.")
     else:
         yn = input("Start? [Y/n] ").strip()[-1:].lower()
-        if yn != "y": bye("Cancelling.")
+        if yn == "n": bye("Cancelling.")
     print()
 
     ### Parse

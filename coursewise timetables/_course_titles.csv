@@ -61,7 +61,7 @@ CE F266,Study Project,Study Proj
 CE F312,Hydraulic Engineering,
 CE F313,Foundation Engineering,
 CE F320,Design of Reinforced Concrete Structure,Design of Reinforced CS
-CE F321,Engineering Hydrology,
+CE F321,Engineering Hydrology,EH
 CE F342,Water & Wastewater Treat,
 CE F343,Design of Steel Structures,Design of Steel Struc
 CE F366,Laboratory Project,Lab Proj
@@ -71,7 +71,7 @@ CE F377,Design Project,Design Proj
 CE F415,Design of Prestressed Concrete Structures,Design of Prestressed CS
 CE F423,Green Build & Ener Conse,
 CE F425,Airport Rail & Waterways,
-CE F434,Env Impact Assessment,
+CE F434,Env Impact Assessment,EIA
 CE F491,Special Project,Spl Proj
 CHE F211,Chemical Process Calcula,Chem Calc
 CHE F212,Fluid Mechanics,Fluid Mech
@@ -93,7 +93,7 @@ CHE F366,Laboratory Project,Lab Proj
 CHE F367,Laboratory Project,Lab Proj
 CHE F376,Design Project,Design Proj
 CHE F377,Design Project,Design Proj
-CHE F411,Envir Pollution Control,
+CHE F411,Envir Pollution Control,EPC
 CHE F414,Transport Phenomena,
 CHE F416,Process Plant Des Pro I,
 CHE F421,Biochemical Engineering,Biochem Engg
@@ -118,7 +118,7 @@ CS F266,Study Project,Study Proj
 CS F301,Principles of Progg Lang,PoPL
 CS F303,Computer Networks,Comp Networks
 CS F320,Foundation of Data Science,Foundation of Data Sci
-CS F342,Computer Architecture,Comp Arch
+CS F342,Computer Architecture,CA
 CS F351,Theory of Computation,Theory of Comp
 CS F363,Compiler Construction,CC
 CS F364,Design & Anal of Algo,DAA
@@ -134,7 +134,7 @@ CS F429,Natural Language Processing,NLP
 CS F491,Special Project,Spl Proj
 ECE F211,Electrical Machines,Elec Mach
 ECE F212,Electromagnetic Theo,EM Theory
-ECE F214,Electronic Devices,
+ECE F214,Electronic Devices,ED
 ECE F215,Digital Design,DD
 ECE F241,Microproc & Interfacing,Microproc
 ECE F242,Control Systems,Control Sys
@@ -160,7 +160,7 @@ ECON F412,Security Analysis and Portfolio Mgmt,Security Anal & Portfolio Mgmt
 EEE F111,Electrical Sciences,ES
 EEE F211,Electrical Machines,Elec Mach
 EEE F212,Electromagnetic Theo,EM Theory
-EEE F214,Electronic Devices,
+EEE F214,Electronic Devices,ED
 EEE F215,Digital Design,DD
 EEE F241,Microproc & Interfacing,Microproc
 EEE F242,Control Systems,Control Sys
@@ -185,7 +185,7 @@ FIN F212,Funda of Fin and Account,FFA
 FIN F311,Derivatives & Risk Mgmt,DRM
 FIN F315,Financial Management,Fin Mgmt
 GS F211,Modern Political Concepts,Mod Pol Concepts
-GS F212,Environ Dev & Climate Ch,
+GS F212,Environ Dev & Climate Ch,EDCC
 GS F266,Study Project,Study Proj
 GS F332,Contemporary India,Contemp India
 GS F376,Design Project,Design Proj
@@ -197,7 +197,7 @@ HSS F252,International Law,IL
 HSS F266,Study Project,Study Proj
 HSS F346,International Relations,IR
 HSS F349,Ecocriticism,
-HSS F350,"Human Rights: History, Theory and Practice",Human Rights
+HSS F350,"Human Rights: History, Theory and Practice",HR
 HSS F354,Intro to Islamic Economy,Islamic Eco
 HSS F365,Science of Sustainable Happiness,Happiness
 IS F341,Software Engineering,Software Engg
@@ -213,7 +213,7 @@ MATH F366,Laboratory Project,Lab Proj
 MATH F367,Laboratory Project,Lab Proj
 MATH F376,Design Project,Design Proj
 MATH F377,Design Project,Design Proj
-MATH F432,Applied Statistical Methods,Appl Stat
+MATH F432,Applied Statistical Methods,ASM
 MATH F491,Special Project,Spl Proj
 ME F112,Workshop Practice,Workshop
 ME F211,Mechanics of Solids,Mech of Solids
@@ -228,7 +228,7 @@ ME F266,Study Project,Study Proj
 ME F314,Design of Machine Elements,Design of Machine Elem
 ME F315,Advanced Manufacturing Processes,Adv Manuf Proc
 ME F316,Manufacturing Management,Manuf Mgmt
-ME F317,"Engines, Motors and Mobility",
+ME F317,"Engines, Motors and Mobility",EMM
 ME F318,Computer Aided Design,CAD
 ME F319,Vibrations and Control,
 ME F320,Engineering Optimization,Engg Optimization
@@ -252,3 +252,23 @@ PHY F367,Laboratory Project,Lab Proj
 PHY F376,Design Project,Design Proj
 PHY F377,Design Project,Design Proj
 PHY F491,Special Project,Spl Proj
+AN F312,Aircraft Propulsion,Aircraft Prop
+BITS F115,Intro to Basic Sciences,IBS
+BITS F211,Inrtoduction to IPR,IPR
+BITS F319,Negotiation Skills And Techniques,Negotiation
+BITS F441,Robotics,
+BITS F463,Cryptography,Crypto
+BITS F467,Bioethics And Biosafety,Bioethics
+BITS F468,New Venture Creation,NVC
+CE F417,App of AI in Civil Engg,AI in CEngg
+CE F431,Princi of Geo Info Sys,PGIS
+CHE F316,Sust Energy Systems,SES
+CHE F413,Process Plant Safety,PPS
+ECON F212,Fund of Fin And Acc,FFA
+ECOM F213,Object Oriented Prog,OOP
+ECOM F214,Electronic Devices,ED
+ECOM F215,Digital Design,DD
+ECOM F222,Discr Struc For Comp Sci,DS
+GS F232,Introductory Psychology,
+MATH F114,Math For Business,
+ME F452,Composite Material & Des,
