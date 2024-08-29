@@ -495,8 +495,8 @@
     "title_short": "Chem Engg Lab I",
     "IC": "Souvik K Paul",
     "sections": [
-      {"section_name": "P1", "instructor": "SOUVIK K PAUL/ B G Prakash Kumar/Murchana Changmai", "room": "340", "days": "T345"},
-      {"section_name": "P1", "instructor": "SOUVIK K PAUL/ B G Prakash Kumar/Murchana Changmai", "room": "340", "days": "W789"}
+      {"section_name": "P1", "instructor": "SOUVIK K PAUL/B G Prakash Kumar/Murchana Changmai",  "room": "340", "days": "T345"},
+      {"section_name": "P1", "instructor": "SOUVIK K PAUL/B G Prakash Kumar/Murchana Changmai",  "room": "340", "days": "W789"}
     ]
   },
   "CHE F313": {
@@ -692,7 +692,7 @@
   },
   "CS F351": {
     "title": "Theory of Computation",
-    "title_short": "Theory of Comp",
+    "title_short": "ToC",
     "IC": "Elakkiya Rajasekar",
     "sections": [
       {"section_name": "L1", "instructor": "ELAKKIYA RAJASEKAR",                                 "room": "210", "days": "M3 W4 Th8 F3"},

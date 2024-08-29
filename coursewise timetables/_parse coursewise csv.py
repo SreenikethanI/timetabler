@@ -165,6 +165,7 @@ def parse_csv(path_csv: str, path_titles: str) -> tuple[SemesterJSON, list[Parse
         # Start with an empty course, to which we keep adding entries, until we
         # encounter the next course ID.
         curr_course: CourseJSON = create_empty_course()
+        curr_course_row_num_csv: int = -1
         section_prefix: str = "L"
         for row_num_csv, cols in enumerate(r, start=1):
             if not any(cols):
@@ -175,14 +176,13 @@ def parse_csv(path_csv: str, path_titles: str) -> tuple[SemesterJSON, list[Parse
             cols_filtered = list(map(str.strip, resize_list(cols, 8, "")))
 
             for col_index, col in enumerate(cols_filtered):
-                if "\n" in col or "\r" in col:
+                col_new = col.replace(" /", "/").replace("/ ", "/")
+                while "  " in col_new: col_new.replace("  ", " ")
+                if "\n" in col_new or "\r" in col_new:
                     warn(row_num_csv, "Newline found, replacing with space.",
                          col_index + 1)
-                    cols_filtered[col_index] = (col
-                                                .replace("\r\n", " ")
-                                                .replace("\n", " ")
-                                                .replace("\r", " ")
-                                                )
+                    col_new = col_new.replace("\r\n", " ").replace("\n", " ").replace("\r", " ")
+                cols_filtered[col_index] = col_new
 
             (_com_cod, course_id, course_title, credit_LPU, section_number,
              instructor, room, days) = cols_filtered
@@ -202,7 +202,11 @@ def parse_csv(path_csv: str, path_titles: str) -> tuple[SemesterJSON, list[Parse
             # Course ID encountered, so create a new Course object, and figure
             # out whether the course has lectures and/or practicals sections
             if course_id:
+                if curr_course_row_num_csv > 0 and not curr_course["IC"]:
+                    warn(curr_course_row_num_csv, f"Cannot recognize IC.", 6)
+
                 curr_course = create_empty_course()
+                curr_course_row_num_csv = row_num_csv
                 semester[course_id] = curr_course
                 if course_id in titles:
                     (curr_course["title"], curr_course["title_short"]) = titles[course_id]
@@ -267,7 +271,8 @@ def parse_csv(path_csv: str, path_titles: str) -> tuple[SemesterJSON, list[Parse
 
             # Create a section object in the current course.
             # NOTE: This is the most important change, i.e. the new section
-            # object is being **appended** to the **list** of sections.
+            # object is being **appended** to the **list** of sections, see
+            # commit https://github.com/SreenikethanI/timetabler/commit/043b409
             curr_course["sections"].append({
                 "section_name": section_number_prefixed,
                 "instructor": instructor,
@@ -325,5 +330,5 @@ if __name__ == "__main__":
 
     ### Output
     with open(path_out, "w") as f:
-        dump(semester, f, indent=4)
+        dump(semester, f, indent=2)
     print("Written to output path.")
