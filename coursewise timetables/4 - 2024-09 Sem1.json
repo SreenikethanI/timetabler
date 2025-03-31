@@ -669,7 +669,7 @@
   },
   "CS F320": {
     "title": "Foundation of Data Science",
-    "title_short": "Foundation of Data Sci",
+    "title_short": "FDS",
     "IC": "Ashish Gupta",
     "sections": [
       {"section_name": "L1", "instructor": "ASHISH GUPTA",                                       "room": "226", "days": "M5 T1 W6"}
@@ -1108,7 +1108,7 @@
   },
   "GS F211": {
     "title": "Modern Political Concepts",
-    "title_short": "Mod Pol Concepts",
+    "title_short": "Mod Pol",
     "IC": "Shamshad Khan",
     "sections": [
       {"section_name": "L1", "instructor": "SHAMSHAD KHAN",                                      "room": "214", "days": "T9 Th9 F5"}
@@ -1132,7 +1132,7 @@
   },
   "GS F332": {
     "title": "Contemporary India",
-    "title_short": "Contemp India",
+    "title_short": "CI",
     "IC": "Mrutuyanjaya Sahu",
     "sections": [
       {"section_name": "L1", "instructor": "MRUTUYANJAYA SAHU",                                  "room": "214", "days": "M9 T7 Th2"}
@@ -1458,7 +1458,7 @@
   },
   "PHY F215": {
     "title": "Intro to Astro & Astroph",
-    "title_short": "Astrophysics",
+    "title_short": "Astro",
     "IC": "Swati Routh",
     "sections": [
       {"section_name": "L1", "instructor": "SWATI ROUTH",                                        "room": "222", "days": "M9 T7 Th2"}
