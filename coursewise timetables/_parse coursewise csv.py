@@ -167,7 +167,7 @@ def parse_csv(path_csv: str, path_titles: str) -> tuple[SemesterJSON, list[Parse
         curr_course: CourseJSON = create_empty_course()
         curr_course_row_num_csv: int = -1
         section_prefix: str = "L"
-        for row_num_csv, cols in enumerate(r, start=1):
+        for row_num_csv, cols in enumerate(r, start=2): # 2 as I skipped headers
             if not any(cols):
                 warn(row_num_csv, "Empty row.")
                 continue
@@ -217,7 +217,7 @@ def parse_csv(path_csv: str, path_titles: str) -> tuple[SemesterJSON, list[Parse
 
                 try:
                     # Try to parse first three values as ints
-                    credit_parts = list(map(int, credit_LPU.split()))[:3]
+                    credit_parts = list(map(int, credit_LPU.replace("*", "").split()))[:3]
                 except:
                     # Ideally we should create a parse warning here, but by
                     # setting `credit_parts` as an empty list, the warning will
@@ -257,7 +257,7 @@ def parse_csv(path_csv: str, path_titles: str) -> tuple[SemesterJSON, list[Parse
                 try:
                     section_number_int = int(section_number)
                 except:
-                    warn(row_num_csv, "Section number isn't an int.", 6)
+                    warn(row_num_csv, "Section number isn't an integer.", 6)
                     continue
 
             # At this point of code, `section_number_int` will definitely have
@@ -266,8 +266,13 @@ def parse_csv(path_csv: str, path_titles: str) -> tuple[SemesterJSON, list[Parse
 
             # Check for Instructor-in-Charge. BITS convention is to write IC's
             # name in ALL CAPS.
-            if not curr_course["IC"] and instructor.isupper():
-                curr_course["IC"] = instructor.title()
+            if not curr_course["IC"]:
+                instructors_ic = "/".join([
+                    x.title()
+                    for x in instructor.split("/")
+                    if x.isupper()
+                ])
+                if instructors_ic: curr_course["IC"] = instructors_ic
 
             # Create a section object in the current course.
             # NOTE: This is the most important change, i.e. the new section
