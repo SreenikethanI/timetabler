@@ -32,7 +32,7 @@ A "Semester" here refers to the entire list of courses available for a certain
 semester. This information is received as a PDF in email, either from Kumar sir,
 or from the AUGSD department.<br>Example file name: "*Draft Timetable_FD_Second  Sem 23-24_19 1 2024.pdf*"
 
-### 👉 Brief outline
+### Brief outline
 Here's a brief on what shall be done with the PDF. The chain is **PDF** →
 **CSV** → **JSON**.
 1. The table from the PDF file is imported into Excel. **Motive:** Excel feels
@@ -48,6 +48,8 @@ Here's a brief on what shall be done with the PDF. The chain is **PDF** →
    file is created. **Motive:** JavaScript doesn't have native support for CSV,
    but it supports JSON natively. Also, its hierarchial nature feels most
    suitable for representing semester info.
+   <!-- TODO: Explain warnings from parser script, and how to deal with each
+   warning. -->
 
 4. This JSON file is then referenced in the [Constants](/scripts/constants.js)
    script file under `SEMESTERS_PROMISES`.

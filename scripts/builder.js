@@ -137,8 +137,8 @@ function loadCourses(semester, categorizer, exclude, customCategories) {
 /** Shows the builder dialog optionally with a pre-filled timetable.
  * @param {Constants.Student} courses The list of *selected* courses and
  * sections to pre-fill the dialog with.
- * @param {string} title The name of the student, which will be automatically
- * suffixed with "'s timetable".
+ * @param {string} title The name of the student. Note that it will be suffixed
+ * with "'s timetable", only for displaying.
  * @param {number} semIndex The index of the semester in {@link Constants.SEMESTERS}.
  * @returns `true` if Save was clicked, `false` if Discard was clicked.
  */
@@ -172,5 +172,8 @@ export async function showDialog(courses, title, semIndex) {
     // Finish up and return
     e(DOM.DOM_BUILDER_CONTAINER).classList.add(DOM.CSS_BUILDER_HIDDEN);
     isDialogShown = false;
+
+    // TODO: Change this to return an object, with one of the properties being
+    // dialogResult.
     return dialogResult;
 }
