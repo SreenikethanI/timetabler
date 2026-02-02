@@ -91,34 +91,6 @@ Here's a brief on what shall be done with the PDF. The chain is **PDF** →
 
 That's it, you may move to the next step in the process.
 
-<!-- 5. Add a "#" that just contains the row number. ([More info](#the--column)) -->
-
----
-## More info
-
-<!-- ### The "#" column
-**Here's what it is:**
-This column contains "row numbers". Start typing 1, 2, 3 for the first 3 cells,
-and Auto Fill the remaining rows. Example:<br>
-![Example for the # column](<../docs/cwtt appendix hash 1.png>)
-
-**Here's the purpose:**
-Say you want to temporarily sort by a column, make some changes, and revert the
-order of the rows. This # column will help you to get back the original order of
-the rows.
-
-**Here's why it matters:**
-For example, take the rows 10 thru 13 in the screenshot above. The
-"*BIO F111 General Biology*" course thus takes up 4 rows. Only row 10 has the
-course number and the title, and the other rows (rows 11 thru 13) are blank
-for these two columns.
-
-The conclusion is that, if we reorder any rows, then we are losing critical
-information. For example, IF row 12 was inserted after row 4, then it would add
-an extra section for *Bio Lab* and remove a section from *General Bio*, which
-will be incorrect. Hence it is critical that we preserve the original order of
-the rows, which can be achieved using this "#" column. -->
-
 <!-- you get a cookie for reading this 😃😄 -->
 
 <!-- cookies are tasty -->

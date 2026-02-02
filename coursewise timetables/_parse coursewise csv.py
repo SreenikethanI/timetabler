@@ -1,8 +1,7 @@
 from csv import reader
 from json import dump
 from typing import NamedTuple
-# from collections import defaultdict
-from os.path import realpath
+import re
 from pathlib import Path
 
 from _common import *
@@ -66,8 +65,7 @@ def load_course_titles(path_in: Path) -> dict[str, tuple[str, str]]:
         r = reader(f)
         next(r) # Skip headers
         for cols in r:
-            (course_id, title, title_short) = map(str.strip,
-                                                  resize_list(cols, 3, ""))
+            (course_id, title, title_short) = map(str.strip, resize_list(cols, 3, ""))
             if not course_id: continue
             titles[course_id] = (title or title_short, title_short)
 
@@ -146,9 +144,7 @@ def parse_csv(path_csv: Path, path_titles: Path) -> tuple[SemesterJSON, list[Par
     8. days/hours
 
     Extra columns are ignored, and missing columns are taken as blank."""
-
-    # Removed from docstring above (ignore, basically):
-    # 1. row number a.k.a. "#" (check `coursewise timetables/README.md` for info)
+    NUM_COLS = 8
 
     semester: SemesterJSON = {}
     warnings: list[ParseWarning] = []
@@ -157,8 +153,6 @@ def parse_csv(path_csv: Path, path_titles: Path) -> tuple[SemesterJSON, list[Par
         warnings.append(ParseWarning(row_num, message, col_num))
 
     titles = load_course_titles(path_titles)
-    # course_has_LP: dict[str, tuple[bool, bool]] = defaultdict(lambda: (False, False))
-    # row_num_prev: int | None = None
     with open(path_csv, "r", encoding="utf-8-sig") as f:
         r = reader(f)
         next(r) # Skip headers
@@ -174,35 +168,26 @@ def parse_csv(path_csv: Path, path_titles: Path) -> tuple[SemesterJSON, list[Par
                 continue
 
             # Unpack columns and strip all columns.
-            cols_filtered = list(map(str.strip, resize_list(cols, 8, "")))
+            cols_filtered = resize_list(cols, NUM_COLS, "")
 
             for col_index, col in enumerate(cols_filtered):
-                col_new = col.replace(" /", "/").replace("/ ", "/")
-                while "  " in col_new: col_new.replace("  ", " ")
-                if "\n" in col_new or "\r" in col_new:
-                    warn(row_num_csv, "Newline found, replacing with space.",
-                         col_index + 1)
-                    col_new = col_new.replace("\r\n", " ").replace("\n", " ").replace("\r", " ")
-                cols_filtered[col_index] = col_new
+                if "\n" in col or "\r" in col:
+                    warn(row_num_csv, "Newline found, replacing with space.", col_index + 1)
+                    col = col.replace("\r\n", " ").replace("\n", " ").replace("\r", " ")
+                while "  " in col: col = col.replace("  ", " ")
+                col = col.replace(" /", "/").replace("/ ", "/")
+                col = col.strip()
+                cols_filtered[col_index] = col
 
-            (_com_cod, course_id, course_title, credit_LPU, section_number,
-             instructor, room, days) = cols_filtered
-
-            # Verify Row number, just for redundancy.
-            # NOTE: This was a temporary idea, but I feel now it's unnecessary
-            # and just extra effort.
-            # try:
-            #     row_num_int = int(row_num)
-            #     if row_num_prev is None:
-            #         row_num_prev = row_num_int
-            #     elif row_num_int < row_num_prev:
-            #         warn(row_num_csv, "Row # is not ascending, did you forget to sort?", 1)
-            # except:
-            #     warn(row_num_csv, "Row number isn't an int.", 1)
+            (_com_cod, course_id, course_title, credit_LPU, section_number, instructor, room, days) = cols_filtered
+            instructor_list = [x.strip() for x in re.split(r"/|&|,", instructor)]
+            instructor_list_title = [x.title() for x in instructor_list]
 
             # Course ID encountered, so create a new Course object, and figure
             # out whether the course has lectures and/or practicals sections
             if course_id:
+
+                # Warn if the previous course's IC was not recognized.
                 if curr_course_row_num_csv > 0 and not curr_course["IC"]:
                     warn(curr_course_row_num_csv, f"Cannot recognize IC.", 6)
 
@@ -214,6 +199,7 @@ def parse_csv(path_csv: Path, path_titles: Path) -> tuple[SemesterJSON, list[Par
                 else:
                     warn(row_num_csv, f"Course ID {course_id} not found in Titles CSV.")
                     curr_course["title"] = course_title
+
                 section_prefix = "L"
 
                 try:
@@ -226,62 +212,57 @@ def parse_csv(path_csv: Path, path_titles: Path) -> tuple[SemesterJSON, list[Par
                     credit_parts = []
 
                 if len(credit_parts) == 1:
-                    # course_has_LP[course_id] = (True, False)
                     section_prefix = "L"
 
                 elif len(credit_parts) == 3:
                     credit_L, credit_P, credit_U = credit_parts
-                    # course_has_LP[course_id] = (credit_L > 0, credit_P > 0)
 
                     section_prefix = "P" if credit_L == 0 and credit_P > 0 else "L"
 
                 else:
-                    warn(row_num_csv, "Course credits should have 1 or 3 NUMBERS only.", 5)
+                    warn(row_num_csv, "Course credits should have 1 or 3 numbers only.", 5)
 
-            elif course_title.lower() == "practical":
-                # note that `not course_id` is also True. Course ID is blank.
+            if course_title.lower().startswith("practical"):
                 section_prefix = "P"
 
             # If section number is missing, then this row might describe the IC.
             if not section_number:
-                if instructor:
-                    curr_course["IC"] = instructor.title()
+                if instructor_list:
+                    curr_course["IC"] = ", ".join(instructor_list_title)
                 else:
                     # Does NOT describe the IC, so seems like an error.
                     warn(row_num_csv, "Missing section number.", 6)
 
-                # Since section number is missing, we don't add a section object
-                # later on, and thus `continue` the loop.
+                # Since section number is missing, we discard this section.
                 continue
 
+            # Try parsing section number. The old PDFs till 2025-09 have it
+            # numbered 1,2,3,... whereas 2026-01 onwards have it numbered
+            # as L1,L2,L3,... P1,P2,P3,... Q1,Q2,Q3,...
+            # So if the section number is just a number, then we add the L/P
+            # prefix, otherwise it can be understood that the section number
+            # already has the L/P/Q prefix.
+            if section_number.isdigit():
+                section_number = f"{section_prefix}{section_number}"
             else:
-                try:
-                    section_number_int = int(section_number)
-                except:
-                    warn(row_num_csv, "Section number isn't an integer.", 6)
-                    continue
-
-            # At this point of code, `section_number_int` will definitely have
-            # a value assigned to it.
-            section_number_prefixed = f"{section_prefix}{section_number_int}"
+                pass
 
             # Check for Instructor-in-Charge. BITS convention is to write IC's
             # name in ALL CAPS.
+            # And they randomly decide to split with comma, ampersand or slash
+            # depending on the color of the moon. Come on, man...
             if not curr_course["IC"]:
                 instructors_ic = "/".join([
                     x.title()
-                    for x in instructor.split("/")
+                    for x in instructor_list
                     if x.isupper()
                 ])
                 if instructors_ic: curr_course["IC"] = instructors_ic
 
             # Create a section object in the current course.
-            # NOTE: This is the most important change, i.e. the new section
-            # object is being **appended** to the **list** of sections, see
-            # commit https://github.com/SreenikethanI/timetabler/commit/043b409
             curr_course["sections"].append({
-                "section_name": section_number_prefixed,
-                "instructor": instructor,
+                "section_name": section_number,
+                "instructor": ", ".join(instructor_list_title),
                 "room": room,
                 "days": days,
             })
