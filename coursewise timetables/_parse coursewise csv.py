@@ -3,6 +3,7 @@ from json import dump
 from typing import NamedTuple
 # from collections import defaultdict
 from os.path import realpath
+from pathlib import Path
 
 from _common import *
 
@@ -48,7 +49,7 @@ def create_empty_course() -> CourseJSON:
 
 # >>==========================================================================<<
 
-def load_course_titles(path_in: str) -> dict[str, tuple[str, str]]:
+def load_course_titles(path_in: Path) -> dict[str, tuple[str, str]]:
     """Load course titles and short titles from the given CSV file.
 
     The CSV file SHOULD have a header row, and SHOULD have the following columns
@@ -72,7 +73,7 @@ def load_course_titles(path_in: str) -> dict[str, tuple[str, str]]:
 
     return titles
 
-def parse_csv_old(path_in: str) -> tuple[SemesterJSON_Old, list[ParseWarning]]:
+def parse_csv_old(path_in: Path) -> tuple[SemesterJSON_Old, list[ParseWarning]]:
     """[deprecated] Parse the given CSV file and return a dict.
 
     The CSV file SHOULD NOT have a header row, and SHOULD have the following
@@ -130,7 +131,7 @@ def parse_csv_old(path_in: str) -> tuple[SemesterJSON_Old, list[ParseWarning]]:
 
     return semester, warnings
 
-def parse_csv(path_csv: str, path_titles: str) -> tuple[SemesterJSON, list[ParseWarning]]:
+def parse_csv(path_csv: Path, path_titles: Path) -> tuple[SemesterJSON, list[ParseWarning]]:
     """Parse the given CSV file and return a dict.
 
     The CSV file SHOULD have a header row, and SHOULD have the following columns
@@ -292,23 +293,22 @@ def parse_csv(path_csv: str, path_titles: str) -> tuple[SemesterJSON, list[Parse
 if __name__ == "__main__":
     ### Import modules
     from sys import argv
-    from os.path import isfile, splitext
 
     ### Load CSV file path from command-line argument.
-    path_in = argv[1] if len(argv) >= 2 else ""
+    path_in = Path(argv[1] if len(argv) >= 2 else "")
     while True:
-        if isfile(path_in): break
+        if path_in.is_file(): break
         if path_in: print("  Error: CSV file path doesn't exist.")
-        path_in = input("Enter CSV path: ").replace('"', '').strip()
+        path_in = Path(input("Enter CSV path: ").replace('"', '').strip())
 
-    path_out = splitext(path_in)[0] + ".json"
+    path_out = path_in.with_suffix(".json")
 
     ### Load Titles CSV file path from command-line argument.
-    path_titles = argv[2] if len(argv) >= 3 else "_course_titles.csv"
+    path_titles = Path(argv[2] if len(argv) >= 3 else "_course_titles.csv")
     while True:
-        if isfile(path_titles): break
+        if path_titles.is_file(): break
         if path_titles: print("  Error: Titles CSV path doesn't exist.")
-        path_titles = input("Enter path for \"_course_titles.csv\": ").replace('"', '').strip()
+        path_titles = Path(input("Enter path for \"_course_titles.csv\": ").replace('"', '').strip())
     print()
 
     ### Confirm before start
@@ -316,7 +316,7 @@ if __name__ == "__main__":
     print("  Input CSV  :", path_in)
     print("  Output JSON:", path_out)
     print("  Titles CSV :", path_titles)
-    if isfile(path_out):
+    if path_out.is_file():
         yn = input("Output file already exists, overwrite? [y/N] ").strip()[-1:].lower()
         # Check for just "y", so that other inputs will be interpreted as a No.
         if yn != "y": bye("Cancelling.")
