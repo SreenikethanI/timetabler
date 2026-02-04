@@ -79,6 +79,10 @@ const SEMESTERS_PROMISES = [
     loadJSON("coursewise timetables\\1 - 2023-02 Sem2 (Year 1 only).json"),
     loadJSON("coursewise timetables\\2 - 2023-09 Sem1 (v2).json"),
     loadJSON("coursewise timetables\\3 - 2024-02 Sem2 (v3).json"),
+    loadJSON("coursewise timetables\\4 - 2024-09 Sem1.json"),
+    loadJSON("coursewise timetables\\5 - 2025-01 Sem2.json"),
+    loadJSON("coursewise timetables\\6 - 2025-09 Sem1.json"),
+    loadJSON("coursewise timetables\\7 - 2026-01 Sem2.json"),
 ];
 
 //=| Friends |================================================================//
