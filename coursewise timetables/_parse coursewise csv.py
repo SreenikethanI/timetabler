@@ -180,8 +180,11 @@ def parse_csv(path_csv: Path, path_titles: Path) -> tuple[SemesterJSON, list[Par
                 cols_filtered[col_index] = col
 
             (_com_cod, course_id, course_title, credit_LPU, section_number, instructor, room, days) = cols_filtered
-            instructor_list = [x.strip() for x in re.split(r"/|&|,", instructor)]
-            instructor_list_title = [x.title() for x in instructor_list]
+
+            # They randomly decide to split with comma, ampersand or slash
+            # depending on the color of the moon. Come on, man...
+            instructor_list = [x.strip() for x in re.split(r"/|&|,", instructor) if x.strip()]
+            instructor_list_title = [x.title() if x.upper() != "TBA" else x for x in instructor_list]
 
             # Course ID encountered, so create a new Course object, and figure
             # out whether the course has lectures and/or practicals sections
@@ -249,11 +252,9 @@ def parse_csv(path_csv: Path, path_titles: Path) -> tuple[SemesterJSON, list[Par
 
             # Check for Instructor-in-Charge. BITS convention is to write IC's
             # name in ALL CAPS.
-            # And they randomly decide to split with comma, ampersand or slash
-            # depending on the color of the moon. Come on, man...
             if not curr_course["IC"]:
-                instructors_ic = "/".join([
-                    x.title()
+                instructors_ic = ", ".join([
+                    x.title() if x.upper() != "TBA" else x
                     for x in instructor_list
                     if x.isupper()
                 ])
@@ -262,7 +263,7 @@ def parse_csv(path_csv: Path, path_titles: Path) -> tuple[SemesterJSON, list[Par
             # Create a section object in the current course.
             curr_course["sections"].append({
                 "section_name": section_number,
-                "instructor": ", ".join(instructor_list_title),
+                "instructor": " / ".join(instructor_list_title),
                 "room": room,
                 "days": days,
             })

@@ -7,7 +7,7 @@ to as the "Semester index" in the code.
 
 ---
 ## Files
-The **pdf**, **xlsx**, **csv**, **json** files are documented in the section
+The **pdf**/**xlsx**, **csv**, **json** files are documented in the section
 [#Creating a file for a Semester](#creating-a-file-for-a-semester). The
 remaining files are documented here:
 | File | Description |

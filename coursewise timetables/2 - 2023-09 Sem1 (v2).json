@@ -5,10 +5,10 @@
     "IC": "Aditya Sharma",
     "sections": [
       {"section_name": "P1", "instructor": "Neeru Sood"                       , "room": "307" , "days": "M34"},
-      {"section_name": "P2", "instructor": "ADITYA SHARMA"                    , "room": "307" , "days": "M89"},
-      {"section_name": "P3", "instructor": "ADITYA SHARMA"                    , "room": "307" , "days": "T89"},
+      {"section_name": "P2", "instructor": "Aditya Sharma"                    , "room": "307" , "days": "M89"},
+      {"section_name": "P3", "instructor": "Aditya Sharma"                    , "room": "307" , "days": "T89"},
       {"section_name": "P4", "instructor": "Mainak Dutta"                     , "room": "307" , "days": "W34"},
-      {"section_name": "P5", "instructor": "ADITYA SHARMA"                    , "room": "307" , "days": "W89"},
+      {"section_name": "P5", "instructor": "Aditya Sharma"                    , "room": "307" , "days": "W89"},
       {"section_name": "P6", "instructor": "Neeru Sood"                       , "room": "307" , "days": "Th89"},
       {"section_name": "P7", "instructor": "S Ramachandran"                   , "room": "307" , "days": "F34"}
     ]
@@ -18,35 +18,35 @@
     "title_short": "Biology",
     "IC": "Neeru Sood",
     "sections": [
-      {"section_name": "P1", "instructor": "Debostuti Ghosh"                  , "room": "101" , "days": "M1 T6 Th4 F5"},
-      {"section_name": "P2", "instructor": "Aditya Sharma"                    , "room": "105" , "days": "M1 T4 W1 Th5"},
-      {"section_name": "P3", "instructor": "NEERU SOOD"                       , "room": "123" , "days": "M1 T4 Th5 F5"}
+      {"section_name": "L1", "instructor": "Debostuti Ghosh"                  , "room": "101" , "days": "M1 T6 Th4 F5"},
+      {"section_name": "L2", "instructor": "Aditya Sharma"                    , "room": "105" , "days": "M1 T4 W1 Th5"},
+      {"section_name": "L3", "instructor": "Neeru Sood"                       , "room": "123" , "days": "M1 T4 Th5 F5"}
     ]
   },
   "BIOT F211": {
     "title": "Biological Chemistry",
-    "title_short": "Bio. chem",
+    "title_short": "Biochem",
     "IC": "Mainak Dutta",
     "sections": [
-      {"section_name": "L1", "instructor": "MAINAK DUTTA"                     , "room": "220" , "days": "M1 T9 W6 Th9"}
+      {"section_name": "L1", "instructor": "Mainak Dutta"                     , "room": "220" , "days": "M1 T9 W6 Th9"}
     ]
   },
   "BIOT F212": {
     "title": "Microbiology",
-    "title_short": "Microbio",
+    "title_short": "Micro Bio",
     "IC": "Trupti Gokhale",
     "sections": [
-      {"section_name": "L1", "instructor": "TRUPTI GOKHALE"                   , "room": "220" , "days": "M5 T8 W1 F2"},
-      {"section_name": "P1", "instructor": "TRUPTI GOKHALE"                   , "room": "307" , "days": "T345"},
-      {"section_name": "P2", "instructor": "TRUPTI GOKHALE"                   , "room": "307" , "days": "Th234"}
+      {"section_name": "L1", "instructor": "Trupti Gokhale"                   , "room": "220" , "days": "M5 T8 W1 F2"},
+      {"section_name": "P1", "instructor": "Trupti Gokhale"                   , "room": "307" , "days": "T345"},
+      {"section_name": "P2", "instructor": "Trupti Gokhale"                   , "room": "307" , "days": "Th234"}
     ]
   },
   "BIOT F213": {
     "title": "Cell Biology",
-    "title_short": "Cell bio",
+    "title_short": "Cell Bio",
     "IC": "Neeru Sood",
     "sections": [
-      {"section_name": "L1", "instructor": "NEERU SOOD"                       , "room": "220" , "days": "M6 T7 W5 F3"}
+      {"section_name": "L1", "instructor": "Neeru Sood"                       , "room": "220" , "days": "M6 T7 W5 F3"}
     ]
   },
   "BIOT F215": {
@@ -54,15 +54,15 @@
     "title_short": "Biophy",
     "IC": "Debostuti Ghosh",
     "sections": [
-      {"section_name": "L1", "instructor": "DEBOSTUTI GHOSH"                  , "room": "220" , "days": "M3 W3 Th8 F1"}
+      {"section_name": "L1", "instructor": "Debostuti Ghosh"                  , "room": "220" , "days": "M3 W3 Th8 F1"}
     ]
   },
   "BIOT F242": {
     "title": "Intro to Bioinformatics",
-    "title_short": "Intro to bioinfo",
+    "title_short": "Bioinfo",
     "IC": "Aditya Sharma",
     "sections": [
-      {"section_name": "L1", "instructor": "ADITYA SHARMA"                    , "room": "271" , "days": "M5 W5 Th9"}
+      {"section_name": "L1", "instructor": "Aditya Sharma"                    , "room": "271" , "days": "M5 W5 Th9"}
     ]
   },
   "BIOT F266": {
@@ -70,34 +70,34 @@
     "title_short": "",
     "IC": "Neeru Sood",
     "sections": [
-      {"section_name": "1", "instructor": "NEERU SOOD"                        , "room": ""    , "days": ""}
+      {"section_name": "L1", "instructor": "Neeru Sood"                       , "room": ""    , "days": ""}
     ]
   },
   "BIOT F311": {
-    "title": "Recombinant DNA Tech",
-    "title_short": "Recomb. DNA",
+    "title": "Recombinant DNA Technology",
+    "title_short": "Recomb DNA",
     "IC": "Pallab Sanpui",
     "sections": [
-      {"section_name": "L1", "instructor": "PALLAB SANPUI"                    , "room": "271" , "days": "M2 T3 W2 Th2"}
+      {"section_name": "L1", "instructor": "Pallab Sanpui"                    , "room": "271" , "days": "M2 T3 W2 Th2"}
     ]
   },
   "BIOT F314": {
-    "title": "Ind Microbio & Biopro Engg",
+    "title": "Industrial Microbiology & Biopro Engineering",
     "title_short": "",
     "IC": "S Ramachandran",
     "sections": [
-      {"section_name": "L1", "instructor": "S RAMACHANDRAN"                   , "room": "271" , "days": "M9 T5"},
-      {"section_name": "P1", "instructor": "S Ramachandran/ Debostuti Ghosh"  , "room": "307" , "days": "M67"},
-      {"section_name": "P2", "instructor": "S Ramachandran/ Debostuti Ghosh"  , "room": "307" , "days": "W67"}
+      {"section_name": "L1", "instructor": "S Ramachandran"                   , "room": "271" , "days": "M9 T5"},
+      {"section_name": "P1", "instructor": "S Ramachandran / Debostuti Ghosh" , "room": "307" , "days": "M67"},
+      {"section_name": "P1", "instructor": "S Ramachandran / Debostuti Ghosh" , "room": "307" , "days": "W67"}
     ]
   },
   "BIOT F343": {
     "title": "Experiments in Biotech",
-    "title_short": "Expt in biotech",
+    "title_short": "Expt in Biotech",
     "IC": "Mainak Dutta",
     "sections": [
-      {"section_name": "P1", "instructor": "Mainak Dutta/ Pallab Sanpui"      , "room": "308" , "days": "Th567"},
-      {"section_name": "P2", "instructor": "Mainak Dutta/ Pallab Sanpui"      , "room": "308" , "days": "F345"}
+      {"section_name": "P1", "instructor": "Mainak Dutta / Pallab Sanpui"     , "room": "308" , "days": "Th567"},
+      {"section_name": "P2", "instructor": "Mainak Dutta / Pallab Sanpui"     , "room": "308" , "days": "F345"}
     ]
   },
   "BIOT F345": {
@@ -105,23 +105,23 @@
     "title_short": "",
     "IC": "S Ramachandran",
     "sections": [
-      {"section_name": "L1", "instructor": "S RAMACHANDRAN"                   , "room": "271" , "days": "T7 W3 Th1"}
+      {"section_name": "L1", "instructor": "S Ramachandran"                   , "room": "271" , "days": "T7 W3 Th1"}
     ]
   },
   "BIOT F366": {
     "title": "Laboratory Project",
-    "title_short": "Lab project",
+    "title_short": "Lab Proj",
     "IC": "Neeru Sood",
     "sections": [
-      {"section_name": "1", "instructor": "NEERU SOOD"                        , "room": ""    , "days": ""}
+      {"section_name": "L1", "instructor": "Neeru Sood"                       , "room": ""    , "days": ""}
     ]
   },
   "BIOT F367": {
     "title": "Laboratory Project",
-    "title_short": "Lab project",
+    "title_short": "Lab Proj",
     "IC": "Neeru Sood",
     "sections": [
-      {"section_name": "1", "instructor": "NEERU SOOD"                        , "room": ""    , "days": ""}
+      {"section_name": "L1", "instructor": "Neeru Sood"                       , "room": ""    , "days": ""}
     ]
   },
   "BIOT F376": {
@@ -129,7 +129,7 @@
     "title_short": "",
     "IC": "Neeru Sood",
     "sections": [
-      {"section_name": "1", "instructor": "NEERU SOOD"                        , "room": ""    , "days": ""}
+      {"section_name": "L1", "instructor": "Neeru Sood"                       , "room": ""    , "days": ""}
     ]
   },
   "BIOT F377": {
@@ -137,15 +137,15 @@
     "title_short": "",
     "IC": "Neeru Sood",
     "sections": [
-      {"section_name": "1", "instructor": "NEERU SOOD"                        , "room": ""    , "days": ""}
+      {"section_name": "L1", "instructor": "Neeru Sood"                       , "room": ""    , "days": ""}
     ]
   },
   "BIOT F424": {
     "title": "Food Biotechnology",
-    "title_short": "Food biotech",
+    "title_short": "Food Biotech",
     "IC": "Trupti Gokhale",
     "sections": [
-      {"section_name": "L1", "instructor": "TRUPTI GOKHALE"                   , "room": "271" , "days": "M3 T1 W4"}
+      {"section_name": "L1", "instructor": "Trupti Gokhale"                   , "room": "271" , "days": "M3 T1 W4"}
     ]
   },
   "BIOT F491": {
@@ -153,39 +153,33 @@
     "title_short": "",
     "IC": "Neeru Sood",
     "sections": [
-      {"section_name": "1", "instructor": "NEERU SOOD"                        , "room": ""    , "days": ""}
+      {"section_name": "L1", "instructor": "Neeru Sood"                       , "room": ""    , "days": ""}
     ]
   },
   "BITS C791T": {
     "title": "Teaching Practice I",
-    "title_short": "",
+    "title_short": "TP I",
     "IC": "Ram Karthikeyan",
-    "sections": [
-      {"section_name": "1", "instructor": "RAM KARTHIKEYAN"                   , "room": ""    , "days": ""}
-    ]
+    "sections": []
   },
   "BITS C797T": {
     "title": "PhD Seminar",
     "title_short": "",
     "IC": "Ram Karthikeyan",
-    "sections": [
-      {"section_name": "1", "instructor": "RAM KARTHIKEYAN"                   , "room": ""    , "days": ""}
-    ]
+    "sections": []
   },
   "BITS C799T": {
     "title": "PhD Thesis",
     "title_short": "",
     "IC": "Ram Karthikeyan",
-    "sections": [
-      {"section_name": "1", "instructor": "RAM KARTHIKEYAN"                   , "room": ""    , "days": ""}
-    ]
+    "sections": []
   },
   "BITS E661": {
     "title": "Research Methodology I",
     "title_short": "",
     "IC": "Ram Karthikeyan",
     "sections": [
-      {"section_name": "1", "instructor": "RAM KARTHIKEYAN"                   , "room": ""    , "days": ""}
+      {"section_name": "L1", "instructor": "Ram Karthikeyan"                  , "room": ""    , "days": ""}
     ]
   },
   "BITS F110": {
@@ -193,7 +187,7 @@
     "title_short": "EG",
     "IC": "Meghana S Charde",
     "sections": [
-      {"section_name": "L1", "instructor": "MEGHANA S CHARDE"                 , "room": "101" , "days": "Th3"},
+      {"section_name": "L1", "instructor": "Meghana S Charde"                 , "room": "101" , "days": "Th3"},
       {"section_name": "L2", "instructor": "Akshay Venkateshwaran"            , "room": "105" , "days": "Th4"},
       {"section_name": "L3", "instructor": "Deepthi Mary Dilip"               , "room": "123" , "days": "T3"},
       {"section_name": "P1", "instructor": "Meghana S Charde"                 , "room": "MS5" , "days": "M89"},
@@ -206,7 +200,7 @@
     "title_short": "Thermo",
     "IC": "Snehaunshu Choudhury",
     "sections": [
-      {"section_name": "L1", "instructor": "SNEHAUNSHU CHOUDHURY"             , "room": "165" , "days": "M2 T2 Th1 F3"},
+      {"section_name": "L1", "instructor": "Snehaunshu Choudhury"             , "room": "165" , "days": "M2 T2 Th1 F3"},
       {"section_name": "L2", "instructor": "Shashank Khurana"                 , "room": "185" , "days": "M2 T2 W1 Th1"},
       {"section_name": "L3", "instructor": "Majid Hasan Khan"                 , "room": "190" , "days": "M2 W1 Th1 F5"}
     ]
@@ -216,7 +210,7 @@
     "title_short": "TRW",
     "IC": "Sayantan Chakraborty",
     "sections": [
-      {"section_name": "L1", "instructor": "SAYANTAN CHAKRABORTY"             , "room": "101" , "days": "T5 Th2"},
+      {"section_name": "L1", "instructor": "Sayantan Chakraborty"             , "room": "101" , "days": "T5 Th2"},
       {"section_name": "L2", "instructor": "Shazi S J"                        , "room": "105" , "days": "T5 Th2"},
       {"section_name": "L3", "instructor": "Sayantan Chakraborty"             , "room": "101" , "days": "W2 F1"},
       {"section_name": "L4", "instructor": "Shazi S J"                        , "room": "105" , "days": "W2 F1"}
@@ -228,80 +222,72 @@
     "IC": "Rusal Raj",
     "sections": [
       {"section_name": "L1", "instructor": "Vijaya Ilango"                    , "room": "228" , "days": "W2 Th1 F4"},
-      {"section_name": "L2", "instructor": "RUSAL RAJ"                        , "room": "220" , "days": "M4 W9 F4"}
+      {"section_name": "L2", "instructor": "Rusal Raj"                        , "room": "220" , "days": "M4 W9 F4"}
     ]
   },
   "BITS F226": {
     "title": "Soft Skills For Professionals",
-    "title_short": "Soft skills for profs",
+    "title_short": "Soft Skills",
     "IC": "Rohit",
     "sections": [
-      {"section_name": "L1", "instructor": "ROHIT"                            , "room": "220" , "days": "M7 T2 Th6"}
+      {"section_name": "L1", "instructor": "Rohit"                            , "room": "220" , "days": "M7 T2 Th6"}
     ]
   },
   "BITS F312": {
-    "title": "Neural Net & Fuzzy Logic",
-    "title_short": "",
+    "title": "Neural Networks & Fuzzy Logic",
+    "title_short": "NNFL",
     "IC": "V Kalaichelvi",
     "sections": [
-      {"section_name": "L1", "instructor": "V KALAICHELVI"                    , "room": "184" , "days": "M5 W5 Th9", "comment": "Room # originally 221"}
+      {"section_name": "L1", "instructor": "V Kalaichelvi"                    , "room": "184" , "days": "M5 W5 Th9", "comment": "Room # originally 221"}
     ]
   },
   "BITS F327": {
-    "title": "AI in Robotics",
-    "title_short": "",
+    "title": "Artificial Intelligence for Robotics",
+    "title_short": "AI Robotics",
     "IC": "Ram Karthikeyan",
     "sections": [
-      {"section_name": "L1", "instructor": "RAM KARTHIKEYAN"                  , "room": "276" , "days": "M6 W6 Th5"},
-      {"section_name": "L2", "instructor": "RAM KARTHIKEYAN"                  , "room": "MS2" , "days": "Th12"}
+      {"section_name": "L1", "instructor": "Ram Karthikeyan"                  , "room": "276" , "days": "M6 W6 Th5"},
+      {"section_name": "L1", "instructor": "Ram Karthikeyan"                  , "room": "MS2" , "days": "Th12"}
     ]
   },
   "BITS F412": {
     "title": "Practice School II",
-    "title_short": "",
+    "title_short": "PS II",
     "IC": "A Somasundaram",
-    "sections": [
-      {"section_name": "1", "instructor": "A SOMASUNDARAM"                    , "room": ""    , "days": ""}
-    ]
+    "sections": []
   },
   "BITS F416": {
-    "title": "Intro to Nano Science",
-    "title_short": "",
+    "title": "Intro to Nanoscience",
+    "title_short": "Nanosci",
     "IC": "K K Singh",
     "sections": [
-      {"section_name": "L1", "instructor": "K K SINGH"                        , "room": "226" , "days": "M5 W5 Th9"}
+      {"section_name": "L1", "instructor": "K K Singh"                        , "room": "226" , "days": "M5 W5 Th9"}
     ]
   },
   "BITS F421T": {
     "title": "Thesis",
     "title_short": "",
     "IC": "K Kumar",
-    "sections": [
-      {"section_name": "1", "instructor": "K KUMAR"                           , "room": ""    , "days": ""}
-    ]
+    "sections": []
   },
   "BITS F422T": {
     "title": "Thesis",
     "title_short": "",
     "IC": "K Kumar",
-    "sections": [
-      {"section_name": "1", "instructor": "K KUMAR"                           , "room": ""    , "days": ""}
-    ]
+    "sections": []
   },
   "BITS F423T": {
     "title": "Thesis",
     "title_short": "",
     "IC": "K Kumar",
-    "sections": [
-      {"section_name": "1", "instructor": "K KUMAR"                           , "room": ""    , "days": ""}
-    ]
+    "sections": []
   },
   "BITS F452": {
     "title": "Blockchain Technology",
-    "title_short": "Blockchain tech",
+    "title_short": "Blockchain",
     "IC": "Raja M",
     "sections": [
-      {"section_name": "L1", "instructor": "RAJA M"                           , "room": "223" , "days": "T6 W1 Th7"}
+      {"section_name": "L1", "instructor": "Raja M"                           , "room": "223" , "days": "T6 W1 Th7"}
     ]
   },
   "BITS F464": {
@@ -309,7 +295,7 @@
     "title_short": "ML",
     "IC": "Pranav Mothabhau Pawar",
     "sections": [
-      {"section_name": "L1", "instructor": "PRANAV MOTHABHAU PAWAR"           , "room": "268" , "days": "T6 W1 Th7"}
+      {"section_name": "L1", "instructor": "Pranav Mothabhau Pawar"           , "room": "268" , "days": "T6 W1 Th7"}
     ]
   },
   "BITS G661": {
@@ -317,15 +303,15 @@
     "title_short": "",
     "IC": "Ram Karthikeyan",
     "sections": [
-      {"section_name": "1", "instructor": "RAM KARTHIKEYAN"                   , "room": ""    , "days": ""}
+      {"section_name": "L1", "instructor": "Ram Karthikeyan"                  , "room": ""    , "days": ""}
     ]
   },
   "CE F211": {
     "title": "Mechanics of Solids",
-    "title_short": "Mech. of solids",
+    "title_short": "Mech of Solids",
     "IC": "Akshay Venkateshwaran",
     "sections": [
-      {"section_name": "L1", "instructor": "AKSHAY VENKATESHWARAN"            , "room": "222" , "days": "T6 W1 Th2 F3"}
+      {"section_name": "L1", "instructor": "Akshay Venkateshwaran"            , "room": "222" , "days": "T6 W1 Th2 F3"}
     ]
   },
   "CE F213": {
@@ -333,25 +319,25 @@
     "title_short": "",
     "IC": "Meghana S Charde",
     "sections": [
-      {"section_name": "L1", "instructor": "MEGHANA S CHARDE"                 , "room": "222" , "days": "T5 W6 Th8 F5"},
+      {"section_name": "L1", "instructor": "Meghana S Charde"                 , "room": "222" , "days": "T5 W6 Th8 F5"},
       {"section_name": "P1", "instructor": "Meghana S Charde"                 , "room": "MF1" , "days": "F12"}
     ]
   },
   "CE F230": {
     "title": "Civil Engineering Materials",
-    "title_short": "Civ engg materials",
+    "title_short": "Civil Engg Materials",
     "IC": "Deepthi Mary Dilip",
     "sections": [
-      {"section_name": "L1", "instructor": "DEEPTHI MARY DILIP"               , "room": "222" , "days": "M9 T1 W8 Th9"},
+      {"section_name": "L1", "instructor": "Deepthi Mary Dilip"               , "room": "222" , "days": "M9 T1 W8 Th9"},
       {"section_name": "P1", "instructor": "Vivek B Kartha"                   , "room": "MG2" , "days": "M56"}
     ]
   },
   "CE F231": {
     "title": "Fluid Mechanics",
-    "title_short": "Fluid mech",
+    "title_short": "Fluid Mech",
     "IC": "Brij Kishore Pandey",
     "sections": [
-      {"section_name": "L1", "instructor": "BRIJ KISHORE PANDEY"              , "room": "222" , "days": "M4 T7 W9 Th4"}
+      {"section_name": "L1", "instructor": "Brij Kishore Pandey"              , "room": "222" , "days": "M4 T7 W9 Th4"}
     ]
   },
   "CE F266": {
@@ -359,48 +345,48 @@
     "title_short": "",
     "IC": "Vivek B Kartha",
     "sections": [
-      {"section_name": "1", "instructor": "VIVEK B KARTHA"                    , "room": ""    , "days": ""}
+      {"section_name": "L1", "instructor": "Vivek B Kartha"                   , "room": ""    , "days": ""}
     ]
   },
   "CE F312": {
     "title": "Hydraulic Engineering",
-    "title_short": "Hydraulic engg",
+    "title_short": "",
     "IC": "Brij Kishore Pandey",
     "sections": [
-      {"section_name": "L1", "instructor": "BRIJ KISHORE PANDEY"              , "room": "256" , "days": "M7 T1 Th7 F3"},
+      {"section_name": "L1", "instructor": "Brij Kishore Pandey"              , "room": "256" , "days": "M7 T1 Th7 F3"},
       {"section_name": "P1", "instructor": "Brij Kishore Pandey"              , "room": "MF4" , "days": "W34"}
     ]
   },
   "CE F313": {
     "title": "Foundation Engineering",
-    "title_short": "Foundation engg",
+    "title_short": "",
     "IC": "Vivek B Kartha",
     "sections": [
-      {"section_name": "L1", "instructor": "VIVEK B KARTHA"                   , "room": "256" , "days": "M3 T3 W1 Th6"}
+      {"section_name": "L1", "instructor": "Vivek B Kartha"                   , "room": "256" , "days": "M3 T3 W1 Th6"}
     ]
   },
   "CE F320": {
     "title": "Design of Reinforced Concrete Structure",
-    "title_short": "Design of reinf conc struc",
+    "title_short": "Design of Reinforced CS",
     "IC": "Akshay Venkateshwaran",
     "sections": [
-      {"section_name": "L1", "instructor": "AKSHAY VENKATESHWARAN"            , "room": "256" , "days": "M6 T8 W6 F5"}
+      {"section_name": "L1", "instructor": "Akshay Venkateshwaran"            , "room": "256" , "days": "M6 T8 W6 F5"}
     ]
   },
   "CE F366": {
     "title": "Laboratory Project",
-    "title_short": "Lab project",
+    "title_short": "Lab Proj",
     "IC": "Vivek B Kartha",
     "sections": [
-      {"section_name": "1", "instructor": "VIVEK B KARTHA"                    , "room": ""    , "days": ""}
+      {"section_name": "L1", "instructor": "Vivek B Kartha"                   , "room": ""    , "days": ""}
     ]
   },
   "CE F367": {
     "title": "Laboratory Project",
-    "title_short": "Lab project",
+    "title_short": "Lab Proj",
     "IC": "Vivek B Kartha",
     "sections": [
-      {"section_name": "1", "instructor": "VIVEK B KARTHA"                    , "room": ""    , "days": ""}
+      {"section_name": "L1", "instructor": "Vivek B Kartha"                   , "room": ""    , "days": ""}
     ]
   },
   "CE F376": {
@@ -408,7 +394,7 @@
     "title_short": "",
     "IC": "Vivek B Kartha",
     "sections": [
-      {"section_name": "1", "instructor": "VIVEK B KARTHA"                    , "room": ""    , "days": ""}
+      {"section_name": "L1", "instructor": "Vivek B Kartha"                   , "room": ""    , "days": ""}
     ]
   },
   "CE F377": {
@@ -416,7 +402,7 @@
     "title_short": "",
     "IC": "Vivek B Kartha",
     "sections": [
-      {"section_name": "1", "instructor": "VIVEK B KARTHA"                    , "room": ""    , "days": ""}
+      {"section_name": "L1", "instructor": "Vivek B Kartha"                   , "room": ""    , "days": ""}
     ]
   },
   "CE F425": {
@@ -424,15 +410,15 @@
     "title_short": "",
     "IC": "Deepthi Mary Dilip",
     "sections": [
-      {"section_name": "L1", "instructor": "DEEPTHI MARY DILIP"               , "room": "256" , "days": "M2 T6 F4"}
+      {"section_name": "L1", "instructor": "Deepthi Mary Dilip"               , "room": "256" , "days": "M2 T6 F4"}
     ]
   },
   "CE F434": {
     "title": "Env Impact Assessment",
-    "title_short": "",
+    "title_short": "EIA",
     "IC": "Vivek B Kartha",
     "sections": [
-      {"section_name": "L1", "instructor": "VIVEK B KARTHA"                   , "room": "256" , "days": "W8 Th3 F2"}
+      {"section_name": "L1", "instructor": "Vivek B Kartha"                   , "room": "256" , "days": "W8 Th3 F2"}
     ]
   },
   "CE F491": {
@@ -440,39 +426,39 @@
     "title_short": "",
     "IC": "Vivek B Kartha",
     "sections": [
-      {"section_name": "1", "instructor": "VIVEK B KARTHA"                    , "room": ""    , "days": ""}
+      {"section_name": "L1", "instructor": "Vivek B Kartha"                   , "room": ""    , "days": ""}
     ]
   },
   "CHE F211": {
     "title": "Chemical Process Calcula",
-    "title_short": "",
+    "title_short": "Chem Calc",
     "IC": "Nishant H Pandya",
     "sections": [
-      {"section_name": "L1", "instructor": "NISHANT H PANDYA"                 , "room": "245" , "days": "M1 T8 W5 Th8"}
+      {"section_name": "L1", "instructor": "Nishant H Pandya"                 , "room": "245" , "days": "M1 T8 W5 Th8"}
     ]
   },
   "CHE F212": {
     "title": "Fluid Mechanics",
-    "title_short": "",
+    "title_short": "Fluid Mech",
     "IC": "Majid Hasan Khan",
     "sections": [
-      {"section_name": "L1", "instructor": "MAJID HASAN KHAN"                 , "room": "219" , "days": "T6 W9 Th4 F2"}
+      {"section_name": "L1", "instructor": "Majid Hasan Khan"                 , "room": "219" , "days": "T6 W9 Th4 F2"}
     ]
   },
   "CHE F213": {
     "title": "Chem Engg Thermodynamics",
-    "title_short": "",
+    "title_short": "Chem Engg Thermo",
     "IC": "Souvik K Paul",
     "sections": [
-      {"section_name": "L1", "instructor": "SOUVIK K PAUL"                    , "room": "245" , "days": "M8 T1 W3 F3"}
+      {"section_name": "L1", "instructor": "Souvik K Paul"                    , "room": "245" , "days": "M8 T1 W3 F3"}
     ]
   },
   "CHE F214": {
     "title": "Engineering Chemistry",
-    "title_short": "",
+    "title_short": "Engg Chem",
     "IC": "Tejal Patel",
     "sections": [
-      {"section_name": "L1", "instructor": "TEJAL PATEL"                      , "room": "245" , "days": "T3 W1 Th23"}
+      {"section_name": "L1", "instructor": "Tejal Patel"                      , "room": "245" , "days": "T3 W1 Th23"}
     ]
   },
   "CHE F266": {
@@ -480,56 +466,56 @@
     "title_short": "",
     "IC": "B G Prakash Kumar",
     "sections": [
-      {"section_name": "1", "instructor": "B G PRAKASH KUMAR"                 , "room": ""    , "days": ""}
+      {"section_name": "L1", "instructor": "B G Prakash Kumar"                , "room": ""    , "days": ""}
     ]
   },
   "CHE F311": {
-    "title": "Kinetics & Reactor Desig",
-    "title_short": "",
+    "title": "Kinetics & Reactor Design",
+    "title_short": "KRD",
     "IC": "B G Prakash Kumar",
     "sections": [
-      {"section_name": "L1", "instructor": "B G PRAKASH KUMAR"                , "room": "226" , "days": "M3 T1 W4 F2"}
+      {"section_name": "L1", "instructor": "B G Prakash Kumar"                , "room": "226" , "days": "M3 T1 W4 F2"}
     ]
   },
   "CHE F312": {
-    "title": "Chemical Engg Lab I",
-    "title_short": "",
-    "IC": "SOUVIK K PAUL",
+    "title": "Chemical Engineering Lab I",
+    "title_short": "Chem Engg Lab I",
+    "IC": "Nishant H Pandya",
     "sections": [
-      {"section_name": "P1", "instructor": "NISHANT H PANDYA / B G Prakash Kumar / Murchana Changmai" , "room": "340" , "days": "W789"},
-      {"section_name": "P2", "instructor": "NISHANT H PANDYA / B G Prakash Kumar / Murchana Changmai" , "room": "340" , "days": "Th123"}
+      {"section_name": "P1","instructor": "Nishant H Pandya / B G Prakash Kumar / Murchana Changmai","room": "340","days": "W789"},
+      {"section_name": "P1","instructor": "Nishant H Pandya / B G Prakash Kumar / Murchana Changmai","room": "340","days": "Th123"}
     ]
   },
   "CHE F313": {
     "title": "Separation Processes II",
-    "title_short": "",
+    "title_short": "SP II",
     "IC": "Murchana Changmai",
     "sections": [
-      {"section_name": "L1", "instructor": "MURCHANA CHANGMAI"                , "room": "226" , "days": "M7 T3 W1 Th6"}
+      {"section_name": "L1", "instructor": "Murchana Changmai"                , "room": "226" , "days": "M7 T3 W1 Th6"}
     ]
   },
   "CHE F314": {
-    "title": "Process Des Principles I",
-    "title_short": "",
+    "title": "Process Design Principles I",
+    "title_short": "PDP I",
     "IC": "Nishant H Pandya",
     "sections": [
-      {"section_name": "L1", "instructor": "NISHANT H PANDYA"                 , "room": "226" , "days": "M4 T6 W3 F4"}
+      {"section_name": "L1", "instructor": "Nishant H Pandya"                 , "room": "226" , "days": "M4 T6 W3 F4"}
     ]
   },
   "CHE F366": {
     "title": "Laboratory Project",
-    "title_short": "Lab project",
+    "title_short": "Lab Proj",
     "IC": "B G Prakash Kumar",
     "sections": [
-      {"section_name": "1", "instructor": "B G PRAKASH KUMAR"                 , "room": ""    , "days": ""}
+      {"section_name": "L1", "instructor": "B G Prakash Kumar"                , "room": ""    , "days": ""}
     ]
   },
   "CHE F367": {
     "title": "Laboratory Project",
-    "title_short": "Lab project",
+    "title_short": "Lab Proj",
     "IC": "B G Prakash Kumar",
     "sections": [
-      {"section_name": "1", "instructor": "B G PRAKASH KUMAR"                 , "room": ""    , "days": ""}
+      {"section_name": "L1", "instructor": "B G Prakash Kumar"                , "room": ""    , "days": ""}
     ]
   },
   "CHE F376": {
@@ -537,7 +523,7 @@
     "title_short": "",
     "IC": "B G Prakash Kumar",
     "sections": [
-      {"section_name": "1", "instructor": "B G PRAKASH KUMAR"                 , "room": ""    , "days": ""}
+      {"section_name": "L1", "instructor": "B G Prakash Kumar"                , "room": ""    , "days": ""}
     ]
   },
   "CHE F377": {
@@ -545,23 +531,23 @@
     "title_short": "",
     "IC": "B G Prakash Kumar",
     "sections": [
-      {"section_name": "1", "instructor": "B G PRAKASH KUMAR"                 , "room": ""    , "days": ""}
+      {"section_name": "L1", "instructor": "B G Prakash Kumar"                , "room": ""    , "days": ""}
     ]
   },
   "CHE F411": {
-    "title": "Envir Pollution Control",
-    "title_short": "",
+    "title": "Environment Pollution Control",
+    "title_short": "EPC",
     "IC": "Murchana Changmai",
     "sections": [
-      {"section_name": "L1", "instructor": "MURCHANA CHANGMAI"                , "room": "226" , "days": "M2 T8 F5"}
+      {"section_name": "L1", "instructor": "Murchana Changmai"                , "room": "226" , "days": "M2 T8 F5"}
     ]
   },
   "CHE F421": {
     "title": "Biochemical Engineering",
-    "title_short": "",
+    "title_short": "Biochem Engg",
     "IC": "Souvik K Paul",
     "sections": [
-      {"section_name": "L1", "instructor": "SOUVIK K PAUL"                    , "room": "226" , "days": "M6 Th8 F1"}
+      {"section_name": "L1", "instructor": "Souvik K Paul"                    , "room": "226" , "days": "M6 Th8 F1"}
     ]
   },
   "CHE F491": {
@@ -569,7 +555,7 @@
     "title_short": "",
     "IC": "B G Prakash Kumar",
     "sections": [
-      {"section_name": "1", "instructor": "B G PRAKASH KUMAR"                 , "room": ""    , "days": ""}
+      {"section_name": "L1", "instructor": "B G Prakash Kumar"                , "room": ""    , "days": ""}
     ]
   },
   "CHEM F110": {
@@ -580,9 +566,9 @@
       {"section_name": "P1", "instructor": "Geetha Kannan"                    , "room": "306" , "days": "M34"},
       {"section_name": "P2", "instructor": "Rusal Raj"                        , "room": "306" , "days": "M89"},
       {"section_name": "P3", "instructor": "Rusal Raj"                        , "room": "306" , "days": "T34"},
-      {"section_name": "P4", "instructor": "VIJAYA ILANGO"                    , "room": "306" , "days": "T89"},
+      {"section_name": "P4", "instructor": "Vijaya Ilango"                    , "room": "306" , "days": "T89"},
       {"section_name": "P5", "instructor": "Geetha Kannan"                    , "room": "306" , "days": "W34"},
-      {"section_name": "P6", "instructor": "VIJAYA ILANGO"                    , "room": "306" , "days": "W89"}
+      {"section_name": "P6", "instructor": "Vijaya Ilango"                    , "room": "306" , "days": "W89"}
     ]
   },
   "CHEM F111": {
@@ -590,7 +576,7 @@
     "title_short": "Chemistry",
     "IC": "Rusal Raj",
     "sections": [
-      {"section_name": "L1", "instructor": "RUSAL RAJ"                        , "room": "101" , "days": "M6 T1 W6 F2"},
+      {"section_name": "L1", "instructor": "Rusal Raj"                        , "room": "101" , "days": "M6 T1 W6 F2"},
       {"section_name": "L2", "instructor": "Vijaya Ilango"                    , "room": "105" , "days": "M6 T1 Th3 F2"},
       {"section_name": "L3", "instructor": "Geetha Kannan"                    , "room": "123" , "days": "M6 T1 W6 F2"}
     ]
@@ -600,23 +586,23 @@
     "title_short": "",
     "IC": "R Roop Kumar",
     "sections": [
-      {"section_name": "1", "instructor": "R ROOP KUMAR"                      , "room": ""    , "days": ""}
+      {"section_name": "L1", "instructor": "R Roop Kumar"                     , "room": ""    , "days": ""}
     ]
   },
   "CHEM F366": {
     "title": "Laboratory Project",
-    "title_short": "Lab project",
+    "title_short": "Lab Proj",
     "IC": "R Roop Kumar",
     "sections": [
-      {"section_name": "1", "instructor": "R ROOP KUMAR"                      , "room": ""    , "days": ""}
+      {"section_name": "L1", "instructor": "R Roop Kumar"                     , "room": ""    , "days": ""}
     ]
   },
   "CHEM F367": {
     "title": "Laboratory Project",
-    "title_short": "Lab project",
+    "title_short": "Lab Proj",
     "IC": "R Roop Kumar",
     "sections": [
-      {"section_name": "1", "instructor": "R ROOP KUMAR"                      , "room": ""    , "days": ""}
+      {"section_name": "L1", "instructor": "R Roop Kumar"                     , "room": ""    , "days": ""}
     ]
   },
   "CHEM F376": {
@@ -624,7 +610,7 @@
     "title_short": "",
     "IC": "R Roop Kumar",
     "sections": [
-      {"section_name": "1", "instructor": "R ROOP KUMAR"                      , "room": ""    , "days": ""}
+      {"section_name": "L1", "instructor": "R Roop Kumar"                     , "room": ""    , "days": ""}
     ]
   },
   "CHEM F377": {
@@ -632,7 +618,7 @@
     "title_short": "",
     "IC": "R Roop Kumar",
     "sections": [
-      {"section_name": "1", "instructor": "R ROOP KUMAR"                      , "room": ""    , "days": ""}
+      {"section_name": "L1", "instructor": "R Roop Kumar"                     , "room": ""    , "days": ""}
     ]
   },
   "CHEM F491": {
@@ -640,7 +626,7 @@
     "title_short": "",
     "IC": "R Roop Kumar",
     "sections": [
-      {"section_name": "1", "instructor": "R ROOP KUMAR"                      , "room": ""    , "days": ""}
+      {"section_name": "L1", "instructor": "R Roop Kumar"                     , "room": ""    , "days": ""}
     ]
   },
   "CS F111": {
@@ -648,7 +634,7 @@
     "title_short": "CP",
     "IC": "Sapna Sadhwani",
     "sections": [
-      {"section_name": "L1", "instructor": "SAPNA SADHWANI"                   , "room": "101" , "days": "M5 W1 Th7 F4"},
+      {"section_name": "L1", "instructor": "Sapna Sadhwani"                   , "room": "101" , "days": "M5 W1 Th7 F4"},
       {"section_name": "L2", "instructor": "Ashish Gupta"                     , "room": "105" , "days": "M5 T6 Th7 F2"},
       {"section_name": "L3", "instructor": "Shikhar Verma"                    , "room": "123" , "days": "M5 W1 Th7 F4"},
       {"section_name": "P1", "instructor": "Pramod Gaur"                      , "room": "335" , "days": "M34"},
@@ -657,11 +643,11 @@
     ]
   },
   "CS F213": {
-    "title": "Object Oriented Prog",
+    "title": "Object Oriented Programming",
     "title_short": "OOP",
     "IC": "Sujala D Shetty",
     "sections": [
-      {"section_name": "L1", "instructor": "SUJALA D SHETTY"                  , "room": "210" , "days": "T1 W6 Th5 F2"},
+      {"section_name": "L1", "instructor": "Sujala D Shetty"                  , "room": "210" , "days": "T1 W6 Th5 F2"},
       {"section_name": "L2", "instructor": "Pranav Mothabhau Pawar"           , "room": "257" , "days": "T1 W6 Th5 F2"},
       {"section_name": "L3", "instructor": "Sapna Sadhwani"                   , "room": "229" , "days": "T1 W6 Th5 F2"},
       {"section_name": "L4", "instructor": "Shikhar Verma"                    , "room": "205" , "days": "T1 W6 Th5 F2"},
@@ -672,11 +658,11 @@
     ]
   },
   "CS F214": {
-    "title": "Logic in Computer Sc",
+    "title": "Logic in Computer Science",
     "title_short": "Logic",
     "IC": "Siddhaling Urolagin",
     "sections": [
-      {"section_name": "L1", "instructor": "SIDDHALING UROLAGIN"              , "room": "210" , "days": "M1 W2 Th1 F5"},
+      {"section_name": "L1", "instructor": "Siddhaling Urolagin"              , "room": "210" , "days": "M1 W2 Th1 F5"},
       {"section_name": "L2", "instructor": "Ashish Gupta"                     , "room": "257" , "days": "M1 W2 Th1 F5"},
       {"section_name": "L3", "instructor": "S Jeyalatha"                      , "room": "229" , "days": "M1 W2 Th1 F1"},
       {"section_name": "L4", "instructor": "Siddhaling Urolagin"              , "room": "205" , "days": "M3 W4 Th7 F3"}
@@ -687,7 +673,7 @@
     "title_short": "DD",
     "IC": "Jagadish Nayak",
     "sections": [
-      {"section_name": "L1", "instructor": "JAGADISH NAYAK"                   , "room": "210" , "days": "M2 T6 W1 Th2"},
+      {"section_name": "L1", "instructor": "Jagadish Nayak"                   , "room": "210" , "days": "M2 T6 W1 Th2"},
       {"section_name": "L2", "instructor": "R Swarnalatha"                    , "room": "257" , "days": "M2 T6 W1 Th2"},
       {"section_name": "L3", "instructor": "Vilas H Gaidhane"                 , "room": "229" , "days": "M2 T6 W1 Th2"},
       {"section_name": "L4", "instructor": "Shazia Hasan"                     , "room": "205" , "days": "M2 T6 W1 Th2"},
@@ -702,13 +688,13 @@
     ]
   },
   "CS F222": {
-    "title": "Discr Struc For Comp Sci",
-    "title_short": "Discr Struc",
+    "title": "Discrete Structures For Computer Science",
+    "title_short": "DS",
     "IC": "A Somasundaram",
     "sections": [
       {"section_name": "L1", "instructor": "S Baskaran"                       , "room": "210" , "days": "M9 T7 Th9 F1"},
-      {"section_name": "L2", "instructor": "A SOMASUNDARAM"                   , "room": "257" , "days": "M9 T7 Th3 F1"},
-      {"section_name": "L3", "instructor": "A SOMASUNDARAM"                   , "room": "334" , "days": "M4 W7 Th9 F5"}
+      {"section_name": "L2", "instructor": "A Somasundaram"                   , "room": "257" , "days": "M9 T7 Th3 F1"},
+      {"section_name": "L3", "instructor": "A Somasundaram"                   , "room": "334" , "days": "M4 W7 Th9 F5"}
     ]
   },
   "CS F266": {
@@ -716,33 +702,33 @@
     "title_short": "",
     "IC": "B Vijayakumar",
     "sections": [
-      {"section_name": "1", "instructor": "B VIJAYAKUMAR"                     , "room": ""    , "days": ""}
+      {"section_name": "L1", "instructor": "B Vijayakumar"                    , "room": ""    , "days": ""}
     ]
   },
   "CS F301": {
-    "title": "Principles of Progg Lang",
-    "title_short": "",
+    "title": "Principles of Programming Languages",
+    "title_short": "PoPL",
     "IC": "B Vijayakumar",
     "sections": [
-      {"section_name": "L1", "instructor": "B VIJAYAKUMAR"                    , "room": "269" , "days": "W3 Th2"},
+      {"section_name": "L1", "instructor": "B Vijayakumar"                    , "room": "269" , "days": "W3 Th2"},
       {"section_name": "L2", "instructor": "Pranav Mothabhau Pawar"           , "room": "268" , "days": "W3 Th2"},
       {"section_name": "L3", "instructor": "B Vijayakumar"                    , "room": "267" , "days": "Th6 F4"}
     ]
   },
   "CS F320": {
     "title": "Foundation of Data Science",
-    "title_short": "Foundation of DS",
+    "title_short": "FDS",
     "IC": "Siddhaling Urolagin",
     "sections": [
-      {"section_name": "L1", "instructor": "SIDDHALING UROLAGIN"              , "room": "268" , "days": "M6 T7 Th3"}
+      {"section_name": "L1", "instructor": "Siddhaling Urolagin"              , "room": "268" , "days": "M6 T7 Th3"}
     ]
   },
   "CS F342": {
     "title": "Computer Architecture",
-    "title_short": "Comp arch",
+    "title_short": "CA",
     "IC": "Tamizharasan Periyasamy",
     "sections": [
-      {"section_name": "L1", "instructor": "TAMIZHARASAN PERIYASAMY"          , "room": "269" , "days": "M3 T4 Th1 F5"},
+      {"section_name": "L1", "instructor": "Tamizharasan Periyasamy"          , "room": "269" , "days": "M3 T4 Th1 F5"},
       {"section_name": "L2", "instructor": "Raja M"                           , "room": "268" , "days": "M3 T4 Th1 F5"},
       {"section_name": "L3", "instructor": "Raja M"                           , "room": "267" , "days": "T1 W3 Th5 F3"},
       {"section_name": "P1", "instructor": "Tamizharasan Periyasamy"          , "room": "332" , "days": "W89"},
@@ -752,28 +738,28 @@
   },
   "CS F351": {
     "title": "Theory of Computation",
-    "title_short": "Theory of comp",
+    "title_short": "ToC",
     "IC": "Elakkiya Rajasekar",
     "sections": [
-      {"section_name": "L1", "instructor": "ELAKKIYA RAJASEKAR"               , "room": "269" , "days": "T1 W4 Th5 F3"},
+      {"section_name": "L1", "instructor": "Elakkiya Rajasekar"               , "room": "269" , "days": "T1 W4 Th5 F3"},
       {"section_name": "L2", "instructor": "S Jeyalatha"                      , "room": "268" , "days": "T1 W4 Th5 F3"},
       {"section_name": "L3", "instructor": "Elakkiya Rajasekar"               , "room": "267" , "days": "M3 T4 Th2 F5"}
     ]
   },
   "CS F366": {
     "title": "Laboratory Project",
-    "title_short": "Lab project",
+    "title_short": "Lab Proj",
     "IC": "B Vijayakumar",
     "sections": [
-      {"section_name": "1", "instructor": "B VIJAYAKUMAR"                     , "room": ""    , "days": ""}
+      {"section_name": "L1", "instructor": "B Vijayakumar"                    , "room": ""    , "days": ""}
     ]
   },
   "CS F367": {
     "title": "Laboratory Project",
-    "title_short": "Lab project",
+    "title_short": "Lab Proj",
     "IC": "B Vijayakumar",
     "sections": [
-      {"section_name": "1", "instructor": "B VIJAYAKUMAR"                     , "room": ""    , "days": ""}
+      {"section_name": "L1", "instructor": "B Vijayakumar"                    , "room": ""    , "days": ""}
     ]
   },
   "CS F372": {
@@ -781,7 +767,7 @@
     "title_short": "OS",
     "IC": "Angel A Jothi",
     "sections": [
-      {"section_name": "L1", "instructor": "ANGEL A JOTHI"                    , "room": "269" , "days": "T5 W2 Th6 F4"},
+      {"section_name": "L1", "instructor": "Angel A Jothi"                    , "room": "269" , "days": "T5 W2 Th6 F4"},
       {"section_name": "L2", "instructor": "Pramod Gaur"                      , "room": "268" , "days": "T5 W2 Th6 F4"},
       {"section_name": "L3", "instructor": "Angel A Jothi"                    , "room": "267" , "days": "M2 W4 Th1 F2"}
     ]
@@ -791,7 +777,7 @@
     "title_short": "",
     "IC": "B Vijayakumar",
     "sections": [
-      {"section_name": "1", "instructor": "B VIJAYAKUMAR"                     , "room": ""    , "days": ""}
+      {"section_name": "L1", "instructor": "B Vijayakumar"                    , "room": ""    , "days": ""}
     ]
   },
   "CS F377": {
@@ -799,7 +785,7 @@
     "title_short": "",
     "IC": "B Vijayakumar",
     "sections": [
-      {"section_name": "1", "instructor": "B VIJAYAKUMAR"                     , "room": ""    , "days": ""}
+      {"section_name": "L1", "instructor": "B Vijayakumar"                    , "room": ""    , "days": ""}
     ]
   },
   "CS F407": {
@@ -807,23 +793,23 @@
     "title_short": "AI",
     "IC": "Sujala D Shetty",
     "sections": [
-      {"section_name": "L1", "instructor": "SUJALA D SHETTY"                  , "room": "269" , "days": "M6 T7 Th3"}
+      {"section_name": "L1", "instructor": "Sujala D Shetty"                  , "room": "269" , "days": "M6 T7 Th3"}
     ]
   },
   "CS F415": {
     "title": "Data Mining",
-    "title_short": "",
+    "title_short": "DM",
     "IC": "Angel A Jothi",
     "sections": [
-      {"section_name": "L1", "instructor": "ANGEL A JOTHI"                    , "room": "267" , "days": "M6 T7 Th3"}
+      {"section_name": "L1", "instructor": "Angel A Jothi"                    , "room": "267" , "days": "M6 T7 Th3"}
     ]
   },
   "CS F425": {
     "title": "Deep Learning",
-    "title_short": "",
+    "title_short": "DL",
     "IC": "Tamizharasan Periyasamy",
     "sections": [
-      {"section_name": "L1", "instructor": "TAMIZHARASAN PERIYASAMY"          , "room": "267" , "days": "T6 W1 Th7"}
+      {"section_name": "L1", "instructor": "Tamizharasan Periyasamy"          , "room": "267" , "days": "T6 W1 Th7"}
     ]
   },
   "CS F429": {
@@ -831,7 +817,7 @@
     "title_short": "NLP",
     "IC": "Elakkiya Rajasekar",
     "sections": [
-      {"section_name": "L1", "instructor": "ELAKKIYA RAJASEKAR"               , "room": "269" , "days": "T6 W1 Th7"}
+      {"section_name": "L1", "instructor": "Elakkiya Rajasekar"               , "room": "269" , "days": "T6 W1 Th7"}
     ]
   },
   "CS F491": {
@@ -839,32 +825,32 @@
     "title_short": "",
     "IC": "B Vijayakumar",
     "sections": [
-      {"section_name": "1", "instructor": "B VIJAYAKUMAR"                     , "room": ""    , "days": ""}
+      {"section_name": "L1", "instructor": "B Vijayakumar"                    , "room": ""    , "days": ""}
     ]
   },
   "ECE F211": {
     "title": "Electrical Machines",
-    "title_short": "",
+    "title_short": "Elec Mach",
     "IC": "R Gomathi Bhavani",
     "sections": [
-      {"section_name": "L1", "instructor": "R GOMATHI BHAVANI"                , "room": "228" , "days": "M5 T1 Th9 F5"},
+      {"section_name": "L1", "instructor": "R Gomathi Bhavani"                , "room": "228" , "days": "M5 T1 Th9 F5"},
       {"section_name": "P1", "instructor": "R Gomathi Bhavani"                , "room": "313" , "days": "W67"}
     ]
   },
   "ECE F212": {
-    "title": "Electromagnetic Theo",
-    "title_short": "EM theory",
+    "title": "Electromagnetic Theory",
+    "title_short": "EM Theory",
     "IC": "G Amaranath",
     "sections": [
-      {"section_name": "L1", "instructor": "G AMARANATH"                      , "room": "228" , "days": "M6 T7 Th8 F3"}
+      {"section_name": "L1", "instructor": "G Amaranath"                      , "room": "228" , "days": "M6 T7 Th8 F3"}
     ]
   },
   "ECE F214": {
     "title": "Electronic Devices",
-    "title_short": "",
+    "title_short": "ED",
     "IC": "M B Srinivas",
     "sections": [
-      {"section_name": "L1", "instructor": "M B SRINIVAS"                     , "room": "228" , "days": "M1 T8 W5 F2"}
+      {"section_name": "L1", "instructor": "M B Srinivas"                     , "room": "228" , "days": "M1 T8 W5 F2"}
     ]
   },
   "ECE F215": {
@@ -872,7 +858,7 @@
     "title_short": "DD",
     "IC": "Jagadish Nayak",
     "sections": [
-      {"section_name": "L1", "instructor": "JAGADISH NAYAK"                   , "room": "210" , "days": "M2 T6 W1 Th2"},
+      {"section_name": "L1", "instructor": "Jagadish Nayak"                   , "room": "210" , "days": "M2 T6 W1 Th2"},
       {"section_name": "L2", "instructor": "R Swarnalatha"                    , "room": "257" , "days": "M2 T6 W1 Th2"},
       {"section_name": "L3", "instructor": "Vilas H Gaidhane"                 , "room": "229" , "days": "M2 T6 W1 Th2"},
       {"section_name": "L4", "instructor": "Shazia Hasan"                     , "room": "205" , "days": "M2 T6 W1 Th2"},
@@ -891,40 +877,40 @@
     "title_short": "",
     "IC": "V Kalaichelvi",
     "sections": [
-      {"section_name": "1", "instructor": "V KALAICHELVI"                     , "room": ""    , "days": ""}
+      {"section_name": "L1", "instructor": "V Kalaichelvi"                    , "room": ""    , "days": ""}
     ]
   },
   "ECE F311": {
     "title": "Communication Systems",
-    "title_short": "Comm systems",
+    "title_short": "Comm Sys",
     "IC": "Jagadish Nayak",
     "sections": [
-      {"section_name": "L1", "instructor": "JAGADISH NAYAK"                   , "room": "184" , "days": "M6 T1 W3 F3", "comment": "Room # originally 221"},
+      {"section_name": "L1", "instructor": "Jagadish Nayak"                   , "room": "184" , "days": "M6 T1 W3 F3", "comment": "Room # originally 221"},
       {"section_name": "P1", "instructor": "T G Thomas"                       , "room": "330" , "days": "T567"}
     ]
   },
   "ECE F314": {
-    "title": "EM Fields & Micro Engg",
-    "title_short": "",
+    "title": "Electromagnetic Fields & Micro Engineering",
+    "title_short": "EMF & Micro Engg",
     "IC": "Abdul Razak",
     "sections": [
-      {"section_name": "L1", "instructor": "ABDUL RAZAK"                      , "room": "223" , "days": "M9 W7 Th2 F4"}
+      {"section_name": "L1", "instructor": "Abdul Razak"                      , "room": "223" , "days": "M9 W7 Th2 F4"}
     ]
   },
   "ECE F366": {
     "title": "Laboratory Project",
-    "title_short": "Lab project",
+    "title_short": "Lab Proj",
     "IC": "V Kalaichelvi",
     "sections": [
-      {"section_name": "1", "instructor": "V KALAICHELVI"                     , "room": ""    , "days": ""}
+      {"section_name": "L1", "instructor": "V Kalaichelvi"                    , "room": ""    , "days": ""}
     ]
   },
   "ECE F367": {
     "title": "Laboratory Project",
-    "title_short": "Lab project",
+    "title_short": "Lab Proj",
     "IC": "V Kalaichelvi",
     "sections": [
-      {"section_name": "1", "instructor": "V KALAICHELVI"                     , "room": ""    , "days": ""}
+      {"section_name": "L1", "instructor": "V Kalaichelvi"                    , "room": ""    , "days": ""}
     ]
   },
   "ECE F376": {
@@ -932,7 +918,7 @@
     "title_short": "",
     "IC": "V Kalaichelvi",
     "sections": [
-      {"section_name": "1", "instructor": "V KALAICHELVI"                     , "room": ""    , "days": ""}
+      {"section_name": "L1", "instructor": "V Kalaichelvi"                    , "room": ""    , "days": ""}
     ]
   },
   "ECE F377": {
@@ -940,7 +926,7 @@
     "title_short": "",
     "IC": "V Kalaichelvi",
     "sections": [
-      {"section_name": "1", "instructor": "V KALAICHELVI"                     , "room": ""    , "days": ""}
+      {"section_name": "L1", "instructor": "V Kalaichelvi"                    , "room": ""    , "days": ""}
     ]
   },
   "ECE F434": {
@@ -948,16 +934,16 @@
     "title_short": "DSP",
     "IC": "Shazia Hasan",
     "sections": [
-      {"section_name": "L1", "instructor": "SHAZIA HASAN"                     , "room": "223" , "days": "M8 T4 W4 F5"},
+      {"section_name": "L1", "instructor": "Shazia Hasan"                     , "room": "223" , "days": "M8 T4 W4 F5"},
       {"section_name": "P1", "instructor": "Shazia Hasan"                     , "room": "303" , "days": "Th567"}
     ]
   },
   "ECE F472": {
     "title": "Satellite Communication",
-    "title_short": "",
+    "title_short": "Satellite Comm",
     "IC": "Abdul Razak",
     "sections": [
-      {"section_name": "L1", "instructor": "ABDUL RAZAK"                      , "room": "184" , "days": "M3 W1 F2", "comment": "Room # originally 221"}
+      {"section_name": "L1", "instructor": "Abdul Razak"                      , "room": "184" , "days": "M3 W1 F2", "comment": "Room # originally 221"}
     ]
   },
   "ECE F491": {
@@ -965,7 +951,7 @@
     "title_short": "",
     "IC": "V Kalaichelvi",
     "sections": [
-      {"section_name": "1", "instructor": "V KALAICHELVI"                     , "room": ""    , "days": ""}
+      {"section_name": "L1", "instructor": "V Kalaichelvi"                    , "room": ""    , "days": ""}
     ]
   },
   "ECON F211": {
@@ -973,7 +959,7 @@
     "title_short": "PoE",
     "IC": "Sartaj Rasool",
     "sections": [
-      {"section_name": "L1", "instructor": "SARTAJ RASOOL"                    , "room": "334" , "days": "M5 T5 W5"}
+      {"section_name": "L1", "instructor": "Sartaj Rasool"                    , "room": "334" , "days": "M5 T5 W5"}
     ]
   },
   "EEE F111": {
@@ -981,34 +967,34 @@
     "title_short": "ES",
     "IC": "T G Thomas",
     "sections": [
-      {"section_name": "L1", "instructor": "T G THOMAS"                       , "room": "165" , "days": "M1 T9 W5 Th2"},
+      {"section_name": "L1", "instructor": "T G Thomas"                       , "room": "165" , "days": "M1 T9 W5 Th2"},
       {"section_name": "L2", "instructor": "Sunil Thomas"                     , "room": "185" , "days": "M1 T6 W5 F2"},
       {"section_name": "L3", "instructor": "T G Thomas"                       , "room": "190" , "days": "M8 T2 W3 F2"}
     ]
   },
   "EEE F211": {
     "title": "Electrical Machines",
-    "title_short": "",
+    "title_short": "Elec Mach",
     "IC": "R Gomathi Bhavani",
     "sections": [
-      {"section_name": "L1", "instructor": "R GOMATHI BHAVANI"                , "room": "228" , "days": "M5 T1 Th9 F5"},
+      {"section_name": "L1", "instructor": "R Gomathi Bhavani"                , "room": "228" , "days": "M5 T1 Th9 F5"},
       {"section_name": "P1", "instructor": "R Gomathi Bhavani"                , "room": "313" , "days": "W67"}
     ]
   },
   "EEE F212": {
-    "title": "Electromagnetic Theo",
-    "title_short": "",
+    "title": "Electromagnetic Theory",
+    "title_short": "EM Theory",
     "IC": "G Amaranath",
     "sections": [
-      {"section_name": "L1", "instructor": "G AMARANATH"                      , "room": "228" , "days": "M6 T7 Th8 F3"}
+      {"section_name": "L1", "instructor": "G Amaranath"                      , "room": "228" , "days": "M6 T7 Th8 F3"}
     ]
   },
   "EEE F214": {
     "title": "Electronic Devices",
-    "title_short": "",
+    "title_short": "ED",
     "IC": "M B Srinivas",
     "sections": [
-      {"section_name": "L1", "instructor": "M B SRINIVAS"                     , "room": "228" , "days": "M1 T8 W5 F2"}
+      {"section_name": "L1", "instructor": "M B Srinivas"                     , "room": "228" , "days": "M1 T8 W5 F2"}
     ]
   },
   "EEE F215": {
@@ -1016,7 +1002,7 @@
     "title_short": "DD",
     "IC": "Jagadish Nayak",
     "sections": [
-      {"section_name": "L1", "instructor": "JAGADISH NAYAK"                   , "room": "210" , "days": "M2 T6 W1 Th2"},
+      {"section_name": "L1", "instructor": "Jagadish Nayak"                   , "room": "210" , "days": "M2 T6 W1 Th2"},
       {"section_name": "L2", "instructor": "R Swarnalatha"                    , "room": "257" , "days": "M2 T6 W1 Th2"},
       {"section_name": "L3", "instructor": "Vilas H Gaidhane"                 , "room": "229" , "days": "M2 T6 W1 Th2"},
       {"section_name": "L4", "instructor": "Shazia Hasan"                     , "room": "205" , "days": "M2 T6 W1 Th2"},
@@ -1035,48 +1021,48 @@
     "title_short": "",
     "IC": "V Kalaichelvi",
     "sections": [
-      {"section_name": "1", "instructor": "V KALAICHELVI"                     , "room": ""    , "days": ""}
+      {"section_name": "L1", "instructor": "V Kalaichelvi"                    , "room": ""    , "days": ""}
     ]
   },
   "EEE F311": {
     "title": "Communication Systems",
-    "title_short": "Comm systems",
+    "title_short": "Comm Sys",
     "IC": "Jagadish Nayak",
     "sections": [
-      {"section_name": "L1", "instructor": "JAGADISH NAYAK"                   , "room": "184" , "days": "M6 T1 W3 F3", "comment": "Room # originally 221"},
+      {"section_name": "L1", "instructor": "Jagadish Nayak"                   , "room": "184" , "days": "M6 T1 W3 F3", "comment": "Room # originally 221"},
       {"section_name": "P1", "instructor": "T G Thomas"                       , "room": "330" , "days": "T567"}
     ]
   },
   "EEE F312": {
     "title": "Power Systems",
-    "title_short": "",
+    "title_short": "PS",
     "IC": "Sunil Thomas",
     "sections": [
-      {"section_name": "L1", "instructor": "SUNIL THOMAS"                     , "room": "184" , "days": "M8 W7 Th7 F5", "comment": "Room # originally 221"}
+      {"section_name": "L1", "instructor": "Sunil Thomas"                     , "room": "184" , "days": "M8 W7 Th7 F5", "comment": "Room # originally 221"}
     ]
   },
   "EEE F313": {
-    "title": "Analog & Digit VLSI Des",
-    "title_short": "",
+    "title": "Analog & Digital VLSI Design",
+    "title_short": "VLSI",
     "IC": "Vilas H Gaidhane",
     "sections": [
-      {"section_name": "L1", "instructor": "VILAS H GAIDHANE"                 , "room": "229" , "days": "M9 W4 Th5 F4"}
+      {"section_name": "L1", "instructor": "Vilas H Gaidhane"                 , "room": "229" , "days": "M9 W4 Th5 F4"}
     ]
   },
   "EEE F366": {
     "title": "Laboratory Project",
-    "title_short": "Lab project",
+    "title_short": "Lab Proj",
     "IC": "V Kalaichelvi",
     "sections": [
-      {"section_name": "1", "instructor": "V KALAICHELVI"                     , "room": ""    , "days": ""}
+      {"section_name": "L1", "instructor": "V Kalaichelvi"                    , "room": ""    , "days": ""}
     ]
   },
   "EEE F367": {
     "title": "Laboratory Project",
-    "title_short": "Lab project",
+    "title_short": "Lab Proj",
     "IC": "V Kalaichelvi",
     "sections": [
-      {"section_name": "1", "instructor": "V KALAICHELVI"                     , "room": ""    , "days": ""}
+      {"section_name": "L1", "instructor": "V Kalaichelvi"                    , "room": ""    , "days": ""}
     ]
   },
   "EEE F376": {
@@ -1084,7 +1070,7 @@
     "title_short": "",
     "IC": "V Kalaichelvi",
     "sections": [
-      {"section_name": "1", "instructor": "V KALAICHELVI"                     , "room": ""    , "days": ""}
+      {"section_name": "L1", "instructor": "V Kalaichelvi"                    , "room": ""    , "days": ""}
     ]
   },
   "EEE F377": {
@@ -1092,7 +1078,7 @@
     "title_short": "",
     "IC": "V Kalaichelvi",
     "sections": [
-      {"section_name": "1", "instructor": "V KALAICHELVI"                     , "room": ""    , "days": ""}
+      {"section_name": "L1", "instructor": "V Kalaichelvi"                    , "room": ""    , "days": ""}
     ]
   },
   "EEE F411": {
@@ -1100,80 +1086,80 @@
     "title_short": "IoT",
     "IC": "Nilesh Goel",
     "sections": [
-      {"section_name": "L1", "instructor": "NILESH GOEL"                      , "room": "269" , "days": "M4 W6 F1"},
+      {"section_name": "L1", "instructor": "Nilesh Goel"                      , "room": "269" , "days": "M4 W6 F1"},
       {"section_name": "P1", "instructor": "Nilesh Goel"                      , "room": "330" , "days": "T23"}
     ]
   },
   "EEE F417": {
-    "title": "Comp Based Control Sys",
-    "title_short": "",
+    "title": "Computer Based Control System",
+    "title_short": "Comp based Control Sys",
     "IC": "R Gomathi Bhavani",
     "sections": [
-      {"section_name": "L1", "instructor": "R GOMATHI BHAVANI"                , "room": "223" , "days": "M3 W9 F2"}
+      {"section_name": "L1", "instructor": "R Gomathi Bhavani"                , "room": "223" , "days": "M3 W9 F2"}
     ]
   },
   "EEE F432": {
     "title": "Medical Instrumentation",
-    "title_short": "Medical inst.",
+    "title_short": "Medical Instr",
     "IC": "R Swarnalatha",
     "sections": [
-      {"section_name": "L1", "instructor": "R SWARNALATHA"                    , "room": "184" , "days": "M4 W8 F1", "comment": "Room # originally 221"}
+      {"section_name": "L1", "instructor": "R Swarnalatha"                    , "room": "184" , "days": "M4 W8 F1", "comment": "Room # originally 221"}
     ]
   },
   "EEE F472": {
     "title": "Satellite Communication",
-    "title_short": "",
+    "title_short": "Satellite Comm",
     "IC": "Abdul Razak",
     "sections": [
-      {"section_name": "L1", "instructor": "ABDUL RAZAK"                      , "room": "184" , "days": "M3 W1 F2", "comment": "Room # originally 221"}
+      {"section_name": "L1", "instructor": "Abdul Razak"                      , "room": "184" , "days": "M3 W1 F2", "comment": "Room # originally 221"}
     ]
   },
   "FIN F212": {
-    "title": "Funda of Fin and Account",
-    "title_short": "",
+    "title": "Fundamentals of Finance and Accounting",
+    "title_short": "FFA",
     "IC": "Asgar Ali",
     "sections": [
-      {"section_name": "L1", "instructor": "ASGAR ALI"                        , "room": "210" , "days": "M7 T2 Th6"}
+      {"section_name": "L1", "instructor": "Asgar Ali"                        , "room": "210" , "days": "M7 T2 Th6"}
     ]
   },
   "FIN F311": {
-    "title": "Derivatives & Risk Mgmt",
-    "title_short": "",
+    "title": "Derivatives & Risk Management",
+    "title_short": "DRM",
     "IC": "Faisal Nazir Zargar",
     "sections": [
-      {"section_name": "L1", "instructor": "FAISAL NAZIR ZARGAR"              , "room": "267" , "days": "M5 W5 Th9"}
+      {"section_name": "L1", "instructor": "Faisal Nazir Zargar"              , "room": "267" , "days": "M5 W5 Th9"}
     ]
   },
   "FIN F315": {
     "title": "Financial Management",
-    "title_short": "",
+    "title_short": "Fin Mgmt",
     "IC": "Faisal Nazir Zargar",
     "sections": [
-      {"section_name": "L1", "instructor": "FAISAL NAZIR ZARGAR"              , "room": "223" , "days": "M1 T9 Th4"}
+      {"section_name": "L1", "instructor": "Faisal Nazir Zargar"              , "room": "223" , "days": "M1 T9 Th4"}
     ]
   },
   "GS F211": {
-    "title": "Mod Political Concepts",
-    "title_short": "",
+    "title": "Modern Political Concepts",
+    "title_short": "Mod Pol",
     "IC": "Shamshad Khan",
     "sections": [
-      {"section_name": "L1", "instructor": "SHAMSHAD KHAN"                    , "room": "269" , "days": "M5 W5 Th9"}
+      {"section_name": "L1", "instructor": "Shamshad Khan"                    , "room": "269" , "days": "M5 W5 Th9"}
     ]
   },
   "GS F212": {
-    "title": "Environ Dev & Climate Ch",
-    "title_short": "",
+    "title": "Environment Development & Climate Change",
+    "title_short": "EDCC",
     "IC": "Geetha Kannan",
     "sections": [
-      {"section_name": "L1", "instructor": "GEETHA KANNAN"                    , "room": "268" , "days": "M1 T9 Th4"}
+      {"section_name": "L1", "instructor": "Geetha Kannan"                    , "room": "268" , "days": "M1 T9 Th4"}
     ]
   },
   "GS F332": {
     "title": "Contemporary India",
-    "title_short": "",
+    "title_short": "CI",
     "IC": "Mrutuyanjaya Sahu",
     "sections": [
-      {"section_name": "L1", "instructor": "MRUTUYANJAYA SAHU"                , "room": "269" , "days": "M1 T9 Th4"}
+      {"section_name": "L1", "instructor": "Mrutuyanjaya Sahu"                , "room": "269" , "days": "M1 T9 Th4"}
     ]
   },
   "GS F376": {
@@ -1181,7 +1167,7 @@
     "title_short": "",
     "IC": "Sartaj Rasool",
     "sections": [
-      {"section_name": "1", "instructor": "SARTAJ RASOOL"                     , "room": ""    , "days": ""}
+      {"section_name": "L1", "instructor": "Sartaj Rasool"                    , "room": ""    , "days": ""}
     ]
   },
   "GS F377": {
@@ -1189,7 +1175,7 @@
     "title_short": "",
     "IC": "Sartaj Rasool",
     "sections": [
-      {"section_name": "1", "instructor": "SARTAJ RASOOL"                     , "room": ""    , "days": ""}
+      {"section_name": "L1", "instructor": "Sartaj Rasool"                    , "room": ""    , "days": ""}
     ]
   },
   "HSS F211": {
@@ -1197,23 +1183,23 @@
     "title_short": "Arabic",
     "IC": "Shamshad Khan",
     "sections": [
-      {"section_name": "L1", "instructor": "SHAMSHAD KHAN"                    , "room": "229" , "days": "M7 T2 Th6"}
+      {"section_name": "L1", "instructor": "Shamshad Khan"                    , "room": "229" , "days": "M7 T2 Th6"}
     ]
   },
   "HSS F222": {
     "title": "Linguistics",
-    "title_short": "",
+    "title_short": "Lingu",
     "IC": "Sayantan Chakraborty",
     "sections": [
-      {"section_name": "L1", "instructor": "SAYANTAN CHAKRABORTY"             , "room": "228" , "days": "M7 T2 Th6"}
+      {"section_name": "L1", "instructor": "Sayantan Chakraborty"             , "room": "228" , "days": "M7 T2 Th6"}
     ]
   },
   "HSS F232": {
-    "title": "Intro to Dev Studies",
-    "title_short": "",
+    "title": "Introduction to Development Studies",
+    "title_short": "IDS",
     "IC": "Mrutuyanjaya Sahu",
     "sections": [
-      {"section_name": "L1", "instructor": "MRUTUYANJAYA SAHU"                , "room": "257" , "days": "M7 T2 Th6"}
+      {"section_name": "L1", "instructor": "Mrutuyanjaya Sahu"                , "room": "257" , "days": "M7 T2 Th6"}
     ]
   },
   "HSS F266": {
@@ -1221,31 +1207,31 @@
     "title_short": "",
     "IC": "Sartaj Rasool",
     "sections": [
-      {"section_name": "1", "instructor": "SARTAJ RASOOL"                     , "room": ""    , "days": ""}
+      {"section_name": "L1", "instructor": "Sartaj Rasool"                    , "room": ""    , "days": ""}
     ]
   },
   "HSS F346": {
     "title": "International Relations",
-    "title_short": "",
+    "title_short": "IR",
     "IC": "Shamshad Khan",
     "sections": [
-      {"section_name": "L1", "instructor": "SHAMSHAD KHAN"                    , "room": "267" , "days": "M1 T9 Th4"}
+      {"section_name": "L1", "instructor": "Shamshad Khan"                    , "room": "267" , "days": "M1 T9 Th4"}
     ]
   },
   "HSS F349": {
     "title": "Ecocriticism",
-    "title_short": "",
+    "title_short": "Ecocrit",
     "IC": "Sayantan Chakraborty",
     "sections": [
-      {"section_name": "L1", "instructor": "SAYANTAN CHAKRABORTY"             , "room": "184" , "days": "M1 T9 Th4", "comment": "Room # originally 221"}
+      {"section_name": "L1", "instructor": "Sayantan Chakraborty"             , "room": "184" , "days": "M1 T9 Th4", "comment": "Room # originally 221"}
     ]
   },
   "HSS F350": {
     "title": "Human Rights: History, Theory and Practice",
-    "title_short": "Human rights",
+    "title_short": "HR",
     "IC": "Mrutuyanjaya Sahu",
     "sections": [
-      {"section_name": "L1", "instructor": "MRUTUYANJAYA SAHU"                , "room": "268" , "days": "M5 W5 Th9"}
+      {"section_name": "L1", "instructor": "Mrutuyanjaya Sahu"                , "room": "268" , "days": "M5 W5 Th9"}
     ]
   },
   "HSS F365": {
@@ -1253,24 +1239,24 @@
     "title_short": "Happiness",
     "IC": "Shazi S J",
     "sections": [
-      {"section_name": "L1", "instructor": "SHAZI S J"                        , "room": "205" , "days": "M7 T2 Th6"}
+      {"section_name": "L1", "instructor": "Shazi S J"                        , "room": "205" , "days": "M7 T2 Th6"}
     ]
   },
   "IS F341": {
     "title": "Software Engineering",
-    "title_short": "Software engg",
+    "title_short": "Software Engg",
     "IC": "Pramod Gaur",
     "sections": [
-      {"section_name": "L1", "instructor": "PRAMOD GAUR"                      , "room": "223" , "days": "M6 T7 Th3"},
-      {"section_name": "P1", "instructor": "PRAMOD GAUR"                      , "room": "335" , "days": "M89"}
+      {"section_name": "L1", "instructor": "Pramod Gaur"                      , "room": "223" , "days": "M6 T7 Th3"},
+      {"section_name": "P1", "instructor": "Pramod Gaur"                      , "room": "335" , "days": "M89"}
     ]
   },
   "MATH D021": {
     "title": "Remedial Mathematics",
-    "title_short": "Remedial math",
+    "title_short": "Rem Math",
     "IC": "K Kumar",
     "sections": [
-      {"section_name": "L1", "instructor": "K KUMAR"                          , "room": "184" , "days": "M7 T6 W2 Th5", "comment": "Room # originally 221"}
+      {"section_name": "L1", "instructor": "K Kumar"                          , "room": "184" , "days": "M7 T6 W2 Th5", "comment": "Room # originally 221"}
     ]
   },
   "MATH F111": {
@@ -1278,7 +1264,7 @@
     "title_short": "Math I",
     "IC": "Suhel Ahmad Khan",
     "sections": [
-      {"section_name": "L1", "instructor": "SUHEL AHMAD KHAN"                 , "room": "101" , "days": "T2 W5 Th1 F3"},
+      {"section_name": "L1", "instructor": "Suhel Ahmad Khan"                 , "room": "101" , "days": "T2 W5 Th1 F3"},
       {"section_name": "L2", "instructor": "K Kumar"                          , "room": "105" , "days": "T2 W5 Th1 F5"},
       {"section_name": "L3", "instructor": "TBA"                              , "room": "123" , "days": "T2 W5 Th1 F3"},
       {"section_name": "L4", "instructor": "Suhel Ahmad Khan"                 , "room": "165" , "days": "M7 T6 W2 Th5"},
@@ -1291,9 +1277,9 @@
     "title_short": "P&S",
     "IC": "Maneesha",
     "sections": [
-      {"section_name": "L1", "instructor": "MANEESHA"                         , "room": "165" , "days": "M3 T8 W1 F5"},
+      {"section_name": "L1", "instructor": "Maneesha"                         , "room": "165" , "days": "M3 T8 W1 F5"},
       {"section_name": "L2", "instructor": "Suhel Ahmad Khan"                 , "room": "185" , "days": "M5 T4 W8 F5"},
-      {"section_name": "L3", "instructor": "MANEESHA"                         , "room": "190" , "days": "M1 T5 W7 Th2"}
+      {"section_name": "L3", "instructor": "Maneesha"                         , "room": "190" , "days": "M1 T5 W7 Th2"}
     ]
   },
   "MATH F211": {
@@ -1301,8 +1287,8 @@
     "title_short": "Math III",
     "IC": "S Baskaran",
     "sections": [
-      {"section_name": "L1", "instructor": "S BASKARAN"                       , "room": "228" , "days": "M3 T4 W4 Th5"},
-      {"section_name": "L2", "instructor": "S BASKARAN"                       , "room": "220" , "days": "T1 W8 Th1 F5"}
+      {"section_name": "L1", "instructor": "S Baskaran"                       , "room": "228" , "days": "M3 T4 W4 Th5"},
+      {"section_name": "L2", "instructor": "S Baskaran"                       , "room": "220" , "days": "T1 W8 Th1 F5"}
     ]
   },
   "MATH F212": {
@@ -1310,7 +1296,7 @@
     "title_short": "",
     "IC": "Maneesha",
     "sections": [
-      {"section_name": "L1", "instructor": "MANEESHA"                         , "room": "223" , "days": "M5 W5 Th9"}
+      {"section_name": "L1", "instructor": "Maneesha"                         , "room": "223" , "days": "M5 W5 Th9"}
     ]
   },
   "MATH F266": {
@@ -1318,23 +1304,23 @@
     "title_short": "",
     "IC": "R Roop Kumar",
     "sections": [
-      {"section_name": "1", "instructor": "R ROOP KUMAR"                      , "room": ""    , "days": ""}
+      {"section_name": "L1", "instructor": "R Roop Kumar"                     , "room": ""    , "days": ""}
     ]
   },
   "MATH F366": {
     "title": "Laboratory Project",
-    "title_short": "Lab project",
+    "title_short": "Lab Proj",
     "IC": "R Roop Kumar",
     "sections": [
-      {"section_name": "1", "instructor": "R ROOP KUMAR"                      , "room": ""    , "days": ""}
+      {"section_name": "L1", "instructor": "R Roop Kumar"                     , "room": ""    , "days": ""}
     ]
   },
   "MATH F367": {
     "title": "Laboratory Project",
-    "title_short": "Lab project",
+    "title_short": "Lab Proj",
     "IC": "R Roop Kumar",
     "sections": [
-      {"section_name": "1", "instructor": "R ROOP KUMAR"                      , "room": ""    , "days": ""}
+      {"section_name": "L1", "instructor": "R Roop Kumar"                     , "room": ""    , "days": ""}
     ]
   },
   "MATH F376": {
@@ -1342,7 +1328,7 @@
     "title_short": "",
     "IC": "R Roop Kumar",
     "sections": [
-      {"section_name": "1", "instructor": "R ROOP KUMAR"                      , "room": ""    , "days": ""}
+      {"section_name": "L1", "instructor": "R Roop Kumar"                     , "room": ""    , "days": ""}
     ]
   },
   "MATH F377": {
@@ -1350,7 +1336,7 @@
     "title_short": "",
     "IC": "R Roop Kumar",
     "sections": [
-      {"section_name": "1", "instructor": "R ROOP KUMAR"                      , "room": ""    , "days": ""}
+      {"section_name": "L1", "instructor": "R Roop Kumar"                     , "room": ""    , "days": ""}
     ]
   },
   "MATH F491": {
@@ -1358,7 +1344,7 @@
     "title_short": "",
     "IC": "R Roop Kumar",
     "sections": [
-      {"section_name": "1", "instructor": "R ROOP KUMAR"                      , "room": ""    , "days": ""}
+      {"section_name": "L1", "instructor": "R Roop Kumar"                     , "room": ""    , "days": ""}
     ]
   },
   "ME F112": {
@@ -1366,9 +1352,9 @@
     "title_short": "Workshop",
     "IC": "Ravindra Bhardwaj",
     "sections": [
-      {"section_name": "L1", "instructor": "RAVINDRA BHARDWAJ"                , "room": "165" , "days": "T5"},
-      {"section_name": "L2", "instructor": "RAVINDRA BHARDWAJ"                , "room": "185" , "days": "T3"},
-      {"section_name": "L3", "instructor": "RAVINDRA BHARDWAJ"                , "room": "190" , "days": "M5"},
+      {"section_name": "L1", "instructor": "Ravindra Bhardwaj"                , "room": "165" , "days": "T5"},
+      {"section_name": "L2", "instructor": "Ravindra Bhardwaj"                , "room": "185" , "days": "T3"},
+      {"section_name": "L3", "instructor": "Ravindra Bhardwaj"                , "room": "190" , "days": "M5"},
       {"section_name": "P1", "instructor": "Ravindra Bhardwaj"                , "room": "MG1" , "days": "M89"},
       {"section_name": "P2", "instructor": "Ram Karthikeyan"                  , "room": "MG1" , "days": "T34"},
       {"section_name": "P3", "instructor": "Snehaunshu Choudhury"             , "room": "MG1" , "days": "T89"},
@@ -1380,32 +1366,32 @@
   },
   "ME F211": {
     "title": "Mechanics of Solids",
-    "title_short": "",
+    "title_short": "Mech of Solids",
     "IC": "Priyank Upadhyaya",
     "sections": [
-      {"section_name": "L1", "instructor": "PRIYANK UPADHYAYA"                , "room": "219" , "days": "M1 T3 W3 Th2"}
+      {"section_name": "L1", "instructor": "Priyank Upadhyaya"                , "room": "219" , "days": "M1 T3 W3 Th2"}
     ]
   },
   "ME F212": {
     "title": "Fluid Mechanics",
-    "title_short": "",
+    "title_short": "Fluid Mech",
     "IC": "Majid Hasan Khan",
     "sections": [
-      {"section_name": "L1", "instructor": "MAJID HASAN KHAN"                 , "room": "219" , "days": "T6 W9 Th4 F2"}
+      {"section_name": "L1", "instructor": "Majid Hasan Khan"                 , "room": "219" , "days": "T6 W9 Th4 F2"}
     ]
   },
   "ME F216": {
-    "title": "Materials Science & Engineering",
-    "title_short": "MS and engg",
+    "title": "Material Science & Engineering",
+    "title_short": "Materials Sci & Engg",
     "IC": "Vincent S Kumar",
     "sections": [
-      {"section_name": "L1", "instructor": "VINCENT S KUMAR"                  , "room": "219" , "days": "M9 T8 W1 Th8"},
+      {"section_name": "L1", "instructor": "Vincent S Kumar"                  , "room": "219" , "days": "M9 T8 W1 Th8"},
       {"section_name": "P1", "instructor": "Vincent S Kumar"                  , "room": "MF3" , "days": "W56"}
     ]
   },
   "ME F217": {
     "title": "Applied Thermodynamics",
-    "title_short": "Applied thermo.",
+    "title_short": "Appl Thermo",
     "IC": "",
     "sections": [
       {"section_name": "L1", "instructor": "Snehaunshu Choudhury"             , "room": "219" , "days": "T5 W8 Th3 F1"},
@@ -1417,56 +1403,56 @@
     "title_short": "",
     "IC": "Priyank Upadhyaya",
     "sections": [
-      {"section_name": "1", "instructor": "PRIYANK UPADHYAYA"                 , "room": ""    , "days": ""}
+      {"section_name": "L1", "instructor": "Priyank Upadhyaya"                , "room": ""    , "days": ""}
     ]
   },
   "ME F314": {
     "title": "Design of Machine Elements",
-    "title_short": "",
+    "title_short": "Design of Machine Elem",
     "IC": "Ravindra Bhardwaj",
     "sections": [
-      {"section_name": "L1", "instructor": "RAVINDRA BHARDWAJ"                , "room": "276" , "days": "M3 W3 Th3 F1"}
+      {"section_name": "L1", "instructor": "Ravindra Bhardwaj"                , "room": "276" , "days": "M3 W3 Th3 F1"}
     ]
   },
   "ME F315": {
     "title": "Advanced Manufacturing Processes",
-    "title_short": "Adv. manuf. processes",
+    "title_short": "Adv Manuf Proc",
     "IC": "Harpreet Singh Bedi",
     "sections": [
-      {"section_name": "L1", "instructor": "HARPREET SINGH BEDI"              , "room": "276" , "days": "M8 T5 W1"},
+      {"section_name": "L1", "instructor": "Harpreet Singh Bedi"              , "room": "276" , "days": "M8 T5 W1"},
       {"section_name": "P1", "instructor": "Harpreet Singh Bedi"              , "room": "MG1" , "days": "F345"}
     ]
   },
   "ME F316": {
     "title": "Manufacturing Management",
-    "title_short": "Manuf. mgmt.",
+    "title_short": "Manuf Mgmt",
     "IC": "Gulshan Kumar",
     "sections": [
-      {"section_name": "L1", "instructor": "GULSHAN KUMAR"                    , "room": "276" , "days": "M4 T1 Th6"}
+      {"section_name": "L1", "instructor": "Gulshan Kumar"                    , "room": "276" , "days": "M4 T1 Th6"}
     ]
   },
   "ME F317": {
     "title": "Engines, Motors and Mobility",
-    "title_short": "",
+    "title_short": "EMM",
     "IC": "Shashank Khurana",
     "sections": [
-      {"section_name": "L1", "instructor": "SHASHANK KHURANA"                 , "room": "276" , "days": "T4 W8 F2"}
+      {"section_name": "L1", "instructor": "Shashank Khurana"                 , "room": "276" , "days": "T4 W8 F2"}
     ]
   },
   "ME F366": {
     "title": "Laboratory Project",
-    "title_short": "Lab project",
+    "title_short": "Lab Proj",
     "IC": "Priyank Upadhyaya",
     "sections": [
-      {"section_name": "1", "instructor": "PRIYANK UPADHYAYA"                 , "room": ""    , "days": ""}
+      {"section_name": "L1", "instructor": "Priyank Upadhyaya"                , "room": ""    , "days": ""}
     ]
   },
   "ME F367": {
     "title": "Laboratory Project",
-    "title_short": "Lab project",
+    "title_short": "Lab Proj",
     "IC": "Priyank Upadhyaya",
     "sections": [
-      {"section_name": "1", "instructor": "PRIYANK UPADHYAYA"                 , "room": ""    , "days": ""}
+      {"section_name": "L1", "instructor": "Priyank Upadhyaya"                , "room": ""    , "days": ""}
     ]
   },
   "ME F376": {
@@ -1474,7 +1460,7 @@
     "title_short": "",
     "IC": "Priyank Upadhyaya",
     "sections": [
-      {"section_name": "1", "instructor": "PRIYANK UPADHYAYA"                 , "room": ""    , "days": ""}
+      {"section_name": "L1", "instructor": "Priyank Upadhyaya"                , "room": ""    , "days": ""}
     ]
   },
   "ME F377": {
@@ -1482,15 +1468,15 @@
     "title_short": "",
     "IC": "Priyank Upadhyaya",
     "sections": [
-      {"section_name": "1", "instructor": "PRIYANK UPADHYAYA"                 , "room": ""    , "days": ""}
+      {"section_name": "L1", "instructor": "Priyank Upadhyaya"                , "room": ""    , "days": ""}
     ]
   },
   "ME F461": {
-    "title": "Refrigeration & Aircond",
-    "title_short": "",
+    "title": "Refrigeration & Airconditioning",
+    "title_short": "R&AC",
     "IC": "Harpreet Singh Bedi",
     "sections": [
-      {"section_name": "L1", "instructor": "HARPREET SINGH BEDI"              , "room": "276" , "days": "T8 W4 Th8"}
+      {"section_name": "L1", "instructor": "Harpreet Singh Bedi"              , "room": "276" , "days": "T8 W4 Th8"}
     ]
   },
   "ME F491": {
@@ -1498,15 +1484,15 @@
     "title_short": "",
     "IC": "Priyank Upadhyaya",
     "sections": [
-      {"section_name": "1", "instructor": "PRIYANK UPADHYAYA"                 , "room": ""    , "days": ""}
+      {"section_name": "L1", "instructor": "Priyank Upadhyaya"                , "room": ""    , "days": ""}
     ]
   },
   "MF F418": {
     "title": "Lean Manufacturing",
-    "title_short": "",
+    "title_short": "LM",
     "IC": "Gulshan Kumar",
     "sections": [
-      {"section_name": "L1", "instructor": "GULSHAN KUMAR"                    , "room": "245" , "days": "M6 T6 W6"}
+      {"section_name": "L1", "instructor": "Gulshan Kumar"                    , "room": "245" , "days": "M6 T6 W6"}
     ]
   },
   "MGTS F211": {
@@ -1524,7 +1510,7 @@
     "title_short": "Phy Lab",
     "IC": "R Roop Kumar",
     "sections": [
-      {"section_name": "P1", "instructor": "R ROOP KUMAR"                     , "room": "309" , "days": "M34"},
+      {"section_name": "P1", "instructor": "R Roop Kumar"                     , "room": "309" , "days": "M34"},
       {"section_name": "P2", "instructor": "G Amaranath"                      , "room": "309" , "days": "M89"},
       {"section_name": "P3", "instructor": "K K Singh"                        , "room": "309" , "days": "T34"},
       {"section_name": "P4", "instructor": "R Roop Kumar"                     , "room": "309" , "days": "T89"},
@@ -1535,19 +1521,19 @@
     ]
   },
   "PHY F111": {
-    "title": "Mech Oscillations & Wave",
+    "title": "Mechanics Oscillations & Wave",
     "title_short": "MOW",
     "IC": "R Roop Kumar",
     "sections": [
-      {"section_name": "L1", "instructor": "R ROOP KUMAR"                     , "room": "165" , "days": "T1 W6 Th6 F1"},
+      {"section_name": "L1", "instructor": "R Roop Kumar"                     , "room": "165" , "days": "T1 W6 Th6 F1"},
       {"section_name": "L2", "instructor": "K K Singh"                        , "room": "185" , "days": "T1 W7 Th6 F1"},
       {"section_name": "L3", "instructor": "G Amaranath"                      , "room": "190" , "days": "T1 W5 Th6 F1"}
     ]
   },
   "PHY F215": {
-    "title": "Intro to Astro & Astroph",
-    "title_short": "",
-    "IC": "Tba",
+    "title": "Intro to Astro & Astrophysics",
+    "title_short": "Astro",
+    "IC": "TBA",
     "sections": [
       {"section_name": "L1", "instructor": "TBA"                              , "room": "276" , "days": "M5 W5 Th9"}
     ]
@@ -1557,23 +1543,23 @@
     "title_short": "",
     "IC": "R Roop Kumar",
     "sections": [
-      {"section_name": "1", "instructor": "R ROOP KUMAR"                      , "room": ""    , "days": ""}
+      {"section_name": "L1", "instructor": "R Roop Kumar"                     , "room": ""    , "days": ""}
     ]
   },
   "PHY F366": {
     "title": "Laboratory Project",
-    "title_short": "Lab project",
+    "title_short": "Lab Proj",
     "IC": "R Roop Kumar",
     "sections": [
-      {"section_name": "1", "instructor": "R ROOP KUMAR"                      , "room": ""    , "days": ""}
+      {"section_name": "L1", "instructor": "R Roop Kumar"                     , "room": ""    , "days": ""}
     ]
   },
   "PHY F367": {
     "title": "Laboratory Project",
-    "title_short": "Lab project",
+    "title_short": "Lab Proj",
     "IC": "R Roop Kumar",
     "sections": [
-      {"section_name": "1", "instructor": "R ROOP KUMAR"                      , "room": ""    , "days": ""}
+      {"section_name": "L1", "instructor": "R Roop Kumar"                     , "room": ""    , "days": ""}
     ]
   },
   "PHY F376": {
@@ -1581,7 +1567,7 @@
     "title_short": "",
     "IC": "R Roop Kumar",
     "sections": [
-      {"section_name": "1", "instructor": "R ROOP KUMAR"                      , "room": ""    , "days": ""}
+      {"section_name": "L1", "instructor": "R Roop Kumar"                     , "room": ""    , "days": ""}
     ]
   },
   "PHY F377": {
@@ -1589,7 +1575,7 @@
     "title_short": "",
     "IC": "R Roop Kumar",
     "sections": [
-      {"section_name": "1", "instructor": "R ROOP KUMAR"                      , "room": ""    , "days": ""}
+      {"section_name": "L1", "instructor": "R Roop Kumar"                     , "room": ""    , "days": ""}
     ]
   },
   "PHY F491": {
@@ -1597,7 +1583,7 @@
     "title_short": "",
     "IC": "R Roop Kumar",
     "sections": [
-      {"section_name": "1", "instructor": "R ROOP KUMAR"                      , "room": ""    , "days": ""}
+      {"section_name": "L1", "instructor": "R Roop Kumar"                     , "room": ""    , "days": ""}
     ]
   }
 }

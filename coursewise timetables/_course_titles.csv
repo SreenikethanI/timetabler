@@ -83,6 +83,7 @@ BITS F421T,Thesis,
 BITS F422T,Thesis,
 BITS F423T,Thesis,
 BITS F425T,Thesis,
+BITS F427,Digital Marketing,
 BITS F441,Robotics,
 BITS F441T,Seminar,
 BITS F452,Blockchain Technology,Blockchain
@@ -122,7 +123,7 @@ CE F377,Design Project,
 CE F411,Operation Research for Engineering,OR
 CE F412,Disaster Management,
 CE F415,Design of Prestressed Concrete Structures,Design of Prestressed CS
-CE F417,Applications of AI in Civil Engineering,Appl of AI in CEngg
+CE F417,Applications of Artificial Intelligence in Civil Engineering,AI in CEngg
 CE F423,Green Build & Energy Conservation,GBEC
 CE F425,Airport Rail & Waterways,
 CE F431,Principles of Geo Info Sys,PGIS
@@ -153,6 +154,7 @@ CHE F411,Environment Pollution Control,EPC
 CHE F413,Process Plant Safety,PPS
 CHE F414,Transport Phenomena,TP
 CHE F416,Process Plant Design Pro I,PPDP I
+CHE F418,Modelling & Simulation in Chemical Engineering,M&S
 CHE F419,Chemical Process Technology,
 CHE F421,Biochemical Engineering,Biochem Engg
 CHE F422,Petroleoum Refining Technology,Petroleoum
@@ -221,6 +223,8 @@ ECE F366,Laboratory Project,Lab Proj
 ECE F367,Laboratory Project,Lab Proj
 ECE F376,Design Project,
 ECE F377,Design Project,
+ECE F411,Internet of Things,IoT
+ECE F417,Computer Based Control System,Comp based Control Sys
 ECE F432,Medical Instrumentation,Medical Instr
 ECE F434,Digital Signal Process,DSP
 ECE F472,Satellite Communication,Satellite Comm
@@ -294,6 +298,7 @@ GS F231,Dynamics of Social Change,
 GS F232,Introductory Psychology,Psychology
 GS F233,Public Policy,
 GS F234,Development Economics,Dev Eco
+GS F241,Creative Writing,
 GS F245,Effective Public Speaking,Public Speaking
 GS F266,Study Project,
 GS F331,Techniques in Social Research,TSR
@@ -304,7 +309,8 @@ HSS F101,Understanding Self & Society,USS
 HSS F211,Introduction to Arabic,Arabic
 HSS F222,Linguistics,Lingu
 HSS F227,Cross Cultural Skills,CCS
-HSS F232,Intro to Development Studies,IDS
+HSS F232,Introduction to Development Studies,IDS
+HSS F235,Introductory Philosophy,Philosophy
 HSS F252,International Law,IL
 HSS F266,Study Project,
 HSS F317,Introduction to Globalization,Globalization
@@ -314,12 +320,13 @@ HSS F346,International Relations,IR
 HSS F349,Ecocriticism,Ecocrit
 HSS F350,"Human Rights: History, Theory and Practice",HR
 HSS F354,Intro to Islamic Economy,Islamic Eco
+HSS F364,Political Economy of Gulf Cooperation Council States,Pol Eco of GCC
 HSS F365,Science of Sustainable Happiness,Happiness
 HSS F387,History of Transport & Mobility in Modern Asia,History of Transport
 IS F341,Software Engineering,Software Engg
 MAC F211,Linear Algebra Applications,
 MAC F212,Object Oriented Programming,OOP
-MAC F241,Numerical Analysis,NA
+MAC F241,Numerical Analysis,
 MAC F242,Data Structures & Algorithms,DSA
 MAC F243,Numerical Optimization,Num Optimization
 MAC F244,Stochastic Calculus and Application to Finance,
@@ -337,7 +344,7 @@ MATH F212,Optimization,
 MATH F213,Discrete Mathematics,Discrete Math
 MATH F214,Elementary Real Analysis,ERA
 MATH F266,Study Project,
-MATH F313,Numerical Analysis,NA
+MATH F313,Numerical Analysis,
 MATH F366,Laboratory Project,Lab Proj
 MATH F367,Laboratory Project,Lab Proj
 MATH F376,Design Project,
@@ -373,7 +380,9 @@ ME F366,Laboratory Project,Lab Proj
 ME F367,Laboratory Project,Lab Proj
 ME F376,Design Project,
 ME F377,Design Project,
+ME F414,Fuel Cells Science & Technology,Fuel Cells
 ME F426,Industry 4.0,
+ME F441,Automotive Vehicles,
 ME F443,Quality Control Assur & Rel,
 ME F452,Composite Material & Design,CMD
 ME F461,Refrigeration & Airconditioning,R&AC

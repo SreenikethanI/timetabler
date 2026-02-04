@@ -11,7 +11,7 @@ const KEY_COMPARE_MODE = `${KEY_PREFIX}CompareMode`;
 /** @type {string[][]} */           var selections;
 /** @type {number} */               var semIndex;
 /** @type {boolean} */              var compareMode;
-const semIndexDefault = 3;
+const semIndexDefault = 7;
 
 const LS_AVAILABLE = (() => {
     // https://stackoverflow.com/a/16427725/
