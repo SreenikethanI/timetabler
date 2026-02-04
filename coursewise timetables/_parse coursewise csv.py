@@ -4,7 +4,7 @@ from typing import NamedTuple
 import re
 from pathlib import Path
 
-from _common import *
+from _common import resize_list, CourseJSON, SemesterJSON
 
 class ParseWarning(NamedTuple):
     """Represents a warning from the `parse_csv` function."""
@@ -36,11 +36,6 @@ def bye(msg):
     input(f"{msg}\nPress Enter to exit.")
     raise SystemExit
 
-def create_empty_course_old() -> CourseJSON_Old:
-    """[deprecated] Create a `CourseJSON` object with all properties set to
-    empty strings, empty dicts, etc. as applicable."""
-    return {"title":"", "title_short":"", "IC":"", "sections": {}}
-
 def create_empty_course() -> CourseJSON:
     """Create a `CourseJSON` object with all properties set to empty strings,
     empty lists, etc. as applicable."""
@@ -70,64 +65,6 @@ def load_course_titles(path_in: Path) -> dict[str, tuple[str, str]]:
             titles[course_id] = (title or title_short, title_short)
 
     return titles
-
-def parse_csv_old(path_in: Path) -> tuple[SemesterJSON_Old, list[ParseWarning]]:
-    """[deprecated] Parse the given CSV file and return a dict.
-
-    The CSV file SHOULD NOT have a header row, and SHOULD have the following
-    columns in the same order mentioned below:
-    1. course id
-    2. title
-    3. short title
-    4. section number
-    5. instructor
-    6. room
-    7. days
-
-    Extra columns are ignored, and missing columns are taken as blank."""
-
-    warnings: list[ParseWarning] = []
-
-    semester: SemesterJSON_Old = {}
-    with open(path_in, "r", encoding="utf-8-sig") as f:
-        r = reader(f)
-
-        # Start with an empty course, to which we keep adding entries, until we
-        # encounter the next course ID.
-        current_course: CourseJSON_Old = create_empty_course_old()
-        for row_num, cols in enumerate(r, start=1):
-            if not any(cols):
-                warnings.append(ParseWarning(row_num, "Empty row."))
-
-            # Unpack columns and strip all columns.
-            (course_id, title, title_short, section_number, instructor, room,
-             days) = map(str.strip, resize_list(cols, 7, ""))
-
-            # Next course ID, so create a new Course object
-            if course_id:
-                current_course = create_empty_course_old()
-                semester[course_id] = current_course
-                current_course["title"] = title
-                current_course["title_short"] = title_short
-
-            # If section number is missing, then this row is pointless.
-            if not section_number:
-                warnings.append(ParseWarning(row_num, "Missing section number.", 4))
-                continue
-
-            # Check for Instructor-in-Charge. BITS convention is to write IC's
-            # name in ALL CAPS.
-            if not current_course["IC"] and instructor.isupper():
-                current_course["IC"] = instructor.title()
-
-            # Create a section object in the current course.
-            current_course["sections"][section_number] = {
-                "instructor": instructor,
-                "room": room,
-                "days": days,
-            }
-
-    return semester, warnings
 
 def parse_csv(path_csv: Path, path_titles: Path) -> tuple[SemesterJSON, list[ParseWarning]]:
     """Parse the given CSV file and return a dict.

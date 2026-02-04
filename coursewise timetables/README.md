@@ -19,9 +19,7 @@ remaining files are documented here:
 Some more files, which I've used maybe once, but kept for the sake of history:
 | File | Description |
 | ---: | --- |
-| [_compare short titles.**py**](<_compare short titles.py>) | To compare the "short title" values between a CSV and a JSON file, just to ensure that they're consistent.<br>This is now deprecated, since the short titles will no longer be stored in the individual CSV files, but rather in a dedicated file ([_parse coursewise csv.py](<_parse coursewise csv.py>)). |
 | [_room number change notice.**py**](<_room number change notice.py>) | To get all sections that have a certain room number. See the file contents for more details. |
-| [_VBA Add prefix.**bas**](<_VBA Add prefix.bas>) | A quick VBA code to add a prefix to the selected cells.<br>e.g. to convert "**1**","**2**","**3**" to "**P1**","**P2**","**P3**"<br>This is now deprecated, since this is now detected automatically (by [_parse coursewise csv.py](<_parse coursewise csv.py>)). |
 
 ---
 ## Creating a file for a Semester
