@@ -12,13 +12,13 @@ giving you an idea of the *periods* and *free hours* which are in **common**.
 
 ### Available for these courses, so far:
 - **2022-09:** Semester 1 *(Year 1 courses only)*
-- **2023-04:** Semester 2 *(Year 1 courses only)*
-- **2023-09:** Semester 1 *(All courses)*
-- **2024-02:** Semester 2 *(All courses)*
-- **2024-09:** Semester 1 *(All courses)*
-- **2025-01:** Semester 2 *(All courses)*
-- **2025-09:** Semester 1 *(All courses)*
-- 🌟 **2026-01:** Semester 2 *(All courses)*
+- **2023-04:** Semester 2
+- **2023-09:** Semester 1
+- **2024-02:** Semester 2
+- **2024-09:** Semester 1
+- **2025-01:** Semester 2
+- **2025-09:** Semester 1
+- 🌟 **2026-01:** Semester 2
 
 ## Website
 You can find the live version of this website here, hosted using GitHub Pages:

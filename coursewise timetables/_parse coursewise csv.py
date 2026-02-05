@@ -39,7 +39,7 @@ def bye(msg):
 def create_empty_course() -> CourseJSON:
     """Create a `CourseJSON` object with all properties set to empty strings,
     empty lists, etc. as applicable."""
-    return {"title":"", "title_short":"", "IC":"", "sections": []}
+    return {"title":"", "title_short":"", "IC":"", "date_midsem":"", "date_compre":"", "sections":[]}
 
 # >>==========================================================================<<
 
@@ -79,9 +79,11 @@ def parse_csv(path_csv: Path, path_titles: Path) -> tuple[SemesterJSON, list[Par
     6. instructor/IC
     7. room
     8. days/hours
+    9. midsem date
+    10. compre date
 
     Extra columns are ignored, and missing columns are taken as blank."""
-    NUM_COLS = 8
+    NUM_COLS = 10
 
     semester: SemesterJSON = {}
     warnings: list[ParseWarning] = []
@@ -116,7 +118,7 @@ def parse_csv(path_csv: Path, path_titles: Path) -> tuple[SemesterJSON, list[Par
                 col = col.strip()
                 cols_filtered[col_index] = col
 
-            (_com_cod, course_id, course_title, credit_LPU, section_number, instructor, room, days) = cols_filtered
+            (_com_cod, course_id, course_title, credit_LPU, section_number, instructor, room, days, date_midsem, date_compre) = cols_filtered
 
             # They randomly decide to split with comma, ampersand or slash
             # depending on the color of the moon. Come on, man...
@@ -139,6 +141,9 @@ def parse_csv(path_csv: Path, path_titles: Path) -> tuple[SemesterJSON, list[Par
                 else:
                     warn(row_num_csv, f"Course ID {course_id} not found in Titles CSV.")
                     curr_course["title"] = course_title
+
+                curr_course["date_midsem"] = date_midsem
+                curr_course["date_compre"] = date_compre
 
                 section_prefix = "L"
 

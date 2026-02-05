@@ -3,7 +3,7 @@ from json import load
 from pathlib import Path
 
 SectionJSON = TypedDict("SectionJSON", {"section_name": str, "instructor": str, "room": str, "days": str})
-CourseJSON = TypedDict("CourseJSON", {"title": str, "title_short": str, "IC": str, "sections": list[SectionJSON]})
+CourseJSON = TypedDict("CourseJSON", {"title": str, "title_short": str, "IC": str, "date_midsem": str, "date_compre": str, "sections": list[SectionJSON]})
 SemesterJSON = dict[str, CourseJSON]
 
 def load_semester(path: Path) -> SemesterJSON:

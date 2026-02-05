@@ -3,6 +3,8 @@
     "title": "Biology Laboratory",
     "title_short": "Bio Lab",
     "IC": "D J Shariff",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "P1", "room": "307", "instructor": "D J Shariff"              , "days": "M34"},
       {"section_name": "P2", "room": "307", "instructor": "D J Shariff"              , "days": "M89"},
@@ -17,6 +19,8 @@
     "title": "General Biology",
     "title_short": "Biology",
     "IC": "Neeru Sood",
+    "date_midsem": "2.11.2022 FN",
+    "date_compre": "10.01.2023 FN",
     "sections": [
       {"section_name": "L1", "room": "101", "instructor": "D J Shariff"              , "days": "M1 W4 Th6 F2"},
       {"section_name": "L2", "room": "105", "instructor": "Neeru Sood"               , "days": "M1 W4 Th6 F2"},
@@ -27,6 +31,8 @@
     "title": "Engineering Graphics",
     "title_short": "EG",
     "IC": "Meghana S Charde",
+    "date_midsem": "1.11.22 FN",
+    "date_compre": "06.01.2023",
     "sections": [
       {"section_name": "L1", "room": "101", "instructor": "Meghana S Charde"         , "days": "W1"},
       {"section_name": "L2", "room": "101", "instructor": "Deepthi Mary Dilip"       , "days": "T5"},
@@ -40,6 +46,8 @@
     "title": "Thermodynamics",
     "title_short": "Thermo",
     "IC": "Snehaunshu Choudhury",
+    "date_midsem": "1.11.2022 AN",
+    "date_compre": "12.01.2023 AN",
     "sections": [
       {"section_name": "L1", "room": "189", "instructor": "Naveen Shrivastava"       , "days": "M4 T1 W2 F5"},
       {"section_name": "L2", "room": "165", "instructor": "Snehaunshu Choudhury"     , "days": "M4 T1 W2 F5"},
@@ -50,6 +58,8 @@
     "title": "Technical Report Writing",
     "title_short": "TRW",
     "IC": "Sayantan Chakraborty",
+    "date_midsem": "7.11.2022 FN",
+    "date_compre": "13.01.2023 FN",
     "sections": [
       {"section_name": "L1", "room": "334", "instructor": "Shazi S J"                , "days": "T7 F5"},
       {"section_name": "L2", "room": "336", "instructor": "Sayantan Chakraborty"     , "days": "T7 F5"}
@@ -59,6 +69,8 @@
     "title": "Chemistry Laboratory",
     "title_short": "Chem Lab",
     "IC": "Geetha Kannan",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "P1", "room": "306", "instructor": "Vijaya Ilango"            , "days": "M34"},
       {"section_name": "P2", "room": "306", "instructor": "Geetha Kannan"            , "days": "M89"},
@@ -72,6 +84,8 @@
     "title": "General Chemistry",
     "title_short": "Chemistry",
     "IC": "Vijaya Ilango",
+    "date_midsem": "3.11.2022 FN",
+    "date_compre": "11.01.2023 FN",
     "sections": [
       {"section_name": "L1", "room": "101", "instructor": "Vijaya Ilango"            , "days": "M6 T1 W2 F4"},
       {"section_name": "L2", "room": "105", "instructor": "Rusal Raj"                , "days": "M6 T1 W2 F4"},
@@ -82,6 +96,8 @@
     "title": "Computer Programming",
     "title_short": "CP",
     "IC": "Sapna Sadhwani",
+    "date_midsem": "4.11.2022 FN",
+    "date_compre": "12.01.2023 FN",
     "sections": [
       {"section_name": "L1", "room": "105", "instructor": "Pramod Gaur"              , "days": "M2 W3 Th5 F1"},
       {"section_name": "L2", "room": "101", "instructor": "Sapna Sadhwani"           , "days": "M2 W3 Th5 F1"},
@@ -95,6 +111,8 @@
     "title": "Electrical Sciences",
     "title_short": "ES",
     "IC": "T G Thomas",
+    "date_midsem": "3.11.2022 AN",
+    "date_compre": "11.01.2023 AN",
     "sections": [
       {"section_name": "L1", "room": "165", "instructor": "T G Thomas"               , "days": "M1 W6 Th2 F4"},
       {"section_name": "L2", "room": "189", "instructor": "V Kalaichelvi"            , "days": "M1 W6 Th2 F4"},
@@ -105,6 +123,8 @@
     "title": "Remedial Mathematics",
     "title_short": "Rem Math",
     "IC": "K Kumar",
+    "date_midsem": "31.10.2022 FN",
+    "date_compre": "9.01.2023 FN",
     "sections": [
       {"section_name": "L1", "room": "165", "instructor": "A Somasundaram / K Kumar" , "days": "M5 T2 W9 Th8"}
     ]
@@ -113,6 +133,8 @@
     "title": "Mathematics I",
     "title_short": "Math I",
     "IC": "Suhel Ahmad Khan",
+    "date_midsem": "31.10.2022 FN",
+    "date_compre": "9.01.2023 FN",
     "sections": [
       {"section_name": "L1", "room": "101", "instructor": "Priti Bajpai"             , "days": "M5 T2 W7 Th1"},
       {"section_name": "L2", "room": "105", "instructor": "Suhel Ahmad Khan"         , "days": "M5 T2 W7 Th1"},
@@ -126,6 +148,8 @@
     "title": "Probability & Statistics",
     "title_short": "P&S",
     "IC": "Maneesha",
+    "date_midsem": "7.11.2022 AN",
+    "date_compre": "9.01.2023 AN",
     "sections": [
       {"section_name": "L1", "room": "165", "instructor": "Maneesha"                 , "days": "M7 T9 W5 F1"},
       {"section_name": "L2", "room": "190", "instructor": "Suhel Ahmad Khan"         , "days": "M7 T9 W5 F1"},
@@ -136,6 +160,8 @@
     "title": "Workshop Practice",
     "title_short": "Workshop",
     "IC": "Ravindra Giriraj Bhardwaj",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "room": "165", "instructor": "Ravindra Giriraj Bhardwaj", "days": "T3"},
       {"section_name": "L2", "room": "189", "instructor": "Ravindra Giriraj Bhardwaj", "days": "W8"},
@@ -153,6 +179,8 @@
     "title": "Physics Laboratory",
     "title_short": "Phy Lab",
     "IC": "G Amaranath",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "P1", "room": "309", "instructor": "R Roop Kumar"             , "days": "M89"},
       {"section_name": "P2", "room": "309", "instructor": "K K Singh"                , "days": "T34"},
@@ -168,6 +196,8 @@
     "title": "Mechanics Oscillations & Wave",
     "title_short": "MOW",
     "IC": "R Roop Kumar",
+    "date_midsem": "2.11.2022 AN",
+    "date_compre": "10.01.2023 AN",
     "sections": [
       {"section_name": "L1", "room": "165", "instructor": "R Roop Kumar"             , "days": "M2 T6 W1 Th6"},
       {"section_name": "L2", "room": "189", "instructor": "K K Singh"                , "days": "M2 T6 W1 Th6"},

@@ -23,7 +23,7 @@ The following are timetable information derived/constructed from each `Student`:
 /** @typedef {Day[]} Timetable */
 
 /** @typedef {{section_name:string, room:string, instructor:string, days:string}} Section */
-/** @typedef {{title:string, title_short:string, IC:string, sections:Section[]}} Course */
+/** @typedef {{title:string, title_short:string, IC:string, date_midsem:string, date_compre:string, sections:Section[]}} Course */
 /** @typedef {Object.<string, Course>} Semester */
 
 /** @typedef {Object.<string, string[]>} Student */

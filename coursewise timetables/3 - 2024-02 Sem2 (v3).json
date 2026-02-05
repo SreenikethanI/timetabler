@@ -3,6 +3,8 @@
     "title": "Principles of Aerodynamics",
     "title_short": "Aerodynamics",
     "IC": "Majid H Khan",
+    "date_midsem": "03.04.2024 FN",
+    "date_compre": "04.06.2024 AN",
     "sections": [
       {"section_name": "L1", "instructor": "Majid H Khan",                                      "room": "276", "days": "M6 T2 F1"}
     ]
@@ -11,6 +13,8 @@
     "title": "Biology Laboratory",
     "title_short": "Bio Lab",
     "IC": "Neeru Sood",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "P1", "instructor": "Aditya Sharma",                                     "room": "307", "days": "M34"},
       {"section_name": "P2", "instructor": "Neeru Sood",                                        "room": "307", "days": "M89"},
@@ -25,6 +29,8 @@
     "title": "General Biology",
     "title_short": "Biology",
     "IC": "Debostuti Ghosh",
+    "date_midsem": "01.04.2024 FN",
+    "date_compre": "04.06.2024 FN",
     "sections": [
       {"section_name": "L1", "instructor": "Neeru Sood",                                        "room": "101", "days": "M2 T2 Th5 F1"},
       {"section_name": "L2", "instructor": "Mainak Dutta",                                      "room": "105", "days": "T2 W1 Th5 F4"},
@@ -35,6 +41,8 @@
     "title": "Genetic Engineering Tech",
     "title_short": "Genetic Engg Tech",
     "IC": "Pallab Sanpui",
+    "date_midsem": "29.03.2024 FN",
+    "date_compre": "29.05.2024 FN",
     "sections": [
       {"section_name": "L1", "instructor": "Pallab Sanpui",                                     "room": "220", "days": "Th4"},
       {"section_name": "P1", "instructor": "Pallab Sanpui",                                     "room": "307", "days": "T789"},
@@ -47,6 +55,8 @@
     "title": "Genetics",
     "title_short": "",
     "IC": "Aditya Sharma",
+    "date_midsem": "01.04.2024 AN",
+    "date_compre": "31.05.2024 FN",
     "sections": [
       {"section_name": "L1", "instructor": "Aditya Sharma",                                     "room": "220", "days": "M8 T3 W2 Th1"}
     ]
@@ -55,6 +65,8 @@
     "title": "Instru Methods of Analysis",
     "title_short": "",
     "IC": "Mainak Dutta",
+    "date_midsem": "03.04.2024 AN",
+    "date_compre": "03.06.2024 AN",
     "sections": [
       {"section_name": "L1", "instructor": "S Ramachandran",                                    "room": "220", "days": "M2"},
       {"section_name": "P1", "instructor": "Mainak Dutta / S Ramachandran",                     "room": "308", "days": "T789"},
@@ -67,6 +79,8 @@
     "title": "Intro to Environ Biotech",
     "title_short": "Environ Biotech",
     "IC": "Trupti Gokhale",
+    "date_midsem": "04.04.2024 AN",
+    "date_compre": "05.06.2024 AN",
     "sections": [
       {"section_name": "L1", "instructor": "Trupti Gokhale",                                    "room": "220", "days": "M3 T5 Th2 F1"}
     ]
@@ -75,6 +89,8 @@
     "title": "Study Project",
     "title_short": "",
     "IC": "Neeru Sood",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "Neeru Sood",                                        "room": "",    "days": ""}
     ]
@@ -83,6 +99,8 @@
     "title": "Immunology",
     "title_short": "",
     "IC": "Arun Kumar Upadhyay",
+    "date_midsem": "29.03.2024 FN",
+    "date_compre": "29.05.2024 AN",
     "sections": [
       {"section_name": "L1", "instructor": "Arun Kumar Upadhyay",                               "room": "271", "days": "M2 T7 W2 Th1"}
     ]
@@ -91,6 +109,8 @@
     "title": "Downstream Processing",
     "title_short": "DP",
     "IC": "",
+    "date_midsem": "01.04.2024 AN",
+    "date_compre": "31.05.2024 FN",
     "sections": [
       {"section_name": "L1", "instructor": "New Faculty",                                       "room": "271", "days": "M9 F3"},
       {"section_name": "P1", "instructor": "New Faculty",                                       "room": "305", "days": "M45"},
@@ -101,6 +121,8 @@
     "title": "Laboratory Project",
     "title_short": "Lab Proj",
     "IC": "Neeru Sood",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "Neeru Sood",                                        "room": "",    "days": ""}
     ]
@@ -109,6 +131,8 @@
     "title": "Laboratory Project",
     "title_short": "Lab Proj",
     "IC": "Neeru Sood",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "Neeru Sood",                                        "room": "",    "days": ""}
     ]
@@ -117,6 +141,8 @@
     "title": "Design Project",
     "title_short": "",
     "IC": "Neeru Sood",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "Neeru Sood",                                        "room": "",    "days": ""}
     ]
@@ -125,6 +151,8 @@
     "title": "Design Project",
     "title_short": "",
     "IC": "Neeru Sood",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "Neeru Sood",                                        "room": "",    "days": ""}
     ]
@@ -133,6 +161,8 @@
     "title": "Intro to Pharma Biotech",
     "title_short": "Pharma Biotech",
     "IC": "S Ramachandran",
+    "date_midsem": "01.04.2024 FN",
+    "date_compre": "30.05.2024 FN",
     "sections": [
       {"section_name": "L1", "instructor": "S Ramachandran",                                    "room": "271", "days": "M7 W7 Th9"}
     ]
@@ -141,6 +171,8 @@
     "title": "Biomolecular Modeling",
     "title_short": "",
     "IC": "Debostuti Ghosh",
+    "date_midsem": "01.04.2024 FN",
+    "date_compre": "30.05.2024 FN",
     "sections": [
       {"section_name": "L1", "instructor": "Debostuti Ghosh",                                   "room": "210", "days": "M7 W7 Th9"}
     ]
@@ -149,6 +181,8 @@
     "title": "Drug Design and Delivery",
     "title_short": "Drug Design",
     "IC": "",
+    "date_midsem": "03.04.2024 FN",
+    "date_compre": "04.06.2024 AN",
     "sections": [
       {"section_name": "L1", "instructor": "New Faculty",                                       "room": "271", "days": "M1 T3 F4"}
     ]
@@ -157,6 +191,8 @@
     "title": "Nanobiotechnology",
     "title_short": "Nanobiotech",
     "IC": "Pallab Sanpui",
+    "date_midsem": "03.04.2024 FN",
+    "date_compre": "04.06.2024 AN",
     "sections": [
       {"section_name": "L1", "instructor": "Pallab Sanpui",                                     "room": "223", "days": "M1 T3 Th2"}
     ]
@@ -165,6 +201,8 @@
     "title": "Special Project",
     "title_short": "",
     "IC": "Neeru Sood",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "Neeru Sood",                                        "room": "",    "days": ""}
     ]
@@ -173,6 +211,8 @@
     "title": "Renewable Energy",
     "title_short": "",
     "IC": "Ravindra G Bhardwaj",
+    "date_midsem": "03.04.2024 FN",
+    "date_compre": "04.06.2024 AN",
     "sections": [
       {"section_name": "L1", "instructor": "Ravindra G Bhardwaj",                               "room": "245", "days": "M6 T2 F1"}
     ]
@@ -181,6 +221,8 @@
     "title": "Teaching Practice I",
     "title_short": "TP I",
     "IC": "Ram Karthikeyan",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "Ram Karthikeyan",                                   "room": "",    "days": ""}
     ]
@@ -189,6 +231,8 @@
     "title": "PhD Seminar",
     "title_short": "",
     "IC": "Ram Karthikeyan",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "Ram Karthikeyan",                                   "room": "",    "days": ""}
     ]
@@ -197,6 +241,8 @@
     "title": "PhD Thesis",
     "title_short": "",
     "IC": "Ram Karthikeyan",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "Ram Karthikeyan",                                   "room": "",    "days": ""}
     ]
@@ -205,6 +251,8 @@
     "title": "Research Methodology I",
     "title_short": "",
     "IC": "Ram Karthikeyan",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "Ram Karthikeyan",                                   "room": "",    "days": ""}
     ]
@@ -213,6 +261,8 @@
     "title": "Engineering Graphics",
     "title_short": "EG",
     "IC": "Meghana S Charde",
+    "date_midsem": "04.04.2024 FN",
+    "date_compre": "06.06.2024 FN",
     "sections": [
       {"section_name": "L1", "instructor": "Akshay Venkateshwaran",                             "room": "101", "days": "W1"},
       {"section_name": "L2", "instructor": "Meghana S Charde",                                  "room": "105", "days": "Th8"},
@@ -226,6 +276,8 @@
     "title": "Thermodynamics",
     "title_short": "Thermo",
     "IC": "Shashank Khurana",
+    "date_midsem": "02.04.2024 FN",
+    "date_compre": "31.05.2024 FN",
     "sections": [
       {"section_name": "L1", "instructor": "Shashank Khurana",                                  "room": "165", "days": "M1 T5 W2 Th2"},
       {"section_name": "L2", "instructor": "Snehaunshu C",                                      "room": "183", "days": "M1 T5 W2 Th2"},
@@ -236,6 +288,8 @@
     "title": "Technical Report Writing",
     "title_short": "TRW",
     "IC": "Sayantan Chakraborty",
+    "date_midsem": "05.04.2024 FN",
+    "date_compre": "07.06.2024 FN",
     "sections": [
       {"section_name": "L1", "instructor": "Sayantan Chakraborty",                              "room": "101", "days": "M6 T9"},
       {"section_name": "L2", "instructor": "Shazi S J",                                         "room": "105", "days": "M6 T9"},
@@ -247,6 +301,8 @@
     "title": "Environmental Studies",
     "title_short": "EvS",
     "IC": "Vijaya Ilango",
+    "date_midsem": "04.04.2024 FN",
+    "date_compre": "04.06.2024 AN",
     "sections": [
       {"section_name": "L1", "instructor": "Vijaya Ilango",                                     "room": "210", "days": "M6 T1 Th6"},
       {"section_name": "L2", "instructor": "Rusal Raj",                                         "room": "257", "days": "M6 T1 Th6"},
@@ -258,6 +314,8 @@
     "title": "Neural Networks & Fuzzy Logic",
     "title_short": "NNFL",
     "IC": "Kalaichelvi",
+    "date_midsem": "04.04.2024 FN",
+    "date_compre": "07.06.2024 FN",
     "sections": [
       {"section_name": "L1", "instructor": "Kalaichelvi",                                       "room": "223", "days": "T1 Th7 F5"}
     ]
@@ -266,6 +324,8 @@
     "title": "Practice School II",
     "title_short": "PS II",
     "IC": "A Somasundaram",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "A Somasundaram",                                    "room": "",    "days": ""}
     ]
@@ -274,6 +334,8 @@
     "title": "Intro to Nanoscience",
     "title_short": "Nanosci",
     "IC": "K K Singh",
+    "date_midsem": "04.04.2024 FN",
+    "date_compre": "07.06.2024 FN",
     "sections": [
       {"section_name": "L1", "instructor": "K K Singh",                                         "room": "226", "days": "T1 Th7 F5"}
     ]
@@ -282,6 +344,8 @@
     "title": "Thesis",
     "title_short": "",
     "IC": "K Kumar",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "K Kumar",                                           "room": "",    "days": ""}
     ]
@@ -290,6 +354,8 @@
     "title": "Thesis",
     "title_short": "",
     "IC": "K Kumar",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "K Kumar",                                           "room": "",    "days": ""}
     ]
@@ -298,6 +364,8 @@
     "title": "Thesis",
     "title_short": "",
     "IC": "K Kumar",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "K Kumar",                                           "room": "",    "days": ""}
     ]
@@ -306,6 +374,8 @@
     "title": "Seminar",
     "title_short": "",
     "IC": "Ram Karthikeyan",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "Ram Karthikeyan",                                   "room": "",    "days": ""}
     ]
@@ -314,6 +384,8 @@
     "title": "Blockchain Technology",
     "title_short": "Blockchain",
     "IC": "Raja M",
+    "date_midsem": "01.04.2024 FN",
+    "date_compre": "30.05.2024 FN",
     "sections": [
       {"section_name": "L1", "instructor": "Raja M",                                            "room": "267", "days": "M2 T7 W1"}
     ]
@@ -322,6 +394,8 @@
     "title": "Machine Learning",
     "title_short": "ML",
     "IC": "Pranav Motabhau Pawar",
+    "date_midsem": "01.04.2024 FN",
+    "date_compre": "30.05.2024 FN",
     "sections": [
       {"section_name": "L1", "instructor": "Pranav Motabhau Pawar",                             "room": "219", "days": "M2 T7 W1"}
     ]
@@ -330,6 +404,8 @@
     "title": "Analysis of Structures",
     "title_short": "",
     "IC": "Vivek B",
+    "date_midsem": "29.03.2024 FN",
+    "date_compre": "29.05.2024 FN",
     "sections": [
       {"section_name": "L1", "instructor": "Vivek B",                                           "room": "222", "days": "M6 W6 Th3 F3"}
     ]
@@ -338,6 +414,8 @@
     "title": "Construction Plan & Tech",
     "title_short": "CPT",
     "IC": "Meghana S Charde",
+    "date_midsem": "01.04.2024 AN",
+    "date_compre": "31.05.2024 FN",
     "sections": [
       {"section_name": "L1", "instructor": "Meghana S Charde",                                  "room": "222", "days": "M2 T3 Th6 F1"}
     ]
@@ -346,6 +424,8 @@
     "title": "Soil Mechanics",
     "title_short": "Soil Mech",
     "IC": "Vivek B",
+    "date_midsem": "03.04.2024 AN",
+    "date_compre": "03.06.2024 AN",
     "sections": [
       {"section_name": "L1", "instructor": "Vivek B",                                           "room": "222", "days": "M8 T6 W4 Th1"},
       {"section_name": "P1", "instructor": "Vivek B",                                           "room": "MF5", "days": "T89"}
@@ -355,6 +435,8 @@
     "title": "Highway Engineering",
     "title_short": "Highway Engg",
     "IC": "Deepthi Mary Dilip",
+    "date_midsem": "04.04.2024 AN",
+    "date_compre": "05.06.2024 AN",
     "sections": [
       {"section_name": "L1", "instructor": "Deepthi Mary Dilip",                                "room": "222", "days": "M1 T5 W3 Th4"},
       {"section_name": "P1", "instructor": "Deepthi Mary Dilip",                                "room": "MF5", "days": "W89"}
@@ -364,6 +446,8 @@
     "title": "Study Project",
     "title_short": "",
     "IC": "Vivek B",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "Vivek B",                                           "room": "",    "days": ""}
     ]
@@ -372,6 +456,8 @@
     "title": "Engineering Hydrology",
     "title_short": "EH",
     "IC": "Brij Kishore Pandey",
+    "date_midsem": "29.03.2024 FN",
+    "date_compre": "29.05.2024 AN",
     "sections": [
       {"section_name": "L1", "instructor": "Brij Kishore Pandey",                               "room": "256", "days": "M1 T2 W5 F2"}
     ]
@@ -380,6 +466,8 @@
     "title": "Water & Wastewater Treatment",
     "title_short": "WWT",
     "IC": "Brij Kishore Pandey",
+    "date_midsem": "01.04.2024 AN",
+    "date_compre": "31.05.2024 FN",
     "sections": [
       {"section_name": "L1", "instructor": "Brij Kishore Pandey",                               "room": "256", "days": "M5 W1 Th9 F4"},
       {"section_name": "P1", "instructor": "Brij Kishore Pandey",                               "room": "306", "days": "Th34"}
@@ -389,6 +477,8 @@
     "title": "Design of Steel Structures",
     "title_short": "Design of Steel Struc",
     "IC": "Akshay Venkateshwaran",
+    "date_midsem": "03.04.2024 AN",
+    "date_compre": "05.06.2024 AN",
     "sections": [
       {"section_name": "L1", "instructor": "Akshay Venkateshwaran",                             "room": "256", "days": "M2 T3 Th6 F3"}
     ]
@@ -397,6 +487,8 @@
     "title": "Laboratory Project",
     "title_short": "Lab Proj",
     "IC": "Vivek B",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "Vivek B",                                           "room": "",    "days": ""}
     ]
@@ -405,6 +497,8 @@
     "title": "Design Project",
     "title_short": "",
     "IC": "Vivek B",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "Vivek B",                                           "room": "",    "days": ""}
     ]
@@ -413,6 +507,8 @@
     "title": "Design of Prestressed Concrete Structures",
     "title_short": "Design of Prestressed CS",
     "IC": "Akshay Venkateshwaran",
+    "date_midsem": "01.04.2024 FN",
+    "date_compre": "30.05.2024 FN",
     "sections": [
       {"section_name": "L1", "instructor": "Akshay Venkateshwaran",                             "room": "256", "days": "M6 T6 Th1"}
     ]
@@ -421,6 +517,8 @@
     "title": "Green Build & Energy Conservation",
     "title_short": "GBEC",
     "IC": "Meghana S Charde",
+    "date_midsem": "03.04.2024 FN",
+    "date_compre": "04.06.2024 AN",
     "sections": [
       {"section_name": "L1", "instructor": "Meghana S Charde",                                  "room": "256", "days": "M4 T5 W6"}
     ]
@@ -429,6 +527,8 @@
     "title": "Special Project",
     "title_short": "",
     "IC": "Vivek B",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "Vivek B",                                           "room": "",    "days": ""}
     ]
@@ -437,6 +537,8 @@
     "title": "Heat Transfer",
     "title_short": "HT",
     "IC": "Nishant H Pandya",
+    "date_midsem": "29.03.2024 FN",
+    "date_compre": "29.05.2024 FN",
     "sections": [
       {"section_name": "L1", "instructor": "Nishant H Pandya",                                  "room": "245", "days": "T7 W3 Th8 F5"}
     ]
@@ -445,6 +547,8 @@
     "title": "Num Method for Chem Engineering",
     "title_short": "",
     "IC": "Souvik K Paul",
+    "date_midsem": "01.04.2024 AN",
+    "date_compre": "31.05.2024 FN",
     "sections": [
       {"section_name": "L1", "instructor": "Souvik K Paul",                                     "room": "245", "days": "M2 W7 Th9 F4"}
     ]
@@ -453,6 +557,8 @@
     "title": "Material Science & Engineering",
     "title_short": "Materials Sci & Engg",
     "IC": "Swati Routh",
+    "date_midsem": "03.04.2024 AN",
+    "date_compre": "03.06.2024 AN",
     "sections": [
       {"section_name": "L1", "instructor": "Swati Routh",                                       "room": "245", "days": "M8 T5 W8 Th1"}
     ]
@@ -461,6 +567,8 @@
     "title": "Separation Processes I",
     "title_short": "SP I",
     "IC": "B G Prakash Kumar",
+    "date_midsem": "04.04.2024 AN",
+    "date_compre": "05.06.2024 AN",
     "sections": [
       {"section_name": "L1", "instructor": "B G Prakash Kumar",                                 "room": "245", "days": "M1 T4 Th2 F3"}
     ]
@@ -469,6 +577,8 @@
     "title": "Study Project",
     "title_short": "",
     "IC": "B G Prakash Kumar",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "B G Prakash Kumar",                                 "room": "",    "days": ""}
     ]
@@ -477,6 +587,8 @@
     "title": "Chemical Engineering Lab II",
     "title_short": "Chem Engg Lab II",
     "IC": "Murchana Changmai",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "P1", "instructor": "Murchana Changmai / B G Prakash Kumar / Souvik K Paul","room": "329", "days": "T789"},
       {"section_name": "P1", "instructor": "Murchana Changmai / B G Prakash Kumar / Souvik K Paul","room": "331", "days": "W345"}
@@ -486,6 +598,8 @@
     "title": "Process Dyn & Control",
     "title_short": "PDC",
     "IC": "R Swarnalatha",
+    "date_midsem": "01.04.2024 AN",
+    "date_compre": "31.05.2024 FN",
     "sections": [
       {"section_name": "L1", "instructor": "R Swarnalatha",                                     "room": "226", "days": "M4 W1 Th2 F1"}
     ]
@@ -494,6 +608,8 @@
     "title": "Process Design Principle II",
     "title_short": "PDP II",
     "IC": "Nishant H Pandya",
+    "date_midsem": "03.04.2024 AN",
+    "date_compre": "05.06.2024 AN",
     "sections": [
       {"section_name": "L1", "instructor": "Nishant H Pandya",                                  "room": "226", "days": "M1 W7 Th3 F2"}
     ]
@@ -502,6 +618,8 @@
     "title": "Laboratory Project",
     "title_short": "Lab Proj",
     "IC": "B G Prakash Kumar",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "B G Prakash Kumar",                                 "room": "",    "days": ""}
     ]
@@ -510,6 +628,8 @@
     "title": "Laboratory Project",
     "title_short": "Lab Proj",
     "IC": "B G Prakash Kumar",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "B G Prakash Kumar",                                 "room": "",    "days": ""}
     ]
@@ -518,6 +638,8 @@
     "title": "Design Project",
     "title_short": "",
     "IC": "B G Prakash Kumar",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "B G Prakash Kumar",                                 "room": "",    "days": ""}
     ]
@@ -526,6 +648,8 @@
     "title": "Design Project",
     "title_short": "",
     "IC": "B G Prakash Kumar",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "B G Prakash Kumar",                                 "room": "",    "days": ""}
     ]
@@ -534,6 +658,8 @@
     "title": "Transport Phenomena",
     "title_short": "TP",
     "IC": "Souvik K Paul",
+    "date_midsem": "01.04.2024 FN",
+    "date_compre": "30.05.2024 FN",
     "sections": [
       {"section_name": "L1", "instructor": "Souvik K Paul",                                     "room": "226", "days": "M9 T3 Th1"}
     ]
@@ -542,6 +668,8 @@
     "title": "Process Plant Design Pro I",
     "title_short": "PPDP I",
     "IC": "Nishant H Pandya",
+    "date_midsem": "03.04.2024 FN",
+    "date_compre": "04.06.2024 AN",
     "sections": [
       {"section_name": "L1", "instructor": "Nishant H Pandya",                                  "room": "226", "days": "M6"},
       {"section_name": "P1", "instructor": "Nishant H Pandya",                                  "room": "336", "days": "Th56"}
@@ -551,6 +679,8 @@
     "title": "Special Project",
     "title_short": "",
     "IC": "B G Prakash Kumar",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "B G Prakash Kumar",                                 "room": "",    "days": ""}
     ]
@@ -559,6 +689,8 @@
     "title": "Chemistry Laboratory",
     "title_short": "Chem Lab",
     "IC": "Rusal Raj",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "P1", "instructor": "Rusal Raj",                                         "room": "306", "days": "M34"},
       {"section_name": "P2", "instructor": "Vijaya Ilango",                                     "room": "306", "days": "M89"},
@@ -572,6 +704,8 @@
     "title": "General Chemistry",
     "title_short": "Chemistry",
     "IC": "Geetha",
+    "date_midsem": "02.04.2024 FN",
+    "date_compre": "31.05.2024 FN",
     "sections": [
       {"section_name": "L1", "instructor": "Geetha",                                            "room": "101", "days": "M1 T8 W6 F5"},
       {"section_name": "L2", "instructor": "Vijaya Ilango",                                     "room": "105", "days": "M1 T8 W6 F5"},
@@ -582,6 +716,8 @@
     "title": "Study Project",
     "title_short": "",
     "IC": "R Roopkumar",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "R Roopkumar",                                       "room": "",    "days": ""}
     ]
@@ -590,6 +726,8 @@
     "title": "Laboratory Project",
     "title_short": "Lab Proj",
     "IC": "R Roopkumar",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "R Roopkumar",                                       "room": "",    "days": ""}
     ]
@@ -598,6 +736,8 @@
     "title": "Laboratory Project",
     "title_short": "Lab Proj",
     "IC": "R Roopkumar",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "R Roopkumar",                                       "room": "",    "days": ""}
     ]
@@ -606,6 +746,8 @@
     "title": "Design Project",
     "title_short": "",
     "IC": "R Roopkumar",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "R Roopkumar",                                       "room": "",    "days": ""}
     ]
@@ -614,6 +756,8 @@
     "title": "Design Project",
     "title_short": "",
     "IC": "R Roopkumar",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "R Roopkumar",                                       "room": "",    "days": ""}
     ]
@@ -622,6 +766,8 @@
     "title": "Special Project",
     "title_short": "",
     "IC": "R Roopkumar",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "R Roopkumar",                                       "room": "",    "days": ""}
     ]
@@ -630,6 +776,8 @@
     "title": "Computer Programming",
     "title_short": "CP",
     "IC": "Sapna Sadhwani",
+    "date_midsem": "03.04.2024 FN",
+    "date_compre": "03.06.2024 FN",
     "sections": [
       {"section_name": "L1", "instructor": "Sapna Sadhwani",                                    "room": "101", "days": "T6 W2 Th1 F2"},
       {"section_name": "L2", "instructor": "Ashish Gupta",                                      "room": "105", "days": "M2 T6 W2 Th1"},
@@ -643,6 +791,8 @@
     "title": "Data Structures & Algorithms",
     "title_short": "DSA",
     "IC": "Ashish Gupta",
+    "date_midsem": "03.04.2024 AN",
+    "date_compre": "03.06.2024 AN",
     "sections": [
       {"section_name": "L1", "instructor": "Ashish Gupta",                                      "room": "210", "days": "T2 W5 Th3 F5"},
       {"section_name": "L2", "instructor": "New Faculty",                                       "room": "257", "days": "T8 W3 Th2 F5"},
@@ -658,6 +808,8 @@
     "title": "Database Systems",
     "title_short": "DBMS",
     "IC": "B Vijayakumar",
+    "date_midsem": "01.04.2024 AN",
+    "date_compre": "31.05.2024 FN",
     "sections": [
       {"section_name": "L1", "instructor": "B Vijayakumar",                                     "room": "210", "days": "M2 T5 Th4 F3"},
       {"section_name": "L2", "instructor": "New Faculty",                                       "room": "257", "days": "M2 T6 Th4 F3"},
@@ -673,6 +825,8 @@
     "title": "Microproc & Interfacing",
     "title_short": "MPI",
     "IC": "Shazia Hasan",
+    "date_midsem": "29.03.2024 FN",
+    "date_compre": "29.05.2024 FN",
     "sections": [
       {"section_name": "L1", "instructor": "Shazia Hasan",                                      "room": "210", "days": "M5 T9 W6 F4"},
       {"section_name": "L2", "instructor": "Nilesh Goel",                                       "room": "257", "days": "M5 W6 Th1 F4"},
@@ -689,6 +843,8 @@
     "title": "Study Project",
     "title_short": "",
     "IC": "B Vijayakumar",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "B Vijayakumar",                                     "room": "",    "days": ""}
     ]
@@ -697,6 +853,8 @@
     "title": "Computer Networks",
     "title_short": "Comp Networks",
     "IC": "Pranav Motabhau Pawar",
+    "date_midsem": "01.04.2024 AN",
+    "date_compre": "31.05.2024 FN",
     "sections": [
       {"section_name": "L1", "instructor": "Pranav Motabhau Pawar",                             "room": "269", "days": "M4 T3 W6 Th1"},
       {"section_name": "L2", "instructor": "Tamilarasan Periasamy",                             "room": "268", "days": "M4 W6 Th1 F2"},
@@ -710,6 +868,8 @@
     "title": "Foundation of Data Science",
     "title_short": "FDS",
     "IC": "Siddhaling Urolagin",
+    "date_midsem": "03.04.2024 FN",
+    "date_compre": "04.06.2024 AN",
     "sections": [
       {"section_name": "L1", "instructor": "Siddhaling Urolagin",                               "room": "269", "days": "T2 W5 F1"}
     ]
@@ -718,6 +878,8 @@
     "title": "Compiler Construction",
     "title_short": "CC",
     "IC": "Elakkiya Rajasekar",
+    "date_midsem": "29.03.2024 FN",
+    "date_compre": "29.05.2024 AN",
     "sections": [
       {"section_name": "L1", "instructor": "Elakkiya Rajasekar",                                "room": "269", "days": "M9 T5 Th2"},
       {"section_name": "L2", "instructor": "Angel Arul Jothi",                                  "room": "268", "days": "M3 T5 W9"},
@@ -731,6 +893,8 @@
     "title": "Design & Analysis of Algorithms",
     "title_short": "DAA",
     "IC": "Siddhaling Urolagin",
+    "date_midsem": "03.04.2024 AN",
+    "date_compre": "05.06.2024 AN",
     "sections": [
       {"section_name": "L1", "instructor": "Siddhaling Urolagin",                               "room": "269", "days": "M1 T6 W2 Th5"},
       {"section_name": "L2", "instructor": "New Faculty",                                       "room": "268", "days": "M1 T3 W2 Th5"},
@@ -741,6 +905,8 @@
     "title": "Laboratory Project",
     "title_short": "Lab Proj",
     "IC": "B Vijayakumar",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "B Vijayakumar",                                     "room": "",    "days": ""}
     ]
@@ -749,6 +915,8 @@
     "title": "Laboratory Project",
     "title_short": "Lab Proj",
     "IC": "B Vijayakumar",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "B Vijayakumar",                                     "room": "",    "days": ""}
     ]
@@ -757,6 +925,8 @@
     "title": "Design Project",
     "title_short": "",
     "IC": "B Vijayakumar",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "B Vijayakumar",                                     "room": "",    "days": ""}
     ]
@@ -765,6 +935,8 @@
     "title": "Design Project",
     "title_short": "",
     "IC": "B Vijayakumar",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "B Vijayakumar",                                     "room": "",    "days": ""}
     ]
@@ -773,6 +945,8 @@
     "title": "Artificial Intelligence",
     "title_short": "AI",
     "IC": "Sujala D Shetty",
+    "date_midsem": "03.04.2024 FN",
+    "date_compre": "04.06.2024 AN",
     "sections": [
       {"section_name": "L1", "instructor": "Sujala D Shetty",                                   "room": "268", "days": "T2 W5 F1"}
     ]
@@ -781,6 +955,8 @@
     "title": "Data Mining",
     "title_short": "DM",
     "IC": "Angel Arul Jothi",
+    "date_midsem": "03.04.2024 FN",
+    "date_compre": "04.06.2024 AN",
     "sections": [
       {"section_name": "L1", "instructor": "Angel Arul Jothi",                                  "room": "267", "days": "T2 W5 F1"}
     ]
@@ -789,6 +965,8 @@
     "title": "Deep Learning",
     "title_short": "DL",
     "IC": "Tamilarasan Periasamy",
+    "date_midsem": "01.04.2024 FN",
+    "date_compre": "30.05.2024 FN",
     "sections": [
       {"section_name": "L1", "instructor": "Tamilarasan Periasamy",                             "room": "269", "days": "M2 T7 W1"}
     ]
@@ -797,6 +975,8 @@
     "title": "Natural Language Processing",
     "title_short": "NLP",
     "IC": "Elakkiya Rajasekar",
+    "date_midsem": "01.04.2024 FN",
+    "date_compre": "30.05.2024 FN",
     "sections": [
       {"section_name": "L1", "instructor": "Elakkiya Rajasekar",                                "room": "268", "days": "M2 T7 W1"}
     ]
@@ -805,6 +985,8 @@
     "title": "Special Project",
     "title_short": "",
     "IC": "B Vijayakumar",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "B Vijayakumar",                                     "room": "",    "days": ""}
     ]
@@ -813,6 +995,8 @@
     "title": "Microproc & Interfacing",
     "title_short": "MPI",
     "IC": "Shazia Hasan",
+    "date_midsem": "29.03.2024 FN",
+    "date_compre": "29.05.2024 FN",
     "sections": [
       {"section_name": "L1", "instructor": "Shazia Hasan",                                      "room": "210", "days": "M5 T9 W6 F4"},
       {"section_name": "L2", "instructor": "Nilesh Goel",                                       "room": "257", "days": "M5 W6 Th1 F4"},
@@ -829,6 +1013,8 @@
     "title": "Control Systems",
     "title_short": "Control Sys",
     "IC": "R Swarnalatha",
+    "date_midsem": "01.04.2024 AN",
+    "date_compre": "31.05.2024 FN",
     "sections": [
       {"section_name": "L1", "instructor": "R Swarnalatha",                                     "room": "228", "days": "M2 T8 W5 Th8"}
     ]
@@ -837,6 +1023,8 @@
     "title": "Signals & Systems",
     "title_short": "SS",
     "IC": "Shazia Hasan",
+    "date_midsem": "03.04.2024 AN",
+    "date_compre": "03.06.2024 AN",
     "sections": [
       {"section_name": "L1", "instructor": "Shazia Hasan",                                      "room": "228", "days": "M8 T5 W4 Th1"}
     ]
@@ -845,6 +1033,8 @@
     "title": "Microelectronic Circuits",
     "title_short": "Microelec Circuits",
     "IC": "Vilas H Gaidhane",
+    "date_midsem": "04.04.2024 AN",
+    "date_compre": "05.06.2024 AN",
     "sections": [
       {"section_name": "L1", "instructor": "Vilas H Gaidhane",                                  "room": "228", "days": "M1 T6 W8 Th4"}
     ]
@@ -853,6 +1043,8 @@
     "title": "Study Project",
     "title_short": "",
     "IC": "Kalaichelvi",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "Kalaichelvi",                                       "room": "",    "days": ""}
     ]
@@ -861,6 +1053,8 @@
     "title": "Analog Electronics",
     "title_short": "Analog Elec",
     "IC": "Kalaichelvi",
+    "date_midsem": "29.03.2024 FN",
+    "date_compre": "29.05.2024 AN",
     "sections": [
       {"section_name": "L1", "instructor": "Kalaichelvi",                                       "room": "189", "days": "M2 T8 W2 F2"},
       {"section_name": "P1", "instructor": "Kalaichelvi",                                       "room": "304", "days": "Th345"}
@@ -870,6 +1064,8 @@
     "title": "Communication Networks",
     "title_short": "CN",
     "IC": "Abdul Razak",
+    "date_midsem": "01.04.2024 AN",
+    "date_compre": "31.05.2024 FN",
     "sections": [
       {"section_name": "L1", "instructor": "Abdul Razak",                                       "room": "223", "days": "M5 T2 W7 Th1"}
     ]
@@ -878,6 +1074,8 @@
     "title": "Info Theory & Coding",
     "title_short": "ITC",
     "IC": "T G Thomas",
+    "date_midsem": "03.04.2024 AN",
+    "date_compre": "05.06.2024 AN",
     "sections": [
       {"section_name": "L1", "instructor": "T G Thomas",                                        "room": "223", "days": "M9 W3 Th8 F4"}
     ]
@@ -886,6 +1084,8 @@
     "title": "Laboratory Project",
     "title_short": "Lab Proj",
     "IC": "Kalaichelvi",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "Kalaichelvi",                                       "room": "",    "days": ""}
     ]
@@ -894,6 +1094,8 @@
     "title": "Laboratory Project",
     "title_short": "Lab Proj",
     "IC": "Kalaichelvi",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "Kalaichelvi",                                       "room": "",    "days": ""}
     ]
@@ -902,6 +1104,8 @@
     "title": "Design Project",
     "title_short": "",
     "IC": "Kalaichelvi",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "Kalaichelvi",                                       "room": "",    "days": ""}
     ]
@@ -910,6 +1114,8 @@
     "title": "Design Project",
     "title_short": "",
     "IC": "Kalaichelvi",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "Kalaichelvi",                                       "room": "",    "days": ""}
     ]
@@ -918,6 +1124,8 @@
     "title": "Medical Instrumentation",
     "title_short": "Medical Instr",
     "IC": "R Swarnalatha",
+    "date_midsem": "03.04.2024 FN",
+    "date_compre": "04.06.2024 AN",
     "sections": [
       {"section_name": "L1", "instructor": "R Swarnalatha",                                     "room": "223", "days": "M7 T6 F3"}
     ]
@@ -926,6 +1134,8 @@
     "title": "Satellite Communication",
     "title_short": "Satellite Comm",
     "IC": "Abdul Razak",
+    "date_midsem": "01.04.2024 FN",
+    "date_compre": "30.05.2024 FN",
     "sections": [
       {"section_name": "L1", "instructor": "Abdul Razak",                                       "room": "189", "days": "M1 T5 Th9"}
     ]
@@ -934,6 +1144,8 @@
     "title": "Special Project",
     "title_short": "",
     "IC": "Kalaichelvi",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "Kalaichelvi",                                       "room": "",    "days": ""}
     ]
@@ -942,6 +1154,8 @@
     "title": "Principles of Economics",
     "title_short": "PoE",
     "IC": "Sartaj Rasool",
+    "date_midsem": "02.04.2024 FN",
+    "date_compre": "30.05.2024 AN",
     "sections": [
       {"section_name": "L1", "instructor": "Sartaj Rasool",                                     "room": "228", "days": "M5 T1 Th5"}
     ]
@@ -950,6 +1164,8 @@
     "title": "Money Bank & Fin Markets",
     "title_short": "MBFM",
     "IC": "Asgar Ali",
+    "date_midsem": "02.04.2024 AN",
+    "date_compre": "06.06.2024 FN",
     "sections": [
       {"section_name": "L1", "instructor": "Asgar Ali",                                         "room": "267", "days": "M8 T4 W8"}
     ]
@@ -958,6 +1174,8 @@
     "title": "Security Analysis and Portfolio Management",
     "title_short": "SAPM",
     "IC": "Asgar Ali",
+    "date_midsem": "04.04.2024 FN",
+    "date_compre": "07.06.2024 FN",
     "sections": [
       {"section_name": "L1", "instructor": "Asgar Ali",                                         "room": "256", "days": "T1 Th7 F5"}
     ]
@@ -966,6 +1184,8 @@
     "title": "Electrical Sciences",
     "title_short": "ES",
     "IC": "T G Thomas",
+    "date_midsem": "03.04.2024 FN",
+    "date_compre": "03.06.2024 FN",
     "sections": [
       {"section_name": "L1", "instructor": "T G Thomas",                                        "room": "165", "days": "M5 T4 W1 Th5"},
       {"section_name": "L2", "instructor": "Gomathi Bhavani",                                   "room": "183", "days": "M5 T4 W1 Th5"},
@@ -976,6 +1196,8 @@
     "title": "Microproc & Interfacing",
     "title_short": "MPI",
     "IC": "Shazia Hasan",
+    "date_midsem": "29.03.2024 FN",
+    "date_compre": "29.05.2024 FN",
     "sections": [
       {"section_name": "L1", "instructor": "Shazia Hasan",                                      "room": "210", "days": "M5 T9 W6 F4"},
       {"section_name": "L2", "instructor": "Nilesh Goel",                                       "room": "257", "days": "M5 W6 Th1 F4"},
@@ -992,6 +1214,8 @@
     "title": "Control Systems",
     "title_short": "Control Sys",
     "IC": "R Swarnalatha",
+    "date_midsem": "01.04.2024 AN",
+    "date_compre": "31.05.2024 FN",
     "sections": [
       {"section_name": "L1", "instructor": "R Swarnalatha",                                     "room": "228", "days": "M2 T8 W5 Th8"}
     ]
@@ -1000,6 +1224,8 @@
     "title": "Signals & Systems",
     "title_short": "SS",
     "IC": "Shazia Hasan",
+    "date_midsem": "03.04.2024 AN",
+    "date_compre": "03.06.2024 AN",
     "sections": [
       {"section_name": "L1", "instructor": "Shazia Hasan",                                      "room": "228", "days": "M8 T5 W4 Th1"}
     ]
@@ -1008,6 +1234,8 @@
     "title": "Microelectronic Circuits",
     "title_short": "Microelec Circuits",
     "IC": "Vilas H Gaidhane",
+    "date_midsem": "04.04.2024 AN",
+    "date_compre": "05.06.2024 AN",
     "sections": [
       {"section_name": "L1", "instructor": "Vilas H Gaidhane",                                  "room": "228", "days": "M1 T6 W8 Th4"}
     ]
@@ -1016,6 +1244,8 @@
     "title": "Study Project",
     "title_short": "",
     "IC": "Kalaichelvi",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "Kalaichelvi",                                       "room": "",    "days": ""}
     ]
@@ -1024,6 +1254,8 @@
     "title": "Analog Electronics",
     "title_short": "Analog Elec",
     "IC": "Kalaichelvi",
+    "date_midsem": "29.03.2024 FN",
+    "date_compre": "29.05.2024 AN",
     "sections": [
       {"section_name": "L1", "instructor": "Kalaichelvi",                                       "room": "189", "days": "M2 T8 W2 F2"},
       {"section_name": "P1", "instructor": "Kalaichelvi",                                       "room": "304", "days": "Th345"}
@@ -1033,6 +1265,8 @@
     "title": "Power Electronics",
     "title_short": "PE",
     "IC": "Sunil Thomas",
+    "date_midsem": "01.04.2024 AN",
+    "date_compre": "31.05.2024 FN",
     "sections": [
       {"section_name": "L1", "instructor": "Sunil Thomas",                                      "room": "189", "days": "M5 T3 W9 F1"},
       {"section_name": "P1", "instructor": "Sunil Thomas",                                      "room": "302", "days": "W345"}
@@ -1042,6 +1276,8 @@
     "title": "Laboratory Project",
     "title_short": "Lab Proj",
     "IC": "Kalaichelvi",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "Kalaichelvi",                                       "room": "",    "days": ""}
     ]
@@ -1050,6 +1286,8 @@
     "title": "Laboratory Project",
     "title_short": "Lab Proj",
     "IC": "Kalaichelvi",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "Kalaichelvi",                                       "room": "",    "days": ""}
     ]
@@ -1058,6 +1296,8 @@
     "title": "Design Project",
     "title_short": "",
     "IC": "Kalaichelvi",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "Kalaichelvi",                                       "room": "",    "days": ""}
     ]
@@ -1066,6 +1306,8 @@
     "title": "Design Project",
     "title_short": "",
     "IC": "Kalaichelvi",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "Kalaichelvi",                                       "room": "",    "days": ""}
     ]
@@ -1074,6 +1316,8 @@
     "title": "Computer Based Control System",
     "title_short": "Comp based Control Sys",
     "IC": "Gomathi Bhavani",
+    "date_midsem": "01.04.2024 FN",
+    "date_compre": "30.05.2024 FN",
     "sections": [
       {"section_name": "L1", "instructor": "Gomathi Bhavani",                                   "room": "189", "days": "M7 T6 F3"}
     ]
@@ -1082,6 +1326,8 @@
     "title": "Medical Instrumentation",
     "title_short": "Medical Instr",
     "IC": "R Swarnalatha",
+    "date_midsem": "03.04.2024 FN",
+    "date_compre": "04.06.2024 AN",
     "sections": [
       {"section_name": "L1", "instructor": "R Swarnalatha",                                     "room": "223", "days": "M7 T6 F3"}
     ]
@@ -1090,6 +1336,8 @@
     "title": "Satellite Communication",
     "title_short": "Satellite Comm",
     "IC": "Abdul Razak",
+    "date_midsem": "01.04.2024 FN",
+    "date_compre": "30.05.2024 FN",
     "sections": [
       {"section_name": "L1", "instructor": "Abdul Razak",                                       "room": "189", "days": "M1 T5 Th9"}
     ]
@@ -1098,6 +1346,8 @@
     "title": "Special Project",
     "title_short": "",
     "IC": "Kalaichelvi",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "Kalaichelvi",                                       "room": "",    "days": ""}
     ]
@@ -1106,6 +1356,8 @@
     "title": "Fundamentals of Finance and Accounting",
     "title_short": "FFA",
     "IC": "Asgar Ali",
+    "date_midsem": "05.04.2024 FN",
+    "date_compre": "06.06.2024 AN",
     "sections": [
       {"section_name": "L1", "instructor": "Asgar Ali",                                         "room": "220", "days": "M4 W1 F2"}
     ]
@@ -1114,6 +1366,8 @@
     "title": "Financial Management",
     "title_short": "Fin Mgmt",
     "IC": "Faisal N Zargar",
+    "date_midsem": "02.04.2024 AN",
+    "date_compre": "06.06.2024 FN",
     "sections": [
       {"section_name": "L1", "instructor": "Faisal N Zargar",                                   "room": "268", "days": "M8 T4 W8"}
     ]
@@ -1122,6 +1376,8 @@
     "title": "Modern Political Concepts",
     "title_short": "Mod Pol",
     "IC": "Shamshad Khan",
+    "date_midsem": "04.04.2024 FN",
+    "date_compre": "07.06.2024 FN",
     "sections": [
       {"section_name": "L1", "instructor": "Shamshad Khan",                                     "room": "269", "days": "T1 Th7 F5"}
     ]
@@ -1130,6 +1386,8 @@
     "title": "Study Project",
     "title_short": "",
     "IC": "R Roopkumar",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "R Roopkumar",                                       "room": "",    "days": ""}
     ]
@@ -1138,6 +1396,8 @@
     "title": "Contemporary India",
     "title_short": "CI",
     "IC": "Mrutuyanjaya Sahu",
+    "date_midsem": "02.04.2024 AN",
+    "date_compre": "06.06.2024 FN",
     "sections": [
       {"section_name": "L1", "instructor": "Mrutuyanjaya Sahu",                                 "room": "269", "days": "M8 T4 W8"}
     ]
@@ -1146,6 +1406,8 @@
     "title": "Design Project",
     "title_short": "",
     "IC": "Sartaj Rasool",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "Sartaj Rasool",                                     "room": "",    "days": ""}
     ]
@@ -1154,6 +1416,8 @@
     "title": "Design Project",
     "title_short": "",
     "IC": "Sartaj Rasool",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "Sartaj Rasool",                                     "room": "",    "days": ""}
     ]
@@ -1162,6 +1426,8 @@
     "title": "Introduction to Arabic",
     "title_short": "Arabic",
     "IC": "Shamshad Khan",
+    "date_midsem": "05.04.2024 FN",
+    "date_compre": "06.06.2024 AN",
     "sections": [
       {"section_name": "L1", "instructor": "Shamshad Khan",                                     "room": "257", "days": "M4 W1 F2"}
     ]
@@ -1170,6 +1436,8 @@
     "title": "Linguistics",
     "title_short": "Lingu",
     "IC": "Sayantan Chakraborty",
+    "date_midsem": "05.04.2024 FN",
+    "date_compre": "06.06.2024 AN",
     "sections": [
       {"section_name": "L1", "instructor": "Sayantan Chakraborty",                              "room": "229", "days": "M4 W1 F2"}
     ]
@@ -1178,6 +1446,8 @@
     "title": "Introduction to Development Studies",
     "title_short": "IDS",
     "IC": "Mrutuyanjaya Sahu",
+    "date_midsem": "05.04.2024 FN",
+    "date_compre": "06.06.2024 AN",
     "sections": [
       {"section_name": "L1", "instructor": "Mrutuyanjaya Sahu",                                 "room": "205", "days": "M4 W1 F2"}
     ]
@@ -1186,6 +1456,8 @@
     "title": "International Law",
     "title_short": "IL",
     "IC": "Shamshad Khan",
+    "date_midsem": "02.04.2024 AN",
+    "date_compre": "06.06.2024 FN",
     "sections": [
       {"section_name": "L1", "instructor": "Shamshad Khan",                                     "room": "223", "days": "M8 T4 W8"}
     ]
@@ -1194,6 +1466,8 @@
     "title": "Study Project",
     "title_short": "",
     "IC": "Sartaj Rasool",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "Sartaj Rasool",                                     "room": "",    "days": ""}
     ]
@@ -1202,6 +1476,8 @@
     "title": "Ecocriticism",
     "title_short": "Ecocrit",
     "IC": "Sayantan Chakraborty",
+    "date_midsem": "02.04.2024 AN",
+    "date_compre": "06.06.2024 FN",
     "sections": [
       {"section_name": "L1", "instructor": "Sayantan Chakraborty",                              "room": "256", "days": "M8 T4 W8"}
     ]
@@ -1210,6 +1486,8 @@
     "title": "Human Rights: History, Theory and Practice",
     "title_short": "HR",
     "IC": "Mrutuyanjaya Sahu",
+    "date_midsem": "04.04.2024 FN",
+    "date_compre": "07.06.2024 FN",
     "sections": [
       {"section_name": "L1", "instructor": "Mrutuyanjaya Sahu",                                 "room": "268", "days": "T1 Th7 F5"}
     ]
@@ -1218,6 +1496,8 @@
     "title": "Intro to Islamic Economy",
     "title_short": "Islamic Eco",
     "IC": "Aqila Begum",
+    "date_midsem": "02.04.2024 AN",
+    "date_compre": "06.06.2024 FN",
     "sections": [
       {"section_name": "L1", "instructor": "Aqila Begum",                                       "room": "226", "days": "M8 T4 W8"}
     ]
@@ -1226,6 +1506,8 @@
     "title": "Science of Sustainable Happiness",
     "title_short": "Happiness",
     "IC": "Shazi S J",
+    "date_midsem": "05.04.2024 FN",
+    "date_compre": "06.06.2024 AN",
     "sections": [
       {"section_name": "L1", "instructor": "Shazi S J",                                         "room": "210", "days": "M4 W1 F2"}
     ]
@@ -1234,6 +1516,8 @@
     "title": "Software Engineering",
     "title_short": "Software Engg",
     "IC": "B Vijayakumar",
+    "date_midsem": "03.04.2024 FN",
+    "date_compre": "04.06.2024 AN",
     "sections": [
       {"section_name": "L1", "instructor": "B Vijayakumar",                                     "room": "271", "days": "T2 W5 F1"},
       {"section_name": "P1", "instructor": "B Vijayakumar",                                     "room": "335", "days": "M56"}
@@ -1243,6 +1527,8 @@
     "title": "Mathematics II",
     "title_short": "Math II",
     "IC": "Suhel Ahmed Khan",
+    "date_midsem": "29.03.2024 FN",
+    "date_compre": "29.05.2024 FN",
     "sections": [
       {"section_name": "L1", "instructor": "Suhel Ahmed Khan",                                  "room": "165", "days": "T2 W6 Th1 F5"},
       {"section_name": "L2", "instructor": "K Kumar",                                           "room": "183", "days": "T2 W6 Th1 F5"},
@@ -1257,6 +1543,8 @@
     "title": "Probability & Statistics",
     "title_short": "P&S",
     "IC": "Maneesha",
+    "date_midsem": "05.04.2024 FN",
+    "date_compre": "07.06.2024 FN",
     "sections": [
       {"section_name": "L1", "instructor": "Maneesha",                                          "room": "165", "days": "M2 T7 W5 F1"},
       {"section_name": "L2", "instructor": "Shanookha Ali",                                     "room": "183", "days": "M2 T7 W8 F1"},
@@ -1267,6 +1555,8 @@
     "title": "Mathematics III",
     "title_short": "Math III",
     "IC": "S Baskaran",
+    "date_midsem": "02.04.2024 AN",
+    "date_compre": "07.06.2024 FN",
     "sections": [
       {"section_name": "L1", "instructor": "S Baskaran",                                        "room": "210", "days": "M3 W4 Th5 F1"},
       {"section_name": "L2", "instructor": "A Somasundaram",                                    "room": "257", "days": "M3 W4 Th5 F1"},
@@ -1278,6 +1568,8 @@
     "title": "Optimization",
     "title_short": "",
     "IC": "Maneesha",
+    "date_midsem": "04.04.2024 FN",
+    "date_compre": "07.06.2024 FN",
     "sections": [
       {"section_name": "L1", "instructor": "Maneesha",                                          "room": "267", "days": "T1 Th7 F5"}
     ]
@@ -1286,6 +1578,8 @@
     "title": "Numerical Analysis",
     "title_short": "",
     "IC": "K Kumar",
+    "date_midsem": "02.04.2024 AN",
+    "date_compre": "06.06.2024 FN",
     "sections": [
       {"section_name": "L1", "instructor": "K Kumar",                                           "room": "276", "days": "M8 T4 W8"}
     ]
@@ -1294,6 +1588,8 @@
     "title": "Study Project",
     "title_short": "",
     "IC": "R Roopkumar",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "R Roopkumar",                                       "room": "",    "days": ""}
     ]
@@ -1302,6 +1598,8 @@
     "title": "Laboratory Project",
     "title_short": "Lab Proj",
     "IC": "R Roopkumar",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "R Roopkumar",                                       "room": "",    "days": ""}
     ]
@@ -1310,6 +1608,8 @@
     "title": "Laboratory Project",
     "title_short": "Lab Proj",
     "IC": "R Roopkumar",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "R Roopkumar",                                       "room": "",    "days": ""}
     ]
@@ -1318,6 +1618,8 @@
     "title": "Design Project",
     "title_short": "",
     "IC": "R Roopkumar",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "R Roopkumar",                                       "room": "",    "days": ""}
     ]
@@ -1326,6 +1628,8 @@
     "title": "Design Project",
     "title_short": "",
     "IC": "R Roopkumar",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "R Roopkumar",                                       "room": "",    "days": ""}
     ]
@@ -1334,6 +1638,8 @@
     "title": "Applied Statistical Methods",
     "title_short": "ASM",
     "IC": "Maneesha",
+    "date_midsem": "02.04.2024 AN",
+    "date_compre": "06.06.2024 FN",
     "sections": [
       {"section_name": "L1", "instructor": "Maneesha",                                          "room": "271", "days": "M8 T4 W8"}
     ]
@@ -1342,6 +1648,8 @@
     "title": "Special Project",
     "title_short": "",
     "IC": "R Roopkumar",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "R Roopkumar",                                       "room": "",    "days": ""}
     ]
@@ -1350,6 +1658,8 @@
     "title": "Workshop Practice",
     "title_short": "Workshop",
     "IC": "Vincent Kumar",
+    "date_midsem": "04.04.2024 FN",
+    "date_compre": "06.06.2024 FN",
     "sections": [
       {"section_name": "L1", "instructor": "Vincent Kumar",                                     "room": "165", "days": "T3"},
       {"section_name": "L2", "instructor": "Vincent Kumar",                                     "room": "183", "days": "M4"},
@@ -1367,6 +1677,8 @@
     "title": "Advanced Mechanics of Solids",
     "title_short": "Adv Mech of Solids",
     "IC": "Priyank Upadhyaya",
+    "date_midsem": "29.03.2024 FN",
+    "date_compre": "29.05.2024 FN",
     "sections": [
       {"section_name": "L1", "instructor": "Priyank Upadhyaya",                                 "room": "219", "days": "M7 W3 Th1"}
     ]
@@ -1375,6 +1687,8 @@
     "title": "Manufacturing Processes",
     "title_short": "Manuf Proc",
     "IC": "Gulshan Kumar",
+    "date_midsem": "01.04.2024 AN",
+    "date_compre": "31.05.2024 FN",
     "sections": [
       {"section_name": "L1", "instructor": "Gulshan Kumar",                                     "room": "219", "days": "M9 T8 Th3 F4"},
       {"section_name": "P1", "instructor": "Gulshan Kumar",                                     "room": "MG1", "days": "T34"}
@@ -1384,6 +1698,8 @@
     "title": "Heat Transfer",
     "title_short": "HT",
     "IC": "Snehaunshu C",
+    "date_midsem": "03.04.2024 AN",
+    "date_compre": "03.06.2024 AN",
     "sections": [
       {"section_name": "L1", "instructor": "Snehaunshu C",                                      "room": "219", "days": "M3 W5 Th8 F3"},
       {"section_name": "P1", "instructor": "Snehaunshu C",                                      "room": "MS4", "days": "W89"}
@@ -1393,6 +1709,8 @@
     "title": "Mechanisms and Machines",
     "title_short": "",
     "IC": "Ram Karthikeyan",
+    "date_midsem": "04.04.2024 AN",
+    "date_compre": "05.06.2024 AN",
     "sections": [
       {"section_name": "L1", "instructor": "Ram Karthikeyan",                                   "room": "219", "days": "M1 W6 Th4 F5"}
     ]
@@ -1401,6 +1719,8 @@
     "title": "Study Project",
     "title_short": "",
     "IC": "Priyank Upadhyaya",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "Priyank Upadhyaya",                                 "room": "",    "days": ""}
     ]
@@ -1409,6 +1729,8 @@
     "title": "Computer Aided Design",
     "title_short": "CAD",
     "IC": "Ravindra G Bhardwaj",
+    "date_midsem": "29.03.2024 FN",
+    "date_compre": "29.05.2024 AN",
     "sections": [
       {"section_name": "L1", "instructor": "Ravindra G Bhardwaj",                               "room": "276", "days": "T7 Th9"},
       {"section_name": "P1", "instructor": "Priyank Upadhyaya",                                 "room": "MS6", "days": "T56"},
@@ -1419,6 +1741,8 @@
     "title": "Vibrations and Control",
     "title_short": "VC",
     "IC": "Harpreet Singh",
+    "date_midsem": "01.04.2024 AN",
+    "date_compre": "31.05.2024 FN",
     "sections": [
       {"section_name": "L1", "instructor": "Harpreet Singh",                                    "room": "276", "days": "M1 T3 W4 F4"}
     ]
@@ -1427,6 +1751,8 @@
     "title": "Engineering Optimization",
     "title_short": "Engg Optimization",
     "IC": "Vincent Kumar",
+    "date_midsem": "03.04.2024 AN",
+    "date_compre": "05.06.2024 AN",
     "sections": [
       {"section_name": "L1", "instructor": "Vincent Kumar",                                     "room": "276", "days": "M2 T9 W1 F2"}
     ]
@@ -1435,6 +1761,8 @@
     "title": "Primemovers & Fluid Machines",
     "title_short": "",
     "IC": "Shashank Khurana",
+    "date_midsem": "04.04.2024 AN",
+    "date_compre": "03.06.2024 AN",
     "sections": [
       {"section_name": "L1", "instructor": "Shashank Khurana",                                  "room": "276", "days": "M3 Th4 F3"},
       {"section_name": "P1", "instructor": "Shashank Khurana",                                  "room": "MG1", "days": "W56"}
@@ -1444,6 +1772,8 @@
     "title": "Laboratory Project",
     "title_short": "Lab Proj",
     "IC": "Priyank Upadhyaya",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "Priyank Upadhyaya",                                 "room": "",    "days": ""}
     ]
@@ -1452,6 +1782,8 @@
     "title": "Laboratory Project",
     "title_short": "Lab Proj",
     "IC": "Priyank Upadhyaya",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "Priyank Upadhyaya",                                 "room": "",    "days": ""}
     ]
@@ -1460,6 +1792,8 @@
     "title": "Design Project",
     "title_short": "",
     "IC": "Priyank Upadhyaya",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "Priyank Upadhyaya",                                 "room": "",    "days": ""}
     ]
@@ -1468,6 +1802,8 @@
     "title": "Design Project",
     "title_short": "",
     "IC": "Priyank Upadhyaya",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "Priyank Upadhyaya",                                 "room": "",    "days": ""}
     ]
@@ -1476,6 +1812,8 @@
     "title": "Quality Control Assur & Rel",
     "title_short": "",
     "IC": "Gulshan Kumar",
+    "date_midsem": "01.04.2024 FN",
+    "date_compre": "30.05.2024 FN",
     "sections": [
       {"section_name": "L1", "instructor": "Gulshan Kumar",                                     "room": "276", "days": "M4 W2 Th1"}
     ]
@@ -1484,6 +1822,8 @@
     "title": "Special Project",
     "title_short": "",
     "IC": "Priyank Upadhyaya",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "Priyank Upadhyaya",                                 "room": "",    "days": ""}
     ]
@@ -1492,6 +1832,8 @@
     "title": "Operations Management",
     "title_short": "OM",
     "IC": "Lijo John",
+    "date_midsem": "05.04.2024 FN",
+    "date_compre": "06.06.2024 AN",
     "sections": [
       {"section_name": "L1", "instructor": "Lijo John",                                         "room": "245", "days": "M4 W1 F2"}
     ]
@@ -1500,6 +1842,8 @@
     "title": "Principles of Management",
     "title_short": "PoM",
     "IC": "Aqila Begum",
+    "date_midsem": "02.04.2024 FN",
+    "date_compre": "30.05.2024 AN",
     "sections": [
       {"section_name": "L1", "instructor": "Aqila Begum",                                       "room": "220", "days": "M5 T1 Th5"},
       {"section_name": "L2", "instructor": "Anurag Singh",                                      "room": "219", "days": "M5 T1 Th5"}
@@ -1509,6 +1853,8 @@
     "title": "Physics Laboratory",
     "title_short": "Phy Lab",
     "IC": "Swati Routh",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "P1", "instructor": "R Roopkumar",                                       "room": "309", "days": "M34"},
       {"section_name": "P2", "instructor": "Amarnath",                                          "room": "309", "days": "M89"},
@@ -1524,6 +1870,8 @@
     "title": "Mechanics Oscillations & Wave",
     "title_short": "MOW",
     "IC": "Amarnath",
+    "date_midsem": "01.04.2024 FN",
+    "date_compre": "04.06.2024 FN",
     "sections": [
       {"section_name": "L1", "instructor": "Amarnath",                                          "room": "165", "days": "M6 T1 Th6 F2"},
       {"section_name": "L2", "instructor": "R Roopkumar",                                       "room": "183", "days": "M6 T1 Th6 F2"},
@@ -1534,6 +1882,8 @@
     "title": "Intro to Astro & Astrophysics",
     "title_short": "Astro",
     "IC": "Swati Routh",
+    "date_midsem": "04.04.2024 FN",
+    "date_compre": "07.06.2024 FN",
     "sections": [
       {"section_name": "L1", "instructor": "Swati Routh",                                       "room": "276", "days": "T1 Th7 F5"}
     ]
@@ -1542,6 +1892,8 @@
     "title": "Study Project",
     "title_short": "",
     "IC": "R Roopkumar",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "R Roopkumar",                                       "room": "",    "days": ""}
     ]
@@ -1550,6 +1902,8 @@
     "title": "Laboratory Project",
     "title_short": "Lab Proj",
     "IC": "R Roopkumar",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "R Roopkumar",                                       "room": "",    "days": ""}
     ]
@@ -1558,6 +1912,8 @@
     "title": "Laboratory Project",
     "title_short": "Lab Proj",
     "IC": "R Roopkumar",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "R Roopkumar",                                       "room": "",    "days": ""}
     ]
@@ -1566,6 +1922,8 @@
     "title": "Design Project",
     "title_short": "",
     "IC": "R Roopkumar",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "R Roopkumar",                                       "room": "",    "days": ""}
     ]
@@ -1574,6 +1932,8 @@
     "title": "Design Project",
     "title_short": "",
     "IC": "R Roopkumar",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "R Roopkumar",                                       "room": "",    "days": ""}
     ]
@@ -1582,6 +1942,8 @@
     "title": "Special Project",
     "title_short": "",
     "IC": "R Roopkumar",
+    "date_midsem": "",
+    "date_compre": "",
     "sections": [
       {"section_name": "L1", "instructor": "R Roopkumar",                                       "room": "",    "days": ""}
     ]
